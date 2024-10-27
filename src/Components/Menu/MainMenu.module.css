@@ -1,0 +1,43 @@
+.navM {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navM .ulM {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.navM .liM {
+  padding: 0 21px;
+}
+.navM .linkM {
+  text-decoration: none;
+  color: #626f78;
+  font-size: 13px;
+  font-weight: 600;
+}
+.navM .linkM .offLogo {
+  font-size: 17px;
+  font-weight: 900;
+}
+.navM .linkM span {
+  font-size: 17px;
+  padding-right: 10px;
+}
+
+.MObileResponse {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 185px;
+  border-radius: 8px;
+}
+.MObileResponse:hover {
+  background-color: #f1f8ff;
+}
+.MObileResponse .AiOutlineMenu {
+  font-size: 21px;
+}/*# sourceMappingURL=MainMenu.module.css.map */

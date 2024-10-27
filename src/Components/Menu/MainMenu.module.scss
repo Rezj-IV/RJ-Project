@@ -1,0 +1,53 @@
+$lightBlue:#f1f8ff;
+$borderRD:8px;
+@mixin hover($bgcolor){
+    &:hover{
+        background-color: $bgcolor;
+    }
+}
+.navM{
+display: flex;
+justify-content: space-between;
+align-items: center;
+ 
+
+    .ulM{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       list-style: none;
+      
+    }
+    .liM{
+        padding: 0 21px;
+    }
+    .linkM{
+        text-decoration: none;
+        color:#626f78;
+        font-size: 13px ;
+        font-weight: 600;
+        .offLogo{
+            font-size: 17px;
+            font-weight: 900;
+        }
+        span{
+font-size: 17px;
+padding-right: 10px;
+
+        }
+    }
+}
+.MObileResponse {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 185px;
+    border-radius: $borderRD;
+
+@include hover($lightBlue);
+    
+    .AiOutlineMenu{
+        font-size: 21px;
+    }
+}

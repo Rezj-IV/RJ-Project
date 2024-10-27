@@ -1,0 +1,68 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.navbar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #ffffff;
+  padding: 20px 15px;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  width: 291px;
+  height: 100vh;
+}
+.navbar li {
+  padding: 0 20px;
+  list-style: none;
+}
+.navbar .ParentLink {
+  display: inline-flex;
+  align-items: center;
+  padding-right: 15px;
+}
+.navbar .ParentLink .LinkOption {
+  color: #545454;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.navbar .ParentLogo {
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px 0px #cfcfcf;
+  border-radius: 50%;
+}
+.HeadMenuMobile {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.CloseMenu {
+  display: flex;
+  align-items: center;
+  color: #333333;
+  font-weight: 600;
+}
+
+.groupMenu {
+  width: 100%;
+}
+
+.otherOption {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  height: 60px;
+}/*# sourceMappingURL=MobileMenu.module.css.map */
