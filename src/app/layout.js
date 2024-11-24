@@ -1,11 +1,12 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { StoreProvider } from "@/Components/StoreRedux/StoreProvider";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",${geistSans.variable}
+// });
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -19,9 +20,13 @@ export const metadata = {
 const yekan= localFont({src:"./fonts/BYekan+.ttf"})
 export default function RootLayout({ children }) {
   return (
+    
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${yekan.className}`}>
+      <body className={` ${geistMono.variable} ${yekan.className}`}>
+      <StoreProvider>
         {children}
+        </StoreProvider>
+      
       </body>
     </html>
   );

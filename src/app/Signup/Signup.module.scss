@@ -1,0 +1,140 @@
+$grayBlue: rgb(99, 128, 192);
+
+
+@mixin Midia($width){
+@media (max-width:$width) {
+    display: none;
+}
+}
+
+.signupContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.imageSignupContainer {
+    flex-basis: 77%;
+@include Midia(1350px);
+    .imageSignup {
+        width: 100%;
+        height: 99.4vh;
+    }
+}
+
+
+.FieldContainer {
+    flex-basis: 23%;
+    
+   
+
+    img {
+        display: block;
+        margin: 12px auto 30px auto;
+
+    }
+
+    .form__group {
+        position: relative;
+      
+        width: 350px;
+        display: block;
+        margin:  40px auto;
+     
+      }
+      
+      .form__field {
+        width: 300px;
+        border: 1px solid rgb(162, 162, 162) ;
+        border-radius: 5px;
+        color: #313a46;
+        height: 40px;
+        padding: 0rem 15px;
+        margin: 0 auto;
+        display: block;
+      }
+      
+      .form__field::placeholder {
+        color: transparent;
+      }
+      
+      .form__field:placeholder-shown ~ .form__label {
+        top: 10px;
+        
+      
+        border-right: none;
+        border-left: none;
+      }
+      
+      .form__label {
+        background-color: white;
+        border-left: 1px solid silver;
+        border-right: 1px solid silver;
+        color: #676767;
+        display: block;
+        font-size: .9em;
+        margin-left: 10px;
+        padding: 0 10px;
+        pointer-events: none;
+        position: absolute;
+        top: -10px;
+        right: 25px;
+        transition: 0.2s;
+      }
+      
+      .form__field:focus {
+        border: 1px solid $grayBlue !important;
+        outline: none;
+      }
+      
+      .form__field:focus ~ .form__label {
+        background-color: white;
+        border-right: 1px solid $grayBlue;
+        border-left: 1px solid $grayBlue;
+        color: $grayBlue;
+        font-size: .9em;
+        margin-left: 10px;
+        padding: 0 10px;
+        position: absolute;
+        top: -10px;
+        transition: 0.2s;
+      }
+      
+
+    .ErrorMessage {
+        display: block;
+        margin-bottom: 20px;
+        color: rgba(250, 33, 33, 0.59);
+        font-size: 14px;
+        font-weight: 600;
+        padding-right: 25px;
+        padding-top: 5px;
+
+        
+
+    
+    }
+    .title{
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 22px;
+        padding-bottom: 15px;
+    }
+    button{
+        display: block;
+       width: 300px;
+       height: 35px;
+        border: none;
+        font-size: 15px;
+        margin: 30px auto 0 auto;
+        border-radius: 4px;
+        background-color:$grayBlue;
+        color: #ffffff;
+        font-weight: 600;
+    }
+    button:hover{
+        border: 1px solid $grayBlue;
+        background-color: #ffffff;
+        color: $grayBlue;
+    }
+}
+

@@ -1,42 +1,88 @@
-$lightBlue:#f1f8ff;
-$borderRD:8px;
-@mixin hover($bgcolor){
-    &:hover{
+$lightBlue: #f1f8ff;
+$borderRD: 8px;
+
+@mixin hover($bgcolor) {
+    &:hover {
         background-color: $bgcolor;
     }
 }
-.navM{
-display: flex;
-justify-content: space-between;
-align-items: center;
- 
 
-    .ulM{
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       list-style: none;
-      
-    }
-    .liM{
-        padding: 0 21px;
-    }
-    .linkM{
+.navM {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+
+
+    .ulM {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        position: relative;
+
+        .liM {
+            padding: 0 21px;
+
+            .layer {
+                display: none;
+                position: absolute;
+
+
+            }
+       
+           
+       
+        
+    .linkM {
         text-decoration: none;
-        color:#626f78;
-        font-size: 13px ;
+        color: #626f78;
+        font-size: 13px;
         font-weight: 600;
-        .offLogo{
+
+        .offLogo {
             font-size: 17px;
             font-weight: 900;
         }
-        span{
-font-size: 17px;
-padding-right: 10px;
+
+        span {
+            font-size: 17px;
+            padding-right: 10px;
 
         }
     }
+    .linkM::after{
+        width: 0%;
+        height: 1.8px;
+        background-color: rgb(125, 163, 220);
+        content: '';
+        font-size: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        position: absolute;
+        margin: 0px auto;
+    }
+    
+    .linkM:hover::after{
+        transition: all .5s;
+        width: 100%;
+    }
 }
+   
+    }
+
+    .liM:hover .layer {
+        display: block;
+        z-index: 1;
+        
+   
+    }
+
+
+
+}
+
 .MObileResponse {
     display: inline-flex;
     justify-content: center;
@@ -45,9 +91,10 @@ padding-right: 10px;
     width: 185px;
     border-radius: $borderRD;
 
-@include hover($lightBlue);
-    
-    .AiOutlineMenu{
+    @include hover($lightBlue);
+
+    .AiOutlineMenu {
         font-size: 21px;
     }
 }
+ 

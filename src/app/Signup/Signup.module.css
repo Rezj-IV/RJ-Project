@@ -1,0 +1,120 @@
+.signupContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.imageSignupContainer {
+  flex-basis: 77%;
+}
+@media (max-width: 1350px) {
+  .imageSignupContainer {
+    display: none;
+  }
+}
+.imageSignupContainer .imageSignup {
+  width: 100%;
+  height: 99.4vh;
+}
+
+.FieldContainer {
+  flex-basis: 23%;
+}
+.FieldContainer img {
+  display: block;
+  margin: 12px auto 30px auto;
+}
+.FieldContainer .form__group {
+  position: relative;
+  width: 350px;
+  display: block;
+  margin: 40px auto;
+}
+.FieldContainer .form__field {
+  width: 300px;
+  border: 1px solid rgb(162, 162, 162);
+  border-radius: 5px;
+  color: #313a46;
+  height: 40px;
+  padding: 0rem 15px;
+  margin: 0 auto;
+  display: block;
+}
+.FieldContainer .form__field::-moz-placeholder {
+  color: transparent;
+}
+.FieldContainer .form__field::placeholder {
+  color: transparent;
+}
+.FieldContainer .form__field:-moz-placeholder-shown ~ .form__label {
+  top: 10px;
+  border-right: none;
+  border-left: none;
+}
+.FieldContainer .form__field:placeholder-shown ~ .form__label {
+  top: 10px;
+  border-right: none;
+  border-left: none;
+}
+.FieldContainer .form__label {
+  background-color: white;
+  border-left: 1px solid silver;
+  border-right: 1px solid silver;
+  color: #676767;
+  display: block;
+  font-size: 0.9em;
+  margin-left: 10px;
+  padding: 0 10px;
+  pointer-events: none;
+  position: absolute;
+  top: -10px;
+  right: 25px;
+  transition: 0.2s;
+}
+.FieldContainer .form__field:focus {
+  border: 1px solid rgb(99, 128, 192) !important;
+  outline: none;
+}
+.FieldContainer .form__field:focus ~ .form__label {
+  background-color: white;
+  border-right: 1px solid rgb(99, 128, 192);
+  border-left: 1px solid rgb(99, 128, 192);
+  color: rgb(99, 128, 192);
+  font-size: 0.9em;
+  margin-left: 10px;
+  padding: 0 10px;
+  position: absolute;
+  top: -10px;
+  transition: 0.2s;
+}
+.FieldContainer .ErrorMessage {
+  display: block;
+  margin-bottom: 20px;
+  color: rgba(250, 33, 33, 0.59);
+  font-size: 14px;
+  font-weight: 600;
+  padding-right: 25px;
+  padding-top: 5px;
+}
+.FieldContainer .title {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  padding-bottom: 15px;
+}
+.FieldContainer button {
+  display: block;
+  width: 300px;
+  height: 35px;
+  border: none;
+  font-size: 15px;
+  margin: 30px auto 0 auto;
+  border-radius: 4px;
+  background-color: rgb(99, 128, 192);
+  color: #ffffff;
+  font-weight: 600;
+}
+.FieldContainer button:hover {
+  border: 1px solid rgb(99, 128, 192);
+  background-color: #ffffff;
+  color: rgb(99, 128, 192);
+}/*# sourceMappingURL=Signup.module.css.map */

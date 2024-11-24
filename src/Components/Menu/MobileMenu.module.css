@@ -1,4 +1,6 @@
 .navbar {
+  position: fixed;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,28 +14,30 @@
   align-items: flex-start;
   background-color: #ffffff;
   padding: 20px 15px;
-  position: fixed;
-  top: 0px;
+  position: relative;
+  top: 45px;
   right: 0;
-  width: 291px;
-  height: 100vh;
+  width: 261px;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0px 1px 4px 1px #e1e1e1;
 }
-.navbar li {
+.navbar ul li {
   padding: 0 20px;
   list-style: none;
 }
-.navbar .ParentLink {
+.navbar ul .ParentLink {
   display: inline-flex;
   align-items: center;
   padding-right: 15px;
 }
-.navbar .ParentLink .LinkOption {
+.navbar ul .ParentLink .LinkOption {
   color: #545454;
   font-size: 14px;
   text-decoration: none;
   font-weight: 600;
 }
-.navbar .ParentLogo {
+.navbar ul .ParentLogo {
   width: 35px;
   height: 35px;
   display: inline-flex;
@@ -43,17 +47,30 @@
   box-shadow: 0px 0px 4px 0px #cfcfcf;
   border-radius: 50%;
 }
+
+li:hover .layer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.layer {
+  z-index: -1;
+  display: none;
+  background-color: #ffffff;
+  padding: 20px 15px;
+  position: absolute;
+  top: 0;
+  right: 260px;
+  width: 291px;
+  height: 401px;
+}
+
 .HeadMenuMobile {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-
-.CloseMenu {
-  display: flex;
-  align-items: center;
-  color: #333333;
-  font-weight: 600;
 }
 
 .groupMenu {
