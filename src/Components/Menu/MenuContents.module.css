@@ -1,1 +1,19 @@
-/*# sourceMappingURL=MenuContents.module.css.map */
+.Developing {
+  padding-top: 80px;
+  width: 100%;
+}
+.Developing .notification {
+  text-shadow: -1px 11px 7px #9b9b9b;
+  color: rgb(179, 179, 179);
+}
+.Developing .notification h3 {
+  padding-bottom: 10px;
+  text-align: center;
+}
+.Developing .notification h4 {
+  text-align: center;
+}
+.Developing .developingLogo {
+  position: absolute;
+  z-index: -1;
+}

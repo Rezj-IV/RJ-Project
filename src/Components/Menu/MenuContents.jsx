@@ -1,11 +1,12 @@
 import React from "react";
-import styles from "./MenuContents.module.scss";
+import styles from "./MenuContents.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 
 const MenuContents = async ({ itemId }) => {
   return (
-    <div>
+    <>
       {itemId === 1 ? (
         <div>
           <h3>برندهای مختلف گوشی موبایل</h3>
@@ -44,11 +45,17 @@ const MenuContents = async ({ itemId }) => {
         </div>
       ) : null}
 
-{itemId > 2 ?(<div>
- <h1>alo</h1>
+{itemId > 2 ?(<div className={styles.Developing}>
+  
+  <Image src="/logo/developingLogo.jpg" alt="Developing" width={150} height={150} className={styles.developingLogo}/>
+ <div className={styles.notification}>
+  <h3>وب سایت در حال توسعه هست</h3>
+  <h4>ممنون از صبر و شکیبایی شما</h4>
+
+ </div>
 </div>) : null}
       <div></div>
-    </div>
+    </>
   );
 };
 

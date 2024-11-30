@@ -22,9 +22,24 @@
   height: fit-content;
   box-shadow: 0px 1px 4px 1px #e1e1e1;
 }
-.navbar ul li {
+.navbar ul .otherOption {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f3f3f3;
+  height: 60px;
+  width: 245.5px;
+}
+.navbar ul .otherOption:hover {
+  background-color: rgba(182, 214, 250, 0.29);
+  border-end-end-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.navbar ul .otherOption li {
+  display: flex;
+  align-items: center;
   padding: 0 20px;
   list-style: none;
+  width: 100%;
 }
 .navbar ul .ParentLink {
   display: inline-flex;
@@ -75,11 +90,4 @@ li:hover .layer {
 
 .groupMenu {
   width: 100%;
-}
-
-.otherOption {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #f0f0f0;
-  height: 60px;
 }/*# sourceMappingURL=MobileMenu.module.css.map */

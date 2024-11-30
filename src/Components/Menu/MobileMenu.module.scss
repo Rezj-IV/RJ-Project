@@ -1,6 +1,11 @@
 $white: #ffffff;
 $BlackGray: #545454;
-
+@mixin hover($bgColor , $BR){
+    &:hover{    background-color: $bgColor;
+    border-end-end-radius: $BR;
+    border-top-left-radius: $BR;
+}
+}
 .navbar {
     position: fixed;
     z-index: 1;
@@ -23,12 +28,24 @@ $BlackGray: #545454;
         height: fit-content;
         box-shadow: 0px 1px 4px 1px #e1e1e1;
 
-        li {
-            padding: 0 20px;
-            list-style: none;
+        .otherOption {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #f3f3f3;
+            height: 60px;
+            width: 245.5px;
+ @include hover(rgba(182, 214, 250, 0.29),15px );
+            li {
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                list-style: none;
+                width: 100%;
 
-
+            }
         }
+
+
 
 
         .ParentLink {
@@ -99,15 +116,5 @@ li:hover .layer {
 .groupMenu {
 
     width: 100%;
-
-}
-
-
-
-.otherOption {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #f0f0f0;
-    height: 60px;
 
 }
