@@ -1,18 +1,19 @@
-import Card from '@/Components/Card/Card';
-import GetIncredibleOffers from '@/Components/IncredibleOffersProducts/GetIncredibleOffers';
-import React from 'react'
+import Card from "@/Components/Card/Card";
+import CardDetails from "@/Components/Card/CardDetails";
+import GetIncredibleOffers from "@/Components/IncredibleOffersProducts/GetIncredibleOffers";
 
-const IncredibleOffersList =  async() => {
-    const data = await GetIncredibleOffers()
+const IncredibleOffersList = async () => {
+  const data = await GetIncredibleOffers();
+
   return (
     <div>
-      {
-        data.map(item=>{
-            return <Card product={item}/>
-        })
-      }
-    </div>
-  )
-}
+      <div></div>
 
-export default IncredibleOffersList
+      <div>
+        <CardDetails product={data} />
+      </div>
+    </div>
+  );
+};
+
+export default IncredibleOffersList;
