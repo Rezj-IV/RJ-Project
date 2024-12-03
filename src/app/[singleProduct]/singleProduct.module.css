@@ -1,0 +1,84 @@
+.container {
+  margin-top: 50px;
+  display: flex;
+}
+.container .descriptionContainer {
+  flex-basis: 72%;
+  padding: 40px;
+  width: 100%;
+  height: 700px;
+  border: 1px solid #d6d8de;
+  border-radius: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .descriptionContainer .nameContainer {
+  flex-basis: 57%;
+}
+.container .descriptionContainer .nameContainer .name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #474658;
+  line-height: 33px;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: table;
+  width: 599px;
+}
+.container .descriptionContainer .nameContainer .nameb {
+  font-size: 13px;
+  padding: 15px 0;
+  color: #284681;
+}
+.container .descriptionContainer .nameContainer .commentContainer {
+  width: 135px;
+  border-bottom: 1px solid #d6d8de;
+  padding-bottom: 15px;
+}
+.container .descriptionContainer .nameContainer .commentContainer .comment {
+  font-size: 15px;
+  font-weight: 600;
+  color: #474658;
+  padding-left: 10px;
+}
+.container .descriptionContainer .nameContainer .commentContainer .numberComment {
+  color: #14a0de;
+  font-size: 15px;
+}
+.container .descriptionContainer .nameContainer .colorContainer {
+  width: 190px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.container .descriptionContainer .nameContainer .colorContainer .insideColor {
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  border-radius: 50%;
+  height: 30px;
+  border: 1px solid #d6d8de;
+  display: flex;
+  margin: 0px 4px;
+  box-shadow: 0px 0px 2px 0px #d9d9d9;
+}
+.container .descriptionContainer .nameContainer .colorContainer .insideColor .color {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 10px;
+}
+.container .descriptionContainer .imageContainer {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 43%;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+.container .peiceContainer {
+  flex-basis: 23%;
+}/*# sourceMappingURL=singleProduct.module.css.map */

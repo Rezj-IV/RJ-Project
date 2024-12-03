@@ -6,7 +6,7 @@ import UnavailableCarusel from './UnavailableCarusel'
 
 const SlideCarouselCard = ({product}) => {
   return (
-    <Link href={`/SingelProduct/${product.name}`} className={styles.LinkContainer}>
+    <Link href={`/${product.id}`} className={styles.LinkContainer}>
       {product.stock === 0 ? <UnavailableCarusel product = {product}/>:
      <div className={styles.mainContainer}>
         <div className={`${styles.incredibleOfferImageContainer}`}>

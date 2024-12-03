@@ -1,7 +1,6 @@
 import React from "react";
 import * as repository from "../../../RestConfig/RestRequest";
 import IncredibleOffersList from "@/app/IncredibleOffers/page";
-import { RevalidateAC } from "@/Revalidate/RevalidateAC.js";
 
 async function getAllProduct() {
   const response = await repository.Get("products/incredibleOffers");
@@ -11,7 +10,6 @@ async function getAllProduct() {
   } else {
     console.log("دیتا به درستی از سرور دریافت نشد");
   }
-  RevalidateAC("")
 }
 const GetIncredibleOffers = async () => {
   const PrdData = await getAllProduct();

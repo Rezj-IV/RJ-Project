@@ -5,6 +5,7 @@ import Header from "@/Components/Header/Header";
 import GetProducts from "@/Components/GetProducts";
 import GetIncredibleOffers from "@/Components/IncredibleOffersProducts/GetIncredibleOffers";
 import IncCarusel from "@/Components/Carusel/IncCarusel";
+import Alo from "@/Components/Alo";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       {/* <MainMenu/> */}
       {/* <MobileMenu/> */}
       <IncCarusel />
+      {/* <Alo/> */}
     </>
   );
 }

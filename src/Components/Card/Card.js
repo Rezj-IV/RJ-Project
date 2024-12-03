@@ -9,7 +9,7 @@ const Card = ({product}) => {
   return (
 
 
-    <Link style={{textDecoration:"none" , color:"#272951"}} href={`/SingelProduct/${product.name}`}>
+    <Link style={{textDecoration:"none" , color:"#272951"}} href={`${product.id}`}>
     {product.stock === 0 ? <UnavailableCarusel product = {product}/>:
  <div className={styles.mainContainer}>
         <div className={`${styles.incredibleOfferImageContainer}`}>

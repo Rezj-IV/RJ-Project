@@ -10,7 +10,7 @@ const CardDetails = ({ product }) => {
   const checkHandler = (id, box) => {
     let exist = false;
     state.forEach((element) => {
-      if (element.id == id.id) {
+      if (element == id) {
         exist = true;
       }
     });
@@ -21,55 +21,66 @@ const CardDetails = ({ product }) => {
     } else {
       setState(
         state.filter((item) => {
-          return item.id !== id.id;
+          return item !== id;
         })
       );
     }
   };
+  
   console.log(state);
   return (
     <div className={styles.cardDetailsConrainer}>
       <div className={styles.cardDetail}>
-      <div className={styles.filterLogo}>
-        <p>فیلتر</p>
-      </div>
-        <div className={styles.categories}>
-        <p>دسته بندی ها</p>
-        <input
-          type="checkbox"
-          id="mobile"
-          ref={checked}
-          onChange={() => {
-            checkHandler({ id: 1, name: "mobile" }, checked);
-          }}
-        />
-        <label>mobile</label>
-        <br />
-        <input
-          type="checkbox"
-          id="tablet"
-          ref={checked1}
-          onChange={() => {
-            checkHandler({ id: 2, name: "tablet" }, checked1);
-          }}
-        />
-        <label>tablet</label>
-        <br />
-        <input
-          type="checkbox"
-          id="laptop"
-          ref={checked2}
-          onChange={() => {
-            checkHandler({ id: 3, name: "laptop" }, checked2);
-          }}
-        />
-        <label>laptop</label>
+        <div className={styles.filterLogo}>
+          <p>فیلتر</p>
         </div>
-        
+        <div className={styles.categories}>
+          <p>دسته بندی ها</p>
+          <input
+            type="checkbox"
+            id="mobile"
+            ref={checked}
+            onChange={() => {
+              checkHandler("mobile", checked);
+            }}
+          />
+          <label>mobile</label>
+          <br />
+          <input
+            type="checkbox"
+            id="tablet"
+            ref={checked1}
+            onChange={() => {
+              checkHandler("tablet", checked1);
+            }}
+          />
+          <label>tablet</label>
+          <br />
+          <input
+            type="checkbox"
+            id="laptop"
+            ref={checked2}
+            onChange={() => {
+              checkHandler("laptop", checked2);
+            }}
+          />
+          <label>laptop</label>
+        </div>
+
+        <div className={styles.mainDropdown}>
+          
+        </div>
       </div>
       <div className={styles.Card}>
         {product.map((item) => {
+          if(state[0] === item.type || state[1] === item.type || state[2] === item.type){
           return <Card product={item} key={item.id} />;
+        }else{
+          if(state.length === 0){
+          return <Card product={item} key={item.id} />;
+          }
+
+        }
         })}
       </div>
     </div>
