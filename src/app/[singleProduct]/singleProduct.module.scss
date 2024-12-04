@@ -95,10 +95,19 @@ $lightBlue: #14a0de;
             flex-basis: 43%;
             width: 100%;
             align-items: center;
-            margin-bottom: 30px;
             justify-content: center;
 
             .incredibleOfferImage {}
+            .prdImage{
+                flex-basis: 80%;
+                display: flex;
+                align-items: center;
+            }
+            .otherImage{
+                flex-basis: 20%;
+                display: flex;
+                align-items: flex-end;
+            }
         }
     }
 

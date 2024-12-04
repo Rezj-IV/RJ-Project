@@ -6,6 +6,7 @@ import GetProducts from "@/Components/GetProducts";
 import GetIncredibleOffers from "@/Components/IncredibleOffersProducts/GetIncredibleOffers";
 import IncCarusel from "@/Components/Carusel/IncCarusel";
 import Alo from "@/Components/Alo";
+import Modal from "@/Components/Modal/ImageModal";
 
 export default function Home() {
   return (

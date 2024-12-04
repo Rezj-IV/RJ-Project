@@ -1,0 +1,53 @@
+.mainImage {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 275px;
+}
+.mainImage .showMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #d5dddf;
+  background-color: transparent;
+  border-radius: 7.5px;
+  overflow: hidden;
+  padding: 5px;
+}
+.mainImage .showMore img {
+  border-radius: 7px;
+}
+
+.imagesProduct .containerModalIMages {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+  width: 55vw;
+  height: 30vw;
+  border: 1px solid #d5dddf;
+  border-radius: 10px;
+  background-color: #ffffff;
+  top: 80px;
+  left: 23vw;
+}
+.imagesProduct .containerModalIMages .modalIMages {
+  flex-basis: 55%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 80px;
+  gap: 27px;
+}
+.imagesProduct .containerModalIMages .modalIMages .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #d5dddf;
+  background-color: transparent;
+  border-radius: 7.5px;
+  overflow: hidden;
+  padding: 5px;
+}
+.imagesProduct .containerModalIMages .mainModalIMages {
+  flex-basis: 45%;
+}/*# sourceMappingURL=ImageModal.module.css.map */

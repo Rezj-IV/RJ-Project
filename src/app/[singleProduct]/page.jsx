@@ -2,6 +2,7 @@ import React from "react";
 import * as repository from "../../../RestConfig/RestRequest";
 import styles from "./singleProduct.module.scss";
 import Image from "next/image";
+import ImageModal from "@/Components/Modal/ImageModal";
 async function getAllSingleProduct(props) {
   const response = await repository.Get(`products/${props}`);
   if (response.ok) {
@@ -14,6 +15,7 @@ async function getAllSingleProduct(props) {
 const singleProduct = async (props) => {
   const context = await props.params;
   const data = await getAllSingleProduct(context.singleProduct);
+
   console.log(context);
   console.log(data);
   return (
@@ -37,13 +39,12 @@ const singleProduct = async (props) => {
                   {/* <span>رنگ :</span>
                   <span className={styles.showColor}>{item.showColor}</span> */}
                   <div className={styles.insideColor}>
-                  <div
-                    className={styles.color}
-                    style={{
-            
-                      backgroundColor: item.color,
-                    }}
-                  ></div>
+                    <div
+                      className={styles.color}
+                      style={{
+                        backgroundColor: item.color,
+                      }}
+                    ></div>
                   </div>
                 </div>
               );
@@ -61,12 +62,17 @@ const singleProduct = async (props) => {
               height={12}
             />
           ) : null}
-          <Image
-            src={data.indexImageUrl}
-            width={360}
-            height={360}
-            alt={data.name}
-          />
+          <div className={styles.prdImage}>
+            <Image
+              src={data.indexImageUrl}
+              width={360}
+              height={360}
+              alt={data.name}
+            />
+          </div>
+          <div className={styles.otherImage}>
+            <ImageModal images={data.images} alt={data.name} />
+          </div>
         </div>
       </div>
 
