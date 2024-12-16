@@ -1,0 +1,52 @@
+$borderColor: #8c9ab9;
+$ShText : rgb(34 60 120/1);
+
+.caruselContainer {
+    width: 100%;
+    height: fit-content;
+    border: 1px solid $borderColor;
+    border-radius: 25px;
+    margin: 60px auto;
+    overflow: hidden;
+    padding: 30px 20px;
+
+    .titleCarusel {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 70px;
+        background-color: transparent;
+        font-weight: 600;
+        padding: 0 27px;
+
+        p {
+            font-size: 20px;
+
+        }
+
+        span {
+            font-size: 20px;
+        }
+
+        .rjLand {
+            padding-right: 10px;
+        }
+
+        .ShowAll {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            text-decoration: none;
+            color: $ShText;
+            height: fit-content;
+
+
+        }
+
+        .AiOutlineLeft {
+
+            margin-right: 10px;
+            font-size: 14px;
+        }
+    }
+}

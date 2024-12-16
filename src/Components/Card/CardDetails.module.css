@@ -1,5 +1,6 @@
 .cardDetailsConrainer {
   display: flex;
+  padding: 0 135px;
 }
 .cardDetailsConrainer .cardDetail {
   border: 1px solid #cecfd0;

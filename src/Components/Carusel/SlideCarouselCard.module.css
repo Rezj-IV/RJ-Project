@@ -1,5 +1,6 @@
 .LinkContainer {
   text-decoration: none;
+  direction: rtl;
 }
 
 .mainContainer {
@@ -28,8 +29,26 @@
 
 .priceContainer {
   height: 3.5em;
-  color: #000002;
-  line-height: 1.5em;
+  color: #383838;
+  text-align: left;
+  width: 100%;
+}
+.priceContainer .price {
+  font-size: 17px;
+  font-weight: 600;
+}
+.priceContainer .price span {
+  font-size: 12px;
+  color: #3c3c3c;
+  padding-right: 2px;
+}
+.priceContainer .priceBeforeOff {
+  color: #95a0b7;
+  text-decoration-line: line-through;
+  text-decoration-color: #7b8292;
+  text-decoration-thickness: 0.1em;
+  font-size: 14px;
+  text-align: left;
 }
 
 .priceDetail {
@@ -38,16 +57,9 @@
   justify-content: space-between;
 }
 
-.priceBeforeOff {
-  color: #95a0b7;
-  text-decoration-line: line-through;
-  text-decoration-color: #7b8292;
-  text-decoration-thickness: 0.1em;
-  font-size: 11px;
-}
-
 .offPrcent {
   text-align: center;
+  padding-top: 2px;
   width: 2.8em;
   font-size: 0.7em;
   font-weight: 600;
@@ -56,8 +68,6 @@
   border-style: none;
   background-color: #14a0de;
   color: rgb(241, 235, 235);
-  line-height: 8.5px;
-  padding: 5px;
 }
 
 .incredibleOfferImageContainer {

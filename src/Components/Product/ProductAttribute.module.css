@@ -1,0 +1,23 @@
+.attContainer {
+  padding: 10px 17px;
+}
+.attContainer .attChild, .attContainer .attChildEnd {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed #d3d8e4;
+  width: 100%;
+  height: 52px;
+  font-size: 14px;
+}
+.attContainer .attChild .attName, .attContainer .attChildEnd .attName {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: rgb(33, 33, 33);
+}
+.attContainer .attChild .attMainText, .attContainer .attChildEnd .attMainText {
+  padding-left: 20px;
+  color: rgba(31, 71, 165, 0.8392156863);
+}
+.attContainer .attChildEnd {
+  border-bottom: none;
+}/*# sourceMappingURL=ProductAttribute.module.css.map */

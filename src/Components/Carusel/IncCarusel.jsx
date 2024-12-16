@@ -3,7 +3,7 @@ import * as repository from "../../../RestConfig/RestRequest";
 import SlideCarousel from "../Carusel/SlideCarousel";
 import IncredibleOffersList from "@/app/IncredibleOffers/page";
 
-async function getAllProduct() {
+async function getAllProductInc() {
   const response = await repository.Get("products/incredibleOffers");
   if (response.ok) {
     const data = await response.json();
@@ -13,7 +13,7 @@ async function getAllProduct() {
   }
 }
 const IncCarusel = async () => {
-  const PrdData = await getAllProduct();
+  const PrdData = await getAllProductInc();
 
   return (
     <div>

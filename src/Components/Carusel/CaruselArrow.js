@@ -16,7 +16,7 @@ export function NextArrow(props) {
         margin: "auto",
         marginRight: "30px",
         zIndex: "10000",
-        color: "gray  ",
+        color: "#4a4a4a  ",
       }}
       onClick={onClick}
     />
@@ -37,7 +37,7 @@ export function PrevArrow(props) {
         margin: "auto",
         marginLeft: "30px",
         zIndex: "10000",
-        color: "gray",
+        color: "#4a4a4a",
       }}
       onClick={onClick}
     />

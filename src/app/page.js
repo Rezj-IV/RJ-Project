@@ -5,17 +5,33 @@ import Header from "@/Components/Header/Header";
 import GetProducts from "@/Components/GetProducts";
 import GetIncredibleOffers from "@/Components/IncredibleOffersProducts/GetIncredibleOffers";
 import IncCarusel from "@/Components/Carusel/IncCarusel";
-import Alo from "@/Components/Alo";
 import Modal from "@/Components/Modal/ImageModal";
+import MainSlider from "@/Components/Slider/mainSlider";
+import ProductCarusel from "@/Components/Product/ProductCarusel";
+import * as repository  from "../../RestConfig/RestRequest";
 
-export default function Home() {
+async function getAllProduct() {
+  const response = await repository.Get("products");
+  if (response.ok) {
+    const data = await response.json();
+    return data;
+  } else {
+    console.log("دیتا به درستی از سرور دریافت نشد");
+  }
+}
+export default async function Home() {
+  const data = await getAllProduct();
+  console.log(data);
   return (
     <>
+    <div className={styles.PdContainer}>
       {/* <Header/> */}
       {/* <MainMenu/> */}
       {/* <MobileMenu/> */}
       <IncCarusel />
-      {/* <Alo/> */}
+      <ProductCarusel data={data}/>
+      </div>
+      {/* <MainSlider/> */}
     </>
   );
 }

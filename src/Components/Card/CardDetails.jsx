@@ -6,6 +6,8 @@ const CardDetails = ({ product }) => {
   const checked = useRef("");
   const checked1 = useRef("");
   const checked2 = useRef("");
+  const checked3 = useRef("");
+  const checked4 = useRef("");
   const [state, setState] = useState([]);
   const checkHandler = (id, box) => {
     let exist = false;
@@ -65,6 +67,30 @@ const CardDetails = ({ product }) => {
             }}
           />
           <label>laptop</label>
+
+         
+
+
+          <br />
+          <input
+            type="checkbox"
+            id="computer"
+            ref={checked3}
+            onChange={() => {
+              checkHandler("computer", checked4);
+            }}
+          />
+          <label>computer</label>
+          <br />
+          <input
+            type="checkbox"
+            id="console"
+            ref={checked4}
+            onChange={() => {
+              checkHandler("console", checked);
+            }}
+          />
+          <label>console</label>
         </div>
 
         <div className={styles.mainDropdown}>
@@ -73,7 +99,7 @@ const CardDetails = ({ product }) => {
       </div>
       <div className={styles.Card}>
         {product.map((item) => {
-          if(state[0] === item.type || state[1] === item.type || state[2] === item.type){
+          if(state[0] === item.type || state[1] === item.type || state[2] === item.type   ||  state[3] === item.type || state[4] === item.type){
           return <Card product={item} key={item.id} />;
         }else{
           if(state.length === 0){

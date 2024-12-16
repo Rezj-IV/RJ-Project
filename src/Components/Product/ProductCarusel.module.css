@@ -1,0 +1,35 @@
+.caruselContainer {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px solid #8c9ab9;
+  border-radius: 25px;
+  margin: 60px auto;
+  overflow: hidden;
+  padding: 30px 20px;
+}
+.caruselContainer .titleCarusel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  font-weight: 600;
+  padding: 0 27px;
+}
+.caruselContainer .titleCarusel p {
+  font-size: 20px;
+}
+.caruselContainer .titleCarusel .ShowAll {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  text-decoration: none;
+  color: rgb(34, 60, 120);
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.caruselContainer .titleCarusel .AiOutlineLeft {
+  margin-right: 10px;
+  font-size: 14px;
+}/*# sourceMappingURL=ProductCarusel.module.css.map */

@@ -1,0 +1,7 @@
+.sliderContainer {
+  position: relative;
+  height: 430px;
+}
+.sliderContainer .imageSlider {
+  height: unset;
+}/*# sourceMappingURL=CarouselSlider.module.css.map */

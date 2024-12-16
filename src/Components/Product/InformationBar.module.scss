@@ -1,0 +1,203 @@
+$colorBar: #f3f8fc;
+$iconColor: #465e91;
+$delText: #8e9bbb;
+$lightBlue: #14a0de;
+
+.container {
+    .informationBar {
+        width: 100%;
+        background-color: $colorBar;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 0 50px;
+        border-bottom: 1px solid #afafaf;
+        color: #111416;
+
+        font-size: 14px;
+        font-weight: 600;
+
+    }
+
+
+    .informationContainer {
+        display: flex;
+
+
+
+        .informationBarContainer {
+            flex-basis: 70%;
+
+
+
+            .specificationsProductContainer {
+                display: flex;
+                flex-direction: column;
+
+                .specificationsProduct {
+
+                    border-radius: 10px;
+                    background-color: $colorBar;
+                    width: 100%;
+                    height: 90px;
+                    margin: 10px auto;
+                    padding: 20px 25px;
+
+                    p {
+
+                        color: #585858;
+                    }
+
+                    h4 {
+                        color: rgb(55, 55, 55);
+                        font-size: 16px;
+                        height: 32px;
+                    }
+
+                }
+
+            }
+        }
+
+
+
+
+
+
+
+        .dataProductContainer {
+            flex-basis: 30%;
+            display: flex;
+            justify-content: end;
+            margin-top: 45px;
+
+            .dataProduct {
+                border-radius: 15px;
+                box-shadow: 0px 1px 9px 0.5px #e9e9e9;
+                background-color: #ffffff;
+                padding: 23px 25px;
+                width: 75%;
+                height: fit-content;
+
+                .nameAndImgContainer {
+                    display: flex;
+                    justify-content: space-between;
+height: 113px;
+                    .imagePrd {}
+
+                    .namePrd {
+                        padding: 0 20px;
+                        text-align: justify;
+                        font-size: 14.5px;
+                        font-weight: 600;
+                        line-height: 28px;
+                        color: rgb(53, 53, 53);
+                    }
+                }
+
+
+                .iconShop {
+                    color: $iconColor;
+                    margin-left: 18px;
+                    font-size: 17px;
+                }
+
+                .seller {
+
+
+
+                    span {
+                        font-size: 15px;
+                        font-weight: 400;
+                    }
+                    height: 64px;
+                    border-bottom: 1px solid rgba(183, 183, 183, 0.756);
+                }
+
+                .warranty {
+
+
+                    display: flex;
+                    align-items: center;
+
+
+                }
+
+                .priceDetail {
+
+                    .priceContainer {
+                        display: flex;
+                        justify-content: end;
+                        font-weight: 600;
+
+                        .priceToman {
+                            font-size: 12px;
+                            padding-right: 5px;
+                            color: #2a2a2a;
+                        }
+
+                        .price {
+                            font-size: 19px;
+                            padding-right: 10px;
+                        }
+
+                        .priceWithDiscount {
+                            color: $delText;
+                            text-decoration-line: line-through;
+                            text-decoration-color: #7b8292;
+                            text-decoration-thickness: 2px;
+                            font-size: 16px;
+
+
+                        }
+
+
+                    }
+
+                    .offPrcentContainer {
+                        display: flex;
+                        justify-content: end;
+                        height: 55px;
+                        margin-left: 10px;
+                        align-items: center;
+
+                        .offPrcent {
+                            width: 150px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: $lightBlue;
+                            height: 25px;
+                            color: #ffffff;
+                            border-radius: 16px;
+                            font-weight: 600;
+
+                            .offPrcentNumber {
+                                font-size: 16px;
+                                padding-top: 4px;
+
+
+                            }
+
+                            .offPrcentToman {
+                                font-size: 12px;
+                                padding-right: 8px;
+                            }
+                        }
+                    }
+
+
+
+
+
+
+                }
+
+            }
+        }
+
+    }
+
+    .commentsProduct {}
+}

@@ -1,0 +1,33 @@
+$Bcolor: #d3d8e4;
+$AattColor: #1f47a5d6;
+
+.attContainer {
+    padding: 10px 17px;
+
+
+
+    .attChild {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px dashed $Bcolor ;
+        width: 100%;
+        height: 52px;
+        font-size: 14px;
+
+        .attName {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: rgb(33, 33, 33);
+        }
+
+        .attMainText {
+            padding-left: 20px;
+            color: $AattColor;
+        }
+    }
+
+    .attChildEnd {
+        @extend .attChild;
+        border-bottom: none;
+    }
+}

@@ -1,53 +1,147 @@
-.mainImage {
+.imagesProduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imagesProduct .mainImage {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 275px;
 }
-.mainImage .showMore {
+.imagesProduct .mainImage .showMore {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   border: 1px solid #d5dddf;
   background-color: transparent;
   border-radius: 7.5px;
   overflow: hidden;
   padding: 5px;
 }
-.mainImage .showMore img {
+.imagesProduct .mainImage .showMore img {
   border-radius: 7px;
 }
-
 .imagesProduct .containerModalIMages {
+  background-color: rgba(0, 0, 0, 0.326);
   position: fixed;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  z-index: 1;
-  width: 55vw;
-  height: 30vw;
-  border: 1px solid #d5dddf;
-  border-radius: 10px;
-  background-color: #ffffff;
-  top: 80px;
-  left: 23vw;
-}
-.imagesProduct .containerModalIMages .modalIMages {
-  flex-basis: 55%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 80px;
-  gap: 27px;
-}
-.imagesProduct .containerModalIMages .modalIMages .image {
+  right: 0;
+  top: 0px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border: 1px solid #d5dddf;
+  justify-content: center;
+}
+.imagesProduct .containerModalIMages .childModalIMages {
+  background-color: white;
+  margin: 0 auto;
+  width: 63%;
+  height: 650px;
+  border-radius: 8.5px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 25px;
+}
+.imagesProduct .containerModalIMages .childModalIMages .closeModalIMagesContainer {
+  width: 100%;
+  height: 90px;
+  background-color: transparent;
+  border-bottom: 1px solid #909ebc;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.imagesProduct .containerModalIMages .childModalIMages .closeModalIMagesContainer .closeModalIMagesChild {
+  flex-basis: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.imagesProduct .containerModalIMages .childModalIMages .closeModalIMagesContainer .closeModalIMagesChild .officialImages h3 {
+  font-size: 18.5px;
+}
+.imagesProduct .containerModalIMages .childModalIMages .closeModalIMagesContainer .closeModalIMagesChild .closeIcon {
+  font-size: 28px;
+  color: #262626;
+}
+.imagesProduct .containerModalIMages .childModalIMages .closeModalIMagesContainer .bunchPhotos {
+  display: flex;
+  align-items: end;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 2px solid #14a0de;
+  margin-right: 15px;
+  flex-basis: 60%;
+}
+.imagesProduct .containerModalIMages .childModalIMages .closeModalIMagesContainer .bunchPhotos p {
+  padding-bottom: 3px;
+  color: #14a0de;
+  font-weight: 600;
+}
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages {
+  width: 100%;
+  height: 100%;
+}
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .childModalSlideIMages {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-right: 27px;
+  gap: 22px;
+}
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .childModalSlideIMages .rightsideContainer {
+  display: block;
+  flex-basis: 53%;
+}
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .childModalSlideIMages .rightsideContainer .nameProduct {
+  font-size: 17px;
+  font-weight: 600;
+  height: 60px;
+}
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .childModalSlideIMages .rightsideContainer .rightside {
+  display: flex;
+  gap: 23px;
+}
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .childModalSlideIMages .rightsideContainer .rightside .slideImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  gap: 20px;
+  border: 2px solid #d3d8e4;
   background-color: transparent;
   border-radius: 7.5px;
   overflow: hidden;
-  padding: 5px;
 }
-.imagesProduct .containerModalIMages .mainModalIMages {
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .leftSildeContainer {
+  height: 500px;
+  padding-left: 30px;
   flex-basis: 45%;
+}
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .leftSildeContainer .mainModalIMages {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .leftSildeContainer .mainModalIMages img {
+  margin: 0 10px;
+}
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .leftSildeContainer .mainModalIMages .clickArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  box-shadow: 0 0 14px -3px rgba(0, 0, 0, 0.22);
+}
+.imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .leftSildeContainer .mainModalIMages .clickArrow .iconArrow {
+  font-size: 25px;
+  color: #002367;
 }/*# sourceMappingURL=ImageModal.module.css.map */
