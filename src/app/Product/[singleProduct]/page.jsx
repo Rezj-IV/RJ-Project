@@ -1,14 +1,16 @@
 import React from "react";
-import * as repository from "../../../RestConfig/RestRequest";
+import * as repository from "../../../../RestConfig/RestRequest";
 import styles from "./singleProduct.module.scss";
 import Image from "next/image";
 import ImageModal from "@/Components/Modal/ImageModal";
 import ProductAttribute from "@/Components/Product/ProductAttribute";
 import { BsShop } from "react-icons/bs";
-import { AiOutlineSetting } from "react-icons/ai";
+import { AiOutlineLeft, AiOutlineSetting } from "react-icons/ai";
 import { GoShieldCheck } from "react-icons/go";
 import { BsCart3, BsBoxSeam } from "react-icons/bs";
 import InformationBar from "@/Components/Product/InformationBar";
+import Carusel from "@/Components/Carusel/Carusel";
+import Link from "next/link";
 
 async function getAllSingleProduct(props) {
   const response = await repository.Get(`products/${props}`);
@@ -19,12 +21,23 @@ async function getAllSingleProduct(props) {
     console.log("دیتا به درستی از سرور دریافت نشد");
   }
 }
+
+async function getAllSameCategory(props) {
+  const response = await repository.Get(`products/category/${props}`);
+  if (response.ok) {
+    const data = await response.json();
+    return data;
+  } else {
+    console.log("دیتا به درستی از سرور دریافت نشد");
+  }
+}
 const singleProduct = async (props) => {
   const context = await props.params;
   const data = await getAllSingleProduct(context.singleProduct);
-
+  const category = await getAllSameCategory(data.category);
   console.log(context);
   console.log(data);
+  console.log(category);
   return (
     <div className={styles.mainContainer}>
       <div className={styles.dataProductContainer}>
@@ -84,9 +97,10 @@ const singleProduct = async (props) => {
             <div className={styles.prdImage}>
               <Image
                 src={data.indexImageUrl}
-                width={360}
-                height={360}
+                width={370}
+                height={370}
                 alt={data.name}
+                priority
               />
             </div>
             <div className={styles.otherImage}>
@@ -124,13 +138,14 @@ const singleProduct = async (props) => {
             <div>
               {data.priceWithDiscount === 0 ? (
                 <div className={`${styles.priceDetail}`}>
-                <div className={`${styles.priceContainer}`}>
-                  <div className={styles.price}>
-                  {data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                  <span className={styles.priceToman}>تومان</span>
+                  <div className={`${styles.priceContainer}`}>
+                    <div className={styles.price}>
+                      {data.price
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                      <span className={styles.priceToman}>تومان</span>
+                    </div>
                   </div>
-                  </div>
-
                 </div>
               ) : (
                 <div className={`${styles.priceDetail}`}>
@@ -165,7 +180,6 @@ const singleProduct = async (props) => {
               <div className={styles.remainingContainer}>
                 <div className={styles.remaining}>
                   <BsBoxSeam className={styles.FiBox} />
-                  <span>تنها</span>
                   <span>{data.stock}</span>
                   <span>عدد در انبار باقی مانده</span>
                 </div>
@@ -184,11 +198,25 @@ const singleProduct = async (props) => {
         </div>
       </div>
 
+     {data.category === "هوآوی " || data.category === "آنر" ? null :   
+      <div className={styles.caruselContainer}>
+        <div className={styles.titleCarusel}>
+          <p>برند مشابه</p>
+          <Link
+            href={`/brand/${data.category}`}
+            className={styles.ShowAll}
+          >
+            نمایش همه
+            <AiOutlineLeft className={styles.AiOutlineLeft} />
+          </Link>
+        </div>
+        <Carusel data={category} />
+      </div>
+  }
+
+
       <div className={styles.informationProductContainer}>
-        {data.attribute.map((item) => {
-           return<InformationBar Att={item} data={data} />;
-         
-        })}
+        <InformationBar Att={data.attribute} data={data} />
       </div>
     </div>
   );

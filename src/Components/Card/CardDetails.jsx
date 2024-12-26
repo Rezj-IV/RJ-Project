@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import Card from "./Card";
 import styles from "./CardDetails.module.scss";
+import ProductFilter from "../Product/ProductFilter";
 const CardDetails = ({ product }) => {
   const checked = useRef("");
   const checked1 = useRef("");
@@ -30,6 +31,7 @@ const CardDetails = ({ product }) => {
   };
   
   console.log(state);
+ 
   return (
     <div className={styles.cardDetailsConrainer}>
       <div className={styles.cardDetail}>

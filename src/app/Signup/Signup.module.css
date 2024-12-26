@@ -1,11 +1,9 @@
-.signupContainer {
-  display: flex;
-  justify-content: center;
+.mainContainer {
+  display: grid;
+  grid-template-columns: 425px 1fr;
+  grid-template-rows: repeat(1, 1fr);
 }
 
-.imageSignupContainer {
-  flex-basis: 77%;
-}
 @media (max-width: 1350px) {
   .imageSignupContainer {
     display: none;
@@ -16,9 +14,6 @@
   height: 99.4vh;
 }
 
-.FieldContainer {
-  flex-basis: 23%;
-}
 .FieldContainer img {
   display: block;
   margin: 12px auto 30px auto;
@@ -71,14 +66,14 @@
   transition: 0.2s;
 }
 .FieldContainer .form__field:focus {
-  border: 1px solid rgb(99, 128, 192) !important;
+  border: 1px solid #14a0de !important;
   outline: none;
 }
 .FieldContainer .form__field:focus ~ .form__label {
   background-color: white;
-  border-right: 1px solid rgb(99, 128, 192);
-  border-left: 1px solid rgb(99, 128, 192);
-  color: rgb(99, 128, 192);
+  border-right: 1px solid #14a0de;
+  border-left: 1px solid #14a0de;
+  color: #14a0de;
   font-size: 0.9em;
   margin-left: 10px;
   padding: 0 10px;
@@ -98,23 +93,35 @@
 .FieldContainer .title {
   text-align: center;
   color: rgb(0, 0, 0);
-  font-size: 22px;
+  font-size: 24px;
   padding-bottom: 15px;
 }
 .FieldContainer button {
   display: block;
   width: 300px;
-  height: 35px;
+  height: 40px;
   border: none;
-  font-size: 15px;
+  font-size: 16px;
   margin: 30px auto 0 auto;
   border-radius: 4px;
-  background-color: rgb(99, 128, 192);
+  background-color: #14a0de;
   color: #ffffff;
   font-weight: 600;
 }
 .FieldContainer button:hover {
-  border: 1px solid rgb(99, 128, 192);
+  border: 1px solid #14a0de;
   background-color: #ffffff;
-  color: rgb(99, 128, 192);
+  color: #14a0de;
+}
+.FieldContainer .goSignup {
+  padding: 20px 60px;
+  font-size: 15px;
+}
+.FieldContainer .goSignup span {
+  color: #232323;
+}
+.FieldContainer .goSignup a {
+  text-decoration: none;
+  padding-right: 7px;
+  color: #14a0de;
 }/*# sourceMappingURL=Signup.module.css.map */

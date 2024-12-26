@@ -20,9 +20,9 @@
 }
 .cardDetailsConrainer .Card {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr;
-  gap: 10px 13px;
+  gap: 13px 16px;
   margin-right: 25px;
   flex-basis: 85%;
 }/*# sourceMappingURL=CardDetails.module.css.map */

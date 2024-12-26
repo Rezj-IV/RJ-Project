@@ -7,7 +7,6 @@ const IncredibleOffersList = async () => {
 
   return (
     <div>
-      <div></div>
 
       <div>
         <CardDetails product={data} />

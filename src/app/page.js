@@ -28,8 +28,8 @@ export default async function Home() {
       {/* <Header/> */}
       {/* <MainMenu/> */}
       {/* <MobileMenu/> */}
-      <IncCarusel />
-      <ProductCarusel data={data}/>
+      {/* <IncCarusel />*/}
+      <ProductCarusel data={data}/> 
       </div>
       {/* <MainSlider/> */}
     </>

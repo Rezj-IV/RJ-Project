@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import * as repository from "../../../RestConfig/RestRequest";
 import { setToken } from "@/Components/StoreRedux/slices/UserSlice";
+import Link from "next/link";
 
 const LogIn = () => {
   const dispatch = useDispatch();
@@ -35,10 +36,10 @@ const LogIn = () => {
   };
 
   return (
-    <div className={styles.signupContainer}>
+    <div className={styles.mainContainer}>
       <div className={styles.FieldContainer}>
-        <Image src="/logo/rjLogo.png" alt="rj land" width={120} height={120} />
-        <p className={styles.title}> ورود  </p>
+        <Image src="/logo/rjLogo.png" alt="rj land" width={150} height={150} />
+        <p className={styles.title}> ورود </p>
         <Formik
           d
           onSubmit={submitHandler}
@@ -48,8 +49,6 @@ const LogIn = () => {
           validateOnChange={false}
         >
           <Form>
-         
-
             <div className={styles.form__group}>
               <Field
                 name="username"
@@ -57,18 +56,13 @@ const LogIn = () => {
                 className={styles.form__field}
                 placeholder="نام کاربری"
               />
-              <label  className={styles.form__label}>
-                {" "}
-                نام کاربری{" "}
-              </label>
+              <label className={styles.form__label}> نام کاربری </label>
               <ErrorMessage
                 name="username"
                 component={"p"}
                 className={styles.ErrorMessage}
               />
             </div>
-
-
 
             <div className={styles.form__group}>
               <Field
@@ -77,10 +71,7 @@ const LogIn = () => {
                 className={styles.form__field}
                 placeholder="کلمه عبور"
               />
-              <label  className={styles.form__label}>
-                {" "} کلمه عبور{" "}
-               
-              </label>
+              <label className={styles.form__label}> کلمه عبور </label>
               <ErrorMessage
                 name="password"
                 component={"p"}
@@ -88,9 +79,12 @@ const LogIn = () => {
               />
             </div>
 
-       
-
             <button> ورود</button>
+
+            <div className={styles.goSignup}>
+              <span>حساب کاربری ندارید؟</span>
+              <Link href="/Signup">ثبت نام</Link>
+            </div>
           </Form>
         </Formik>
       </div>

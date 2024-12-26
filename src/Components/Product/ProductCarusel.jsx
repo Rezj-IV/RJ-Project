@@ -19,9 +19,7 @@ const ProductCarusel = ({ data }) => {
   let result5 = data.filter((item) => {
     return item.bestSelling === true;
   });
-  // let result6 = data.filter((item)=>{
-  //   return item.category.includes("سامسونگ")
-  // })
+
   console.log(data);
   console.log(result);
   return (
@@ -30,7 +28,7 @@ const ProductCarusel = ({ data }) => {
         <div className={styles.titleCarusel}>
           <p>پرچمداران هوشمند</p>
           <Link
-            href="/"
+            href="/Product/Class/flagBearer"
             className={styles.ShowAll}
           >
             نمایش همه
@@ -49,7 +47,7 @@ const ProductCarusel = ({ data }) => {
           </span>
           
           <Link
-            href="/"
+            href="/Product/Class/laptop"
             className={styles.ShowAll}
           >
             نمایش همه
@@ -63,7 +61,7 @@ const ProductCarusel = ({ data }) => {
         <div className={styles.titleCarusel}>
           <p>کامپیوتر و تجهیزات</p>
           <Link
-            href="/"
+            href="/Product/Class/computer"
             className={styles.ShowAll}
           >
             نمایش همه
@@ -79,7 +77,7 @@ const ProductCarusel = ({ data }) => {
           <span className={styles.rjLand}>ار جی لند</span>
           </span>
           <Link
-            href="/"
+            href="/Product/Class/console"
             className={styles.ShowAll}
           >
             نمایش همه
@@ -93,7 +91,7 @@ const ProductCarusel = ({ data }) => {
         <div className={styles.titleCarusel}>
           <p>پر فروش ترین ها</p>
           <Link
-            href="/"
+            href="/Product/Class/bestSelling"
             className={styles.ShowAll}
           >
             نمایش همه
@@ -103,9 +101,7 @@ const ProductCarusel = ({ data }) => {
         <Carusel data={result5} />
       </div>
 
-      {/* <div>
-      <Carusel data={result6}/>
-</div> */}
+     
     </div>
   );
 };

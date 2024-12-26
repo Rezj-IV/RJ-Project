@@ -56,6 +56,7 @@ $lightBlue: #14a0de;
         height: 100%;
         display: flex;
         flex-wrap: wrap;
+        z-index: 1;
         right: 0;
         top: 0px;
         @include DF();
@@ -132,7 +133,7 @@ $lightBlue: #14a0de;
 
                     .rightsideContainer {
                         display: block;
-                        flex-basis: 53%;
+                        flex-basis: 50%;
 
                         .nameProduct {
                             font-size: 17px;

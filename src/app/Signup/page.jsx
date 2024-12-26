@@ -49,13 +49,17 @@ const SignUp = () => {
 
   return (
     <>
-      <div className={styles.signupContainer}>
+      <div className={styles.mainContainer}>
         <div className={styles.FieldContainer}>
           <Image
             src="/logo/rjLogo.png"
             alt="rj land"
-            width={100}
-            height={100}
+            width={150
+              
+            }
+            height={150
+              
+            }
           />
          
           <p className={styles.title}> ثبت نام   </p>

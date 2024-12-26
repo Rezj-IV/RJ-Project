@@ -29,6 +29,7 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  z-index: 1;
   right: 0;
   top: 0px;
   display: flex;
@@ -94,7 +95,7 @@
 }
 .imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .childModalSlideIMages .rightsideContainer {
   display: block;
-  flex-basis: 53%;
+  flex-basis: 50%;
 }
 .imagesProduct .containerModalIMages .childModalIMages .containerModalSlideIMages .childModalSlideIMages .rightsideContainer .nameProduct {
   font-size: 17px;

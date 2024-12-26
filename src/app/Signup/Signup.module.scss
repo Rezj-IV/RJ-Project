@@ -1,4 +1,5 @@
 $grayBlue: rgb(99, 128, 192);
+$lightBlue: #14a0de;
 
 
 @mixin Midia($width){
@@ -7,13 +8,13 @@ $grayBlue: rgb(99, 128, 192);
 }
 }
 
-.signupContainer {
-    display: flex;
-    justify-content: center;
+.mainContainer {
+  display: grid;
+  grid-template-columns: 425px 1fr;
+  grid-template-rows: repeat(1, 1fr);   
 }
 
 .imageSignupContainer {
-    flex-basis: 77%;
 @include Midia(1350px);
     .imageSignup {
         width: 100%;
@@ -23,7 +24,6 @@ $grayBlue: rgb(99, 128, 192);
 
 
 .FieldContainer {
-    flex-basis: 23%;
     
    
 
@@ -32,7 +32,7 @@ $grayBlue: rgb(99, 128, 192);
         margin: 12px auto 30px auto;
 
     }
-
+  
     .form__group {
         position: relative;
       
@@ -82,15 +82,15 @@ $grayBlue: rgb(99, 128, 192);
       }
       
       .form__field:focus {
-        border: 1px solid $grayBlue !important;
+        border: 1px solid $lightBlue !important;
         outline: none;
       }
       
       .form__field:focus ~ .form__label {
         background-color: white;
-        border-right: 1px solid $grayBlue;
-        border-left: 1px solid $grayBlue;
-        color: $grayBlue;
+        border-right: 1px solid $lightBlue;
+        border-left: 1px solid $lightBlue;
+        color: $lightBlue;
         font-size: .9em;
         margin-left: 10px;
         padding: 0 10px;
@@ -116,25 +116,38 @@ $grayBlue: rgb(99, 128, 192);
     .title{
         text-align: center;
         color: rgb(0, 0, 0);
-        font-size: 22px;
+        font-size: 24px;
         padding-bottom: 15px;
     }
     button{
         display: block;
        width: 300px;
-       height: 35px;
+       height: 40px;
         border: none;
-        font-size: 15px;
+        font-size: 16px;
         margin: 30px auto 0 auto;
         border-radius: 4px;
-        background-color:$grayBlue;
+        background-color:$lightBlue;
         color: #ffffff;
         font-weight: 600;
     }
     button:hover{
-        border: 1px solid $grayBlue;
+        border: 1px solid $lightBlue;
         background-color: #ffffff;
-        color: $grayBlue;
+        color: $lightBlue;
+    }
+    .goSignup{
+
+      padding: 20px 60px ;
+      font-size: 15px;
+      span{
+        color: #232323;
+      }
+      a{
+       text-decoration: none;
+       padding-right: 7px;
+       color: $lightBlue;
+      }
     }
 }
 

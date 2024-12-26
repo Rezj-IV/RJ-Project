@@ -31,7 +31,7 @@
 .mainContainer .dataProductContainer .descriptionContainer .nameContainer .nameb {
   font-size: 13.5px;
   padding: 15px 0;
-  color: #1f47a5;
+  color: rgba(24, 59, 141, 0.8392156863);
 }
 .mainContainer .dataProductContainer .descriptionContainer .nameContainer .commentContainer {
   width: 135px;
@@ -175,8 +175,10 @@
 }
 .mainContainer .dataProductContainer .productDetailsContainer .productDetailsChild .priceDetail .priceContainer {
   display: flex;
+  align-items: center;
   justify-content: end;
   font-weight: 600;
+  height: 40px;
 }
 .mainContainer .dataProductContainer .productDetailsContainer .productDetailsChild .priceDetail .priceContainer .priceToman {
   font-size: 12px;
@@ -262,4 +264,45 @@
   display: flex;
   justify-content: center;
   font-size: 17px;
+}
+.mainContainer .caruselContainer {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px solid #8c9ab9;
+  border-radius: 25px;
+  margin: 60px auto;
+  overflow: hidden;
+  padding: 30px 20px;
+}
+.mainContainer .caruselContainer .titleCarusel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  font-weight: 600;
+  padding: 0 27px;
+}
+.mainContainer .caruselContainer .titleCarusel p {
+  font-size: 20px;
+}
+.mainContainer .caruselContainer .titleCarusel span {
+  font-size: 20px;
+}
+.mainContainer .caruselContainer .titleCarusel .rjLand {
+  padding-right: 10px;
+}
+.mainContainer .caruselContainer .titleCarusel .ShowAll {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  text-decoration: none;
+  color: rgb(34, 60, 120);
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.mainContainer .caruselContainer .titleCarusel .AiOutlineLeft {
+  margin-right: 10px;
+  font-size: 14px;
 }/*# sourceMappingURL=singleProduct.module.css.map */

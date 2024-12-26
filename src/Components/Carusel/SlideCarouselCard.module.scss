@@ -34,27 +34,47 @@ $lightBlue :#14a0de;
 }
 
 .priceContainer {
+
   height: 3.5em;
   color: #383838;
-
   text-align: left;
   width: 100%;
-  .price{
+  display: flex;
+  flex-direction: column;
+
+  .price {
+
+    color: #8796b8;
+    text-decoration-line: line-through;
+    text-decoration-color: #acb7d1;
+    text-decoration-thickness: 0.1em;
+    font-size: 15px;
+    text-align: left;
+    display: inline-block;
+
+  }
+
+  .mainPrice{
+    @extend  .OffPrice ;
+  }
+
+  .tomanIcon {
+    font-size: 12px;
+    color: #8796b8;
+
+    padding-right: 5px;
+  }
+
+  .tomanOffIcon {
+    @extend.tomanIcon;
+    color: #383838;
+    font-weight: 600;
+  }
+
+  .OffPrice {
+    display: inline-block;
     font-size: 17px;
     font-weight: 600;
-    span{
-      font-size: 12px;
-      color: #3c3c3c;
-      padding-right: 2px;
-    }
-  }
-  .priceBeforeOff {
-    color: #95a0b7;
-    text-decoration-line: line-through;
-    text-decoration-color: #7b8292;
-    text-decoration-thickness: 0.1em;
-    font-size: 14px;
-    text-align: left;
   }
 }
 

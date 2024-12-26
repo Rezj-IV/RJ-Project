@@ -20,6 +20,12 @@
 .caruselContainer .titleCarusel p {
   font-size: 20px;
 }
+.caruselContainer .titleCarusel span {
+  font-size: 20px;
+}
+.caruselContainer .titleCarusel .rjLand {
+  padding-right: 10px;
+}
 .caruselContainer .titleCarusel .ShowAll {
   display: flex;
   align-items: center;

@@ -85,15 +85,15 @@ const ImageModal = ({ images, namePrd, mainImage }) => {
                       <Image
                         src={imgID.original}
                         alt={namePrd}
-                        width={370}
-                        height={370}
+                        width={400}
+                        height={400}
                       />
                     ) : (
                       <Image
                         src={mainImage}
                         alt={namePrd}
-                        width={370}
-                        height={370}
+                        width={400}
+                        height={400}
                       />
                     )}
                     <div className={styles.clickArrow}>

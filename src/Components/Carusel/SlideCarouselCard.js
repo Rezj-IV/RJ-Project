@@ -6,7 +6,7 @@ import UnavailableCarusel from "./UnavailableCarusel";
 
 const SlideCarouselCard = ({ product }) => {
   return (
-    <Link href={`/${product.id}`} className={styles.LinkContainer}>
+    <Link href={`/Product/${product.id}`} className={styles.LinkContainer}>
       {product.stock === 0 ? (
         <UnavailableCarusel product={product} />
       ) : (
@@ -39,9 +39,9 @@ const SlideCarouselCard = ({ product }) => {
 
           {product.priceWithDiscount === 0 ? (
             <div className={`${styles.priceContainer}`}>
-              <div className={styles.price}>
+              <div className={styles.mainPrice}>
                 {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                <span> تومان</span>
+                <span className={styles.tomanOffIcon}>تومان</span>
               </div>
             </div>
           ) : (
@@ -54,18 +54,37 @@ const SlideCarouselCard = ({ product }) => {
                 )}
                 %
               </div>
-              <div className={`${styles.priceContainer}`}>
+              {/* <div className={`${styles.priceContainer}`}>
                 <div className={`${styles.price}`}>
                   {product.price
                     .toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                   <span>تومان</span>
                 </div>
-                <div className={styles.priceBeforeOff}>
+                <div className={styles.OffPrice}>
                   {product.priceWithDiscount
                     .toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                   تومان
+                </div>
+              </div> */}
+              <div className={`${styles.priceContainer}`}>
+                <div>
+                  <div className={styles.OffPrice}>
+                    {product.priceWithDiscount
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </div>
+
+                  <span className={styles.tomanOffIcon}>تومان</span>
+                </div>
+                <div>
+                  <div className={`${styles.price}`}>
+                    {product.price
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </div>
+                  <span className={styles.tomanIcon}>تومان</span>
                 </div>
               </div>
             </div>
