@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import * as Repository from "../../../RestConfig/RestRequest";
 import MenuContents from "./MenuContents";
+import MainMenu from "./MainMenu";
 async function getAllContentMenu() {
   try {
     const response = await Repository.Get("ShowController");
@@ -22,6 +23,7 @@ const MobileMenu = async (props) => {
 
   return (
     <>
+    <div className={styles.container}>
       <nav className={styles.navbar}>
         <div>
           <ul>
@@ -44,10 +46,9 @@ const MobileMenu = async (props) => {
                         </Link>
                       </div>
                       <div className={styles.layer}>
-                       <MenuContents itemId={item.id}/>                  
-                    </div>
+                        <MenuContents itemId={item.id} />
+                      </div>
                     </li>
-                    
                   </div>
                 );
               })}
@@ -55,6 +56,7 @@ const MobileMenu = async (props) => {
           </ul>
         </div>
       </nav>
+      </div>
     </>
   );
 };

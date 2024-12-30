@@ -3,15 +3,21 @@ import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
 import styles from "./CarouselSlider.module.css";
+import { NextArrowSlide, PrevArrowSlide } from "./CaruselSliderArrow";
 
 const CarouselSlider = ({ imageSlider }) => {
   console.log(imageSlider);
   var settings = {
     dots: true,
+    // dotsClass :   `slick-dots ${styles.dots}`,
+    
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    nextArrow: <NextArrowSlide  />,
+    prevArrow: <PrevArrowSlide  />,
+    
   };
   return (
     <Slider {...settings}>

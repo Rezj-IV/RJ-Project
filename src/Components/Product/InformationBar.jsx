@@ -5,6 +5,7 @@ import { BsBoxSeam, BsShop } from "react-icons/bs";
 import { GoShieldCheck } from "react-icons/go";
 import { FiBox } from "react-icons/fi";
 import CommentsSection from "./CommentsSection";
+import Link from "next/link";
 
 const InformationBar = ({ Att, data }) => {
   return (
@@ -12,65 +13,72 @@ const InformationBar = ({ Att, data }) => {
       <div className={styles.informationBarContainer}>
         {Att.length !== 0 ? (
           <div>
-            <a href="">مشخصات فنی</a>
+            <Link className={styles.barLink} href="#information">مشخصات فنی</Link>
           </div>
         ) : null}
         <div>
-          <a href=""> نظرات کاربران</a > 
+          <Link className={styles.barLink} href="#commentSection"> نظرات کاربران</Link>
         </div>
       </div>
       <div className={styles.informationContainer}>
-        {Att.length !== 0 ? (
-          <div className={styles.informationBar}>
-            {Att.map((item) => {
-              return (
-                <div className={styles.specificationsProductContainer}>
-                  <div className={styles.title}>
-                    <span> •</span>
-                    <h1>مشخصات فنی</h1>
-                  </div>
+        <div className={styles.rightSide}>
+          {Att.length !== 0 ? (
+            
+            <div id="information" className={styles.informationBar} >
+              {Att.map((item) => {
+                return (
+                  <div className={styles.specificationsProductContainer}>
+                    <div className={styles.title}>
+                      <span> •</span>
+                      <h1>مشخصات فنی</h1>
+                    </div>
 
-                  <div className={styles.specificationsProduct}>
-                    <h4>سیستم عامل :</h4>
-                    <p>{item.operatingsystem}</p>
-                  </div>
-                  <div className={styles.specificationsProduct}>
-                    <h4>سایز صفحه نمایش :</h4>
+                    <div className={styles.specificationsProduct}>
+                      <h4>سیستم عامل :</h4>
+                      <p>{item.operatingsystem}</p>
+                    </div>
+                    <div className={styles.specificationsProduct}>
+                      <h4>سایز صفحه نمایش :</h4>
 
-                    <p>{item.screensize}</p>
-                  </div>
-                  <div className={styles.specificationsProduct}>
-                    <h4>رزولوشن :</h4>
+                      <p>{item.screensize}</p>
+                    </div>
+                    <div className={styles.specificationsProduct}>
+                      <h4>رزولوشن :</h4>
 
-                    <p>{item.resolution}</p>
-                  </div>
-                  <div className={styles.specificationsProduct}>
-                    <h4>تراشه:</h4>
+                      <p>{item.resolution}</p>
+                    </div>
+                    <div className={styles.specificationsProduct}>
+                      <h4>تراشه:</h4>
 
-                    <p>{item.chip}</p>
-                  </div>
-                  <div className={styles.specificationsProduct}>
-                    <h4>پردازنده‌:</h4>
+                      <p>{item.chip}</p>
+                    </div>
+                    <div className={styles.specificationsProduct}>
+                      <h4>پردازنده‌:</h4>
 
-                    <p>{item.processor}</p>
-                  </div>
+                      <p>{item.processor}</p>
+                    </div>
 
-                  <div className={styles.specificationsProduct}>
-                    <h4>حافظه داخلی:</h4>
+                    <div className={styles.specificationsProduct}>
+                      <h4>حافظه داخلی:</h4>
 
-                    <p>{item.internalmemory}</p>
-                  </div>
-                  <div className={styles.specificationsProduct}>
-                    <h4>حافظه رم:</h4>
+                      <p>{item.internalmemory}</p>
+                    </div>
+                    <div className={styles.specificationsProduct}>
+                      <h4>حافظه رم:</h4>
 
-                    <p>{item.ram}</p>
+                      <p>{item.ram}</p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
+          ) : null}
+          
+          <div id="commentSection" className={styles.commentsProduct}>
+
+            <CommentsSection dataPrd={data} />
           </div>
-        ) : null}
-
+        </div>
         <div className={styles.dataProductContainer}>
           <div className={styles.dataProduct}>
             <div className={styles.nameAndImgContainer}>
@@ -158,10 +166,6 @@ const InformationBar = ({ Att, data }) => {
             ) : null}
           </div>
         </div>
-      </div>
-      <div className={styles.commentsProduct}>
-      
-        <CommentsSection  dataPrd={data}/>
       </div>
     </div>
   );

@@ -1,38 +1,31 @@
-.navM {
+.menuContainer {
   display: flex;
-  justify-content: space-between;
+  height: 45px;
+  width: 100%;
   align-items: center;
-  position: fixed;
+  gap: 25px;
 }
-.navM .ulM {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  position: relative;
+.menuContainer .productCategoriesContainer {
+  width: 160px;
+  border-radius: 8px;
 }
-.navM .ulM .liM {
-  padding: 0 21px;
+.menuContainer .productCategoriesContainer:hover {
+  background-color: #f1f8ff;
 }
-.navM .ulM .liM .layer {
-  display: none;
-  position: absolute;
-}
-.navM .ulM .liM .linkM {
+.menuContainer .productCategoriesContainer .productCategories {
   text-decoration: none;
-  color: #626f78;
+  color: #5e5e5e;
   font-size: 13px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.navM .ulM .liM .linkM .offLogo {
-  font-size: 17px;
-  font-weight: 900;
-}
-.navM .ulM .liM .linkM span {
-  font-size: 17px;
+.menuContainer .productCategoriesContainer .productCategories span {
+  font-size: 14.5px;
   padding-right: 10px;
 }
-.navM .ulM .liM .linkM::after {
+.menuContainer .productCategoriesContainer .productCategories::after {
   width: 0%;
   height: 1.8px;
   background-color: rgb(125, 163, 220);
@@ -44,26 +37,38 @@
   position: absolute;
   margin: 0px auto;
 }
-.navM .ulM .liM .linkM:hover::after {
+.menuContainer .productCategoriesContainer .productCategories:hover::after {
   transition: all 0.5s;
   width: 100%;
 }
-.navM .liM:hover .layer {
-  display: block;
-  z-index: 1;
+.menuContainer .productCategoriesContainer .AiOutlineMenu {
+  font-size: 18px;
+  display: inline-flex;
+  height: 50px;
+  align-items: center;
+}
+.menuContainer .offContainer, .menuContainer .bestSellers {
+  display: flex;
+  align-items: center;
+  color: #909394;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.menuContainer .offContainer span, .menuContainer .bestSellers span {
+  padding-right: 7px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.menuContainer .offContainer .MLogo, .menuContainer .bestSellers .MLogo {
+  font-size: 19px;
+}
+.layer {
+  display: none;
+  position: fixed;
 }
 
-.MObileResponse {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 45px;
-  width: 185px;
-  border-radius: 8px;
-}
-.MObileResponse:hover {
-  background-color: #f1f8ff;
-}
-.MObileResponse .AiOutlineMenu {
-  font-size: 21px;
+.productCategoriesContainer:hover .layer {
+  display: block;
+  z-index: 100;
 }/*# sourceMappingURL=MainMenu.module.css.map */

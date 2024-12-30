@@ -18,9 +18,18 @@ $lightBlue: #14a0de;
         top: 0;
         font-size: 14px;
         font-weight: 600;
+.barLink{
+    
+text-decoration: none;
+color: #242424;
+font-size: 14.5px;
+}
 
     }
+.rightSide{
+    flex-basis: 70%;
 
+}
 
     .informationContainer {
         display: flex;
@@ -28,7 +37,6 @@ $lightBlue: #14a0de;
 
 
         .informationBar {
-            flex-basis: 70%;
 
 
 
@@ -292,5 +300,8 @@ $lightBlue: #14a0de;
 
 
 
-    .commentsProduct {}
+    .commentsProduct {
+width: 100%;
+height: 500px;
+    }
 }

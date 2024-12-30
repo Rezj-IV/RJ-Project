@@ -13,11 +13,16 @@
   font-size: 14px;
   font-weight: 600;
 }
+.container .informationBarContainer .barLink {
+  text-decoration: none;
+  color: #242424;
+  font-size: 14.5px;
+}
+.container .rightSide {
+  flex-basis: 70%;
+}
 .container .informationContainer {
   display: flex;
-}
-.container .informationContainer .informationBar {
-  flex-basis: 70%;
 }
 .container .informationContainer .informationBar .specificationsProductContainer {
   display: flex;
@@ -198,4 +203,8 @@
   font-size: 15px;
   font-weight: 600;
   margin-left: 5px;
+}
+.container .commentsProduct {
+  width: 100%;
+  height: 500px;
 }/*# sourceMappingURL=InformationBar.module.css.map */

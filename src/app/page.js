@@ -8,7 +8,7 @@ import IncCarusel from "@/Components/Carusel/IncCarusel";
 import Modal from "@/Components/Modal/ImageModal";
 import MainSlider from "@/Components/Slider/mainSlider";
 import ProductCarusel from "@/Components/Product/ProductCarusel";
-import * as repository  from "../../RestConfig/RestRequest";
+import * as repository from "../../RestConfig/RestRequest";
 
 async function getAllProduct() {
   const response = await repository.Get("products");
@@ -17,6 +17,7 @@ async function getAllProduct() {
     return data;
   } else {
     console.log("دیتا به درستی از سرور دریافت نشد");
+    4;
   }
 }
 export default async function Home() {
@@ -24,14 +25,14 @@ export default async function Home() {
   console.log(data);
   return (
     <>
-    <div className={styles.PdContainer}>
-      {/* <Header/> */}
-      {/* <MainMenu/> */}
-      {/* <MobileMenu/> */}
-      {/* <IncCarusel />*/}
-      <ProductCarusel data={data}/> 
+      {/* <MainMenu/>
+      <MainSlider/> */}
+
+      <div className={styles.PdContainer}>
+        {/* <Header/> */}
+         {/* <IncCarusel /> */}
+      <ProductCarusel data={data}/>  
       </div>
-      {/* <MainSlider/> */}
     </>
   );
 }

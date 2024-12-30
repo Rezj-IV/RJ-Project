@@ -4,4 +4,8 @@
 }
 .sliderContainer .imageSlider {
   height: unset;
+}
+
+.slick-dots .dots > li > button ::after {
+  background-color: aqua;
 }/*# sourceMappingURL=CarouselSlider.module.css.map */

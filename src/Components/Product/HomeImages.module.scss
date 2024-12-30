@@ -1,0 +1,178 @@
+.FirstSectionContainer {
+    position: relative;
+
+    height: 240px;
+    width: 100%;
+
+    .homeImage {
+        height: unset;
+        border-radius: 17px;
+    }
+}
+
+.bestMobile {
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    height: 55px;
+}
+
+.SecondSectionContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 50px;
+
+    height: 285px;
+
+    .SecondHomeImage {}
+
+    p {
+        font-size: 18px;
+        color: rgb(43, 43, 43);
+        font-weight: 600;
+        text-align: center;
+    }
+
+}
+
+.FifthSectionContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 50px;
+    height: 240px;
+
+    .FifthSection {
+        position: relative;
+
+        width: 100%;
+
+        .FifthHomeImage {
+            height: unset;
+            border-radius: 17px;
+
+        }
+    }
+}
+
+.mainContainerNinthSection {
+    width: 70%;
+    height: 460px;
+    display: block;
+    margin: 0 auto;
+
+    .title {
+        height: 58px;
+        font-size: 21px;
+        color: #1b2442;
+    }
+
+    .DigitalContainer {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 35px 0;
+        align-items: center;
+        justify-content: center;
+
+        .Digital {
+            position: relative;
+            overflow: hidden;
+            width: 76%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 16px;
+            padding-bottom: 15px;
+            background: hsl(211, 76%, 59%);
+            background: linear-gradient(90deg, hsl(211, 76%, 59%) 0%, hsl(206, 100%, 85%) 97%);
+            background: -webkit-linear-gradient(90deg, hsl(211, 76%, 59%) 0%, hsl(206, 100%, 85%) 97%);
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+
+            .textDigital {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                display: none;
+                text-align: center;
+                height: 35px;
+                font-size: 15px;
+                font-weight: 600;
+                color: rgb(98, 136, 163);
+                background: hsla(206, 100%, 85%, 1);
+
+                background: hsla(211, 100%, 94%, 1);
+
+                background: radial-gradient(circle, rgba(224, 239, 255, 0.345) 0%, rgba(158, 213, 255, 0.333) 100%);
+
+                background: -moz-radial-gradient(circle, rgba(224, 239, 255, 0.297) 0%, rgba(158, 213, 255, 0.439) 100%);
+
+                background: -webkit-radial-gradient(circle, hsla(211, 100%, 94%, 1) 0%, rgba(158, 213, 255, 0.819) 100%);
+
+
+
+            }
+
+
+
+        }
+
+        .Digital:hover>.textDigital {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+
+
+        }
+
+    }
+}
+
+.EighthSectionContainer {
+    display: flex;
+    justify-content: center;
+    margin: 59px auto;
+
+    .selectedBrandsContainer {
+        display: flex;
+        width: fit-content;
+        height: 135px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        border: 2px solid #d4d8e2;
+        overflow: hidden;
+
+        .selectedBrands {
+            width: 230px;
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-direction: column;
+            background-image: linear-gradient(90deg, #0079b1, #1b3570);
+
+            .Check {
+                font-size: 32px;
+            }
+
+            h3 {
+                font-size: 21px;
+                padding-top: 4px;
+            }
+        }
+
+        .EighthSection {
+            width: 230px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #989eaa;
+        }
+
+    }
+}

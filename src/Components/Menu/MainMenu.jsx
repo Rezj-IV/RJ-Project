@@ -1,34 +1,36 @@
 import styles from "./MainMenu.module.css";
 import Link from "next/link";
 import { AiOutlineMenu } from "react-icons/ai";
-import { FaPercent } from "react-icons/fa";
+import { CiPercent } from "react-icons/ci";
+import { LuBadgePercent , LuFlame } from "react-icons/lu";
+
 import MobileMenu from "./MobileMenu";
 const MainMenu = () => {
   return (
-    <div>
-      <nav className={styles.navM}>
-        <ul className={styles.ulM}>
-          <li className={styles.liM}>
-            <Link className={styles.linkM} href="">
-              <div className={styles.MObileResponse}>
-                <AiOutlineMenu className={styles.AiOutlineMenu} />
-                <span>دسته بندی محصولات</span>
-              </div>
-            </Link>
-            <div className={styles.layer} >
-              <MobileMenu />
-             
-            </div>
-          </li>
+    <div className={styles.menuContainer}>
+      <div className={styles.productCategoriesContainer}>
+        <div className={styles.productCategories}>
+          <div className={styles.AiOutlineMenu}>
+            <AiOutlineMenu />
+          </div>
+          <span>دسته بندی محصولات</span>
+        </div>
 
-          <li className={styles.liM}>
-            <Link className={styles.linkM} href="">
-              <FaPercent className={styles.offLogo} />
-              <span>تکنوآف</span>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        <div className={styles.layer}>
+          <MobileMenu />
+        </div>
+      </div>
+
+        <Link href="/" className={styles.offContainer}>
+          <LuBadgePercent className={styles.MLogo} />
+          <span>شگفت‌انگیزها</span>
+        </Link>
+
+        <Link href="/" className={styles.bestSellers}>
+          <LuFlame className={styles.MLogo} />
+          <span>پرفروش‌ ترین‌ها</span>
+        </Link>
+
     </div>
   );
 };
