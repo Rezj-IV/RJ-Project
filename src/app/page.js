@@ -9,6 +9,7 @@ import Modal from "@/Components/Modal/ImageModal";
 import MainSlider from "@/Components/Slider/mainSlider";
 import ProductCarusel from "@/Components/Product/ProductCarusel";
 import * as repository from "../../RestConfig/RestRequest";
+import SixIcon from "@/Components/SixIcon/SixIcon";
 
 async function getAllProduct() {
   const response = await repository.Get("products");
@@ -25,12 +26,14 @@ export default async function Home() {
   console.log(data);
   return (
     <>
-      {/* <MainMenu/>
-      <MainSlider/> */}
+      <MainMenu/>
+      <MainSlider/>
 
       <div className={styles.PdContainer}>
+        <SixIcon/>
+      
         {/* <Header/> */}
-         {/* <IncCarusel /> */}
+          <IncCarusel /> 
       <ProductCarusel data={data}/>  
       </div>
     </>

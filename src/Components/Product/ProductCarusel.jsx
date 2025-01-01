@@ -41,7 +41,7 @@ const ProductCarusel = ({ data }) => {
       <div className={styles.caruselContainer}>
         <div className={styles.titleCarusel}>
           <p>پرچمداران هوشمند</p>
-          <Link href="/Product/Class/flagBearer" className={styles.ShowAll}>
+          <Link href="/Product/specialCategory/flagBearer" className={styles.ShowAll}>
             نمایش همه
             <AiOutlineLeft className={styles.AiOutlineLeft} />
           </Link>
@@ -105,7 +105,7 @@ const ProductCarusel = ({ data }) => {
       <div className={styles.caruselContainer}>
         <div className={styles.titleCarusel}>
           <p>پر فروش ترین ها</p>
-          <Link href="/Product/Class/bestSelling" className={styles.ShowAll}>
+          <Link href="/Product/specialCategory/bestSelling" className={styles.ShowAll}>
             نمایش همه
             <AiOutlineLeft className={styles.AiOutlineLeft} />
           </Link>

@@ -18,40 +18,14 @@ const ClassData = async (props) => {
     return item.type.includes(context.ClassData);
   });
 
-  let result2 = data.filter((item) => {
-    return item.flagBearer === true;
-  });
-
-  let result3 = data.filter((item) => {
-    return item.bestSelling === true;
-  });
   return (
     <div>
-      {context.ClassData === "laptop" ? (
+      {result && (
         <div>
           <CardDetails product={result} />
         </div>
-      ) : null}
-      {context.ClassData === "computer" ? (
-        <div>
-          <CardDetails product={result} />
-        </div>
-      ) : null}{" "}
-      {context.ClassData === "console" ? (
-        <div>
-          <CardDetails product={result} />
-        </div>
-      ) : null}
-      {context.ClassData === "flagBearer" ? (
-        <div>
-          <CardDetails product={result2} />
-        </div>
-      ) : null}
-      {context.ClassData === "bestSelling" ? (
-        <div>
-          <CardDetails product={result3} />
-        </div>
-      ) : null}
+      )}
+   
     </div>
   );
 };

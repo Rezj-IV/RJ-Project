@@ -11,7 +11,7 @@ const MenuContents = async ({ itemId }) => {
           <div className={styles.contents}>
             <div>
               <span className={styles.khat}>|</span>
-              <Link className={styles.headerContent} href="">
+              <Link className={styles.headerContent} href="/Product/Class/mobile">
                 برندهای مختلف گوشی موبایل
               </Link>
             </div>
@@ -31,7 +31,7 @@ const MenuContents = async ({ itemId }) => {
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link className={styles.headerContent} href="">
+              <Link className={styles.headerContent} href="/Product/Class/tablet">
                 تبلت
               </Link>
             </div>
@@ -51,7 +51,7 @@ const MenuContents = async ({ itemId }) => {
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link className={styles.headerContent} href="">
+              <Link className={styles.headerContent} href="/Product/Class/smartWatch">
                 ساعت هوشمند
               </Link>
             </div>
@@ -76,7 +76,7 @@ const MenuContents = async ({ itemId }) => {
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link href="" className={styles.headerContent}>
+              <Link href="/Product/Class/laptop" className={styles.headerContent}>
                 لپ تاپ
               </Link>
             </div>
@@ -97,7 +97,7 @@ const MenuContents = async ({ itemId }) => {
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link href="" className={styles.headerContent}>
+              <Link href="/Product/Class/computer" className={styles.headerContent}>
                 کامپیوتر
               </Link>
             </div>
@@ -107,7 +107,7 @@ const MenuContents = async ({ itemId }) => {
             <Link className={styles.linkContent} href="/">
               Mini pc{" "}
             </Link>
-            <Link className={styles.linkContent} href="/">
+            <Link className={styles.linkContent} href="">
               {" "}
               کیس اسمبل شده
             </Link>
@@ -116,7 +116,7 @@ const MenuContents = async ({ itemId }) => {
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link href="" className={styles.headerContent}>
+              <Link href="/Product/Class/console" className={styles.headerContent}>
                 {" "}
                 کنسول بازی
               </Link>
@@ -137,7 +137,7 @@ const MenuContents = async ({ itemId }) => {
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link href="" className={styles.headerContent}>
+              <Link href="/Product/Class/handsfree" className={styles.headerContent}>
                 {" "}
                 هندزفری
               </Link>

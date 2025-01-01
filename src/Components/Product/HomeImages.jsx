@@ -207,27 +207,30 @@ export const HomeImagesEighthSection = async () => {
   let result = image.filter((item) => {
     return item.selectedBrands === true;
   });
+  console.log(result);
 
   return (
     <div className={styles.EighthSectionContainer}>
-    <div className={styles.selectedBrandsContainer}>
-      <div className={styles.selectedBrands}>
-        <BsPatchCheck className={styles.Check}/>
-        <h3>برندهای منتخب</h3>
+      <div className={styles.selectedBrandsContainer}>
+        <div className={styles.selectedBrands}>
+          <BsPatchCheck className={styles.Check} />
+          <h3>برندهای منتخب</h3>
+        </div>
+        {result.map((item) => {
+          return (
+            <Link href={`brand/${item.name}`}>
+              <div className={styles.EighthSection}>
+                <Image
+                  width={130}
+                  height={100}
+                  alt={item.name}
+                  src={item.indexImageUrl}
+                />
+              </div>
+            </Link>
+          );
+        })}
       </div>
-      {result.map((item) => {
-        return (
-          <div className={styles.EighthSection}>
-            <Image
-              width={130}
-              height={100}
-              alt={item.name}
-              src={item.indexImageUrl}
-            />
-          </div>
-        );
-      })}
-    </div>
     </div>
   );
 };
@@ -246,7 +249,24 @@ export const HomeImagesNinthSection = async () => {
       <div className={styles.DigitalContainer}>
         {result.map((item) => {
           return (
-            <Link href="/">
+            <div>
+              {item.id === 24 || item.id === 25 || item.id === 26 || item.id === 27 ||item.id === 28?  (
+                <Link href={`/Product/Class/${item.linkName}`}>
+                  <div className={styles.Digital}>
+                    <Image
+                      width={120}
+                      height={120}
+                      alt={item.name}
+                      src={`/Digital/${item.indexImageUrl}`}
+                    />
+
+                    <div className={styles.textDigital}>
+                      <span>{item.name}</span>
+                    </div>
+                  </div>
+                </Link>
+              ) : 
+              <Link href={`/brand/${item.linkName}`}>
               <div className={styles.Digital}>
                 <Image
                   width={120}
@@ -259,7 +279,8 @@ export const HomeImagesNinthSection = async () => {
                   <span>{item.name}</span>
                 </div>
               </div>
-            </Link>
+            </Link>}
+            </div>
           );
         })}
       </div>
