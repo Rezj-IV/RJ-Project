@@ -1,22 +1,38 @@
-$gray: #cecfd0;
+$gray: #ced0cf;
+
+
 
 .cardDetailsConrainer {
     display: flex;
-padding: 0 135px;
+    padding: 0 135px;
+
 
     .cardDetail {
-       
+        margin-left: 30px;
         border: 1px solid $gray;
         border-radius: 10px;
-      padding: 8px 15px;
-        flex-basis: 15%;
+        padding: 8px 15px;
+        flex-basis: 16%;
         height: 500px;
 
         .filterLogo {
+            display: flex;
             height: 40px;
             width: 100%;
-            display: block !important;
+            align-items: center;
             border-bottom: 1px solid $gray;
+
+            p {
+                font-size: 14.5px;
+                font-weight: 600;
+                color: #262626;
+                padding-right: 5px;
+            }
+
+            .FilterIcon {
+                font-size: 22px;
+             
+            }
         }
 
         .categories {
@@ -26,15 +42,67 @@ padding: 0 135px;
         }
     }
 
-    .Card {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 1fr;
-        gap: 13px 16px;
-        margin-right: 25px;
+    .cardContainer {
+        flex-basis: 84%;
+
+        .sortingContainer {
+            width: 100%;
+            padding: 0 25px;
+            height: 48px;
+            border-radius: 8px;
+            background-color: #e9ecf3;
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            margin-bottom: 35px;
+            justify-content: space-between;
+
+            .sorting {
+                display: flex;
+                gap: 27px;
+
+                .title {
+                    display: flex;
+                    align-items: center;
+                    font-size: 13px;
+                    font-weight: 600;
+                    padding-left: 6px;
+                    color: rgb(34, 34, 34);
+
+                    span {
+                        padding-right: 5px;
+                    }
+
+                    .order {
+                        font-size: 18px;
+
+                    }
+
+                }
+            }
+
+            .length {
+                display: flex;
+
+                p {
+                    font-size: 13px;
+                    padding-right: 5px;
+                }
+            }
+
+        }
+
+        .Card {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 1fr;
+            gap: 13px 16px;
 
 
-        flex-basis: 85%;
 
+        }
     }
+
+
+
 }

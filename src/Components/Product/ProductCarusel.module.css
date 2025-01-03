@@ -38,4 +38,15 @@
 .caruselContainer .titleCarusel .AiOutlineLeft {
   margin-right: 10px;
   font-size: 14px;
+}
+
+.weblog {
+  display: flex;
+  color: #869cc9;
+}
+.weblog .BloggerB {
+  font-size: 20px;
+}
+.weblog .weblogTitle {
+  padding-right: 5px;
 }/*# sourceMappingURL=ProductCarusel.module.css.map */

@@ -314,3 +314,33 @@ export const HomeImagesTenthSection = async () => {
     </div>
   );
 };
+
+
+export const HomeImagesEleventhSection = async () => {
+  const image = await getAllHomeImages();
+
+  let result = image.filter((item) => {
+    return item.linkName === "weblog" ;
+  });
+  console.log(result);
+
+  return (
+    <div className={styles.MainEleventhSectionContainer}>
+      <div className={styles.EleventhSectionContainer}>
+        {result.map((item) => {
+          return (
+            <div className={styles.EleventhSection}>
+              <Image
+                className={styles.EleventhHomeImage}
+                fill
+                alt={item.name}
+                src={item.indexImageUrl}
+              />
+              <p>{item.name}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};

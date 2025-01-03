@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Card.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import UnavailableCarusel from "../Carusel/UnavailableCarusel";
+import NonExistentCard from "./NonExistentCard";
 import { BsBoxSeam } from "react-icons/bs";
 
 const Card = ({ product }) => {
@@ -12,7 +12,7 @@ const Card = ({ product }) => {
       href={`/Product/${product.id}`}
     >
       {product.stock === 0 ? (
-        <UnavailableCarusel product={product} />
+        <NonExistentCard product={product} />
       ) : (
         <div className={styles.mainContainer}>
           <div className={`${styles.incredibleOfferImageContainer}`}>
@@ -55,16 +55,6 @@ const Card = ({ product }) => {
               {product.name.substring(0, 60)}
               {product.name.length > 60 ? "..." : null}
             </p>
-
-            {product.stock < 3 ? (
-              <div className={styles.remainingContainer}>
-                <div className={styles.remaining}>
-                  <BsBoxSeam className={styles.FiBox} />
-                  <span>{product.stock}</span>
-                  <span>عدد در انبار باقی مانده</span>
-                </div>
-              </div>
-            ) : null}
           </div>
 
           {product.priceWithDiscount === 0 ? (

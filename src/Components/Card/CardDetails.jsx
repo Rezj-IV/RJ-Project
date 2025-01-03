@@ -2,6 +2,8 @@
 import React, { useRef, useState } from "react";
 import Card from "./Card";
 import styles from "./CardDetails.module.scss";
+import { CgReorder } from "react-icons/cg";
+import { BsFilter } from "react-icons/bs";
 import ProductFilter from "../Product/ProductFilter";
 const CardDetails = ({ product }) => {
   const checked = useRef("");
@@ -29,14 +31,15 @@ const CardDetails = ({ product }) => {
       );
     }
   };
-  
+
   console.log(state);
- 
+
   return (
     <div className={styles.cardDetailsConrainer}>
       <div className={styles.cardDetail}>
         <div className={styles.filterLogo}>
-          <p>فیلتر</p>
+          <BsFilter className={styles.FilterIcon}/>
+          <p>فیلترها</p>
         </div>
         <div className={styles.categories}>
           <p>دسته بندی ها</p>
@@ -70,9 +73,6 @@ const CardDetails = ({ product }) => {
           />
           <label>laptop</label>
 
-         
-
-
           <br />
           <input
             type="checkbox"
@@ -95,21 +95,51 @@ const CardDetails = ({ product }) => {
           <label>console</label>
         </div>
 
-        <div className={styles.mainDropdown}>
-          
-        </div>
+        <div className={styles.mainDropdown}></div>
       </div>
-      <div className={styles.Card}>
-        {product.map((item) => {
-          if(state[0] === item.type || state[1] === item.type || state[2] === item.type   ||  state[3] === item.type || state[4] === item.type){
-          return <Card product={item} key={item.id} />;
-        }else{
-          if(state.length === 0){
-          return <Card product={item} key={item.id} />;
-          }
+      <div className={styles.cardContainer}>
+        <div className={styles.sortingContainer}>
+          <div className={styles.sorting}>
+            <div className={styles.title}>
+              <CgReorder className={styles.order} />
 
-        }
-        })}
+              <span>مرتب سازی:</span>
+            </div>
+            <div>
+              <p>پرفروش ترین</p>
+            </div>
+            <div>
+              <p>بیشترین قیمت</p>
+            </div>
+            <div>
+              <p>کمترین قیمت</p>
+            </div>
+            <div>
+              <p>بیشترین تخفیف</p>
+            </div>
+          </div>
+          <div className={styles.length}>
+            <span>{product.length}</span>
+            <p>کالا</p>
+          </div>
+        </div>
+        <div className={styles.Card}>
+          {product.map((item) => {
+            if (
+              state[0] === item.type ||
+              state[1] === item.type ||
+              state[2] === item.type ||
+              state[3] === item.type ||
+              state[4] === item.type
+            ) {
+              return <Card product={item} key={item.id} />;
+            } else {
+              if (state.length === 0) {
+                return <Card product={item} key={item.id} />;
+              }
+            }
+          })}
+        </div>
       </div>
     </div>
   );

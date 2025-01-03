@@ -50,3 +50,17 @@ $ShText : rgb(34 60 120/1);
         }
     }
 }
+
+.weblog {
+    display: flex;
+    color: #869cc9;
+
+    .BloggerB {
+        font-size: 20px;
+
+    }
+
+    .weblogTitle {
+        padding-right: 5px;
+    }
+}

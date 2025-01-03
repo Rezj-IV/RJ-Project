@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./SlideCarouselCard.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import UnavailableCarusel from "./UnavailableCarusel";
+import UnavailableCard from "../Card/NonExistentCard";
 
 const SlideCarouselCard = ({ product }) => {
   return (
     <Link href={`/Product/${product.id}`} className={styles.LinkContainer}>
       {product.stock === 0 ? (
-        <UnavailableCarusel product={product} />
+        null
       ) : (
         <div className={styles.mainContainer}>
           <div className={`${styles.incredibleOfferImageContainer}`}>

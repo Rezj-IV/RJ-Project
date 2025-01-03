@@ -26,14 +26,14 @@ export default async function Home() {
   console.log(data);
   return (
     <>
-      <MainMenu/>
-      <MainSlider/>
+      {/* <MainMenu/>
+      <MainSlider/> */}
 
       <div className={styles.PdContainer}>
-        <SixIcon/>
+        {/* <SixIcon/> */}
       
         {/* <Header/> */}
-          <IncCarusel /> 
+          {/* <IncCarusel />  */}
       <ProductCarusel data={data}/>  
       </div>
     </>
