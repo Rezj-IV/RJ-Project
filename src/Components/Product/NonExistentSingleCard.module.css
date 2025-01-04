@@ -131,4 +131,78 @@
 .mainContainer .caruselContainer .titleCarusel .AiOutlineLeft {
   margin-right: 10px;
   font-size: 14px;
+}
+.mainContainer .nonExistentContainer {
+  display: flex;
+  height: 165px;
+  width: 90%;
+  justify-content: end;
+  align-items: center;
+}
+.mainContainer .nonExistentContainer .non {
+  font-size: 18.5px;
+  font-weight: 600;
+  padding: 0 25px;
+  color: #9c9d9f;
+}
+.mainContainer .nonExistentContainer .line {
+  width: 104px;
+  height: 1.5px;
+  background-color: #b7b7b7;
+}
+.mainContainer .DetailsNonExistentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 7px;
+  height: 45px;
+  width: 100%;
+  box-shadow: 0px 0px 6px 0px #d7d7d7;
+}
+.mainContainer .DetailsNonExistentContainer .DetailsLine {
+  height: 1px;
+  width: 80px;
+  background-color: #909090;
+}
+.mainContainer .DetailsNonExistentContainer .DetailsNon {
+  font-size: 14px;
+  padding: 0 22px;
+  font-weight: 600;
+  color: rgb(138, 138, 138);
+}
+.mainContainer .DetailsText {
+  width: 100%;
+  margin-top: 23px;
+  margin-bottom: 33px;
+}
+.mainContainer .DetailsText .substituteText {
+  font-weight: 600;
+}
+.mainContainer .DetailsText span {
+  color: #1d1d1d;
+  font-size: 14.5px;
+  text-align: justify;
+  line-height: 22px;
+}
+.mainContainer .notificationContainer {
+  width: 100%;
+  height: 50px;
+  border: 2px solid #00387b;
+  display: flex;
+  padding: 0 15px;
+  align-items: center;
+  border-radius: 10px;
+}
+.mainContainer .notificationContainer p {
+  font-weight: 600;
+  font-size: 15px;
+  color: #00387b;
+  display: block;
+  margin: 0 auto;
+}
+.mainContainer .notificationContainer .notificationIcon {
+  color: #00387b;
+  font-size: 25px;
+  text-align: end;
 }/*# sourceMappingURL=NonExistentSingleCard.module.css.map */

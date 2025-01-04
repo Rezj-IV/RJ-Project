@@ -223,7 +223,7 @@ const singleProduct = async (props) => {
           )}
 
           <div className={styles.informationProductContainer}>
-            <InformationBar Att={data.attribute} data={data} />
+            <InformationBar Att={data.attribute} data={data}  />
           </div>
         </div>
       )}

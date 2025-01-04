@@ -1,9 +1,27 @@
-import React from 'react'
-
+"use client";
+import React, {useState } from "react";
+import styles from "./SearchBox.module.css";
+import * as repository from "../../../RestConfig/RestRequest";
+import Link from "next/link";
 const SearchBox = () => {
-  return (
-    <div>SearchBox</div>
-  )
-}
+  const [textSearch, setTextSearch] = useState([]);
+  
+ 
 
-export default SearchBox
+  const changeHandler = (e) => {
+    e.preventDefault();
+    setTextSearch(e.target.value);
+
+  };
+
+  
+  
+  return (
+    <div>
+      <input type="text" onChange={changeHandler} />
+      <Link href={`search/${textSearch}`}>search</Link>
+    </div>
+  );
+};
+
+export default SearchBox;

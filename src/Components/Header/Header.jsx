@@ -1,10 +1,12 @@
 import React from 'react'
 import LogSignUI from './LogSignUI'
+import SearchBox from './SearchBox'
 
 const Header = () => {
   return (
     <div>
-        <LogSignUI/>
+       <SearchBox/>
+        {/* <LogSignUI/> */}
     </div>
   )
 }

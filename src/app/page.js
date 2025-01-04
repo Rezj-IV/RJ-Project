@@ -2,7 +2,6 @@ import MobileMenu from "@/Components/Menu/MobileMenu";
 import styles from "./page.module.css";
 import MainMenu from "@/Components/Menu/MainMenu";
 import Header from "@/Components/Header/Header";
-import GetProducts from "@/Components/GetProducts";
 import GetIncredibleOffers from "@/Components/IncredibleOffersProducts/GetIncredibleOffers";
 import IncCarusel from "@/Components/Carusel/IncCarusel";
 import Modal from "@/Components/Modal/ImageModal";
@@ -18,7 +17,7 @@ async function getAllProduct() {
     return data;
   } else {
     console.log("دیتا به درستی از سرور دریافت نشد");
-    4;
+    
   }
 }
 export default async function Home() {
@@ -26,15 +25,16 @@ export default async function Home() {
   console.log(data);
   return (
     <>
+      <Header />
+
       {/* <MainMenu/>
       <MainSlider/> */}
 
       <div className={styles.PdContainer}>
         {/* <SixIcon/> */}
-      
-        {/* <Header/> */}
-          {/* <IncCarusel />  */}
-      <ProductCarusel data={data}/>  
+
+        {/* <IncCarusel />  */}
+        {/* <ProductCarusel data={data}/>   */}
       </div>
     </>
   );
