@@ -1,19 +1,12 @@
-.container {
-  background-color: rgba(0, 0, 0, 0.4431372549);
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-}
-
 .navbar {
-  position: fixed;
+  position: relative;
   z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: -moz-fit-content;
   width: fit-content;
-  top: 0;
+  top: 0x;
 }
 .navbar ul {
   border-top: 1px solid rgb(227, 227, 227);
@@ -23,9 +16,6 @@
   align-items: flex-start;
   background-color: #ffffff;
   padding: 20px 15px;
-  position: relative;
-  top: 45px;
-  right: 0;
   width: 261px;
   height: -moz-fit-content;
   height: fit-content;

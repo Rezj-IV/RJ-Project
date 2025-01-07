@@ -7,6 +7,7 @@ import * as repository from "../../../RestConfig/RestRequest";
 import styles from "./Signup.module.scss";
 import { setToken } from "@/Components/StoreRedux/slices/UserSlice";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 const SignUp = () => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -14,7 +15,7 @@ const SignUp = () => {
     name: Yup.string().required("نام خود را وارد کنید"),
     lastname: Yup.string().required("نام خانوادگی خود را وارد کنید"),
     username: Yup.string().required("نام کاربری خود را وارد کنید"),
-    mobilenumber: Yup.number().required("شماره همراه خود را وارد کنید"),
+    mobilenumber: Yup.string().required("شماره همراه خود را وارد کنید"),
     password: Yup.string().required("پسورد  خود را وارد کنید"),
   });
 
@@ -50,8 +51,9 @@ const SignUp = () => {
   return (
     <>
       <div className={styles.mainContainer}>
+        {/* <div className={styles.sginContainer}> */}
         <div className={styles.FieldContainer}>
-          <Image
+          {/* <Image
             src="/logo/rjLogo.png"
             alt="rj land"
             width={150
@@ -60,9 +62,9 @@ const SignUp = () => {
             height={150
               
             }
-          />
-         
-          <p className={styles.title}> ثبت نام   </p>
+          /> */}
+
+          <p className={styles.title}> ثبت نام </p>
 
           <Formik
             onSubmit={submitHandler}
@@ -79,7 +81,6 @@ const SignUp = () => {
                   className={styles.form__field}
                   placeholder="نام"
                 />
-                <label className={styles.form__label}> نام </label>
                 <ErrorMessage
                   name="name"
                   component={"p"}
@@ -94,7 +95,6 @@ const SignUp = () => {
                   className={styles.form__field}
                   placeholder="نام خانوادگی"
                 />
-                <label className={styles.form__label}> نام خانوادگی </label>
                 <ErrorMessage
                   name="lastname"
                   component={"p"}
@@ -109,7 +109,6 @@ const SignUp = () => {
                   className={styles.form__field}
                   placeholder="نام کاربری"
                 />
-                <label className={styles.form__label}> نام کاربری </label>
                 <ErrorMessage
                   name="username"
                   component={"p"}
@@ -120,11 +119,10 @@ const SignUp = () => {
               <div className={styles.form__group}>
                 <Field
                   name="mobilenumber"
-                  type="text"
+                  type="number"
                   className={styles.form__field}
                   placeholder="شماره همراه"
                 />
-                <label className={styles.form__label}> شماره همراه </label>
                 <ErrorMessage
                   name="mobilenumber"
                   component={"p"}
@@ -139,28 +137,34 @@ const SignUp = () => {
                   className={styles.form__field}
                   placeholder="کلمه عبور"
                 />
-                <label className={styles.form__label}> کلمه عبور </label>
                 <ErrorMessage
                   name="password"
                   component={"p"}
                   className={styles.ErrorMessage}
                 />
               </div>
+           
 
               <button type="submit">ثبت نام</button>
+
+              <div className={styles.goSign}>
+                <span>حساب کاربری دارید؟</span>
+                <Link href="/Login">ورود</Link>
+              </div>
             </Form>
           </Formik>
         </div>
 
-        <div className={styles.imageSignupContainer}>
+        {/* <div className={styles.imageSignupContainer}>
           <Image
             className={styles.imageSignup}
             src="/images/signUpImage.webp"
             alt="Signup Image"
-            width={1000}
-            height={1000}
+            width={500}
+            height={450}
           />
-        </div>
+        </div> */}
+        {/* </div> */}
       </div>
     </>
   );

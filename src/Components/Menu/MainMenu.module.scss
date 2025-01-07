@@ -16,6 +16,7 @@ $textColor: #5e5e5e;
     width: 100%;
     align-items: center;
     gap: 25px;
+    margin-bottom: 3px;
 
     .productCategoriesContainer {
 
@@ -32,30 +33,13 @@ $textColor: #5e5e5e;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
 
             span {
                 font-size: 14.5px;
                 padding-right: 10px;
 
             }
-        }
-
-        .productCategories::after {
-            width: 0%;
-            height: 1.8px;
-            background-color: rgb(125, 163, 220);
-            content: '';
-            font-size: 0px;
-            bottom: 0px;
-            right: 0px;
-            left: 0px;
-            position: absolute;
-            margin: 0px auto;
-        }
-
-        .productCategories:hover::after {
-            transition: all .5s;
-            width: 100%;
         }
 
 
@@ -102,7 +86,6 @@ $textColor: #5e5e5e;
 .layer {
     display: none;
     position: fixed;
-
 }
 
 .productCategoriesContainer:hover .layer {

@@ -2,7 +2,7 @@ import styles from "./MainMenu.module.css";
 import Link from "next/link";
 import { AiOutlineMenu } from "react-icons/ai";
 import { CiPercent } from "react-icons/ci";
-import { LuBadgePercent , LuFlame } from "react-icons/lu";
+import { LuBadgePercent, LuFlame } from "react-icons/lu";
 
 import MobileMenu from "./MobileMenu";
 const MainMenu = () => {
@@ -21,16 +21,18 @@ const MainMenu = () => {
         </div>
       </div>
 
-        <Link href="/" className={styles.offContainer}>
-          <LuBadgePercent className={styles.MLogo} />
-          <span>شگفت‌انگیزها</span>
-        </Link>
+      <Link href="/IncredibleOffers" className={styles.offContainer}>
+        <LuBadgePercent className={styles.MLogo} />
+        <span>شگفت‌انگیزها</span>
+      </Link>
 
-        <Link href="/" className={styles.bestSellers}>
-          <LuFlame className={styles.MLogo} />
-          <span>پرفروش‌ ترین‌ها</span>
-        </Link>
-
+      <Link
+        href="/Product/specialCategory/bestSelling"
+        className={styles.bestSellers}
+      >
+        <LuFlame className={styles.MLogo} />
+        <span>پرفروش‌ ترین‌ها</span>
+      </Link>
     </div>
   );
 };

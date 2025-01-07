@@ -38,7 +38,7 @@ const LogIn = () => {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.FieldContainer}>
-        <Image src="/logo/rjLogo.png" alt="rj land" width={150} height={150} />
+        {/* <Image src="/logo/rjLogo.png" alt="rj land" width={150} height={150} /> */}
         <p className={styles.title}> ورود </p>
         <Formik
           d
@@ -56,7 +56,6 @@ const LogIn = () => {
                 className={styles.form__field}
                 placeholder="نام کاربری"
               />
-              <label className={styles.form__label}> نام کاربری </label>
               <ErrorMessage
                 name="username"
                 component={"p"}
@@ -71,7 +70,6 @@ const LogIn = () => {
                 className={styles.form__field}
                 placeholder="کلمه عبور"
               />
-              <label className={styles.form__label}> کلمه عبور </label>
               <ErrorMessage
                 name="password"
                 component={"p"}
@@ -81,7 +79,7 @@ const LogIn = () => {
 
             <button> ورود</button>
 
-            <div className={styles.goSignup}>
+            <div className={styles.goSign}>
               <span>حساب کاربری ندارید؟</span>
               <Link href="/Signup">ثبت نام</Link>
             </div>
@@ -89,15 +87,7 @@ const LogIn = () => {
         </Formik>
       </div>
 
-      <div className={styles.imageSignupContainer}>
-        <Image
-          className={styles.imageSignup}
-          src="/images/signUpImage.webp"
-          alt="Signup Image"
-          width={1460}
-          height={995}
-        />
-      </div>
+     
     </div>
   );
 };

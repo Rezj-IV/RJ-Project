@@ -1,0 +1,16 @@
+.HeaderContainer {
+    display: flex;
+    height: 88px;
+    width: 100%;
+    padding: 0 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.HeaderRightSide {
+    align-items: center;
+    flex-basis: 50%;
+    gap: 43px;
+    height: fit-content;
+    display: flex;
+}

@@ -2,10 +2,35 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
- 
+
 }
-body{
+
+body {
   background-color: #fdfeff;
-  direction: rtl ;
+  direction: rtl;
+
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cacaca;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(206, 100%, 82%, 1);
+
+  background: radial-gradient(circle, hsla(206, 100%, 82%, 1) 33%, #b8b8b8 79%);
+
+  background: -moz-radial-gradient(circle, hsla(206, 100%, 82%, 1) 33%, #b8b8b8 79%);
+
+  background: -webkit-radial-gradient(circle, hsla(206, 100%, 82%, 1) 33%, #b8b8b8 79%);
 
 }

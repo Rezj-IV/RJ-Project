@@ -12,6 +12,7 @@ import InformationBar from "@/Components/Product/InformationBar";
 import Carusel from "@/Components/Carusel/Carusel";
 import Link from "next/link";
 import NonExistentSingleCard from "@/Components/Product/NonExistentSingleCard";
+import Color from "@/Components/Product/Color";
 
 async function getAllSingleProduct(props) {
   const response = await repository.Get(`products/${props}`);
@@ -37,12 +38,12 @@ const singleProduct = async (props) => {
   const data = await getAllSingleProduct(context.singleProduct);
   const category = await getAllSameCategory(data.category);
   console.log(context);
-  console.log(data);
+  console.log(data.colorID);
   console.log(category);
   return (
     <div>
       {data.stock === 0 ? (
-        <NonExistentSingleCard data={data}  category={category}/>
+        <NonExistentSingleCard data={data} category={category} />
       ) : (
         <div className={styles.mainContainer}>
           <div className={styles.dataProductContainer}>
@@ -55,27 +56,11 @@ const singleProduct = async (props) => {
                   <span className={styles.comment}>نظرات کاربران</span>
                   <span className={styles.numberComment}>0نظر</span>
                 </div>
-                <div className={styles.colorContainer}>
-                  {data.colorID.map((item) => {
-                    {
-                      data.colorID !== undefined;
-                    }
-                    return (
-                      <div>
-                        <span className={styles.showColor}>رنگ :</span>
-                        <h4 className={styles.showColor}>{item.showColor}</h4>
-                        <div className={styles.insideColor}>
-                          <div
-                            className={styles.color}
-                            style={{
-                              backgroundColor: item.color,
-                            }}
-                          ></div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+                {data.colorID.length !== 0 ? (
+                  <div>
+                    <Color colorID={data.colorID} />
+                  </div>
+                ) : null}
 
                 {data.attribute.length !== 0 ? (
                   <div>
@@ -223,7 +208,7 @@ const singleProduct = async (props) => {
           )}
 
           <div className={styles.informationProductContainer}>
-            <InformationBar Att={data.attribute} data={data}  />
+            <InformationBar Att={data.attribute} data={data} />
           </div>
         </div>
       )}

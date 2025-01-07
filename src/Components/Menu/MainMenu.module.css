@@ -4,6 +4,7 @@
   width: 100%;
   align-items: center;
   gap: 25px;
+  margin-bottom: 3px;
 }
 .menuContainer .productCategoriesContainer {
   width: 160px;
@@ -20,26 +21,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .menuContainer .productCategoriesContainer .productCategories span {
   font-size: 14.5px;
   padding-right: 10px;
-}
-.menuContainer .productCategoriesContainer .productCategories::after {
-  width: 0%;
-  height: 1.8px;
-  background-color: rgb(125, 163, 220);
-  content: "";
-  font-size: 0px;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
-  position: absolute;
-  margin: 0px auto;
-}
-.menuContainer .productCategoriesContainer .productCategories:hover::after {
-  transition: all 0.5s;
-  width: 100%;
 }
 .menuContainer .productCategoriesContainer .AiOutlineMenu {
   font-size: 18px;

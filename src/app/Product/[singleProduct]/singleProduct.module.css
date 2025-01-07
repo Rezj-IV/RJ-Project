@@ -49,41 +49,6 @@
   font-size: 13px;
   font-weight: 600;
 }
-.mainContainer .dataProductContainer .descriptionContainer .nameContainer .colorContainer {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100px;
-  margin-bottom: 35px;
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  border-bottom: 1px solid #d6d8de;
-}
-.mainContainer .dataProductContainer .descriptionContainer .nameContainer .colorContainer .showColor {
-  font-size: 13.5px;
-  display: inline-block;
-  padding-right: 5px;
-  margin-bottom: 15px;
-}
-.mainContainer .dataProductContainer .descriptionContainer .nameContainer .colorContainer .insideColor {
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  border: 2px solid #949fb5;
-  display: flex;
-  margin: 0px 4px;
-  box-shadow: 0px 0px 2px 0px #d9d9d9;
-}
-.mainContainer .dataProductContainer .descriptionContainer .nameContainer .colorContainer .insideColor .color {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-}
 .mainContainer .dataProductContainer .descriptionContainer .imageContainer {
   display: flex;
   flex-direction: column;

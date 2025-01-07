@@ -9,6 +9,7 @@ import MainSlider from "@/Components/Slider/mainSlider";
 import ProductCarusel from "@/Components/Product/ProductCarusel";
 import * as repository from "../../RestConfig/RestRequest";
 import SixIcon from "@/Components/SixIcon/SixIcon";
+import Footer from "@/Components/Footer/Footer";
 
 async function getAllProduct() {
   const response = await repository.Get("products");
@@ -17,7 +18,6 @@ async function getAllProduct() {
     return data;
   } else {
     console.log("دیتا به درستی از سرور دریافت نشد");
-    
   }
 }
 export default async function Home() {
@@ -27,15 +27,15 @@ export default async function Home() {
     <>
       <Header />
 
-      {/* <MainMenu/>
-      <MainSlider/> */}
+      <MainMenu />
+      <MainSlider />
 
       <div className={styles.PdContainer}>
-        {/* <SixIcon/> */}
-
-        {/* <IncCarusel />  */}
-        {/* <ProductCarusel data={data}/>   */}
+        <SixIcon />
+        <IncCarusel />
+        <ProductCarusel data={data} />
       </div>
+      <Footer/>
     </>
   );
 }

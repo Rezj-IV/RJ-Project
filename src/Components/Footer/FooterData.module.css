@@ -1,0 +1,109 @@
+.footerDataContainer .footerData {
+  display: flex;
+  width: 100%;
+  height: 340px;
+  margin-top: 50px;
+  color: #e4e4e4;
+}
+.footerDataContainer .footerData .rightSideFooter {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.footerDataContainer .footerData .rightSideFooter .Addresses {
+  display: flex;
+  height: 45px;
+}
+.footerDataContainer .footerData .rightSideFooter .Addresses span {
+  padding: 0 15.5px 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.footerDataContainer .footerData .rightSideFooter .Addresses .gmailIcon {
+  font-size: 21px;
+  color: #d9d9d9;
+}
+.footerDataContainer .footerData .rightSideFooter .Addresses .phoneIcon {
+  font-size: 16px;
+  color: #d9d9d9;
+}
+.footerDataContainer .footerData .rightSideFooter .Addresses p {
+  font-size: 14.5px;
+  font-weight: 600;
+  padding-top: 2px;
+}
+.footerDataContainer .footerData .leftSideFooter {
+  flex-basis: 70%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row: auto;
+  cursor: pointer;
+}
+.footerDataContainer .footerData .leftSideFooter .leftSideContent, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled {
+  position: relative;
+}
+.footerDataContainer .footerData .leftSideFooter .leftSideContent h3, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled h3 {
+  height: 45px;
+  font-size: 20px;
+  display: inline-block;
+}
+.footerDataContainer .footerData .leftSideFooter .leftSideContent span, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled span {
+  color: #a0a0a0;
+  font-size: 13px;
+  width: 50px;
+}
+.footerDataContainer .footerData .leftSideFooter .leftSideContent ul, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul {
+  list-style: none;
+}
+.footerDataContainer .footerData .leftSideFooter .leftSideContent ul li, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li {
+  padding: 6px 0;
+}
+.footerDataContainer .footerData .leftSideFooter .leftSideContent ul li a, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li a {
+  text-decoration: none;
+  color: #e4e4e4;
+  font-size: 14px;
+}
+.footerDataContainer .footerData .leftSideFooter .leftSideContent ul li a:hover, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li a:hover {
+  color: rgb(136, 245, 255);
+}
+.footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled p {
+  color: #e4e4e4;
+  font-size: 14px;
+}
+.footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled p:hover {
+  color: darkgrey;
+}
+.footerDataContainer .symbols {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+}
+.footerDataContainer .symbols .symbolImage {
+  border-radius: 8px;
+  background-color: #ffffff;
+  width: 80px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 77px;
+}
+.footerDataContainer .foundation {
+  display: flex;
+  width: 100%;
+  height: 75px;
+  align-items: end;
+  justify-content: center;
+  color: #ffffff;
+}
+.footerDataContainer .foundation span {
+  font-size: 16px;
+  font-weight: 600;
+}
+.footerDataContainer .foundation p {
+  font-size: 14.5px;
+  padding-right: 15px;
+}/*# sourceMappingURL=FooterData.module.css.map */

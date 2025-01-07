@@ -1,1 +1,40 @@
-/*# sourceMappingURL=SearchBox.module.css.map */
+.searchBoxContainer {
+  display: flex;
+  position: relative;
+  width: 74%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.searchBoxContainer .searchIcon {
+  z-index: 1;
+  position: absolute;
+  bottom: 15px;
+  color: #7f7f7f;
+  font-size: 28px;
+  width: 75px;
+}
+.searchBoxContainer .searchBox {
+  width: 100%;
+  height: 57px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  padding-right: 60px;
+  border: none;
+  outline: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif, Geneva, Tahoma, sans-serif;
+  font-size: 17px;
+  color: #4a4a4a;
+}
+.searchBoxContainer .searchBox::-moz-placeholder {
+  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #9f9ea1;
+}
+.searchBoxContainer .searchBox::placeholder {
+  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #9f9ea1;
+}
+.searchBoxContainer .searchBox:focus-visible {
+  border: none;
+}/*# sourceMappingURL=SearchBox.module.css.map */
