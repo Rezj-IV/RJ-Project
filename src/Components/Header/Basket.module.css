@@ -1,0 +1,16 @@
+.ShoppingCartButton{
+    display: flex
+;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+    border: 1px solid #d7dee0;
+    padding: 8px;
+}
+.ShoppingCartIcon{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}

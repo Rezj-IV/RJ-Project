@@ -9,7 +9,7 @@
   z-index: 1;
   position: absolute;
   bottom: 15px;
-  color: #7f7f7f;
+  color: #757575;
   font-size: 28px;
   width: 75px;
 }
@@ -27,13 +27,15 @@
 }
 .searchBoxContainer .searchBox::-moz-placeholder {
   font-size: 14px;
+  font-weight: 600;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #9f9ea1;
+  color: #b1adad;
 }
 .searchBoxContainer .searchBox::placeholder {
   font-size: 14px;
+  font-weight: 600;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #9f9ea1;
+  color: #b1adad;
 }
 .searchBoxContainer .searchBox:focus-visible {
   border: none;

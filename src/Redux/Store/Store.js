@@ -1,17 +1,26 @@
 "use client";
+import session from "redux-persist/lib/storage/session";
 import storageLocal from "redux-persist/lib/storage";
-import UserReducer from "./slices/UserSlice";
+import UserReducer from "../Slices/UserSlice"
+import ShoppingCartReducer from "../Slices/ShoppingCartSlice"
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from "redux-persist";
 
-const configuration = {
-  key: "user",
+const StorageConfiguration = {
+  key: "itemCart",
   storage: storageLocal,
 };
+
+// const SessionConfiguration = {
+//   key: "",
+//   storage: session,
+  
+// };
 const rootReducer = combineReducers({
-  Users: UserReducer,
+  Users:UserReducer ,
+  ShoppingCart: ShoppingCartReducer,
 });
-const persistableReducer = persistReducer(configuration, rootReducer);
+const persistableReducer = persistReducer(StorageConfiguration, rootReducer);
 
 export const store = configureStore({
   reducer: persistableReducer,

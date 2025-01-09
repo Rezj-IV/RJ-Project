@@ -13,6 +13,7 @@ import Carusel from "@/Components/Carusel/Carusel";
 import Link from "next/link";
 import NonExistentSingleCard from "@/Components/Product/NonExistentSingleCard";
 import Color from "@/Components/Product/Color";
+import AddToCartButton from "@/Components/ShoppingCart/AddToCartButton";
 
 async function getAllSingleProduct(props) {
   const response = await repository.Get(`products/${props}`);
@@ -178,15 +179,7 @@ const singleProduct = async (props) => {
                     </div>
                   </div>
                 ) : null}
-                <div className={styles.shoppingCartBtnContainer}>
-                  <div className={styles.textShoppingCart}>
-                    <span>افزودن به سبد خرید</span>
-                  </div>
-
-                  <div className={styles.BsCartIcon}>
-                    <BsCart3 />
-                  </div>
-                </div>
+               <AddToCartButton data={data}/>
               </div>
             </div>
           </div>

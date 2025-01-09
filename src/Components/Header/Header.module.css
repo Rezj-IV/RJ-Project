@@ -14,3 +14,10 @@
     height: fit-content;
     display: flex;
 }
+.HeaderLeftSide{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: end;
+    gap: 35px;
+
+}

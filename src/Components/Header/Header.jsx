@@ -4,6 +4,7 @@ import SearchBox from "./SearchBox";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import Basket from "./Basket";
 const Header = () => {
   return (
     <div className={styles.HeaderContainer}>
@@ -14,9 +15,11 @@ const Header = () => {
         </Link>
         <SearchBox />
       </div>
-      <div>
+      <div className={styles.HeaderLeftSide}>
         
         <LogSignUI />
+
+        <Basket/>
       </div>
     </div>
   );

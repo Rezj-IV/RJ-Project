@@ -202,34 +202,6 @@
   font-weight: 600;
   margin-left: 5px;
 }
-.mainContainer .dataProductContainer .productDetailsContainer .productDetailsChild .shoppingCartBtnContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  border-radius: 10px;
-  background-color: #00387b;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 0px 20px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-.mainContainer .dataProductContainer .productDetailsContainer .productDetailsChild .shoppingCartBtnContainer .textShoppingCart {
-  flex-basis: 95%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.mainContainer .dataProductContainer .productDetailsContainer .productDetailsChild .shoppingCartBtnContainer .BsCartIcon {
-  flex-basis: 5%;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  font-size: 17px;
-}
 .mainContainer .caruselContainer {
   width: 100%;
   height: -moz-fit-content;
