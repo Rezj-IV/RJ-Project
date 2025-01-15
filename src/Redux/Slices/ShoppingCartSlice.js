@@ -56,6 +56,7 @@ const ShoppingCartSlice = createSlice({
     },
     removeAll: (state, action) => {
       state.items = [];
+      state.totalCount=0
     },
   },
 });

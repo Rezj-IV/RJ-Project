@@ -1,5 +1,5 @@
 import React from "react";
-import * as repository from "../../../../RestConfig/RestRequest";
+import * as repository from "../../../../../RestConfig/RestRequest";
 import styles from "./singleProduct.module.scss";
 import Image from "next/image";
 import ImageModal from "@/Components/Modal/ImageModal";
@@ -49,6 +49,8 @@ const singleProduct = async (props) => {
         <div className={styles.mainContainer}>
           <div className={styles.dataProductContainer}>
             <div className={styles.descriptionContainer}>
+         
+            
               <div className={styles.nameContainer}>
                 <p className={styles.name}>{data.name}</p>
                 <p className={styles.nameb}>{data.nameB}</p>
@@ -76,15 +78,16 @@ const singleProduct = async (props) => {
               </div>
 
               <div className={styles.imageContainer}>
-                {/* {data.incredibleOffers === true ? (
-            <Image
-              className={`${styles.incredibleOfferImage}`}
-              alt="IncredibleOffer"
-              src="/IconImages/IncredibleOffer.png"
-              width={110}
-              height={12}
-            />
-          ) : null} */}
+              <div className={styles.offerTextContainer}>
+              {data.incredibleOffers === true ? (
+                <pre className={styles.offerText}>
+                  𝓡𝓙
+                  <br />
+                  𝕆𝕗𝕗
+                  <i>％ </i>
+                </pre>
+              ) : null}
+              </div>
                 <div className={styles.prdImage}>
                   <Image
                     src={data.indexImageUrl}
@@ -103,6 +106,10 @@ const singleProduct = async (props) => {
                 </div>
               </div>
             </div>
+
+
+
+
 
             <div className={styles.productDetailsContainer}>
               <div className={styles.productDetailsChild}>
@@ -179,7 +186,7 @@ const singleProduct = async (props) => {
                     </div>
                   </div>
                 ) : null}
-               <AddToCartButton data={data}/>
+                <AddToCartButton data={data} />
               </div>
             </div>
           </div>

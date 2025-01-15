@@ -1,9 +1,34 @@
+"use client";
 import React from "react";
 import styles from "./MenuContents.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const MenuContents = async ({ itemId }) => {
+const MenuContents = ({ itemId }) => {
+  const rout = useRouter();
+
+  const mobileLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=mobile`);
+  };
+  const tabletLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=tablet`);
+  };
+  const smartWatchLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=smartWatch`);
+  };
+  const laptopLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=laptop`);
+  };
+  const computerLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=computer`);
+  };
+  const consoleLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=console`);
+  };
+  const handsfreeLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=handsfree`);
+  };
   return (
     <>
       {itemId === 1 ? (
@@ -11,61 +36,97 @@ const MenuContents = async ({ itemId }) => {
           <div className={styles.contents}>
             <div>
               <span className={styles.khat}>|</span>
-              <Link className={styles.headerContent} href="/Product/Class/mobile">
+              <Link
+                className={styles.headerContent}
+                href="/Product/Class/mobile"
+              >
                 برندهای مختلف گوشی موبایل
               </Link>
             </div>
-            <Link className={styles.linkContent} href="/">
+            <div
+              className={styles.linkContent}
+              onClick={() => mobileLink("اپل")}
+            >
               اپل{" "}
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => mobileLink("سامسونگ")}
+            >
               {" "}
               سامسونگ
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => mobileLink("شیائومی")}
+            >
               {" "}
               شیائومی
-            </Link>
+            </div>
           </div>
           <div className={styles.contents}>
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link className={styles.headerContent} href="/Product/Class/tablet">
+              <Link
+                className={styles.headerContent}
+                href="/Product/Class/tablet"
+              >
                 تبلت
               </Link>
             </div>
-            <Link className={styles.linkContent} href="/">
+            <div
+              className={styles.linkContent}
+              onClick={() => tabletLink("اپل")}
+            >
               اپل{" "}
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => tabletLink("سامسونگ")}
+            >
               {" "}
               سامسونگ
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => tabletLink("شیائومی")}
+            >
               {" "}
               شیائومی
-            </Link>
+            </div>
           </div>
           <div className={styles.contents}>
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link className={styles.headerContent} href="/Product/Class/smartWatch">
+              <Link
+                className={styles.headerContent}
+                href="/Product/Class/smartWatch"
+              >
                 ساعت هوشمند
               </Link>
             </div>
-            <Link className={styles.linkContent} href="/">
+            <div
+              className={styles.linkContent}
+              onClick={() => smartWatchLink("اپل")}
+            >
               اپل{" "}
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => smartWatchLink("سامسونگ")}
+            >
               {" "}
               سامسونگ
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => smartWatchLink("شیائومی")}
+            >
               {" "}
               شیائومی
-            </Link>
+            </div>
           </div>
         </div>
       ) : null}
@@ -76,87 +137,138 @@ const MenuContents = async ({ itemId }) => {
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link href="/Product/Class/laptop" className={styles.headerContent}>
+              <Link
+                href="/Product/Class/laptop"
+                className={styles.headerContent}
+              >
                 لپ تاپ
               </Link>
             </div>
-            <Link className={styles.linkContent} href="/">
+            <div
+              className={styles.linkContent}
+              onClick={() => laptopLink("مک بوک")}
+            >
               {" "}
               مک بوک
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => laptopLink("msi")}
+            >
               {" "}
               لپ‌تاپ ام اس آی{" "}
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => laptopLink("ایسوس")}
+            >
               {" "}
               لپ‌تاپ ایسوس{" "}
-            </Link>
+            </div>
           </div>
           <div className={styles.contents}>
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link href="/Product/Class/computer" className={styles.headerContent}>
+              <Link
+                href="/Product/Class/computer"
+                className={styles.headerContent}
+              >
                 کامپیوتر
               </Link>
             </div>
-            <Link className={styles.linkContent} href="/">
+            <div
+              className={styles.linkContent}
+              onClick={() => computerLink("allInOne")}
+            >
               All in one{" "}
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => computerLink("miniPc")}
+            >
               Mini pc{" "}
-            </Link>
-            <Link className={styles.linkContent} href="">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => computerLink("assembledCase")}
+            >
               {" "}
               کیس اسمبل شده
-            </Link>
+            </div>
           </div>
           <div className={styles.contents}>
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link href="/Product/Class/console" className={styles.headerContent}>
+              <Link
+                href="/Product/Class/console"
+                className={styles.headerContent}
+              >
                 {" "}
                 کنسول بازی
               </Link>
             </div>
-            <Link className={styles.linkContent} href="/">
+            <div
+              className={styles.linkContent}
+              onClick={() => consoleLink("ps5")}
+            >
               Ps5{" "}
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => consoleLink("ps4")}
+            >
               {" "}
               Ps4
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => consoleLink("xbox")}
+            >
               {" "}
               Xbox
-            </Link>
+            </div>
           </div>
           <div className={styles.contents}>
             <div>
               <span className={styles.khat}>|</span>
 
-              <Link href="/Product/Class/handsfree" className={styles.headerContent}>
+              <Link
+                href="/Product/Class/handsfree"
+                className={styles.headerContent}
+              >
                 {" "}
                 هندزفری
               </Link>
             </div>
-            <Link className={styles.linkContent} href="/">
+            <div
+              className={styles.linkContent}
+              onClick={() => handsfreeLink("اپل")}
+            >
               اپل{" "}
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => handsfreeLink("سامسونگ")}
+            >
               {" "}
               سامسونگ
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => handsfreeLink("شیائومی")}
+            >
               {" "}
               شیائومی{" "}
-            </Link>
-            <Link className={styles.linkContent} href="/">
+            </div>
+            <div
+              className={styles.linkContent}
+              onClick={() => handsfreeLink("انکر")}
+            >
               {" "}
               انکر{" "}
-            </Link>
+            </div>
           </div>
         </div>
       ) : null}

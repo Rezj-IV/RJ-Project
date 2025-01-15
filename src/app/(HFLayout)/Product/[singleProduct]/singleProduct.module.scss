@@ -7,6 +7,10 @@ $delText: #8e9bbb;
 
 $borderColor: #8c9ab9;
 $ShText : rgb(34 60 120/1);
+
+
+
+
 .mainContainer {
     padding: 0 135px;
 
@@ -14,19 +18,20 @@ $ShText : rgb(34 60 120/1);
         margin-top: 50px;
         display: flex;
 
+
         .descriptionContainer {
+            display: flex;
+            border: 1px solid $gray;
             flex-basis: 72%;
-            padding: 40px;
+            padding: 10px 40px 40px 15px;
             width: 100%;
             height: 740px;
-            border: 1px solid $gray;
             border-radius: 13px;
-            display: flex;
             justify-content: space-between;
 
             .nameContainer {
                 flex-basis: 57%;
-
+                padding-top: 30px;
 
                 .name {
                     font-size: 18px;
@@ -65,7 +70,7 @@ $ShText : rgb(34 60 120/1);
                     }
                 }
 
-              
+
 
             }
 
@@ -76,8 +81,28 @@ $ShText : rgb(34 60 120/1);
                 width: 100%;
                 align-items: center;
                 justify-content: center;
-
-                .incredibleOfferImage {}
+                padding-top: 10px;
+                .offerTextContainer {
+                    color: $lightBlue;
+                    font-style: italic;
+                    margin-bottom: 5px;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    height: 45px;
+                    width: 100%;
+                    font-size: 19px;
+                
+                    .offerText {
+                        display: flex;
+                    }
+                
+                    i {
+                
+                        font-size: 32px;
+                
+                    }
+                }
 
                 .prdImage {
                     flex-basis: 80%;
@@ -280,7 +305,7 @@ $ShText : rgb(34 60 120/1);
                     }
                 }
 
-               
+
             }
 
 
@@ -289,7 +314,7 @@ $ShText : rgb(34 60 120/1);
         }
     }
 
-    
+
     .caruselContainer {
         width: 100%;
         height: fit-content;
@@ -298,7 +323,7 @@ $ShText : rgb(34 60 120/1);
         margin: 60px auto;
         overflow: hidden;
         padding: 30px 20px;
-    
+
         .titleCarusel {
             display: flex;
             justify-content: space-between;
@@ -307,20 +332,20 @@ $ShText : rgb(34 60 120/1);
             background-color: transparent;
             font-weight: 600;
             padding: 0 27px;
-    
+
             p {
                 font-size: 20px;
-    
+
             }
-    
+
             span {
                 font-size: 20px;
             }
-    
+
             .rjLand {
                 padding-right: 10px;
             }
-    
+
             .ShowAll {
                 display: flex;
                 align-items: center;
@@ -328,12 +353,12 @@ $ShText : rgb(34 60 120/1);
                 text-decoration: none;
                 color: $ShText;
                 height: fit-content;
-    
-    
+
+
             }
-    
+
             .AiOutlineLeft {
-    
+
                 margin-right: 10px;
                 font-size: 14px;
             }

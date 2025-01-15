@@ -1,7 +1,6 @@
 import React from "react";
 import * as repository from "../../../RestConfig/RestRequest";
 import SlideCarousel from "../Carusel/SlideCarousel";
-import IncredibleOffersList from "@/app/IncredibleOffers/page";
 
 async function getAllProductInc() {
   const response = await repository.Get("products/incredibleOffers");

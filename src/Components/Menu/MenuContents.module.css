@@ -30,6 +30,7 @@
 .contentsContainer .contents .linkContent, .contentsContainerA .contents .linkContent {
   text-decoration: none;
   font-size: 15px;
+  cursor: pointer;
   color: #717171;
 }
 .contentsContainer .contents .linkContent:hover, .contentsContainerA .contents .linkContent:hover {

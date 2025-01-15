@@ -7,8 +7,8 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import * as repository from "../../../RestConfig/RestRequest";
-import { setToken } from "@/Components/StoreRedux/slices/UserSlice";
 import Link from "next/link";
+import { setToken } from "@/Redux/Slices/UserSlice";
 
 const LogIn = () => {
   const dispatch = useDispatch();

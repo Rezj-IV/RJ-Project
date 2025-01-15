@@ -1,29 +1,22 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import * as repository from "../../../RestConfig/RestRequest";
 import Image from "next/image";
 import styles from "./HomeImages.module.scss";
 import Link from "next/link";
 import { BsPatchCheck } from "react-icons/bs";
-async function getAllHomeImages() {
-  const response = await repository.Get("HomeImages ");
-  if (response.ok) {
-    const data = await response.json();
-    return data;
-  } else {
-    console.log("دیتا به درستی از سرور دریافت نشد");
-  }
-}
+import { useRouter, useSearchParams } from "next/navigation";
 
-export const HomeImagesFirstSection = async () => {
-  const image = await getAllHomeImages();
-  let result = image.filter((item) => {
+export const HomeImagesFirstSection = ({ images }) => {
+  let result = images.filter((item) => {
     return item.id === 1;
   });
-
-  console.log(result);
+  const params = new URL(
+    "http://localhost:3000/Product/categoryType/سامسونگ/?class=mobile"
+  );
   return (
     <div>
-      <Link href="/">
+      <Link href={params}>
         <div className={styles.FirstSectionContainer}>
           <Image
             className={styles.homeImage}
@@ -37,12 +30,16 @@ export const HomeImagesFirstSection = async () => {
   );
 };
 
-export const HomeImagesSecondSection = async () => {
-  const image = await getAllHomeImages();
-  let result = image.filter((item) => {
+export const HomeImagesSecondSection = ({ images }) => {
+  let result = images.filter((item) => {
     return item.bestMobile === true;
   });
+  const rout = useRouter();
 
+  const clickHandler = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=mobile`);
+  };
+  console.log();
   return (
     <div>
       <h3 className={styles.bestMobile}>برترین‌های موبایل</h3>
@@ -50,7 +47,7 @@ export const HomeImagesSecondSection = async () => {
       <div className={styles.SecondSectionContainer}>
         {result.map((item) => {
           return (
-            <div>
+            <div key={item.id} onClick={() => clickHandler(item.name)}>
               <Image
                 className={styles.SecondHomeImage}
                 width={180}
@@ -67,32 +64,37 @@ export const HomeImagesSecondSection = async () => {
   );
 };
 
-export const HomeImagesThirdSection = async () => {
-  const image = await getAllHomeImages();
-  let result = image.filter((item) => {
+export const HomeImagesThirdSection = ({ images }) => {
+  let result = images.filter((item) => {
     return item.id === 21;
   });
-
-  console.log(result);
+  const params = new URL(
+    "http://localhost:3000/Product/categoryType/شیائومی /?class=mobile"
+  );
   return (
     <div>
-      <div className={styles.FirstSectionContainer}>
-        <Image
-          className={styles.homeImage}
-          fill
-          alt={result[0].name}
-          src={result[0].indexImageUrl}
-        />
-      </div>
+      <Link href={params}>
+        <div className={styles.FirstSectionContainer}>
+          <Image
+            className={styles.homeImage}
+            fill
+            alt={result[0].name}
+            src={result[0].indexImageUrl}
+          />
+        </div>
+      </Link>
     </div>
   );
 };
-export const HomeImagesFourthSection = async () => {
-  const image = await getAllHomeImages();
-  let result = image.filter((item) => {
+export const HomeImagesFourthSection = ({ images }) => {
+  let result = images.filter((item) => {
     return item.bestLaptop === true;
   });
+  const rout = useRouter();
 
+  const clickHandler = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=laptop`);
+  };
   return (
     <div>
       <h3 className={styles.bestMobile}>برترین‌های لپ‌تاپ</h3>
@@ -100,7 +102,7 @@ export const HomeImagesFourthSection = async () => {
       <div className={styles.SecondSectionContainer}>
         {result.map((item) => {
           return (
-            <div>
+            <div key={item.id} onClick={() => clickHandler(item.name)}>
               <Image
                 className={styles.SecondHomeImage}
                 width={180}
@@ -117,39 +119,58 @@ export const HomeImagesFourthSection = async () => {
   );
 };
 
-export const HomeImagesFifthSection = async () => {
-  const image = await getAllHomeImages();
-
-  let result = image.filter((item) => {
-    return item.id === 2 || item.id === 3;
+export const HomeImagesFifthSection = ({ images }) => {
+  let result1 = images.filter((item) => {
+    return item.id === 2;
   });
+  let result2 = images.filter((item) => {
+    return item.id === 3;
+  });
+  const rout = useRouter();
 
+  const params = new URL(
+    "http://localhost:3000/Product/categoryType/اپل /?class=handsfree"
+  );
   return (
     <div>
       <div className={styles.FifthSectionContainer}>
-        {result.map((item) => {
-          return (
-            <div className={styles.FifthSection}>
-              <Image
-                className={styles.FifthHomeImage}
-                fill
-                alt={item.name}
-                src={item.indexImageUrl}
-              />
-            </div>
-          );
-        })}
+        <div className={styles.FifthSection}>
+          <Link href={params}>
+            <Image
+              className={styles.FifthHomeImage}
+              fill
+              alt={result1[0].name}
+              src={result1[0].indexImageUrl}
+            />
+          </Link>
+        </div>
+
+        <div className={styles.FifthSection}>
+          <Link href="Product/Class/console">
+            <Image
+              className={styles.FifthHomeImage}
+              fill
+              alt={result2[0].name}
+              src={result2[0].indexImageUrl}
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
-export const HomeImagesSixthSection = async () => {
-  const image = await getAllHomeImages();
-  let result = image.filter((item) => {
+export const HomeImagesSixthSection = ({ images }) => {
+  
+  let result = images.filter((item) => {
     return item.bestHandFree === true;
   });
 
+  const rout = useRouter();
+
+  const clickHandler = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=handsfree`);
+  };
   return (
     <div>
       <h3 className={styles.bestMobile}>برترین‌های هندزفری</h3>
@@ -157,7 +178,7 @@ export const HomeImagesSixthSection = async () => {
       <div className={styles.SecondSectionContainer}>
         {result.map((item) => {
           return (
-            <div>
+            <div key={item.id} onClick={() => clickHandler(item.name)}>
               <Image
                 className={styles.SecondHomeImage}
                 width={180}
@@ -174,19 +195,25 @@ export const HomeImagesSixthSection = async () => {
   );
 };
 
-export const HomeImagesSeventhSection = async () => {
-  const image = await getAllHomeImages();
-
-  let result = image.filter((item) => {
+export const HomeImagesSeventhSection = ({ images }) => {
+  let result = images.filter((item) => {
     return item.id === 4 || item.id === 5;
   });
+  const rout = useRouter();
 
+  const clickHandler = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=laptop`);
+  };
   return (
     <div>
       <div className={styles.FifthSectionContainer}>
         {result.map((item) => {
           return (
-            <div className={styles.FifthSection}>
+            <div
+              key={item.id}
+              className={styles.FifthSection}
+              onClick={() => clickHandler(item.name)}
+            >
               <Image
                 className={styles.FifthHomeImage}
                 fill
@@ -201,13 +228,10 @@ export const HomeImagesSeventhSection = async () => {
   );
 };
 
-export const HomeImagesEighthSection = async () => {
-  const image = await getAllHomeImages();
-
-  let result = image.filter((item) => {
+export const HomeImagesEighthSection = ({ images }) => {
+  let result = images.filter((item) => {
     return item.selectedBrands === true;
   });
-  console.log(result);
 
   return (
     <div className={styles.EighthSectionContainer}>
@@ -218,7 +242,7 @@ export const HomeImagesEighthSection = async () => {
         </div>
         {result.map((item) => {
           return (
-            <Link href={`brand/${item.name}`}>
+            <Link href={`/brand/${item.name}`} key={item.id}>
               <div className={styles.EighthSection}>
                 <Image
                   width={130}
@@ -235,10 +259,8 @@ export const HomeImagesEighthSection = async () => {
   );
 };
 
-export const HomeImagesNinthSection = async () => {
-  const image = await getAllHomeImages();
-
-  let result = image.filter((item) => {
+export const HomeImagesNinthSection = ({ images }) => {
+  let result = images.filter((item) => {
     return item.digital === true;
   });
 
@@ -249,8 +271,12 @@ export const HomeImagesNinthSection = async () => {
       <div className={styles.DigitalContainer}>
         {result.map((item) => {
           return (
-            <div>
-              {item.id === 24 || item.id === 25 || item.id === 26 || item.id === 27 ||item.id === 28?  (
+            <div key={item.id}>
+              {item.id === 24 ||
+              item.id === 25 ||
+              item.id === 26 ||
+              item.id === 27 ||
+              item.id === 28 ? (
                 <Link href={`/Product/Class/${item.linkName}`}>
                   <div className={styles.Digital}>
                     <Image
@@ -265,21 +291,22 @@ export const HomeImagesNinthSection = async () => {
                     </div>
                   </div>
                 </Link>
-              ) : 
-              <Link href={`/brand/${item.linkName}`}>
-              <div className={styles.Digital}>
-                <Image
-                  width={120}
-                  height={120}
-                  alt={item.name}
-                  src={`/Digital/${item.indexImageUrl}`}
-                />
+              ) : (
+                <Link href={`/brand/${item.linkName}`}>
+                  <div className={styles.Digital}>
+                    <Image
+                      width={120}
+                      height={120}
+                      alt={item.name}
+                      src={`/Digital/${item.indexImageUrl}`}
+                    />
 
-                <div className={styles.textDigital}>
-                  <span>{item.name}</span>
-                </div>
-              </div>
-            </Link>}
+                    <div className={styles.textDigital}>
+                      <span>{item.name}</span>
+                    </div>
+                  </div>
+                </Link>
+              )}
             </div>
           );
         })}
@@ -288,48 +315,55 @@ export const HomeImagesNinthSection = async () => {
   );
 };
 
-export const HomeImagesTenthSection = async () => {
-  const image = await getAllHomeImages();
-
-  let result = image.filter((item) => {
-    return item.id === 22 || item.id === 23;
+export const HomeImagesTenthSection = ({ images }) => {
+  let result1 = images.filter((item) => {
+    return item.id === 22 ;
+  });
+  let result2 = images.filter((item) => {
+    return item.id === 23;
   });
 
   return (
     <div>
       <div className={styles.FifthSectionContainer}>
-        {result.map((item) => {
-          return (
             <div className={styles.FifthSection}>
-              <Image
-                className={styles.FifthHomeImage}
-                fill
-                alt={item.name}
-                src={item.indexImageUrl}
-              />
+              <Link href="/">
+                <Image
+                  className={styles.FifthHomeImage}
+                  fill
+                  alt={result1[0].name}
+                  src={result1[0].indexImageUrl}
+                />
+              </Link>
             </div>
-          );
-        })}
+
+            <div className={styles.FifthSection}>
+              <Link href="/Product/Class/handsfree">
+                <Image
+                  className={styles.FifthHomeImage}
+                  fill
+                  alt={result2[0].name}
+                  src={result2[0].indexImageUrl}
+                />
+              </Link>
+            </div>
+
       </div>
     </div>
   );
 };
 
-
-export const HomeImagesEleventhSection = async () => {
-  const image = await getAllHomeImages();
-
-  let result = image.filter((item) => {
-    return item.linkName === "weblog" ;
+export const HomeImagesEleventhSection = ({ images }) => {
+  let result = images.filter((item) => {
+    return item.linkName === "weblog";
   });
-  console.log(result);
 
   return (
     <div className={styles.MainEleventhSectionContainer}>
       <div className={styles.EleventhSectionContainer}>
         {result.map((item) => {
           return (
-            <div className={styles.EleventhSection}>
+            <div key={item.id} className={styles.EleventhSection}>
               <Image
                 className={styles.EleventhHomeImage}
                 fill

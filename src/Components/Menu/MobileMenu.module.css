@@ -6,10 +6,11 @@
   align-items: center;
   width: -moz-fit-content;
   width: fit-content;
-  top: 0x;
 }
 .navbar ul {
+  position: absolute;
   border-top: 1px solid rgb(227, 227, 227);
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

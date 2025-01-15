@@ -7,7 +7,7 @@ import IncCarusel from "@/Components/Carusel/IncCarusel";
 import Modal from "@/Components/Modal/ImageModal";
 import MainSlider from "@/Components/Slider/mainSlider";
 import ProductCarusel from "@/Components/Product/ProductCarusel";
-import * as repository from "../../RestConfig/RestRequest";
+import * as repository from "../../../RestConfig/RestRequest";
 import SixIcon from "@/Components/SixIcon/SixIcon";
 import Footer from "@/Components/Footer/Footer";
 
@@ -20,22 +20,26 @@ async function getAllProduct() {
     console.log("دیتا به درستی از سرور دریافت نشد");
   }
 }
+async function getAllHomeImages() {
+  const response = await repository.Get("HomeImages");
+  if (response.ok) {
+    const data = await response.json();
+    return data;
+  } else {
+    console.log("دیتا به درستی از سرور دریافت نشد");
+  }
+}
 export default async function Home() {
   const data = await getAllProduct();
-  console.log(data);
+  const homeImages = await getAllHomeImages();
   return (
     <>
-      <Header />
-
-      <MainMenu />
       <MainSlider />
-
       <div className={styles.PdContainer}>
         <SixIcon />
         <IncCarusel />
-        <ProductCarusel data={data} />
+        <ProductCarusel data={data} homeImages={homeImages} />
       </div>
-      <Footer/>
     </>
   );
 }

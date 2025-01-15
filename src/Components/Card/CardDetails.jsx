@@ -38,11 +38,16 @@ const CardDetails = ({ product }) => {
     <div className={styles.cardDetailsConrainer}>
       <div className={styles.cardDetail}>
         <div className={styles.filterLogo}>
-          <BsFilter className={styles.FilterIcon}/>
+          <BsFilter className={styles.FilterIcon} />
           <p>فیلترها</p>
         </div>
+        
         <div className={styles.categories}>
-          <p>دسته بندی ها</p>
+          <p>فقط کالا های موجود</p>
+
+          <p>فیلتر بر اساس قیمت</p>
+          <p>برند ها</p>
+          {/* <p>دسته بندی ها</p>
           <input
             type="checkbox"
             id="mobile"
@@ -92,7 +97,7 @@ const CardDetails = ({ product }) => {
               checkHandler("console", checked);
             }}
           />
-          <label>console</label>
+          <label>console</label> */}
         </div>
 
         <div className={styles.mainDropdown}></div>

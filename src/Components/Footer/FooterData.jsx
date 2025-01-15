@@ -5,7 +5,6 @@ import { CgMail } from "react-icons/cg";
 import Image from "next/image";
 import Link from "next/link";
 const FooterData = ({ FtData }) => {
-  console.log(FtData);
   return (
     <div className={styles.footerDataContainer}>
       <div className={styles.footerData}>
@@ -106,7 +105,7 @@ const FooterData = ({ FtData }) => {
         </div>
         <div className={styles.symbolImage}>
           <Image
-            width={48}
+            width={45}
             height={60}
             alt=""
             src="/Symbol/National Union.svg"

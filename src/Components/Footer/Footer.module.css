@@ -3,7 +3,7 @@
     width: 98.5%;
     height: 750px;
     display: block;
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
     border-radius: 30px;
     overflow: hidden;
     padding: 0 150px;
@@ -17,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgb(201, 201, 201);
-    padding: 0 10px;
+    padding: 20px 10px 0 10px;
 }
 
 .goUp {

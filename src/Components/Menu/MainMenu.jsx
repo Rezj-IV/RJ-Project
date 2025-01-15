@@ -3,8 +3,8 @@ import Link from "next/link";
 import { AiOutlineMenu } from "react-icons/ai";
 import { CiPercent } from "react-icons/ci";
 import { LuBadgePercent, LuFlame } from "react-icons/lu";
-
 import MobileMenu from "./MobileMenu";
+
 const MainMenu = () => {
   return (
     <div className={styles.menuContainer}>

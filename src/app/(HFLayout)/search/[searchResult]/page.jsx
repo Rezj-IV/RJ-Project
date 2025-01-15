@@ -1,5 +1,5 @@
 import React from "react";
-import * as repository from "../../../../RestConfig/RestRequest";
+import * as repository from "../../../../../RestConfig/RestRequest";
 import Image from "next/image";
 import CardDetails from "@/Components/Card/CardDetails";
 import styles from "./SearchResult.module.css"

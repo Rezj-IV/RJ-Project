@@ -1,5 +1,5 @@
 import React from "react";
-import * as repository from "../../../../RestConfig/RestRequest";
+import * as repository from "../../../../../RestConfig/RestRequest";
 import CardDetails from "@/Components/Card/CardDetails";
 async function getAllSameCategory(props) {
   const response = await repository.Get(`products/category/${props}`);

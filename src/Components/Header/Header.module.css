@@ -10,9 +10,10 @@
 .HeaderRightSide {
     align-items: center;
     flex-basis: 50%;
-    gap: 43px;
+    gap: 40px;
     height: fit-content;
     display: flex;
+  
 }
 .HeaderLeftSide{
     flex-basis: 50%;
@@ -20,4 +21,7 @@
     justify-content: end;
     gap: 35px;
 
+}
+.RJLandLogo{
+margin-top: 10px;
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import * as repository from "../../../../../RestConfig/RestRequest";
+import * as repository from "../../../../../../RestConfig/RestRequest";
 import CardDetails from "@/Components/Card/CardDetails";
-async function getAllProduct() {
-  const response = await repository.Get("products");
+async function getAllProduct(props) {
+  const response = await repository.Get(`products/type/${props}`);
   if (response.ok) {
     const data = await response.json();
     return data;
@@ -12,20 +12,19 @@ async function getAllProduct() {
 }
 const ClassData = async (props) => {
   const context = await props.params;
-  const data = await getAllProduct();
-
+  const SearchParams = await props.searchParams;
+  const data = await getAllProduct(context.ClassData);
   let result = data.filter((item) => {
-    return item.type.includes(context.ClassData);
-  });
-
+    return item.gaming === true;
+  })
   return (
     <div>
-      {result && (
-        <div>
-          <CardDetails product={result} />
-        </div>
-      )}
-   
+      <div>
+       
+        <CardDetails product={data} />
+
+      
+      </div>
     </div>
   );
 };

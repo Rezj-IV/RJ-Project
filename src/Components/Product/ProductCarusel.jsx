@@ -17,8 +17,8 @@ import {
   HomeImagesTenthSection,
   HomeImagesThirdSection,
 } from "./HomeImages";
-import SlideCarouselCard from "../Carusel/SlideCarouselCard";
-const ProductCarusel = ({ data }) => {
+
+const ProductCarusel = ({ data , homeImages }) => {
   let result = data.filter((item) => {
     return item.flagBearer === true;
   });
@@ -35,12 +35,10 @@ const ProductCarusel = ({ data }) => {
     return item.bestSelling === true;
   });
 
-  console.log(data);
-  console.log(result);
+ 
   return (
     <div>
-      <HomeImagesFirstSection />
-
+      <HomeImagesFirstSection images={homeImages}/> 
       <div className={styles.caruselContainer}>
         <div className={styles.titleCarusel}>
           <p>پرچمداران هوشمند</p>
@@ -55,8 +53,8 @@ const ProductCarusel = ({ data }) => {
 
         <Carusel data={result} />
       </div>
-      <HomeImagesSecondSection />
-      <HomeImagesThirdSection />
+      <HomeImagesSecondSection images={homeImages}/>
+      <HomeImagesThirdSection images={homeImages}/>
 
       <div className={styles.caruselContainer}>
         <div className={styles.titleCarusel}>
@@ -73,8 +71,8 @@ const ProductCarusel = ({ data }) => {
         </div>
         <Carusel data={result2} />
       </div>
-      <HomeImagesFourthSection />
-      <HomeImagesFifthSection />
+      <HomeImagesFourthSection images={homeImages}/>
+      <HomeImagesFifthSection images={homeImages}/>
 
       <div className={styles.caruselContainer}>
         <div className={styles.titleCarusel}>
@@ -86,9 +84,9 @@ const ProductCarusel = ({ data }) => {
         </div>
         <Carusel data={result3} />
       </div>
-      <HomeImagesSixthSection />
-      <HomeImagesSeventhSection />
-      <HomeImagesEighthSection />
+      <HomeImagesSixthSection images={homeImages}/>
+      <HomeImagesSeventhSection images={homeImages}/>
+      <HomeImagesEighthSection images={homeImages}/>
 
       <div className={styles.caruselContainer}>
         <div className={styles.titleCarusel}>
@@ -104,9 +102,9 @@ const ProductCarusel = ({ data }) => {
         <Carusel data={result4} />
       </div>
 
-      <HomeImagesNinthSection />
+      <HomeImagesNinthSection images={homeImages}/>
 
-      <HomeImagesTenthSection />
+      <HomeImagesTenthSection images={homeImages}/>
 
       <div className={styles.caruselContainer}>
         <div className={styles.titleCarusel}>
@@ -135,7 +133,7 @@ const ProductCarusel = ({ data }) => {
           </Link>
         </div>
         {}
-        <HomeImagesEleventhSection />
+        <HomeImagesEleventhSection images={homeImages}/>
       </div>
     </div>
   );

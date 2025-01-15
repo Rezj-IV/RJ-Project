@@ -5,9 +5,9 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import * as repository from "../../../RestConfig/RestRequest";
 import styles from "./Signup.module.scss";
-import { setToken } from "@/Components/StoreRedux/slices/UserSlice";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { setToken } from "@/Redux/Slices/UserSlice";
 const SignUp = () => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -15,7 +15,7 @@ const SignUp = () => {
     name: Yup.string().required("نام خود را وارد کنید"),
     lastname: Yup.string().required("نام خانوادگی خود را وارد کنید"),
     username: Yup.string().required("نام کاربری خود را وارد کنید"),
-    mobilenumber: Yup.string().required("شماره همراه خود را وارد کنید"),
+    mobilenumber: Yup.number().required("شماره همراه خود را وارد کنید"),
     password: Yup.string().required("پسورد  خود را وارد کنید"),
   });
 
@@ -23,7 +23,7 @@ const SignUp = () => {
     name: "",
     lastname: "",
     username: "",
-    mobilenumber: "",
+    mobilenumber:"" ,
     password: "",
   };
 
@@ -35,7 +35,7 @@ const SignUp = () => {
       .then((response) => {
         console.log(response.data);
         if (response.data.id === 0) {
-          alert("!!نام کاربری وجود دارد ");
+          alert("نام کاربری وجود دارد !!");
         } else {
           repository
             .Post("users/login", values)
@@ -51,18 +51,8 @@ const SignUp = () => {
   return (
     <>
       <div className={styles.mainContainer}>
-        {/* <div className={styles.sginContainer}> */}
         <div className={styles.FieldContainer}>
-          {/* <Image
-            src="/logo/rjLogo.png"
-            alt="rj land"
-            width={150
-              
-            }
-            height={150
-              
-            }
-          /> */}
+     
 
           <p className={styles.title}> ثبت نام </p>
 
@@ -133,7 +123,7 @@ const SignUp = () => {
               <div className={styles.form__group}>
                 <Field
                   name="password"
-                  type="text"
+                  type="password"
                   className={styles.form__field}
                   placeholder="کلمه عبور"
                 />
@@ -155,16 +145,6 @@ const SignUp = () => {
           </Formik>
         </div>
 
-        {/* <div className={styles.imageSignupContainer}>
-          <Image
-            className={styles.imageSignup}
-            src="/images/signUpImage.webp"
-            alt="Signup Image"
-            width={500}
-            height={450}
-          />
-        </div> */}
-        {/* </div> */}
       </div>
     </>
   );

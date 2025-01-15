@@ -9,8 +9,8 @@ const Header = () => {
   return (
     <div className={styles.HeaderContainer}>
       <div className={styles.HeaderRightSide}>
-        <Link href="/">
-        <Image src="/logo/headerLogo.jpeg"  width={80} height={80} alt="headerLogo"/>
+        <Link href="/" className={styles.RJLandLogo}>
+        <Image src="/logo/RJLand.png"  width={105} height={105} alt="RJLand"/>
 
         </Link>
         <SearchBox />

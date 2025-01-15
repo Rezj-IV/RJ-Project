@@ -15,9 +15,13 @@ const SearchBox = () => {
 
   return (
     <div className={styles.searchBoxContainer}>
+        <Link href={`search/${textSearch}`}>
       <CiSearch className={styles.searchIcon}/>
+
+      
+      </Link>
       <input type="text" onChange={changeHandler} className={styles.searchBox} placeholder="محصول، برند یا دسته مورد نظرتان را جستجو کنید" />
-      <Link href={`search/${textSearch}`}>search</Link>
+    
     </div>
   );
 };

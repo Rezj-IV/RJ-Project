@@ -4,6 +4,7 @@ $delText: #8e9bbb;
 $lightBlue: #14a0de;
 
 .container {
+    margin-top: 30px;
     .informationBarContainer {
         width: 100%;
         background-color: $colorBar;
@@ -18,18 +19,20 @@ $lightBlue: #14a0de;
         top: 0;
         font-size: 14px;
         font-weight: 600;
-.barLink{
-    
-text-decoration: none;
-color: #242424;
-font-size: 14.5px;
-}
+
+        .barLink {
+
+            text-decoration: none;
+            color: #242424;
+            font-size: 14.5px;
+        }
 
     }
-.rightSide{
-    flex-basis: 70%;
 
-}
+    .rightSide {
+        flex-basis: 70%;
+
+    }
 
     .informationContainer {
         display: flex;
@@ -48,7 +51,7 @@ font-size: 14.5px;
                     height: 80px;
                     display: flex;
                     align-items: center;
-                    
+
 
                     span {
                         color: $iconColor;
@@ -99,10 +102,12 @@ font-size: 14.5px;
             display: flex;
             justify-content: end;
             margin-top: 45px;
+            position: sticky;
 
             .dataProduct {
+                top: 100px;
                 position: sticky;
-                top: 0;
+
 
                 border-radius: 15px;
                 box-shadow: 0px 1px 9px 0.5px #e9e9e9;
@@ -301,7 +306,7 @@ font-size: 14.5px;
 
 
     .commentsProduct {
-width: 100%;
-height: 500px;
+        width: 100%;
+        height: 500px;
     }
 }

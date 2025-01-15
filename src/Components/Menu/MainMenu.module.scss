@@ -12,11 +12,11 @@ $textColor: #5e5e5e;
 
 .menuContainer {
     display: flex;
-    height: 45px;
+    height: 50px;
     width: 100%;
     align-items: center;
     gap: 25px;
-    margin-bottom: 3px;
+    border-bottom: 1px solid #daddde;
 
     .productCategoriesContainer {
 
@@ -85,14 +85,12 @@ $textColor: #5e5e5e;
 
 .layer {
     display: none;
-    position: fixed;
 }
 
 .productCategoriesContainer:hover .layer {
     display: block;
-    z-index: 100;
-    // width: 100%;
-    // height: 100%;
+    z-index: 10;
+
 
 
 }

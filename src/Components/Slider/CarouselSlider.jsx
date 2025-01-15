@@ -6,7 +6,6 @@ import styles from "./CarouselSlider.module.css";
 import { NextArrowSlide, PrevArrowSlide } from "./CaruselSliderArrow";
 
 const CarouselSlider = ({ imageSlider }) => {
-  console.log(imageSlider);
   var settings = {
     dots: true,
     // dotsClass :   `slick-dots ${styles.dots}`,

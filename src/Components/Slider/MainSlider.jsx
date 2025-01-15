@@ -14,14 +14,13 @@ async function getAllSlides() {
 }
 
 const MainSlider = async () => {
-  const slide= await getAllSlides();
-  console.log(slide);
-  console.log("object");
-  return(
+  const slide = await getAllSlides();
+
+  return (
     <div>
-<CarouselSlider imageSlider={slide}/>
+      <CarouselSlider imageSlider={slide} />
     </div>
-  )
+  );
 };
 
 export default MainSlider;

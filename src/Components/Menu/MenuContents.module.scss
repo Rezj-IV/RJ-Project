@@ -37,7 +37,7 @@
         .linkContent {
             text-decoration: none;
             font-size: 15px;
-
+            cursor: pointer;
 
             color: #717171;
             @include hover(rgb(46, 144, 242));
