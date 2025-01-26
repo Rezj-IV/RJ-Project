@@ -12,20 +12,14 @@ async function getAllProduct(props) {
 }
 const ClassData = async (props) => {
   const context = await props.params;
-  const SearchParams = await props.searchParams;
   const data = await getAllProduct(context.ClassData);
-  let result = data.filter((item) => {
-    return item.gaming === true;
-  })
-  return (
-    <div>
-      <div>
-       
-        <CardDetails product={data} />
 
-      
+  return (
+    <>
+      <div>
+        <CardDetails product={data} />
       </div>
-    </div>
+    </>
   );
 };
 

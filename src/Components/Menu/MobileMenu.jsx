@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import * as Repository from "../../../RestConfig/RestRequest";
 import MenuContents from "./MenuContents";
-import MainMenu from "./MainMenu";
 async function getAllContentMenu() {
   try {
     const response = await Repository.Get("ShowController");

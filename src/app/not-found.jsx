@@ -10,6 +10,7 @@ export default function NotFound() {
           alt="not-Found"
           width={1400}
           height={440}
+          priority
         />
         <div className={styles.returnHomeContainer}>
           <Link className={styles.returnHomeLink} href="/">بازگشت به صفحه اصلی</Link>

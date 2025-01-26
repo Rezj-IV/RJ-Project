@@ -1,7 +1,7 @@
 "use client"
 const { createSlice } = require("@reduxjs/toolkit");
 
-const initial_State = { token: "" };
+const initial_State = { token: " " };
 const UserSlice = createSlice({
   name: "UserSlice",
   initialState: initial_State,

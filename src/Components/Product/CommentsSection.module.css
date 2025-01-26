@@ -80,6 +80,7 @@
 .addComment .addCommentBtnContainer {
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 .addComment .addCommentBtnContainer .addCommentBtn {
   color: #ffffff;
@@ -109,7 +110,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 100;
   right: 0;
   top: 0px;
 }
@@ -179,20 +180,19 @@
   resize: none;
   padding: 12px;
   font-size: 18px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif, Geneva, Tahoma, sans-serif;
   color: #2b2b2b;
-}
-.containerModalComment .childModalComment .commentText .commentTextInput:focus {
-  border: 3px solid rgb(65, 192, 215);
+  outline: none;
 }
 .containerModalComment .childModalComment .commentText .commentTextInput::-moz-placeholder {
   font-size: 15px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif, Geneva, Tahoma, sans-serif;
   font-weight: 600;
   color: rgba(165, 165, 165, 0.791);
 }
 .containerModalComment .childModalComment .commentText .commentTextInput::placeholder {
   font-size: 15px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif, Geneva, Tahoma, sans-serif;
   font-weight: 600;
   color: rgba(165, 165, 165, 0.791);
 }
@@ -224,4 +224,34 @@
 }
 .containerModalComment .childModalComment .textCaptionContainer .textCaption {
   font-size: 12.5px;
+}
+
+.contentCommentsContainer {
+  height: 200px;
+  width: 100%;
+  margin-top: 40px;
+  box-shadow: 0px 0px 1px 0px #0043ff;
+  border-radius: 30px;
+  padding: 15px 40px;
+}
+
+.userComment {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ededed;
+  padding-right: 5px;
+  color: #272727;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.textComment {
+  padding-right: 10px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  color: #3b5578;
+  font-weight: 600;
 }/*# sourceMappingURL=CommentsSection.module.css.map */

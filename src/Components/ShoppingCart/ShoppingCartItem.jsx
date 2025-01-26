@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import styles from "./ShoppingCartItem.module.css";
 import ShoppingCartItemCountB from "./ShoppingCartItemCountB";
@@ -60,7 +60,7 @@ const ShoppingCartItem = ({ Product }) => {
             <div className={styles.mainPriceContainer}>
               {Product.priceWithDiscount === 0 ? (
                 <div className={`${styles.priceContainer}`}>
-                  <div className={styles.price}>
+                  <div className={styles.mainPrice}>
                     {Product.price
                       .toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}

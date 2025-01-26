@@ -7,6 +7,9 @@ import { PrevArrow } from "./CaruselArrow";
 import SlideCarouselCard from "./SlideCarouselCard";
 
 const Carusel = (props) => {
+  let result = props.data.filter((item) => {
+      return item.stock !== 0;
+    });
   let settings = {
     speed: 700,
     centerMode: true,
@@ -80,7 +83,7 @@ const Carusel = (props) => {
       rtl={true}
       slidesToScroll={1}
     >
-      {props.data.map((item) => (
+      {result.map((item) => (
         <SlideCarouselCard key={item.id} product={item} />
       ))}
     </Slider>

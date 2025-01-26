@@ -25,7 +25,7 @@
     margin: 0px 5px 10px 5px;
     box-shadow: 0px 0px 2px 0px #d9d9d9;
 
-
+    position: relative;
 }
 
 
@@ -45,10 +45,12 @@
     display: inline-block;
     width: 100%;
 }
-.showColorTitle{
+
+.showColorTitle {
     font-size: 14px;
 
 }
+
 .showColor {
     font-size: 14px;
     font-weight: 600;
@@ -56,4 +58,28 @@
 
     padding-right: 5px;
 
+}
+
+ .Check {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+}
+
+.notCheck {
+    display: none;
+}
+
+.CheckColor {
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: flex;
+    margin: 0px 5px 10px 5px;
+    box-shadow: 0px 0px 2px 0px #d9d9d9;
+
+    position: relative;
+    border: 2px solid hsl(226, 100%, 79%);
 }

@@ -15,7 +15,7 @@ async function getSearchResult(props) {
 const SearchResult = async (props) => {
   const context = await props.params;
   const data = await getSearchResult(context.searchResult);
-  console.log(data);
+
   return (
     <div>
       {data.length === 0 ? <div className={styles.notFoundProduct}>

@@ -1,10 +1,26 @@
+"use client";
 import React from "react";
 import styles from "./FooterData.module.scss";
 import { FiPhone } from "react-icons/fi";
 import { CgMail } from "react-icons/cg";
 import Image from "next/image";
 import Link from "next/link";
-const FooterData = ({ FtData }) => {
+import { useRouter } from "next/navigation";
+
+const FooterData = () => {
+  const rout = useRouter();
+  const mobileLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=mobile`);
+  };
+  const tabletLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=tablet`);
+  };
+  const laptopLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=laptop`);
+  };
+  const handsfreeLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=handsfree`);
+  };
   return (
     <div className={styles.footerDataContainer}>
       <div className={styles.footerData}>
@@ -26,22 +42,22 @@ const FooterData = ({ FtData }) => {
             <h3>دسترسی سریع</h3>
             <ul>
               <li>
-                <Link href="/">گوشی سامسونگ</Link>
+                <div onClick={() => mobileLink("سامسونگ")}>گوشی سامسونگ</div>
               </li>
               <li>
-                <Link href="/">گوشی آیفون</Link>
+                <div onClick={() => mobileLink("اپل")}>گوشی آیفون</div>
               </li>
               <li>
-                <Link href="/">گوشی شیائومی</Link>
+                <div onClick={() => mobileLink("شیائومی")}>گوشی شیائومی</div>
               </li>
               <li>
-                <Link href="/">قیمت لپ تاپ</Link>
+                <Link href="/Product/Class/laptop">قیمت لپ تاپ</Link>
               </li>
               <li>
-                <Link href="/">هندزفری بلوتوثی</Link>
+                <Link href="/Product/Class/handsfree">هندزفری </Link>
               </li>
               <li>
-                <Link href="/">لپ تاپ ایسوس</Link>
+                <div onClick={() => laptopLink("ایسوس")}>لپ تاپ ایسوس</div>
               </li>
             </ul>
           </div>
@@ -49,19 +65,19 @@ const FooterData = ({ FtData }) => {
             <h3>پرفروش ترین محصولات</h3>
             <ul>
               <li>
-                <Link href="/">تبلت سامسونگ</Link>
+                <div onClick={() => tabletLink("سامسونگ")}>تبلت سامسونگ</div>
               </li>
               <li>
-                <Link href="/">مک بوک</Link>
+                <div onClick={() => laptopLink("مک بوک")}>مک بوک</div>
               </li>
               <li>
-                <Link href="/">ساعت هوشمند</Link>
+                <Link href="/Product/Class/smartWatch">ساعت هوشمند</Link>
               </li>
               <li>
-                <Link href="/">پلی استیشن</Link>
+                <Link href="/Product/Class/console">کنسول</Link>
               </li>
               <li>
-                <Link href="/">Airpods</Link>
+                <div onClick={() => handsfreeLink("اپل")}>Airpods</div>
               </li>
             </ul>
           </div>

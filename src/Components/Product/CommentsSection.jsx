@@ -1,19 +1,47 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./CommentsSection.module.scss";
 import { BiPlus, BiMessageDots } from "react-icons/bi";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import { LuSquareUserRound } from "react-icons/lu";
 
-const CommentsSection = ({ dataPrd }) => {
-  const [first, setfirst] = useState(false);
+const CommentsSection = ({ PrdData, PrdId }) => {
+  const [showComment, setShowComment] = useState(false);
+  const jwt = useSelector((state) => state.Users);
+  // const arrayToken = jwt.token.split(".");
+  // const tokenPayload = JSON.parse(atob(arrayToken[1]));
+  const Content = useRef();
+
+  const rout = useRouter();
+
   const clickToModal = (props) => {
-    setfirst(!first);
+    if (jwt.token) {
+      setShowComment(!showComment);
+    } else {
+      rout.push("/Login");
+    }
   };
+
+  const RegisterACommentClick = (props) => {
+    localStorage.setItem(
+      "Comment",
+      JSON.stringify({
+        id: PrdId,
+        content: Content.current.value,
+      })
+    );
+
+    if (Content.current.value) {
+      setShowComment(!showComment);
+    }
+  };
+
   return (
     <div className={styles.commentsSectionContainer}>
-      
       <div className={styles.rightSideCommentsSection}>
         <div className={styles.title}>
           <span> •</span>
@@ -26,6 +54,22 @@ const CommentsSection = ({ dataPrd }) => {
             <span>برای ثبت نظر نیاز به خرید کالا نیست؛ </span>
           </div>
         </div>
+
+        {PrdData.id === JSON.parse(localStorage.getItem("Comment")).id ? (
+          <div className={styles.contentCommentsContainer}>
+            <div>
+              <div className={styles.userComment}>
+                {/* <p>{tokenPayload.username}</p> */}
+              </div>
+
+              <div className={styles.textComment}>
+                <span>
+                  {JSON.parse(localStorage.getItem("Comment")).content}
+                </span>
+              </div>
+            </div>
+          </div>
+        ) : null}
       </div>
 
       <div className={styles.leftSideCommentsSection}>
@@ -45,7 +89,7 @@ const CommentsSection = ({ dataPrd }) => {
           </div>
         </div>
       </div>
-      {first && (
+      {showComment && (
         <div className={styles.containerModalComment}>
           <div className={styles.childModalComment}>
             <div className={styles.headerComment}>
@@ -57,27 +101,31 @@ const CommentsSection = ({ dataPrd }) => {
             </div>
             <div className={styles.PrdInformation}>
               <Image
-                src={dataPrd.indexImageUrl}
-                alt={dataPrd.name}
+                src={PrdData.indexImageUrl}
+                alt={PrdData.name}
                 height={70}
                 width={70}
               />
               <p>
-                {dataPrd.name.substring(0, 55)}
-                {dataPrd.name.length > 55 ? "..." : null}
+                {PrdData.name.substring(0, 55)}
+                {PrdData.name.length > 55 ? "..." : null}
               </p>
             </div>
             <div className={styles.commentText}>
               <p>متن دیدگاه:</p>
               <span>*</span>
               <textarea
+                ref={Content}
                 type="text"
                 className={styles.commentTextInput}
                 placeholder="نظر خود را در مورد این کالا با کاربران دیگر به اشتراک بگذارید.."
               />
             </div>
 
-            <div className={styles.registerCommentContainer}>
+            <div
+              className={styles.registerCommentContainer}
+              onClick={() => RegisterACommentClick(PrdData.id)}
+            >
               <div className={styles.registerComment}>ثبت دیدگاه</div>
             </div>
 

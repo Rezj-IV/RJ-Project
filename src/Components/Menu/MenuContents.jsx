@@ -23,6 +23,9 @@ const MenuContents = ({ itemId }) => {
   const computerLink = (props) => {
     rout.push(`/Product/categoryType/${props}/?class=computer`);
   };
+  const allInOneLink = (props) => {
+    rout.push(`/Product/categoryType/${props}/?class=allInOne`);
+  };
   const consoleLink = (props) => {
     rout.push(`/Product/categoryType/${props}/?class=console`);
   };
@@ -179,7 +182,7 @@ const MenuContents = ({ itemId }) => {
             </div>
             <div
               className={styles.linkContent}
-              onClick={() => computerLink("allInOne")}
+              onClick={() => allInOneLink("Hp")}
             >
               All in one{" "}
             </div>

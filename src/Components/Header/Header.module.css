@@ -4,6 +4,10 @@
     width: 100%;
     padding: 0 30px;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #ffffffff;
     justify-content: space-between;
 }
 

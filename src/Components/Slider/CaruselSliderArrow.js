@@ -1,10 +1,12 @@
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
+import { RiArrowDropLeftLine , RiArrowDropRightLine  } from "react-icons/ri";
+
 import styles from "./CaruselSliderArrow.module.css";
 export function NextArrowSlide(props) {
   const { className, style, onClick } = props;
   return (
-      <BiChevronRight
-        className={`${className} ${styles.NextArrowSlide}`}
+      <RiArrowDropRightLine
+        className={` ${styles.NextArrowSlide}`}
         onClick={onClick}
       />
   );
@@ -12,9 +14,11 @@ export function NextArrowSlide(props) {
 export function PrevArrowSlide(props) {
   const { className, style, onClick } = props;
   return (
-      <BiChevronLeft
-        className={`${className}  ${styles.PrevArrowSlide}`}
+  <div className={style.PrevArrowSlideContainer}>
+      <RiArrowDropLeftLine
+        className={`  ${styles.PrevArrowSlide}`}
         onClick={onClick}
       />
+      </div>
   );
 }

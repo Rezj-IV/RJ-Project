@@ -9,6 +9,7 @@ const EmptyShoppingCart = () => {
     <div className={styles.emptyBasketContainer}>
       <div className={styles.emptyBasketContent}>
         <Image
+        priority
           src="/images/mptyBasket.png"
           alt="EmptyShoppingCart"
           height={300}

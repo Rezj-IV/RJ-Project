@@ -10,6 +10,7 @@ import ProductCarusel from "@/Components/Product/ProductCarusel";
 import * as repository from "../../../RestConfig/RestRequest";
 import SixIcon from "@/Components/SixIcon/SixIcon";
 import Footer from "@/Components/Footer/Footer";
+import { Suspense } from "react";
 
 async function getAllProduct() {
   const response = await repository.Get("products");
@@ -34,11 +35,20 @@ export default async function Home() {
   const homeImages = await getAllHomeImages();
   return (
     <>
-      <MainSlider />
+      <Suspense  fallback="loading">
+        <MainSlider />
+      </Suspense>
+
       <div className={styles.PdContainer}>
-        <SixIcon />
-        <IncCarusel />
-        <ProductCarusel data={data} homeImages={homeImages} />
+        <Suspense fallback="loading">
+          <SixIcon />
+        </Suspense>
+        <Suspense fallback="loading">
+          <IncCarusel />
+        </Suspense>
+        <Suspense fallback="loading">
+          <ProductCarusel data={data} homeImages={homeImages} />
+        </Suspense>
       </div>
     </>
   );

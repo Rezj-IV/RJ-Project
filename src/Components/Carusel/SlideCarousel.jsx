@@ -1,9 +1,7 @@
 import React from "react";
 import Carusel from "./Carusel";
 import styles from "./SlideCarousel.module.scss";
-import Image from "next/image";
 import { AiOutlineLeft } from "react-icons/ai";
-import { LiaPercentSolid } from "react-icons/lia";
 import Link from "next/link";
 
 const SlideCarousel = ({ PRD }) => {

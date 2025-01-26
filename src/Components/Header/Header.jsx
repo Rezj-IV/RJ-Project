@@ -10,16 +10,20 @@ const Header = () => {
     <div className={styles.HeaderContainer}>
       <div className={styles.HeaderRightSide}>
         <Link href="/" className={styles.RJLandLogo}>
-        <Image src="/logo/RJLand.png"  width={105} height={105} alt="RJLand"/>
-
+          <Image
+            src="/logo/RJLand.png"
+            width={105}
+            height={105}
+            alt="RJLand"
+            priority
+          />
         </Link>
         <SearchBox />
       </div>
       <div className={styles.HeaderLeftSide}>
-        
         <LogSignUI />
 
-        <Basket/>
+        <Basket />
       </div>
     </div>
   );

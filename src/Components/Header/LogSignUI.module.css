@@ -24,3 +24,100 @@
     display: flex;
     align-items: center;
 }
+
+.userIconContainer {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #ffffffff;
+    box-shadow: 0px 0px 9px #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.userIcon {
+    font-size: 22px;
+    color: #131313;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userLayer {
+    position: absolute;
+    top: 40px;
+    display: none;
+    left: 0;
+    width: 300px;
+    height: 150px;
+    z-index: 10;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #ffffffff;
+    box-shadow: 0px 0px 9px #e1e1e1;
+    padding: 0 28px;
+}
+
+.userIconContainer:hover .userLayer {
+    display: block;
+
+}
+
+.userAccount {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    height: 70px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.userAccount:hover .username {
+    color: #85a0b5;
+}
+
+.username {
+    font-size: 13.5px;
+    color: #a2a2a2;
+    font-weight: 100;
+    padding-right: 8px;
+}
+
+.userAccount p {
+    color: rgb(62, 62, 62);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.ArrowLeftIcon {
+    color: rgb(69, 69, 69);
+    font-size: 18px;
+}
+
+.sginOut {
+    width: 100%;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.sginOut p {
+    color: rgb(62, 62, 62);
+    font-size: 15px;
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+.sginOut:hover .exitIcon {
+    color: rgb(255, 109, 109);
+}
+
+.exitIcon {
+    font-size: 18px;
+}

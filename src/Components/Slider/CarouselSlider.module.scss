@@ -1,29 +1,30 @@
-
 .sliderContainer {
 
     position: relative;
     height: 430px;
-
     .imageSlider {
         height: unset;
 
     }
 }
 .dots{
-   
-    li{
-       
-    }
-    button{
-    }
-    button::before{
+    right: 0 !important;
+    bottom: 30px !important;
+    width: 9.5% !important;
 
+    li{
+        margin: 0px !important;
+    }
+    .active{
+    color: red !important;
+    font-size:28px !important;
+
+   }
+  
+    button::before{
+        font-size:7px !important;
+        color: #b3b3b3 !important;
+        
     }
    
 }
- .dots > li > button {
-}
-.slick-dots .dots > li > button ::after {
-    background-color: aqua;
-    
-    }

@@ -10,7 +10,16 @@
   background: -webkit-radial-gradient(circle, hsl(198, 100%, 87%) 0%, hsl(224, 60%, 81%) 100%);
 }
 .mainContainer .FieldContainer {
-  width: 400px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  grid-gap: 0 21px;
+  gap: 0 21px;
+}
+.mainContainer .MainFieldContainer {
+  width: 630px;
   background: #F8F9FD;
   background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);
   border-radius: 40px;
@@ -18,14 +27,12 @@
   border: 5px solid rgb(255, 255, 255);
   box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
   margin: 20px;
-  height: -moz-fit-content;
-  height: fit-content;
   /* From Uiverse.io by zanina-yassine */
 }
-.mainContainer .FieldContainer .form__group {
+.mainContainer .MainFieldContainer .form__group {
   margin-top: 20px;
 }
-.mainContainer .FieldContainer .form__field {
+.mainContainer .MainFieldContainer .form__field {
   width: 100%;
   background: white;
   border: none;
@@ -38,27 +45,27 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   border-inline: 2px solid transparent;
 }
-.mainContainer .FieldContainer .form__group .form__field::-moz-placeholder {
+.mainContainer .MainFieldContainer .form__group .form__field::-moz-placeholder {
   color: rgb(170, 170, 170);
 }
-.mainContainer .FieldContainer .form__group .form__field::placeholder {
+.mainContainer .MainFieldContainer .form__group .form__field::placeholder {
   color: rgb(170, 170, 170);
 }
-.mainContainer .FieldContainer .form__group .form__field:focus {
+.mainContainer .MainFieldContainer .form__group .form__field:focus {
   outline: none;
   border-inline: 2px solid #12B1D1;
 }
-.mainContainer .FieldContainer .form__field:-moz-placeholder-shown ~ .form__label {
+.mainContainer .MainFieldContainer .form__field:-moz-placeholder-shown ~ .form__label {
   top: 10px;
   border-right: none;
   border-left: none;
 }
-.mainContainer .FieldContainer .form__field:placeholder-shown ~ .form__label {
+.mainContainer .MainFieldContainer .form__field:placeholder-shown ~ .form__label {
   top: 10px;
   border-right: none;
   border-left: none;
 }
-.mainContainer .FieldContainer .ErrorMessage {
+.mainContainer .MainFieldContainer .ErrorMessage {
   color: rgba(234, 64, 64, 0.59);
   font-size: 13px;
   font-weight: 600;
@@ -66,13 +73,13 @@
   padding-top: 10px;
   height: 10px;
 }
-.mainContainer .FieldContainer .title {
+.mainContainer .MainFieldContainer .title {
   text-align: center;
   font-weight: 900;
   font-size: 30px;
   color: rgb(16, 137, 211);
 }
-.mainContainer .FieldContainer button {
+.mainContainer .MainFieldContainer button {
   min-width: 120px;
   font-size: 18px;
   font-weight: 600;
@@ -89,7 +96,7 @@
   color: rgba(255, 255, 255, 0.66);
   transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
-.mainContainer .FieldContainer button::before {
+.mainContainer .MainFieldContainer button::before {
   content: "";
   width: 70%;
   height: 1px;
@@ -101,21 +108,21 @@
   opacity: 0.2;
   transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
-.mainContainer .FieldContainer button:hover {
+.mainContainer .MainFieldContainer button:hover {
   color: rgb(255, 255, 255);
   transform: scale(1.1) translateY(-3px);
 }
-.mainContainer .FieldContainer button:hover::before {
+.mainContainer .MainFieldContainer button:hover::before {
   opacity: 1;
 }
-.mainContainer .FieldContainer .goSign {
+.mainContainer .MainFieldContainer .goSign {
   padding: 20px 10px;
   font-size: 15px;
 }
-.mainContainer .FieldContainer .goSign span {
+.mainContainer .MainFieldContainer .goSign span {
   color: #232323;
 }
-.mainContainer .FieldContainer .goSign a {
+.mainContainer .MainFieldContainer .goSign a {
   text-decoration: none;
   padding-right: 7px;
   color: #14a0de;

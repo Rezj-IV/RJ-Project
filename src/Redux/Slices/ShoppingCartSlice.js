@@ -18,7 +18,9 @@ const refreshState = (state) => {
         : item.price * item.count;
 
     state.discountProducts +=
-      (item.price - item.priceWithDiscount) * item.count;
+      item.priceWithDiscount !== 0
+        ? (item.price - item.priceWithDiscount) * item.count
+        : 0;
   });
   return state;
 };
@@ -56,7 +58,7 @@ const ShoppingCartSlice = createSlice({
     },
     removeAll: (state, action) => {
       state.items = [];
-      state.totalCount=0
+      state.totalCount = 0;
     },
   },
 });

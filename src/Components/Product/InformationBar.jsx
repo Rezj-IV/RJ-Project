@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React from "react";
 import styles from "./InformationBar.module.scss";
 import Image from "next/image";
 import { BsBoxSeam, BsShop } from "react-icons/bs";
@@ -7,7 +7,7 @@ import { FiBox } from "react-icons/fi";
 import CommentsSection from "./CommentsSection";
 import Link from "next/link";
 
-const InformationBar = ({ Att, data, stock }) => {
+const InformationBar = ({ Att, data, stock , PrdId }) => {
   return (
     <div className={styles.container}>
       <div className={styles.informationBarContainer}>
@@ -31,7 +31,7 @@ const InformationBar = ({ Att, data, stock }) => {
             <div id="information" className={styles.informationBar}>
               {Att.map((item) => {
                 return (
-                  <div className={styles.specificationsProductContainer}>
+                  <div className={styles.specificationsProductContainer} key={item.id}>
                     <div className={styles.title}>
                       <span> •</span>
                       <h1>مشخصات فنی</h1>
@@ -79,7 +79,7 @@ const InformationBar = ({ Att, data, stock }) => {
           ) : null}
 
           <div id="commentSection" className={styles.commentsProduct}>
-            <CommentsSection dataPrd={data} />
+            <CommentsSection PrdData={data} PrdId={PrdId}/>
           </div>
         </div>
         {stock === 0 ? null : (

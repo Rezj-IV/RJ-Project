@@ -22,11 +22,9 @@ const ImageModal = ({ images, namePrd, mainImage }) => {
 
   const clickToLeftSlide = () => {
     setImgID((...prev) => prev.id - 1);
-    console.log(imgID);
   };
   const clickToRightSlide = () => {
     setImgID((...prev) => prev.id + 1);
-    console.log(imgID);
   };
   return (
     <div className={styles.imagesProduct}>

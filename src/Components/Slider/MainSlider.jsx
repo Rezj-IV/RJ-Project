@@ -1,7 +1,5 @@
 import * as Repository from "../../../RestConfig/RestRequest";
 import CarouselSlider from "./CarouselSlider";
-import styles from "./MainSlider.module.css";
-import Image from "next/image";
 import React from "react";
 async function getAllSlides() {
   const response = await Repository.Get("public/mainSlider");

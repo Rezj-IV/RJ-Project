@@ -16,12 +16,11 @@ const SCContent = async (props) => {
  
 
   return (
-    <div>
+    <>
       <div>
-       
           <CardDetails product={data} />
       </div>
-    </div>
+    </>
   );
 };
 

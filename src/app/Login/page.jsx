@@ -2,7 +2,7 @@
 import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import styles from "../Signup/Signup.module.scss";
+import styles from "./Login.module.css";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
@@ -28,7 +28,7 @@ const LogIn = () => {
       console.log(response);
       if (response.data.hasOwnProperty("token")) {
         dispatch(setToken(response.data.token));
-        router.push("/");
+        router.push("/Profile");
       } else {
         alert("نام کاربری یا رمزعبور نادرست است");
       }
@@ -66,7 +66,7 @@ const LogIn = () => {
             <div className={styles.form__group}>
               <Field
                 name="password"
-                type="text"
+                type="password"
                 className={styles.form__field}
                 placeholder="کلمه عبور"
               />

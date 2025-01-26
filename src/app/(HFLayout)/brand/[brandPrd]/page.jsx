@@ -14,7 +14,6 @@ async function getAllSameCategory(props) {
 const brandData = async (props) => {
   const context = await props.params;
   const data = await getAllSameCategory(context.brandPrd);
-  console.log(data);
   return (
     <div>
       <CardDetails product={data} />

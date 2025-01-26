@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import * as repository from "../../../../../RestConfig/RestRequest";
 import styles from "./singleProduct.module.scss";
 import Image from "next/image";
@@ -38,9 +38,7 @@ const singleProduct = async (props) => {
   const context = await props.params;
   const data = await getAllSingleProduct(context.singleProduct);
   const category = await getAllSameCategory(data.category);
-  console.log(context);
-  console.log(data.colorID);
-  console.log(category);
+
   return (
     <div>
       {data.stock === 0 ? (
@@ -48,167 +46,170 @@ const singleProduct = async (props) => {
       ) : (
         <div className={styles.mainContainer}>
           <div className={styles.dataProductContainer}>
-            <div className={styles.descriptionContainer}>
-         
-            
-              <div className={styles.nameContainer}>
-                <p className={styles.name}>{data.name}</p>
-                <p className={styles.nameb}>{data.nameB}</p>
+            <Suspense>
+              <div className={styles.descriptionContainer}>
+                <div className={styles.nameContainer}>
+                  <p className={styles.name}>{data.name}</p>
+                  <p className={styles.nameb}>{data.nameB}</p>
 
-                <div className={styles.commentContainer}>
-                  <span className={styles.comment}>نظرات کاربران</span>
-                  <span className={styles.numberComment}>0نظر</span>
-                </div>
-                {data.colorID.length !== 0 ? (
-                  <div>
-                    <Color colorID={data.colorID} />
+                  <div className={styles.commentContainer}>
+                    <span className={styles.comment}>نظرات کاربران</span>
+                    <span className={styles.numberComment}>0نظر</span>
                   </div>
-                ) : null}
-
-                {data.attribute.length !== 0 ? (
-                  <div>
-                    <h3 className={styles.mainFeatures}>ویژگی‌های اصلی</h3>
-                    <div className={styles.attributeContainer}>
-                      {data.attribute.map((item) => {
-                        return <ProductAttribute Att={item} />;
-                      })}
+                  {data.colorID.length !== 0 ? (
+                    <div>
+                      <Color colorID={data.colorID} />
                     </div>
-                  </div>
-                ) : null}
-              </div>
+                  ) : null}
 
-              <div className={styles.imageContainer}>
-              <div className={styles.offerTextContainer}>
-              {data.incredibleOffers === true ? (
-                <pre className={styles.offerText}>
-                  𝓡𝓙
-                  <br />
-                  𝕆𝕗𝕗
-                  <i>％ </i>
-                </pre>
-              ) : null}
-              </div>
-                <div className={styles.prdImage}>
-                  <Image
-                    src={data.indexImageUrl}
-                    width={370}
-                    height={370}
-                    alt={data.name}
-                    priority
-                  />
-                </div>
-                <div className={styles.otherImage}>
-                  <ImageModal
-                    images={data.images}
-                    namePrd={data.name}
-                    mainImage={data.indexImageUrl}
-                  />
-                </div>
-              </div>
-            </div>
-
-
-
-
-
-            <div className={styles.productDetailsContainer}>
-              <div className={styles.productDetailsChild}>
-                <div className={styles.sellerContainer}>
-                  <div className={styles.seller}>
-                    <p>فروشنده</p>
-
-                    <BsShop className={styles.iconShop} />
-                    <span>{data.seller}</span>
-                  </div>
-
-                  <div className={styles.Evaluation}>
-                    <AiOutlineSetting className={styles.iconShop} />
-                    <span>ارزیابی عملکرد: </span>
-                    <span className={styles.excEvaluation}>عالی</span>
-                  </div>
-
-                  <div className={styles.warranty}>
-                    <GoShieldCheck className={styles.iconShop} />
-                    <span>گارانتی اصالت و سلامت فیزیکی کالا</span>
-                  </div>
-                </div>
-
-                <div>
-                  {data.priceWithDiscount === 0 ? (
-                    <div className={`${styles.priceDetail}`}>
-                      <div className={`${styles.priceContainer}`}>
-                        <div className={styles.price}>
-                          {data.price
-                            .toString()
-                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                          <span className={styles.priceToman}>تومان</span>
-                        </div>
+                  {data.attribute.length !== 0 ? (
+                    <div>
+                      <h3 className={styles.mainFeatures}>ویژگی‌های اصلی</h3>
+                      <div className={styles.attributeContainer}>
+                        {data.attribute.map((item) => {
+                          return <ProductAttribute Att={item} key={item.id} />;
+                        })}
                       </div>
                     </div>
-                  ) : (
-                    <div className={`${styles.priceDetail}`}>
-                      <div className={styles.offPrcentContainer}>
-                        <div className={`${styles.offPrcent}`}>
-                          <div className={styles.offPrcentNumber}>
-                            {Math.floor(data.price - data.priceWithDiscount)
+                  ) : null}
+                </div>
+
+                <div className={styles.imageContainer}>
+                  <div className={styles.offerTextContainer}>
+                    {data.incredibleOffers === true ? (
+                      <pre className={styles.offerText}>
+                        𝓡𝓙
+                        <br />
+                        𝕆𝕗𝕗
+                        <i>％ </i>
+                      </pre>
+                    ) : null}
+                  </div>
+                  <div className={styles.prdImage}>
+                    <Image
+                      src={data.indexImageUrl}
+                      width={370}
+                      height={370}
+                      alt={data.name}
+                      priority
+                    />
+                  </div>
+                  <div className={styles.otherImage}>
+                    <ImageModal
+                      images={data.images}
+                      namePrd={data.name}
+                      mainImage={data.indexImageUrl}
+                    />
+                  </div>
+                </div>
+              </div>
+            </Suspense>
+            <Suspense>
+              <div className={styles.productDetailsContainer}>
+                <div className={styles.productDetailsChild}>
+                  <div className={styles.sellerContainer}>
+                    <div className={styles.seller}>
+                      <p>فروشنده</p>
+
+                      <BsShop className={styles.iconShop} />
+                      <span>{data.seller}</span>
+                    </div>
+
+                    <div className={styles.Evaluation}>
+                      <AiOutlineSetting className={styles.iconShop} />
+                      <span>ارزیابی عملکرد: </span>
+                      <span className={styles.excEvaluation}>عالی</span>
+                    </div>
+
+                    <div className={styles.warranty}>
+                      <GoShieldCheck className={styles.iconShop} />
+                      <span>گارانتی اصالت و سلامت فیزیکی کالا</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    {data.priceWithDiscount === 0 ? (
+                      <div className={`${styles.priceDetail}`}>
+                        <div className={`${styles.priceContainer}`}>
+                          <div className={styles.price}>
+                            {data.price
+                              .toString()
+                              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                            <span className={styles.priceToman}>تومان</span>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className={`${styles.priceDetail}`}>
+                        <div className={styles.offPrcentContainer}>
+                          <div className={`${styles.offPrcent}`}>
+                            <div className={styles.offPrcentNumber}>
+                              {Math.floor(data.price - data.priceWithDiscount)
+                                .toString()
+                                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                            </div>
+                            <div className={styles.offPrcentToman}>
+                              {" "}
+                              تومان تخفیف
+                            </div>
+                          </div>
+                        </div>
+                        <div className={`${styles.priceContainer}`}>
+                          <div className={styles.priceWithDiscount}>
+                            {data.priceWithDiscount
                               .toString()
                               .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                           </div>
-                          <div className={styles.offPrcentToman}>
-                            {" "}
-                            تومان تخفیف
+                          <div className={`${styles.price}`}>
+                            {data.price
+                              .toString()
+                              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                            <span className={styles.priceToman}>تومان</span>
                           </div>
                         </div>
                       </div>
-                      <div className={`${styles.priceContainer}`}>
-                        <div className={styles.priceWithDiscount}>
-                          {data.priceWithDiscount
-                            .toString()
-                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                        </div>
-                        <div className={`${styles.price}`}>
-                          {data.price
-                            .toString()
-                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                          <span className={styles.priceToman}>تومان</span>
-                        </div>
+                    )}
+                  </div>
+
+                  {data.stock < 3 ? (
+                    <div className={styles.remainingContainer}>
+                      <div className={styles.remaining}>
+                        <BsBoxSeam className={styles.FiBox} />
+                        <span>{data.stock}</span>
+                        <span>عدد در انبار باقی مانده</span>
                       </div>
                     </div>
-                  )}
+                  ) : null}
+                  <AddToCartButton data={data} />
                 </div>
-
-                {data.stock < 3 ? (
-                  <div className={styles.remainingContainer}>
-                    <div className={styles.remaining}>
-                      <BsBoxSeam className={styles.FiBox} />
-                      <span>{data.stock}</span>
-                      <span>عدد در انبار باقی مانده</span>
-                    </div>
-                  </div>
-                ) : null}
-                <AddToCartButton data={data} />
               </div>
-            </div>
+            </Suspense>
           </div>
-
-          {data.category === "هوآوی " || data.category === "آنر" ? null : (
-            <div className={styles.caruselContainer}>
-              <div className={styles.titleCarusel}>
-                <p>برند مشابه</p>
-                <Link
-                  href={`/brand/${data.category}`}
-                  className={styles.ShowAll}
-                >
-                  نمایش همه
-                  <AiOutlineLeft className={styles.AiOutlineLeft} />
-                </Link>
+          <Suspense>
+            {data.category === "هوآوی " || data.category === "آنر" ? null : (
+              <div className={styles.caruselContainer}>
+                <div className={styles.titleCarusel}>
+                  <p>برند مشابه</p>
+                  <Link
+                    href={`/brand/${data.category}`}
+                    className={styles.ShowAll}
+                  >
+                    نمایش همه
+                    <AiOutlineLeft className={styles.AiOutlineLeft} />
+                  </Link>
+                </div>
+                <Carusel data={category} />
               </div>
-              <Carusel data={category} />
-            </div>
-          )}
-
+            )}
+          </Suspense>
           <div className={styles.informationProductContainer}>
-            <InformationBar Att={data.attribute} data={data} />
+            <Suspense>
+              <InformationBar
+                Att={data.attribute}
+                data={data}
+                PrdId={data.id}
+              />
+            </Suspense>
           </div>
         </div>
       )}

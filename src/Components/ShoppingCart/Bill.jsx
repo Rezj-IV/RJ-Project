@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./Bill.module.css";
-const Bill = ({ totalCount, totalAmount, discountProducts }) => {
+import { PurchaseRegistrationToast } from "../Product/Toast";
+const Bill = ({ totalCount, totalAmount, discountProducts , data }) => {
   const totalSum = totalAmount - discountProducts;
+
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>صورتحساب</h3>
@@ -15,7 +17,7 @@ const Bill = ({ totalCount, totalAmount, discountProducts }) => {
 
             </span>
           </div>
-          <div className={styles.ProductPrice}>
+           <div className={styles.ProductPrice}>
             <p className={styles.productDiscountText}>تخفیف محصولات</p>
             <span className={styles.productDiscountText}>
               {discountProducts
@@ -33,11 +35,7 @@ const Bill = ({ totalCount, totalAmount, discountProducts }) => {
             </span>
           </div>
         </div>
-        <div className={styles.purchaseConfirmationContainer}>
-        <div className={styles.purchaseConfirmation}>
-          <p>تایید خرید</p>
-        </div>
-        </div>
+       <PurchaseRegistrationToast/>
       </div>
     </div>
   );

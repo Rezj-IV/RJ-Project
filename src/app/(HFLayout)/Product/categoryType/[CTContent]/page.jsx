@@ -14,7 +14,6 @@ const CTContent = async (props) => {
   const context = await props.params; 
   const SearchParams = await props.searchParams;
   const data = await getAllCategoryType(context.CTContent);
-  console.log(data);
   const result = data.filter((item) => {
     return item.type.includes(SearchParams.class);
 

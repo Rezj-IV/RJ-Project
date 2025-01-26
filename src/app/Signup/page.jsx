@@ -1,6 +1,5 @@
 "use client";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import Image from "next/image";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import * as repository from "../../../RestConfig/RestRequest";
@@ -17,14 +16,18 @@ const SignUp = () => {
     username: Yup.string().required("نام کاربری خود را وارد کنید"),
     mobilenumber: Yup.number().required("شماره همراه خود را وارد کنید"),
     password: Yup.string().required("پسورد  خود را وارد کنید"),
+    email: Yup.string()
+      .email("فرمت ایمیل را به درستی وارد کنید !!")
+      .required("ایمیل  خود را وارد کنید"),
   });
 
   const FormFields = {
     name: "",
     lastname: "",
     username: "",
-    mobilenumber:"" ,
+    mobilenumber: "",
     password: "",
+    email: "",
   };
 
   const submitHandler = (values) => {
@@ -42,7 +45,7 @@ const SignUp = () => {
 
             .then((loginResponse) => {
               dispatch(setToken(loginResponse.data.token));
-              router.push("/");
+              router.push("/Profile");
             });
         }
       });
@@ -51,9 +54,7 @@ const SignUp = () => {
   return (
     <>
       <div className={styles.mainContainer}>
-        <div className={styles.FieldContainer}>
-     
-
+        <div className={styles.MainFieldContainer}>
           <p className={styles.title}> ثبت نام </p>
 
           <Formik
@@ -64,77 +65,91 @@ const SignUp = () => {
             validateOnChange={false}
           >
             <Form>
-              <div className={styles.form__group}>
-                <Field
-                  name="name"
-                  type="text"
-                  className={styles.form__field}
-                  placeholder="نام"
-                />
-                <ErrorMessage
-                  name="name"
-                  component={"p"}
-                  className={styles.ErrorMessage}
-                />
-              </div>
+              <div className={styles.FieldContainer}>
+                <div className={styles.form__group}>
+                  <Field
+                    name="name"
+                    type="text"
+                    className={styles.form__field}
+                    placeholder="نام"
+                  />
+                  <ErrorMessage
+                    name="name"
+                    component={"p"}
+                    className={styles.ErrorMessage}
+                  />
+                </div>
 
-              <div className={styles.form__group}>
-                <Field
-                  name="lastname"
-                  type="text"
-                  className={styles.form__field}
-                  placeholder="نام خانوادگی"
-                />
-                <ErrorMessage
-                  name="lastname"
-                  component={"p"}
-                  className={styles.ErrorMessage}
-                />
-              </div>
+                <div className={styles.form__group}>
+                  <Field
+                    name="lastname"
+                    type="text"
+                    className={styles.form__field}
+                    placeholder="نام خانوادگی"
+                  />
+                  <ErrorMessage
+                    name="lastname"
+                    component={"p"}
+                    className={styles.ErrorMessage}
+                  />
+                </div>
 
-              <div className={styles.form__group}>
-                <Field
-                  name="username"
-                  type="text"
-                  className={styles.form__field}
-                  placeholder="نام کاربری"
-                />
-                <ErrorMessage
-                  name="username"
-                  component={"p"}
-                  className={styles.ErrorMessage}
-                />
-              </div>
+                <div className={styles.form__group}>
+                  <Field
+                    name="username"
+                    type="text"
+                    className={styles.form__field}
+                    placeholder="نام کاربری"
+                  />
+                  <ErrorMessage
+                    name="username"
+                    component={"p"}
+                    className={styles.ErrorMessage}
+                  />
+                </div>
 
-              <div className={styles.form__group}>
-                <Field
-                  name="mobilenumber"
-                  type="number"
-                  className={styles.form__field}
-                  placeholder="شماره همراه"
-                />
-                <ErrorMessage
-                  name="mobilenumber"
-                  component={"p"}
-                  className={styles.ErrorMessage}
-                />
-              </div>
+                <div className={styles.form__group}>
+                  <Field
+                    name="mobilenumber"
+                    type="number"
+                    className={styles.form__field}
+                    placeholder="شماره همراه"
+                  />
+                  <ErrorMessage
+                    name="mobilenumber"
+                    component={"p"}
+                    className={styles.ErrorMessage}
+                  />
+                </div>
 
-              <div className={styles.form__group}>
-                <Field
-                  name="password"
-                  type="password"
-                  className={styles.form__field}
-                  placeholder="کلمه عبور"
-                />
-                <ErrorMessage
-                  name="password"
-                  component={"p"}
-                  className={styles.ErrorMessage}
-                />
-              </div>
-           
+                <div className={styles.form__group}>
+                  <Field
+                    name="password"
+                    type="password"
+                    className={styles.form__field}
+                    placeholder="کلمه عبور"
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component={"p"}
+                    className={styles.ErrorMessage}
+                  />
+                </div>
 
+                <div className={styles.form__group}>
+                  <Field
+                    name="email"
+                    type="text"
+                    className={styles.form__field}
+                    placeholder="ایمیل"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component={"p"}
+                    className={styles.ErrorMessage}
+                  />
+                </div>
+              </div>
               <button type="submit">ثبت نام</button>
 
               <div className={styles.goSign}>
@@ -144,7 +159,6 @@ const SignUp = () => {
             </Form>
           </Formik>
         </div>
-
       </div>
     </>
   );

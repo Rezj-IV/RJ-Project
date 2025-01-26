@@ -1,20 +1,20 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Color.module.css";
 import AddToCartButton from "../ShoppingCart/AddToCartButton";
+import { BsCheckLg } from "react-icons/bs";
 const Color = ({ colorID }) => {
-  const [color, setColor] = useState([]);
-
+  const [color, setColor] = useState({ id: colorID[0].id ,showColor: colorID[0].showColor });
+  const mainColor = color.id ? color.showColor : colorID[0].showColor;
+  const backgroundColor = color.id ? color.color : colorID[0].color;
   const clickToShow = (allColor) => {
     setColor(allColor);
   };
-  const mainColor = color.id ? color.showColor : colorID[0].showColor;
-  const backgroundColor = color.id ? color.color : colorID[0].color;
-
+  const [first, setfirst] = useState(0);
 
   // useEffect(() => {
   //   AddToCartButton({
-  //     color: {mainColor , backgroundColor},
+  //     color:  backgroundColor,
   //   });
   // }, [color]);
 
@@ -29,7 +29,19 @@ const Color = ({ colorID }) => {
         {colorID.map((item) => {
           return (
             <div key={item.id}>
-              <div className={styles.insideColor}>
+              <div
+                className={
+                  color.id === item.id
+                    ? `${styles.CheckColor}`
+                    : styles.insideColor
+                }
+              >
+                <BsCheckLg
+                  className={
+                    color.id === item.id ? `${styles.Check}` : styles.notCheck
+                  }
+                />
+
                 <div
                   onClick={() => clickToShow(item)}
                   className={styles.color}

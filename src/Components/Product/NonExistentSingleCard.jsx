@@ -7,7 +7,7 @@ import { AiOutlineLeft } from "react-icons/ai";
 import Carusel from "../Carusel/Carusel";
 import InformationBar from "./InformationBar";
 import ProductAttribute from "./ProductAttribute";
-import { CiBellOn } from "react-icons/ci";
+import { NonexistentNotificationToast } from "./Toast";
 
 const NonExistentSingleCard = ({ data, category }) => {
   return (
@@ -72,16 +72,16 @@ const NonExistentSingleCard = ({ data, category }) => {
                 <div className={styles.DetailsLine}></div>
               </div>
               <div className={styles.DetailsText}>
-              <span>این محصول در حال حاضر موجود نیست. می‌توانید </span>
+                <span>این محصول در حال حاضر موجود نیست. می‌توانید </span>
 
-                <span className={styles.substituteText}> از محصولات جایگزین</span>
+                <span className={styles.substituteText}>
+                  {" "}
+                  از محصولات جایگزین
+                </span>
                 <span> در پایین کالا دیدن نمایید .</span>
+              </div>
 
-              </div>
-              <div className={styles.notificationContainer}>
-                <p>موجود شد اطلاع بده</p>
-                <CiBellOn  className={styles.notificationIcon}/>
-              </div>
+              <NonexistentNotificationToast />
             </div>
           </div>
         </div>

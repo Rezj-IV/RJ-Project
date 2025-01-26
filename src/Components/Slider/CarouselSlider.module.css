@@ -6,6 +6,19 @@
   height: unset;
 }
 
-.slick-dots .dots > li > button ::after {
-  background-color: aqua;
+.dots {
+  right: 0 !important;
+  bottom: 30px !important;
+  width: 9.5% !important;
+}
+.dots li {
+  margin: 0px !important;
+}
+.dots .active {
+  color: red !important;
+  font-size: 28px !important;
+}
+.dots button::before {
+  font-size: 7px !important;
+  color: #b3b3b3 !important;
 }/*# sourceMappingURL=CarouselSlider.module.css.map */

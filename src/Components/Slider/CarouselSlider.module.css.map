@@ -1,1 +1,1 @@
-{"version":3,"sources":["CarouselSlider.module.scss","CarouselSlider.module.css"],"names":[],"mappings":"AACA;EAEI,kBAAA;EACA,aAAA;ACDJ;ADGI;EACI,aAAA;ACDR;;ADmBA;EACI,sBAAA;AChBJ","file":"CarouselSlider.module.css"}
+{"version":3,"sources":["CarouselSlider.module.scss","CarouselSlider.module.css"],"names":[],"mappings":"AAAA;EAEI,kBAAA;EACA,aAAA;ACAJ;ADCI;EACI,aAAA;ACCR;;ADGA;EACI,mBAAA;EACA,uBAAA;EACA,sBAAA;ACAJ;ADEI;EACI,sBAAA;ACAR;ADEI;EACA,qBAAA;EACA,0BAAA;ACAJ;ADII;EACI,yBAAA;EACA,yBAAA;ACFR","file":"CarouselSlider.module.css"}

@@ -41,22 +41,3 @@
     font-size: 12px;
 
 }
-.purchaseConfirmationContainer{
-    display: flex;
-    justify-content: center;
-    width: 96%;
-}
-.purchaseConfirmation{
-    color: #ffffff;
-    font-weight: 600;
-    display: flex;
-    margin-top: 15px;
-    font-size: 15.5px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    width: 100%;
-    height:52px;
-    background-color: #223c78;
-    cursor: pointer;
-}

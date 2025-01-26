@@ -1,32 +1,45 @@
 .cardDetailsConrainer {
   display: flex;
-  padding: 0 135px;
+  width: 87%;
+  margin: 40px auto;
 }
-.cardDetailsConrainer .cardDetail {
+.cardDetailsConrainer .filterSectionContainer {
   margin-left: 30px;
   border: 1px solid #ced0cf;
   border-radius: 10px;
   padding: 8px 15px;
   flex-basis: 16%;
   height: 500px;
+  position: sticky;
+  top: 105px;
 }
-.cardDetailsConrainer .cardDetail .filterLogo {
+.cardDetailsConrainer .filterSectionContainer .filterSection {
+  width: 222px;
+}
+.cardDetailsConrainer .filterSectionContainer .filterLogo {
   display: flex;
   height: 40px;
   width: 100%;
   align-items: center;
   border-bottom: 1px solid #ced0cf;
 }
-.cardDetailsConrainer .cardDetail .filterLogo p {
+.cardDetailsConrainer .filterSectionContainer .filterLogo p {
   font-size: 14.5px;
   font-weight: 600;
   color: #262626;
   padding-right: 5px;
 }
-.cardDetailsConrainer .cardDetail .filterLogo .FilterIcon {
+.cardDetailsConrainer .filterSectionContainer .filterLogo .FilterIcon {
   font-size: 22px;
 }
-.cardDetailsConrainer .cardDetail .categories p {
+.cardDetailsConrainer .filterSectionContainer .categories {
+  padding: 15px 0;
+}
+.cardDetailsConrainer .filterSectionContainer .categories p {
+  font-size: 13.5px;
+  padding: 10px 0;
+  color: #777777;
+  font-weight: 600;
   display: block;
 }
 .cardDetailsConrainer .cardContainer {
@@ -70,8 +83,12 @@
   padding-right: 5px;
 }
 .cardDetailsConrainer .cardContainer .Card {
+  width: 100%;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  grid-template-rows: repeat(4, 1fr);
   grid-auto-rows: 1fr;
+  grid-gap: 13px 16px;
   gap: 13px 16px;
 }/*# sourceMappingURL=CardDetails.module.css.map */

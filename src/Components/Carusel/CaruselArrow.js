@@ -15,7 +15,7 @@ export function NextArrow(props) {
         height: `${props.height}`,
         margin: "auto",
         marginRight: "30px",
-        zIndex: "10000",
+        zIndex: "10",
         color: "#4a4a4a  ",
       }}
       onClick={onClick}
@@ -36,7 +36,7 @@ export function PrevArrow(props) {
         width: "30px",
         margin: "auto",
         marginLeft: "30px",
-        zIndex: "10000",
+        zIndex: "10",
         color: "#4a4a4a",
       }}
       onClick={onClick}

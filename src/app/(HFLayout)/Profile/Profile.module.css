@@ -1,0 +1,99 @@
+.profileContainer {
+    display: flex;
+    padding: 0 143px;
+    height: 550px;
+    margin: 50px 0;
+
+}
+
+.rightSide {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    cursor: pointer;
+    flex-basis: 20%;
+}
+
+.profile {
+    display: flex;
+    color: #151515;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.profileIcon {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.profileContent {
+    display: flex;
+    color: #385086;
+    font-size: 17px;
+    font-weight: 600;
+    align-items: center;
+
+}
+
+.EyeIcon {
+    margin-left: 10px;
+    font-size: 23px;
+
+}
+
+.ExitIcon {
+    margin-left: 10px;
+    font-size: 19px;
+
+}
+
+.leftSide {
+    flex-basis: 80%;
+
+    height: 100%;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.constructionContainer {
+    width: 80%;
+    height: 80%;
+
+}
+
+.construction {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 25px 0;
+}
+
+.Specifications {
+    background-color: #f8fbff;
+    display: flex;
+    align-items: center;
+    border-radius: 13px;
+    width: 90%;
+    height: 100px;
+    padding-right: 40px;
+}
+
+.Specifications p {
+    font-size: 15px;
+    color: #545454;
+    font-weight: 600;
+    text-shadow: 0px 0px 20px #9bbaff;
+}
+
+.Specifications span {
+    padding-right: 20px;
+    font-size: 15px;
+    color: #003678;
+    
+}

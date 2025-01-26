@@ -58,6 +58,14 @@
 .footerDataContainer .footerData .leftSideFooter .leftSideContent ul li, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li {
   padding: 6px 0;
 }
+.footerDataContainer .footerData .leftSideFooter .leftSideContent ul li div, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li div {
+  text-decoration: none;
+  color: #e4e4e4;
+  font-size: 14px;
+}
+.footerDataContainer .footerData .leftSideFooter .leftSideContent ul li div:hover, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li div:hover {
+  color: rgb(136, 245, 255);
+}
 .footerDataContainer .footerData .leftSideFooter .leftSideContent ul li a, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li a {
   text-decoration: none;
   color: #e4e4e4;

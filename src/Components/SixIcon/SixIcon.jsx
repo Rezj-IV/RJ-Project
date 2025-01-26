@@ -14,7 +14,6 @@ async function getAllSixIcon() {
 }
 const SixIcon = async () => {
   const data = await getAllSixIcon();
-  console.log(data);
   return (
     <div className={styles.mainContainer}>
     <div className={styles.sixIconContainer}>
@@ -22,7 +21,7 @@ const SixIcon = async () => {
         return (
         <div className={styles.sixIcon} key={item.id}>
             <Link href={`/Product/specialCategory/${item.label}`} className={styles.sixIconLink}>
-            <Image width={80} height={80} src={`/SixIcon/${item.url}`} alt={item.iconName}/>
+            <Image width={80} height={80} src={`/SixIcon/${item.url}`} alt={item.iconName} priority/>
             <p>{item.iconName}</p>
             </Link>
           </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import FooterData from "./FooterData";
-import * as repository from "../../../RestConfig/RestRequest";
 import styles from "./Footer.module.css";
 import { IoIosArrowUp } from "react-icons/io";
 import Link from "next/link";

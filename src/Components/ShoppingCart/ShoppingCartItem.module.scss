@@ -133,6 +133,11 @@ $delText: #8e9bbb;
                         justify-content: end;
                         gap: 10px;
 
+                        .mainPrice {
+                            font-weight: 600;
+                            font-size: 18px;
+                        }
+
                         .price {
                             color: #919ebc;
                             text-decoration-line: line-through;
