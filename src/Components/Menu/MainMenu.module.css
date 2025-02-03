@@ -6,6 +6,11 @@
   gap: 25px;
   border-bottom: 1px solid #daddde;
 }
+@media ((min-width: 100px) and (max-width: 1000px)) {
+  .menuContainer {
+    display: none;
+  }
+}
 .menuContainer .productCategoriesContainer {
   width: 160px;
   border-radius: 8px;

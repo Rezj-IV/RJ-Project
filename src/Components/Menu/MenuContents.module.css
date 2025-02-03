@@ -1,4 +1,5 @@
-.contentsContainer, .contentsContainerA {
+.contentsContainer {
+  background-color: #ffffff;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -8,37 +9,87 @@
   height: 402px;
   width: 550px;
 }
-.contentsContainer .contents, .contentsContainerA .contents {
+@media ((min-width: 600px) and (max-width: 1000px)) {
+  .contentsContainer {
+    height: -moz-fit-content;
+    height: fit-content;
+    border: none;
+    width: 450px;
+  }
+}
+@media ((min-width: 520px) and (max-width: 600px)) {
+  .contentsContainer {
+    height: -moz-fit-content;
+    height: fit-content;
+    border: none;
+    width: 350px;
+  }
+}
+@media ((min-width: 100px) and (max-width: 520px)) {
+  .contentsContainer {
+    height: -moz-fit-content;
+    height: fit-content;
+    border: none;
+    width: 280px;
+    gap: 20px;
+  }
+}
+.contentsContainer .contents {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.contentsContainer .contents .khat, .contentsContainerA .contents .khat {
+.contentsContainer .contents .khat {
   font-size: 25px;
   padding-left: 10px;
   color: rgb(46, 144, 242);
 }
-.contentsContainer .contents .headerContent, .contentsContainerA .contents .headerContent {
+@media ((min-width: 100px) and (max-width: 500px)) {
+  .contentsContainer .contents .khat {
+    font-size: 16px;
+  }
+}
+.contentsContainer .contents .headerContent {
   font-size: 17px;
   text-decoration: none;
   color: rgb(30, 30, 30);
   font-weight: 600;
 }
-.contentsContainer .contents .headerContent:hover, .contentsContainerA .contents .headerContent:hover {
+@media ((min-width: 500px) and (max-width: 740px)) {
+  .contentsContainer .contents .headerContent {
+    font-size: 14.5px;
+  }
+}
+@media ((min-width: 100px) and (max-width: 500px)) {
+  .contentsContainer .contents .headerContent {
+    font-size: 12.5px;
+  }
+}
+.contentsContainer .contents .headerContent:hover {
   color: rgb(46, 144, 242);
 }
-.contentsContainer .contents .linkContent, .contentsContainerA .contents .linkContent {
+.contentsContainer .contents .linkContent {
   text-decoration: none;
   font-size: 15px;
   cursor: pointer;
   color: #717171;
 }
-.contentsContainer .contents .linkContent:hover, .contentsContainerA .contents .linkContent:hover {
+@media ((min-width: 500px) and (max-width: 740px)) {
+  .contentsContainer .contents .linkContent {
+    font-size: 12.5px;
+  }
+}
+@media ((min-width: 100px) and (max-width: 500px)) {
+  .contentsContainer .contents .linkContent {
+    font-size: 10.5px;
+  }
+}
+.contentsContainer .contents .linkContent:hover {
   color: rgb(46, 144, 242);
 }
 
-.contentsContainerA {
-  gap: 0 40px;
+.gap {
+  gap: 23px 40px;
 }
 
 .headerContent:hover {
@@ -46,18 +97,32 @@
 }
 
 .Developing {
-  width: 100%;
   border: 1px solid rgb(227, 227, 227);
   height: 400px;
   width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
+}
+@media ((min-width: 100px) and (max-width: 1000px)) {
+  .Developing {
+    border: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-right: 40%;
+  }
 }
 .Developing .notification {
   text-shadow: -1px 11px 7px #9b9b9b;
   color: rgb(204, 204, 204);
   font-size: 19px;
+  width: 250px;
+}
+@media ((min-width: 100px) and (max-width: 700px)) {
+  .Developing .notification {
+    font-size: 14px;
+  }
 }
 .Developing .notification h3 {
   padding-bottom: 10px;
@@ -65,8 +130,4 @@
 }
 .Developing .notification .h4 {
   text-align: center;
-}
-.Developing .developingLogo {
-  position: absolute;
-  z-index: -1;
 }/*# sourceMappingURL=MenuContents.module.css.map */

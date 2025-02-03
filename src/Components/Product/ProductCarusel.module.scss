@@ -1,12 +1,18 @@
 $borderColor: #8c9ab9;
 $ShText : rgb(34 60 120/1);
-
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
 .caruselContainer {
     width: 100%;
     height: fit-content;
     border: 1px solid $borderColor;
     border-radius: 25px;
-    margin: 60px auto;
+    margin: 0px auto;
+    margin-bottom: 4%;
+
     overflow: hidden;
     padding: 30px 20px;
 
@@ -35,11 +41,14 @@ $ShText : rgb(34 60 120/1);
         .ShowAll {
             display: flex;
             align-items: center;
-            font-size: 15px;
             text-decoration: none;
             color: $ShText;
             height: fit-content;
 
+            span {
+                font-size: 15px;
+
+            }
 
         }
 
@@ -64,3 +73,34 @@ $ShText : rgb(34 60 120/1);
         padding-right: 5px;
     }
 }
+
+@media ((min-width: 100px) and (max-width: 666px)) {
+    .titleCarusel{
+        padding: 0 !important;
+    }
+    .titleCarusel p {
+        font-size: 15.5px !important;
+    }
+
+    .ShowAll span {
+        font-size: 12px !important;
+    }
+
+    .AiOutlineLeft {
+        font-size: 11px !important;
+        margin-right: 5px !important;
+    }
+}
+
+.slick-list{
+    padding: 0 !important;
+  }
+
+  .weblogContainer{
+    display: block;
+    @include Media(100px, 1101px){
+        display: none;
+    }
+  }
+
+

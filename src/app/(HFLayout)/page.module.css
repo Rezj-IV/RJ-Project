@@ -1,5 +1,11 @@
 .PdContainer{
-  padding: 0 135px;
-  direction: rtl;
+width: 85%;  direction: rtl;
+margin: 0 auto;
+
 
 }
+
+/* @media  (min-width:800px ) and (max-width: 3400px) {
+    .LowerPart{
+     display: none;
+    }} */

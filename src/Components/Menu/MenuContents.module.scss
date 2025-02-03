@@ -4,7 +4,14 @@
     }
 }
 
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
 .contentsContainer {
+    background-color: #ffffff;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -14,18 +21,60 @@
     height: 402px;
     width: 550px;
 
+    @include Media(600px, 1000px) {
+        height: fit-content;
+        border: none;
+        width: 450px;
+
+
+    }
+
+    @include Media(520px, 600px) {
+        height: fit-content;
+        border: none;
+        width: 350px;
+
+
+    }
+
+    @include Media(100px, 520px) {
+        height: fit-content;
+        border: none;
+        width: 280px;
+        gap: 20px;
+
+    }
+
+
     .contents {
         display: flex;
         flex-direction: column;
         gap: 10px;
 
         .khat {
+            @include Media(100px, 500px) {
+                font-size: 16px;
+
+            }
+
             font-size: 25px;
             padding-left: 10px;
             color: rgb(46, 144, 242);
         }
 
         .headerContent {
+            @include Media(500px, 740px) {
+                font-size: 14.5px;
+
+
+            }
+
+            @include Media(100px, 500px) {
+                font-size: 12.5px;
+
+
+            }
+
             font-size: 17px;
             text-decoration: none;
             color: rgb(30, 30, 30);
@@ -35,6 +84,16 @@
 
 
         .linkContent {
+            @include Media(500px, 740px) {
+                font-size: 12.5px;
+            }
+
+            @include Media(100px, 500px) {
+                font-size: 10.5px;
+
+
+            }
+
             text-decoration: none;
             font-size: 15px;
             cursor: pointer;
@@ -46,9 +105,9 @@
     }
 }
 
-.contentsContainerA {
-    @extend .contentsContainer;
-    gap: 0 40px;
+.gap {
+
+    gap: 23px 40px;
 }
 
 
@@ -59,31 +118,31 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .Developing {
-    width: 100%;
     border: 1px solid rgb(227, 227, 227);
     height: 400px;
     width: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
+
+    @include Media(100px, 1000px) {
+        border: none;
+        width: fit-content;
+        margin-right: 40%;
+    }
 
     .notification {
         text-shadow: -1px 11px 7px #9b9b9b;
         color: rgb(204, 204, 204);
         font-size: 19px;
+        width: 250px;
+
+        @include Media(100px, 700px) {
+            font-size: 14px;
+
+        }
 
         h3 {
             padding-bottom: 10px;
@@ -97,10 +156,6 @@
         }
     }
 
-    .developingLogo {
 
-        position: absolute;
-        z-index: -1;
-    }
 
 }

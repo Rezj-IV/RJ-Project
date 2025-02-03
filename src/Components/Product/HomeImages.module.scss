@@ -1,37 +1,105 @@
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
 .FirstSectionContainer {
     position: relative;
 
-    height: 240px;
+    margin-bottom: 3.5%;
+    height: fit-content;
     width: 100%;
 
+    @include Media(100px, 1000px) {
+        margin-top: 2%;
+        margin-bottom: 4%;
+
+    }
+
     .homeImage {
-        height: unset;
+        position: unset !important;
+        height: unset !important;
         border-radius: 17px;
     }
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
 }
 
 .bestMobile {
     width: 100%;
     text-align: center;
     font-size: 26px;
-    height: 55px;
+    height: 65px;
+
+    @include Media(100px, 600px) {
+        font-size: 22px;
+
+    }
 }
 
 .SecondSectionContainer {
-    display: flex;
     width: 100%;
-    justify-content: center;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 1fr;
+    grid-auto-rows: 1fr;
+    margin-bottom: 4%;
 
-    height: 285px;
+    @include Media(1555px, 2200px) {
+        width: 55% !important;
+    }
 
-    .SecondHomeImage {}
+    @include Media(1000px, 1555px) {
+        width: 70% !important;
+    }
+
+    gap:15px 40px;
+
+    height: fit-content;
+
+    .SecondSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .SecondHomeImage {
+
+        @include Media(1000px, 1400px) {
+            width: 150px !important;
+            height: 145px !important;
+        }
+
+        @include Media(600px, 1000px) {
+            width: 125px !important;
+            height: 120px !important;
+        }
+
+        @include Media(100px, 600px) {
+            width: 100px !important;
+            height: 99px !important;
+        }
+    }
 
     p {
         font-size: 18px;
         color: rgb(43, 43, 43);
         font-weight: 600;
         text-align: center;
+
+        @include Media(100px, 600px) {
+            font-size: 15px;
+
+        }
     }
 
 }
@@ -40,16 +108,32 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    gap: 50px;
-    height: 240px;
+    gap: 3.5%;
+    height: fit-content;
+    margin-bottom: 5%;
+
+    @include Media(100px, 1100px) {
+        flex-direction: column;
+        gap: 5%;
+
+    }
 
     .FifthSection {
-        position: relative;
 
+
+        position: relative;
         width: 100%;
+        height: fit-content;
+
+        @include Media(100px, 1100px) {
+            margin-top: 3%;
+
+
+        }
 
         .FifthHomeImage {
-            height: unset;
+            position: unset !important;
+            height: unset !important;
             border-radius: 17px;
 
         }
@@ -58,9 +142,14 @@
 
 .mainContainerNinthSection {
     width: 70%;
-    height: 460px;
+    height: fit-content;
     display: block;
     margin: 0 auto;
+    margin-bottom: 5%;
+
+    @include Media(100px, 590px) {
+        width: 95%;
+    }
 
     .title {
         height: 58px;
@@ -69,17 +158,19 @@
     }
 
     .DigitalContainer {
+        width: 100%;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 35px 0;
-        align-items: center;
-        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-rows: 1fr;
+        grid-auto-rows: 1fr;
+        grid-gap: 50px;
+        gap: 50px;
+        margin: 0 auto;
 
         .Digital {
             position: relative;
             overflow: hidden;
-            width: 76%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             padding-top: 16px;
@@ -183,21 +274,33 @@
 
     .EleventhSectionContainer {
         @extend.FifthSectionContainer;
-        height: 222px;
+        height: fit-content;
         width: 95%;
+
+        @include Media(1000px, 1460px) {
+            width: 98%;
+            gap: 20px;
+        }
 
         .EleventhSection {
             position: relative;
             width: 100%;
+            height: 200px;
+
             .EleventhHomeImage {
-                height: 145px !important;
+                height: unset !important;
 
             }
 
             p {
 
+                @include Media(1000px, 1460px) {
+                    height: 45px;
+                    font-size: 11px;
+                }
+
                 position: absolute;
-                bottom: 24px;
+                bottom: 0;
                 width: 100%;
                 background-color: #333333;
                 height: 55px;
@@ -211,4 +314,10 @@
 
 
     }
+}
+
+
+
+.doubleContainer {
+    @include Media(100px, 1100px) {}
 }

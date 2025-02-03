@@ -35,7 +35,7 @@ const MenuContents = ({ itemId }) => {
   return (
     <>
       {itemId === 1 ? (
-        <div className={styles.contentsContainerA}>
+        <div className={`${styles.contentsContainer} ${styles.gap}`}>
           <div className={styles.contents}>
             <div>
               <span className={styles.khat}>|</span>
@@ -43,8 +43,7 @@ const MenuContents = ({ itemId }) => {
                 className={styles.headerContent}
                 href="/Product/Class/mobile"
               >
-                برندهای مختلف گوشی موبایل
-              </Link>
+ موبایل              </Link>
             </div>
             <div
               className={styles.linkContent}
@@ -278,13 +277,7 @@ const MenuContents = ({ itemId }) => {
 
       {itemId > 2 ? (
         <div className={styles.Developing}>
-          <Image
-            src="/logo/developingLogo.jpg"
-            alt="Developing"
-            width={150}
-            height={150}
-            className={styles.developingLogo}
-          />
+
           <div className={styles.notification}>
             <h3>وب سایت در حال توسعه هست</h3>
             <h4>ممنون از صبر و شکیبایی شما</h4>

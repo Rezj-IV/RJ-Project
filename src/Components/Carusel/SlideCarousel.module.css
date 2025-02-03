@@ -7,7 +7,8 @@
   align-items: center;
   border-radius: 20px;
   width: 100%;
-  margin: 35px auto;
+  margin: 0 auto;
+  margin-bottom: 4%;
   border: 1.5px solid #14a0de;
 }
 
@@ -32,7 +33,7 @@
   align-items: center;
   font-size: 19px;
 }
-.ContainerContent .offerText i {
+.ContainerContent i {
   display: flex;
   align-items: center;
   font-size: 47px;
@@ -52,4 +53,19 @@
 
 .ContainerCarousel {
   width: 100%;
+}
+
+@media ((min-width: 100px) and (max-width: 666px)) {
+  .offerText {
+    font-size: 15px !important;
+  }
+  .offerText i {
+    font-size: 28px;
+  }
+  .ShowAllIncredibleOffers {
+    font-size: 13px;
+  }
+  .AiOutlineLeft {
+    font-size: 12.5px !important;
+  }
 }/*# sourceMappingURL=SlideCarousel.module.css.map */

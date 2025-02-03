@@ -1,5 +1,6 @@
 
 import { RiArrowDropLeftLine , RiArrowDropRightLine  } from "react-icons/ri";
+import { RxCaretLeft ,RxCaretRight } from "react-icons/rx";
 
 import styles from "./CaruselSliderArrow.module.css";
 export function NextArrowSlide(props) {

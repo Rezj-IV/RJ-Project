@@ -1,39 +1,99 @@
-
-.mainContainer{
-   
-    display: flex;
-        justify-content: center;
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
 }
+
+.mainContainer {
+
+    display: flex;
+}
+
 .sixIconContainer {
     display: flex;
-    width: 60%;
-    height: 200px;
+    width: 100%;
+    height: 215px;
     align-items: center;
     justify-content: center;
+    gap: 4%;
+
+    @include Media(100px, 1100px) {
+        justify-content: space-around;
+    }
 
     .sixIcon {
-        display: flex;
-        justify-content: center;
+        margin: 0 auto;
         width: 100%;
 
         .sixIconLink {
             text-decoration: none;
-          
-            img {
 
-                border-radius: 50%;
-                display: block;
-                margin: 0 auto;
+
+        }
+
+        img {
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+
+            @include Media(300px, 500px) {
+                width: 35px !important;
+                height: 35px !important;
             }
 
-            p {
-                padding-top: 14px;
-                font-size: 13.5px;
-                font-weight: 600;
-                color: rgb(51 87 124);
-                text-align: center;
+            @include Media(500px, 600px) {
+                width: 50px !important;
+                height: 50px !important;
+            }
+
+            @include Media(600px, 750px) {
+                width: 60px !important;
+                height: 60px !important;
+            }
+
+            @include Media(750px, 1100px) {
+                width: 70px !important;
+                height: 70px !important;
+            }
+
+            @include Media(1100px, 1350px) {
+                width: 75px !important;
+                height: 75px !important;
             }
         }
 
+        p {
+            padding-top: 14px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: rgb(51 87 124);
+            text-align: center;
+
+            @include Media(300px, 500px) {
+                font-size: 5.5px;
+
+            }
+
+            @include Media(500px, 600px) {
+                font-size: 9px;
+
+            }
+
+            @include Media(600px, 800px) {
+                font-size: 10px;
+
+
+            }
+
+            @include Media(800px, 1350px) {
+                font-size: 12px;
+
+            }
+
+            @include Media(1350px, 1550px) {
+                font-size: 12.5px;
+
+            }
+        }
     }
 }

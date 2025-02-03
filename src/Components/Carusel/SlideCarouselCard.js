@@ -74,6 +74,7 @@ const SlideCarouselCard = ({ product }) => {
         )}
       </div>
     </Link>
+    
   );
 };
 

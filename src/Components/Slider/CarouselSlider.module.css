@@ -1,18 +1,41 @@
 .sliderContainer {
   position: relative;
-  height: 430px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-.sliderContainer .imageSlider {
-  height: unset;
+
+.imageSlider {
+  position: unset !important;
+  height: unset !important;
+}
+@media ((min-width: 100px) and (max-width: 999px)) {
+  .imageSlider {
+    border-radius: 22px;
+  }
 }
 
 .dots {
-  right: 0 !important;
-  bottom: 30px !important;
-  width: 9.5% !important;
+  right: 2.5% !important;
+  bottom: 7% !important;
+  direction: rtl !important;
+  text-align: unset;
+  width: 97% !important;
+}
+@media ((min-width: 700px) and (max-width: 1000px)) {
+  .dots {
+    bottom: 8% !important;
+    right: 3% !important;
+  }
+}
+@media ((min-width: 500px) and (max-width: 700px)) {
+  .dots {
+    bottom: 8% !important;
+    right: 5.5% !important;
+  }
 }
 .dots li {
   margin: 0px !important;
+  width: 1.2% !important;
 }
 .dots .active {
   color: red !important;
@@ -21,4 +44,29 @@
 .dots button::before {
   font-size: 7px !important;
   color: #b3b3b3 !important;
+}
+@media ((min-width: 1200px) and (max-width: 1450px)) {
+  .dots button::before {
+    font-size: 6px !important;
+  }
+}
+@media ((min-width: 900px) and (max-width: 1200px)) {
+  .dots button::before {
+    font-size: 5px !important;
+  }
+}
+@media ((min-width: 700px) and (max-width: 900px)) {
+  .dots button::before {
+    font-size: 4px !important;
+  }
+}
+@media ((min-width: 500px) and (max-width: 700px)) {
+  .dots button::before {
+    font-size: 3.5px !important;
+  }
+}
+@media ((min-width: 300px) and (max-width: 500px)) {
+  .dots button::before {
+    font-size: 3px !important;
+  }
 }/*# sourceMappingURL=CarouselSlider.module.css.map */

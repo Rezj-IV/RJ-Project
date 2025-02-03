@@ -1,17 +1,46 @@
 .searchBoxContainer {
   display: flex;
   position: relative;
-  width: 74%;
+  width: 100%;
   height: -moz-fit-content;
   height: fit-content;
+}
+@media ((min-width: 1199px) and (max-width: 1500px)) {
+  .searchBoxContainer {
+    width: 60% !important;
+  }
+}
+@media ((min-width: 1001px) and (max-width: 1199px)) {
+  .searchBoxContainer {
+    width: 70% !important;
+  }
+}
+@media ((min-width: 1500px) and (max-width: 3400px)) {
+  .searchBoxContainer {
+    width: 45% !important;
+  }
 }
 .searchBoxContainer .searchIcon {
   z-index: 1;
   position: absolute;
   bottom: 15px;
-  color: #757575;
+  color: #929292;
   font-size: 28px;
   width: 75px;
+}
+@media ((min-width: 100px) and (max-width: 699px)) {
+  .searchBoxContainer .searchIcon {
+    bottom: 12px;
+    right: 29px;
+    font-size: 24px;
+  }
+}
+@media ((min-width: 699px) and (max-width: 1000px)) {
+  .searchBoxContainer .searchIcon {
+    font-size: 26px;
+    right: 9px;
+    width: 60px;
+  }
 }
 .searchBoxContainer .searchBox {
   width: 100%;
@@ -25,6 +54,20 @@
   font-size: 17px;
   color: #4a4a4a;
 }
+@media ((min-width: 100px) and (max-width: 699px)) {
+  .searchBoxContainer .searchBox {
+    height: 45px;
+    border-radius: 25px;
+    padding-right: 80px;
+    font-size: 15px;
+  }
+}
+@media ((min-width: 699px) and (max-width: 1200px)) {
+  .searchBoxContainer .searchBox {
+    height: 52px;
+    padding-right: 55px;
+  }
+}
 .searchBoxContainer .searchBox::-moz-placeholder {
   font-size: 14px;
   font-weight: 600;
@@ -36,6 +79,22 @@
   font-weight: 600;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #b1adad;
+}
+@media ((min-width: 100px) and (max-width: 699px)) {
+  .searchBoxContainer .searchBox::-moz-placeholder {
+    font-size: 12px;
+  }
+  .searchBoxContainer .searchBox::placeholder {
+    font-size: 12px;
+  }
+}
+@media ((min-width: 699px) and (max-width: 1000px)) {
+  .searchBoxContainer .searchBox::-moz-placeholder {
+    font-size: 13px;
+  }
+  .searchBoxContainer .searchBox::placeholder {
+    font-size: 13px;
+  }
 }
 .searchBoxContainer .searchBox:focus-visible {
   border: none;

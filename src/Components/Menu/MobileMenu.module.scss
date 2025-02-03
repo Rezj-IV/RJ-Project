@@ -9,13 +9,11 @@ $BlackGray: #545454;
     }
 }
 
-// .container {
-//     background-color: #00000071;
-//     width: 100%;
-//     height: 100%;
-//     z-index: 100;
-
-// }
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
 
 .navbar {
     position: relative;
@@ -35,19 +33,85 @@ $BlackGray: #545454;
         justify-content: flex-start;
         align-items: flex-start;
         background-color: $white;
-        padding: 20px 15px;
-
-
+        padding: 8px 0px 0px 15px;
         width: 261px;
         height: fit-content;
         box-shadow: 0px 1px 4px 1px #e1e1e1;
 
+        @include Media(740px, 1000px) {
+            width: 241px;
+            padding: 0;
+            border-left: 1px solid #f3f3f3;
+            box-shadow: none;
+
+
+        }
+
+        @include Media(560px, 740px) {
+            width: 200px;
+            padding: 0;
+            border-left: 1px solid #f3f3f3;
+            box-shadow: none;
+        }
+
+        @include Media(450px, 560px) {
+            width: 170px;
+            padding: 0;
+            border-left: 1px solid #f3f3f3;
+            box-shadow: none;
+
+
+        }
+        @include Media(100px, 450px) {
+            width: 150px;
+            padding: 0;
+            border-left: 1px solid #f3f3f3;
+            box-shadow: none;
+
+
+        }
         .otherOption {
             display: flex;
             align-items: center;
             border-bottom: 1px solid #f3f3f3;
-            height: 60px;
+            height: 65px;
             width: 245.5px;
+
+            @include Media(740px, 1000px) {
+                height: 90px;
+                width: 240px;
+
+            }
+
+            @include Media(560px, 740px) {
+                width: 200px;
+                height: 80px;
+                padding: 0;
+                border-left: 1px solid #f3f3f3;
+                box-shadow: none;
+
+
+            }
+
+            @include Media(100px, 560px) {
+
+                width: 170px;
+                height: 70px;
+                padding: 0;
+                border-left: 1px solid #f3f3f3;
+                box-shadow: none;
+
+            }
+            @include Media(100px, 450px) {
+                width: 150px;
+                height: 60px;
+                padding: 0;
+                border-left: 1px solid #f3f3f3;
+                box-shadow: none;
+    
+    
+            }
+
             @include hover(rgba(182, 214, 250, 0.29), 15px);
 
             li {
@@ -76,6 +140,16 @@ $BlackGray: #545454;
                 text-decoration: none;
                 font-weight: 600;
 
+                @include Media(560px, 740px) {
+                    font-size: 11.5px;
+                }
+
+                @include Media(100px, 560px) {
+
+                    font-size: 10px;
+
+
+                }
             }
 
         }
@@ -90,6 +164,24 @@ $BlackGray: #545454;
             box-shadow: 0px 0px 4px 0px #cfcfcf;
             border-radius: 50%;
 
+            @include Media(100px, 740px) {
+
+                height: 30px;
+                width: 30px;
+
+
+            }
+
+            img {
+                @include Media(100px, 740px) {
+
+                    height: 20px !important;
+                    width: 20px !important;
+
+
+                }
+            }
+
         }
 
     }
@@ -98,17 +190,38 @@ $BlackGray: #545454;
 }
 
 .layer {
-    z-index: -1;
+    z-index: 1;
     display: none;
     background-color: $white;
     position: absolute;
     top: -1px;
-    right: 260px;
+    right: 240px;
+    width: 100%;
+    height: 100%;
+
+    @include Media(560px, 740px) {
+        right: 200px;
+
+
+    }
+
+    @include Media(100px, 560px) {
+        right: 170px;
+
+
+    }
+    @include Media(100px, 450px) {
+        right:  150px;
+ 
+
+
+    }
 }
 
 
 li:hover .layer {
     display: block;
+    width: 100%;
 
 }
 

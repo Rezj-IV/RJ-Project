@@ -16,18 +16,83 @@
   justify-content: flex-start;
   align-items: flex-start;
   background-color: #ffffff;
-  padding: 20px 15px;
+  padding: 8px 0px 0px 15px;
   width: 261px;
   height: -moz-fit-content;
   height: fit-content;
   box-shadow: 0px 1px 4px 1px #e1e1e1;
 }
+@media ((min-width: 740px) and (max-width: 1000px)) {
+  .navbar ul {
+    width: 241px;
+    padding: 0;
+    border-left: 1px solid #f3f3f3;
+    box-shadow: none;
+  }
+}
+@media ((min-width: 560px) and (max-width: 740px)) {
+  .navbar ul {
+    width: 200px;
+    padding: 0;
+    border-left: 1px solid #f3f3f3;
+    box-shadow: none;
+  }
+}
+@media ((min-width: 450px) and (max-width: 560px)) {
+  .navbar ul {
+    width: 170px;
+    padding: 0;
+    border-left: 1px solid #f3f3f3;
+    box-shadow: none;
+  }
+}
+@media ((min-width: 100px) and (max-width: 450px)) {
+  .navbar ul {
+    width: 150px;
+    padding: 0;
+    border-left: 1px solid #f3f3f3;
+    box-shadow: none;
+  }
+}
 .navbar ul .otherOption {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f3f3f3;
-  height: 60px;
+  height: 65px;
   width: 245.5px;
+}
+@media ((min-width: 740px) and (max-width: 1000px)) {
+  .navbar ul .otherOption {
+    height: 90px;
+    width: 240px;
+  }
+}
+@media ((min-width: 560px) and (max-width: 740px)) {
+  .navbar ul .otherOption {
+    width: 200px;
+    height: 80px;
+    padding: 0;
+    border-left: 1px solid #f3f3f3;
+    box-shadow: none;
+  }
+}
+@media ((min-width: 100px) and (max-width: 560px)) {
+  .navbar ul .otherOption {
+    width: 170px;
+    height: 70px;
+    padding: 0;
+    border-left: 1px solid #f3f3f3;
+    box-shadow: none;
+  }
+}
+@media ((min-width: 100px) and (max-width: 450px)) {
+  .navbar ul .otherOption {
+    width: 150px;
+    height: 60px;
+    padding: 0;
+    border-left: 1px solid #f3f3f3;
+    box-shadow: none;
+  }
 }
 .navbar ul .otherOption:hover {
   background-color: rgba(182, 214, 250, 0.29);
@@ -53,6 +118,16 @@
   text-decoration: none;
   font-weight: 600;
 }
+@media ((min-width: 560px) and (max-width: 740px)) {
+  .navbar ul .ParentLink .LinkOption {
+    font-size: 11.5px;
+  }
+}
+@media ((min-width: 100px) and (max-width: 560px)) {
+  .navbar ul .ParentLink .LinkOption {
+    font-size: 10px;
+  }
+}
 .navbar ul .ParentLogo {
   width: 35px;
   height: 35px;
@@ -63,18 +138,48 @@
   box-shadow: 0px 0px 4px 0px #cfcfcf;
   border-radius: 50%;
 }
+@media ((min-width: 100px) and (max-width: 740px)) {
+  .navbar ul .ParentLogo {
+    height: 30px;
+    width: 30px;
+  }
+}
+@media ((min-width: 100px) and (max-width: 740px)) {
+  .navbar ul .ParentLogo img {
+    height: 20px !important;
+    width: 20px !important;
+  }
+}
 
 .layer {
-  z-index: -1;
+  z-index: 1;
   display: none;
   background-color: #ffffff;
   position: absolute;
   top: -1px;
-  right: 260px;
+  right: 240px;
+  width: 100%;
+  height: 100%;
+}
+@media ((min-width: 560px) and (max-width: 740px)) {
+  .layer {
+    right: 200px;
+  }
+}
+@media ((min-width: 100px) and (max-width: 560px)) {
+  .layer {
+    right: 170px;
+  }
+}
+@media ((min-width: 100px) and (max-width: 450px)) {
+  .layer {
+    right: 150px;
+  }
 }
 
 li:hover .layer {
   display: block;
+  width: 100%;
 }
 
 .HeadMenuMobile {

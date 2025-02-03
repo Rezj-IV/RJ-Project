@@ -1,27 +1,33 @@
 $gray: #ced0cf;
 
-@mixin MaxMidia($width) {
+@mixin MaxMedia($width) {
     @media (max-width:$width) {
         display: none;
     }
 }
 
-@mixin Midia($minWidth , $maxWidth ) {
+@mixin Media($minWidth , $maxWidth ) {
     @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
         @content;
     }
 }
 
-// @include Midia(123px , 400px) {
-//     border-width: 2px;
-//   }
+
 
 .cardDetailsConrainer {
     display: flex;
     width: 87%;
     margin: 40px auto;
 
+    @include Media(0px, 1160px) {
+        display: block;
+    }
+
     .filterSectionContainer {
+        @include Media(0px, 1160px) {
+            display: none;
+        }
+
         margin-left: 30px;
         border: 1px solid $gray;
         border-radius: 10px;
@@ -83,11 +89,35 @@ $gray: #ced0cf;
             margin-bottom: 35px;
             justify-content: space-between;
 
+            @include Media(0px, 690px) {
+                display: flex;
+                justify-content: space-between;
+                background-color: #e9ecf3;
+                right: 0;
+                align-items: center;
+                width: 100%;
+                height: 43px;
+                position: fixed;
+                border-radius: 2px;
+                bottom: -36px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #515151;
+
+            }
+         
+
             .sorting {
                 display: flex;
                 gap: 27px;
 
                 .title {
+                    
+            @include Media(0px, 690px) {
+                font-size: 12px;
+            
+
+            }
                     display: flex;
                     align-items: center;
                     font-size: 13px;

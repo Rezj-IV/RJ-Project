@@ -11,6 +11,7 @@ import * as repository from "../../../RestConfig/RestRequest";
 import SixIcon from "@/Components/SixIcon/SixIcon";
 import Footer from "@/Components/Footer/Footer";
 import { Suspense } from "react";
+import LowerPart from "@/Components/LowerPart/LowerPart";
 
 async function getAllProduct() {
   const response = await repository.Get("products");

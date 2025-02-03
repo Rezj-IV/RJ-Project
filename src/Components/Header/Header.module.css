@@ -12,20 +12,55 @@
 }
 
 .HeaderRightSide {
+
     align-items: center;
-    flex-basis: 50%;
+    width: 80%;
+    ;
     gap: 40px;
     height: fit-content;
     display: flex;
-  
+
 }
-.HeaderLeftSide{
-    flex-basis: 50%;
+
+.HeaderLeftSide {
+    width: 20%;
     display: flex;
     justify-content: end;
     gap: 35px;
 
 }
-.RJLandLogo{
-margin-top: 10px;
+
+.RJLandLogo {
+    margin-top: 10px;
+}
+
+@media (min-width:100px) and (max-width: 699px) {
+    .RJLandLogo {
+        position: absolute;
+        z-index: 1;
+        margin-right: 8px;
+
+    }
+
+    .RJLandLogo img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (min-width:700px) and (max-width: 1200px) {
+    .RJLandLogo img {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+@media (min-width:100px) and (max-width: 1000px) {
+    .HeaderLeftSide {
+        display: none;
+    }
+
+    .HeaderRightSide {
+        width: 100%;
+    }
 }

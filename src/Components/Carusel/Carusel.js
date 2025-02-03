@@ -5,7 +5,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import { NextArrow } from "./CaruselArrow";
 import { PrevArrow } from "./CaruselArrow";
 import SlideCarouselCard from "./SlideCarouselCard";
-
+import styles from "./Carusel.module.css"
 const Carusel = (props) => {
   let result = props.data.filter((item) => {
       return item.stock !== 0;
@@ -17,61 +17,61 @@ const Carusel = (props) => {
     swipeToSlide: true,
     rtl: true,
     slidesToShow: 6,
-    slidesToScroll: 1,
+    slidesToScroll: 6,
+
+
     nextArrow: <NextArrow width="30px" height="30px" />,
     prevArrow: <PrevArrow width="30px" height="30px" />,
     responsive: [
       {
-        breakpoint: 300,
+        breakpoint: 1700,
         settings: {
-          slidesToShow: 1,
-          speed: 100,
-          adaptiveHeight: true,
-          slidesToScroll: 1,
-          centerPadding: "1px",
-        },
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          infinite: true,
+
+        }
       },
       {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          speed: 100,
-          adaptiveHeight: true,
-          slidesToScroll: 1,
-          centerPadding: "10px",
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          speed: 100,
-          adaptiveHeight: true,
-          slidesToScroll: 1,
-          centerPadding: "30px",
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          speed: 100,
-          adaptiveHeight: true,
-          slidesToScroll: 1,
-          centerPadding: "1px",
-        },
-      },
-      {
-        breakpoint: 1200,
+        breakpoint: 1400,
         settings: {
           slidesToShow: 4,
-          speed: 100,
-          adaptiveHeight: true,
-          slidesToScroll: 1,
-          centerPadding: "10px",
-        },
+          slidesToScroll: 4,
+          infinite: true,
+
+        }
       },
-    ],
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+
+        }
+      },
+      {
+        breakpoint: 870,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+
+        }
+      },
+   
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          autoplay: false,
+
+        }
+      },
+  
+    ]
   };
 
   return (
@@ -84,7 +84,9 @@ const Carusel = (props) => {
       slidesToScroll={1}
     >
       {result.map((item) => (
-        <SlideCarouselCard key={item.id} product={item} />
+        <div key={item.id} className={styles.SlideCarouselCardContainer} >
+        <SlideCarouselCard  product={item} />
+        </div>
       ))}
     </Slider>
   );

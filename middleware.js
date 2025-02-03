@@ -5,8 +5,8 @@ export const config = {
 }
 export default function middleware(request){
 if(localStorage.get("Users") === undefined){
-    return NextResponse.redirect(new URL("http://localhost:3000/Login", request.url))
-    // return NextResponse.redirect("http://localhost:3001/Login")
+    // return NextResponse.redirect(new URL("http://localhost:3000/Login", request.url))
+    return NextResponse.redirect("http://localhost:3001/Login")
 }
 
 

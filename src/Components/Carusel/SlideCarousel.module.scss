@@ -9,7 +9,8 @@ $lightBlue :#14a0de;
     align-items: center;
     border-radius: 20px;
     width: 100%;
-    margin: 35px auto;
+    margin:  0 auto;
+    margin-bottom: 4%;
     border: 1.5px solid $lightBlue;
 }
 
@@ -34,22 +35,24 @@ $lightBlue :#14a0de;
         align-items: center;
         font-size: 19px;
 
-        i {
-display: flex;
-align-items: center;
-            font-size: 47px;
-
-        }
     }
 
-    
-.ShowAllIncredibleOffers{
-    text-decoration: none;
-    cursor: pointer;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-}
+    i {
+        display: flex;
+        align-items: center;
+        font-size: 47px;
+
+    }
+
+
+    .ShowAllIncredibleOffers {
+        text-decoration: none;
+        cursor: pointer;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+    }
+
     .AiOutlineLeft {
         font-size: 16px;
         font-weight: 600;
@@ -63,3 +66,22 @@ align-items: center;
 
 }
 
+
+@media ((min-width: 100px) and (max-width: 666px)) {
+    .offerText {
+        font-size: 15px !important;
+    }
+
+    .offerText i {
+        font-size: 28px;
+    }
+    .ShowAllIncredibleOffers {
+    font-size: 13px;
+    }
+    .AiOutlineLeft {
+        font-size: 12.5px !important;
+   
+     
+
+    }
+}

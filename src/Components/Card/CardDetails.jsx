@@ -103,9 +103,7 @@ const CardDetails = ({ product }) => {
 
                 <span>مرتب سازی:</span>
               </div>
-              <div>
-                <p>پرفروش ترین</p>
-              </div>
+            
               <div>
                 <p>بیشترین قیمت</p>
               </div>

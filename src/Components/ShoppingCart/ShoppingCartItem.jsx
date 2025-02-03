@@ -11,7 +11,13 @@ import Link from "next/link";
 const ShoppingCartItem = ({ Product }) => {
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.incredibleOffersLogo }>
+      <div
+        className={
+          Product.incredibleOffers === true
+            ? styles.incredibleOffersLogo
+            : styles.removePrdContainer
+        }
+      >
         {Product.incredibleOffers === true ? (
           <pre className={styles.offerText}>
             𝓡𝓙
@@ -25,9 +31,9 @@ const ShoppingCartItem = ({ Product }) => {
 
       <div className={styles.container}>
         <div>
-          <div className={styles.productName}>
+          <Link href={`/Product/${Product.id}`} className={styles.productName}>
             <p>{Product.name}</p>
-          </div>
+          </Link>
           <div className={styles.sellerContainer}>
             <div className={styles.warranty}>
               <PiSealCheck className={styles.iconShop} />

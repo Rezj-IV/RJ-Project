@@ -1,21 +1,67 @@
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
 .searchBoxContainer {
     display: flex;
     position: relative;
-    width: 74%;
+    width: 100%;
     height: fit-content;
+
+    @include Media(1199px, 1500px) {
+
+        width: 60% !important;
+    }
+
+    @include Media(1001px, 1199px) {
+
+        width: 70% !important;
+    }
+
+    @include Media(1500px, 3400px) {
+
+        width: 45% !important;
+    }
 
     .searchIcon {
         z-index: 1;
         position: absolute;
         bottom: 15px;
-        color: #757575;
-
+        color: #929292;
         font-size: 28px;
-
         width: 75px;
+
+        @include Media(100px, 699px) {
+            bottom: 12px;
+            right: 29px;
+            font-size: 24px;
+
+
+        }
+        @include Media(699px, 1000px) {
+            font-size: 26px;
+            right: 9px;
+            width: 60px;
+
+        }
     }
 
     .searchBox {
+        @include Media(100px, 699px) {
+            height: 45px;
+            border-radius: 25px;
+            padding-right: 80px;
+        font-size: 15px;
+
+        }
+
+        @include Media(699px, 1200px) {
+            height: 52px;
+            padding-right: 55px;
+
+        }
 
         width: 100%;
         height: 57px;
@@ -24,7 +70,14 @@
         padding-right: 60px;
         border: none;
         outline: none;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Geneva, Tahoma, sans-serif;
+        font-family: 'Gill Sans',
+        'Gill Sans MT',
+        Calibri,
+        'Trebuchet MS',
+        sans-serif,
+        Geneva,
+        Tahoma,
+        sans-serif;
         font-size: 17px;
         color: #4a4a4a;
     }
@@ -35,6 +88,14 @@
         font-weight: 600;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: #b1adad;
+        @include Media(100px, 699px) {
+            font-size: 12px;
+     
+
+        }
+        @include Media(699px, 1000px) {
+            font-size: 13px;
+        }
     }
 
     .searchBox:focus-visible {

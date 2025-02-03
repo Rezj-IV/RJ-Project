@@ -39,6 +39,8 @@ const CarouselSlider = ({ imageSlider }) => {
                   src={item.indexImageUrl}
                   alt={item.name}
                   fill
+                  sizes="100%"
+
                 />
               </div>
             </Link>
@@ -55,7 +57,8 @@ const CarouselSlider = ({ imageSlider }) => {
                 className={styles.imageSlider}
                 src={item.indexImageUrl}
                 alt={item.name}
-                fill
+                  sizes="100%"
+                  fill
               />
             </div>
           );

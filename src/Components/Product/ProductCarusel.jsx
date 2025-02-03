@@ -46,7 +46,10 @@ const ProductCarusel = ({ data, homeImages }) => {
               href="/Product/specialCategory/flagBearer"
               className={styles.ShowAll}
             >
+              <span>
               نمایش همه
+
+              </span>
               <AiOutlineLeft className={styles.AiOutlineLeft} />
             </Link>
           </div>
@@ -128,7 +131,7 @@ const ProductCarusel = ({ data, homeImages }) => {
         </div>
       </Suspense>
 
-      <div className={styles.caruselContainer}>
+      <div className={`${styles.caruselContainer} ${styles.weblogContainer}`}>
         <div className={styles.titleCarusel}>
           <p>وبلاگ</p>{" "}
           <div className={styles.weblog}>

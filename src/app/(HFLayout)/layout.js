@@ -4,6 +4,7 @@ import Header from "@/Components/Header/Header";
 import Footer from "@/Components/Footer/Footer";
 import MainMenu from "@/Components/Menu/MainMenu";
 import React, { Suspense } from "react";
+import LowerPart from "@/Components/LowerPart/LowerPart";
 
 const geistMono = localFont({
   src: "../../../public/fonts/GeistMonoVF.woff",
@@ -28,6 +29,7 @@ const layout = ({ children }) => {
       <Suspense>
         <Header />
       </Suspense>
+      <LowerPart />
       <Suspense>
         <MainMenu />
       </Suspense>

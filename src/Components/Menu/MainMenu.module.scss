@@ -8,7 +8,11 @@ $textColor: #5e5e5e;
     }
 }
 
-
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
 
 .menuContainer {
     display: flex;
@@ -17,7 +21,10 @@ $textColor: #5e5e5e;
     align-items: center;
     gap: 25px;
     border-bottom: 1px solid #daddde;
+@include Media(100px,1000px){
+    display: none;
 
+}
     .productCategoriesContainer {
 
         width: 160px;

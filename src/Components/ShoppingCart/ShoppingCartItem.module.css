@@ -3,6 +3,12 @@
   border-radius: 15px;
   margin-bottom: 25px;
 }
+.mainContainer .removePrdContainer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 54px;
+}
 .mainContainer .incredibleOffersLogo {
   display: flex;
   align-items: center;
@@ -30,6 +36,9 @@
   justify-content: space-between;
   height: 420px;
   padding: 0 40px;
+}
+.mainContainer .container .productName {
+  text-decoration: none;
 }
 .mainContainer .container .productName p {
   font-weight: 600;

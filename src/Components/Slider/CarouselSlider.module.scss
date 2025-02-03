@@ -1,30 +1,77 @@
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
 .sliderContainer {
 
     position: relative;
-    height: 430px;
-    .imageSlider {
-        height: unset;
 
+    height: fit-content;
+
+
+}
+
+.imageSlider {
+    position: unset !important;
+    height: unset !important;
+
+    @include Media(100px, 999px) {
+        border-radius: 22px;
     }
 }
-.dots{
-    right: 0 !important;
-    bottom: 30px !important;
-    width: 9.5% !important;
 
-    li{
-        margin: 0px !important;
-    }
-    .active{
-    color: red !important;
-    font-size:28px !important;
-
-   }
-  
-    button::before{
-        font-size:7px !important;
-        color: #b3b3b3 !important;
+.dots {
+    right: 2.5% !important;
+    bottom: 7% !important;
+    direction: rtl !important;
+    text-align: unset;
+    width: 97% !important;
+    @include Media(700px, 1000px) {
+    bottom: 8% !important;
+    right: 3% !important;
         
     }
-   
+    @include Media(500px, 700px) {
+        bottom: 8% !important;
+        right: 5.5% !important;
+            
+        }
+    li {
+        margin: 0px !important;
+        width: 1.2% !important;
+    }
+
+    .active {
+        color: red !important;
+        font-size: 28px !important;
+
+    }
+
+    button::before {
+        font-size: 7px !important;
+        color: #b3b3b3 !important;
+
+        @include Media(1200px, 1450px) {
+            font-size: 6px !important;
+        }
+
+        @include Media(900px, 1200px) {
+            font-size: 5px !important;
+        }
+
+        @include Media(700px, 900px) {
+            font-size: 4px !important;
+        }
+
+        @include Media(500px, 700px) {
+            font-size: 3.5px !important;
+        }
+
+        @include Media(300px, 500px) {
+            font-size: 3px !important;
+        }
+    }
+
 }

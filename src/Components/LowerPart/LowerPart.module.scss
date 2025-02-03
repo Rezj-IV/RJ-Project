@@ -1,0 +1,70 @@
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
+.lowerPartContainer {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px -1px 2px 0px #e1e1e1;
+    bottom: 0;
+    height: 50px;
+    display: none;
+    position: fixed;
+    z-index: 100;
+
+    @include Media(100px, 1000px) {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .lowerPart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+        gap: 3px;
+        cursor: pointer;
+        p{
+        color: rgb(87, 87, 87);
+        font-size: 11px; 
+        }
+.icon{
+font-size: 25px;
+color: #787878;
+
+}
+    }
+}
+
+.LogSignUIContainer {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+span{
+    font-size: 12px;
+    color: #606060;
+    padding: 8px;
+
+}
+.link {
+    color: rgb(87, 87, 87);
+    text-decoration: none;
+    font-size: 14px;
+
+}
+.link:hover{
+    color: #5e6f81;
+    font-weight: 600;
+}
+
+.iconLogin {
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    margin-left: 2px;
+}}
