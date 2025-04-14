@@ -1,7 +1,9 @@
 $lightBlue: #14a0de;
 
-@mixin hover() {
-  &:hover {}
+@mixin Media($minWidth , $maxWidth ) {
+  @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+      @content;
+  }
 }
 
 .mainContainer {
@@ -135,6 +137,10 @@ $lightBlue: #14a0de;
   height: 80px;
   margin-top: 15px;
   width: 100%;
+  @include Media(300px,628px ){
+    height: fit-content;
+  }
+  
 
 }
 

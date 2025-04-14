@@ -1,46 +1,119 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 80px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+}
+@media ((min-width: 300px) and (max-width: 1500px)) {
+  .container {
+    gap: 10px;
+  }
 }
 
 .counter {
-    width: 96px;
-    height: 46.5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    font-weight: 600;
-    border-radius: 6px;
-    color: #2a55b2;
-    box-shadow: 0px 0px 4px 0px rgb(24 76 141 / 55%);
-
+  width: 96px;
+  height: 46.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  color: #2a55b2;
+  box-shadow: 0px 0px 4px 0px rgba(24, 76, 141, 0.55);
+}
+@media ((min-width: 300px) and (max-width: 1500px)) {
+  .counter {
+    width: 65%;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 750px)) {
+  .counter {
+    height: 41.5px;
+  }
 }
 
 .countNumber {
-    font-size: 17.5px;
+  font-size: 17.5px;
+}
+@media ((min-width: 300px) and (max-width: 1500px)) {
+  .countNumber {
+    font-size: 18.5px;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .countNumber {
+    font-size: 16.5px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .countNumber {
+    font-size: 15.5px;
+  }
 }
 
 .goShoppingCart {
-    width: 180px;
-    height: 48px;
-    border-radius: 10px;
-    border: 2px solid #295689;
-    color: #3759a3;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 14.5px;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
+  width: 180px;
+  height: 48px;
+  border-radius: 10px;
+  border: 2px solid #295689;
+  color: #3759a3;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
 }
-
-
+@media ((min-width: 320px) and (max-width: 1500px)) {
+  .goShoppingCart {
+    width: -moz-max-content;
+    width: max-content;
+    border: none;
+    justify-content: unset;
+  }
+}
+@media ((min-width: 750px) and (max-width: 1000px)) {
+  .goShoppingCart {
+    font-size: 13px;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .goShoppingCart {
+    font-size: 11px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .goShoppingCart {
+    display: none;
+  }
+}
 
 .leftIcon {
-    font-size: 22px;
+  font-size: 22px;
 }
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .leftIcon {
+    font-size: 18px;
+  }
+}
+
+@media ((min-width: 300px) and (max-width: 1500px)) {
+  .counterIcon {
+    font-size: 20px;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .counterIcon {
+    font-size: 16px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .counterIcon {
+    font-size: 15px;
+  }
+}/*# sourceMappingURL=ShoppingCartItemCount.module.css.map */

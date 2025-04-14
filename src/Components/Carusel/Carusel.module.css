@@ -2,7 +2,8 @@
 
  @media ((min-width: 100px) and (max-width: 650px)) {
   .SlideCarouselCardContainer {
-    width: 90% !important;
+    /* width: 90% !important; */
+display: flex;
 
   }
 } 

@@ -1,18 +1,18 @@
 .footer {
     background-image: linear-gradient(90deg, #0079b1, #1b3570);
     width: 98.5%;
-    height: 750px;
+    height: fit-content;
     display: block;
-    margin: 30px auto 0 auto;
+    margin: 30px auto .5% auto;
     border-radius: 30px;
     overflow: hidden;
-    padding: 0 150px;
 
 }
 
 .headerFooter {
     display: flex;
-    width: 100%;
+    width: 87%;
+    margin: 0 auto;
     height: 170px;
     justify-content: space-between;
     align-items: center;
@@ -35,9 +35,89 @@
     text-decoration: none;
 
 }
-.goUp > p{
+
+.goUp>p {
     padding-top: 5px;
 }
+
 .upIcon {
     font-size: 20px;
+}
+
+.FooterData {
+    width: 87%;
+    margin: 0 auto;
+}
+@media ((min-width:320px) and (max-width:475px)) {
+    .goUp {
+        display: none;
+    }
+}
+@media ((min-width:100px) and (max-width:1500px)) {
+    .FooterData {
+        width: 93%;
+    }
+
+    .headerFooter {
+        width: 93%;
+    }
+}
+
+@media ((min-width:100px) and (max-width:800px)) {
+    .footer {
+        width: 95.5%;
+    margin: 30px auto 2% auto;
+
+    }
+    .rjLogo {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    
+    
+    .goUp {
+        width: 130px;
+        height: 38px;
+        font-size: 12px;
+    }
+
+
+    .upIcon {
+        font-size: 15px;
+    }
+}
+
+@media ((min-width:800px) and (max-width:1500px)) {
+    .footer {
+        width: 97.5%;
+        margin: 30px auto 1% auto;
+
+    }
+    .rjLogo {
+        width: 110px !important;
+        height: 110px !important;
+    }
+    
+    .goUp {
+        width: 141px;
+        height: 42px;
+        font-size: 13px;
+    }
+
+
+    .upIcon {
+        font-size: 17px;
+    }
+}
+@media ((min-width:1500px) and (max-width:1700px)) {
+ 
+    .goUp {
+        width: 170px;
+        height: 47px;
+        font-size: 15px;
+    }
+    .upIcon {
+        font-size:18.5px;
+    }
 }

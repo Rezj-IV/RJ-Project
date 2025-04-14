@@ -19,14 +19,14 @@ const ShoppingCartItemCount = ({ PrdId }) => {
   return (
     <div className={styles.container}>
       <div className={styles.counter}>
-        <LuPlus onClick={() => dispatch(increaceItem(PrdId))} />
+        <LuPlus className={styles.counterIcon} onClick={() => dispatch(increaceItem(PrdId))} />
 
         <label className={styles.countNumber}>{Xcount}</label>
 
         {Xcount === 1 ? (
-          <LuTrash2 onClick={() => dispatch(removeItem(PrdId))} />
+          <LuTrash2 className={styles.counterIcon} onClick={() => dispatch(removeItem(PrdId))} />
         ) : (
-          <LuMinus onClick={() => dispatch(decreaseItem(PrdId))} />
+          <LuMinus className={styles.counterIcon} onClick={() => dispatch(decreaseItem(PrdId))} />
         )}
       </div>
       <div>

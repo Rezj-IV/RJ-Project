@@ -13,16 +13,53 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 70px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 2%;
   background-color: transparent;
   font-weight: 600;
   padding: 0 27px;
 }
+@media ((min-width: 100px) and (max-width: 600px)) {
+  .caruselContainer .titleCarusel {
+    padding: 0;
+  }
+}
 .caruselContainer .titleCarusel p {
   font-size: 20px;
 }
+@media ((min-width: 100px) and (max-width: 600px)) {
+  .caruselContainer .titleCarusel p {
+    font-size: 14px !important;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1100px)) {
+  .caruselContainer .titleCarusel p {
+    font-size: 16.5px !important;
+  }
+}
+@media ((min-width: 1100px) and (max-width: 1500px)) {
+  .caruselContainer .titleCarusel p {
+    font-size: 18.5px !important;
+  }
+}
 .caruselContainer .titleCarusel span {
   font-size: 20px;
+}
+@media ((min-width: 100px) and (max-width: 600px)) {
+  .caruselContainer .titleCarusel span {
+    font-size: 14px !important;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1100px)) {
+  .caruselContainer .titleCarusel span {
+    font-size: 16.5px !important;
+  }
+}
+@media ((min-width: 1100px) and (max-width: 1500px)) {
+  .caruselContainer .titleCarusel span {
+    font-size: 18.5px !important;
+  }
 }
 .caruselContainer .titleCarusel .rjLand {
   padding-right: 10px;
@@ -38,9 +75,41 @@
 .caruselContainer .titleCarusel .ShowAll span {
   font-size: 15px;
 }
+@media ((min-width: 100px) and (max-width: 600px)) {
+  .caruselContainer .titleCarusel .ShowAll span {
+    font-size: 10.5px !important;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1100px)) {
+  .caruselContainer .titleCarusel .ShowAll span {
+    font-size: 12.5px !important;
+  }
+}
+@media ((min-width: 1100px) and (max-width: 1500px)) {
+  .caruselContainer .titleCarusel .ShowAll span {
+    font-size: 14px !important;
+  }
+}
 .caruselContainer .titleCarusel .AiOutlineLeft {
-  margin-right: 10px;
-  font-size: 14px;
+  margin-right: 10px !important;
+  font-size: 14px !important;
+}
+@media ((min-width: 100px) and (max-width: 600px)) {
+  .caruselContainer .titleCarusel .AiOutlineLeft {
+    font-size: 10px !important;
+    margin-right: 2px !important;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1100px)) {
+  .caruselContainer .titleCarusel .AiOutlineLeft {
+    font-size: 12px !important;
+    margin-right: 4px !important;
+  }
+}
+@media ((min-width: 1100px) and (max-width: 1500px)) {
+  .caruselContainer .titleCarusel .AiOutlineLeft {
+    font-size: 13.5px;
+  }
 }
 
 .weblog {
@@ -54,27 +123,9 @@
   padding-right: 5px;
 }
 
-@media ((min-width: 100px) and (max-width: 666px)) {
-  .titleCarusel {
-    padding: 0 !important;
-  }
-  .titleCarusel p {
-    font-size: 15.5px !important;
-  }
-  .ShowAll span {
-    font-size: 12px !important;
-  }
-  .AiOutlineLeft {
-    font-size: 11px !important;
-    margin-right: 5px !important;
-  }
-}
-.slick-list {
-  padding: 0 !important;
-}
-
 .weblogContainer {
   display: block;
+  padding: 30px 20px 10px 20px !important;
 }
 @media ((min-width: 100px) and (max-width: 1101px)) {
   .weblogContainer {

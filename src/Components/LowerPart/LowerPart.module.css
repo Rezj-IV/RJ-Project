@@ -28,9 +28,30 @@
   color: rgb(87, 87, 87);
   font-size: 11px;
 }
-.lowerPartContainer .lowerPart .icon {
+@media ((min-width: 300px) and (max-width: 450px)) {
+  .lowerPartContainer .lowerPart p {
+    font-size: 9px;
+  }
+}
+@media ((min-width: 450px) and (max-width: 650px)) {
+  .lowerPartContainer .lowerPart p {
+    font-size: 10px;
+  }
+}
+
+.icon {
   font-size: 25px;
   color: #787878;
+}
+@media ((min-width: 300px) and (max-width: 450px)) {
+  .icon {
+    font-size: 18px;
+  }
+}
+@media ((min-width: 450px) and (max-width: 650px)) {
+  .icon {
+    font-size: 22px;
+  }
 }
 
 .LogSignUIContainer {
@@ -48,6 +69,16 @@
   text-decoration: none;
   font-size: 14px;
 }
+@media ((min-width: 300px) and (max-width: 450px)) {
+  .LogSignUIContainer .link {
+    font-size: 11px;
+  }
+}
+@media ((min-width: 450px) and (max-width: 650px)) {
+  .LogSignUIContainer .link {
+    font-size: 12.5px;
+  }
+}
 .LogSignUIContainer .link:hover {
   color: #5e6f81;
   font-weight: 600;
@@ -57,4 +88,35 @@
   display: flex;
   align-items: center;
   margin-left: 2px;
+}
+@media ((min-width: 300px) and (max-width: 450px)) {
+  .LogSignUIContainer .iconLogin {
+    font-size: 17px;
+  }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  gap: 3px;
+}
+.profile .userIcon {
+  font-size: 21.5px;
+  color: #787878;
+}
+.profile p {
+  color: rgb(87, 87, 87);
+  font-size: 11px;
+}
+@media ((min-width: 300px) and (max-width: 450px)) {
+  .profile p {
+    font-size: 9px;
+  }
+}
+@media ((min-width: 450px) and (max-width: 650px)) {
+  .profile p {
+    font-size: 10px;
+  }
 }/*# sourceMappingURL=LowerPart.module.css.map */

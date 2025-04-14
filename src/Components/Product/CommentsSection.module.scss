@@ -3,15 +3,44 @@ $colorBar: #f1f8ff;
 $btnColor: #00387b;
 $borderColor: #f0f0f0;
 
+@mixin Media($minWidth , $maxWidth) {
+    @media ((min-width:$minWidth) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
 .commentsSectionContainer {
     display: flex;
     justify-content: space-between;
+
+    @include Media(320px, 1000px) {
+        display: block;
+    }
+}
+
+.rightSideCommentsSection {
+    width: 50%;
+
+    @include Media(320px, 1000px) {
+        width: 100%;
+    }
 }
 
 .leftSideCommentsSection {
-    height: 315px;
     display: flex;
-    align-items: center;
+    align-items: end;
+
+    @include Media(1000px, 1300px) {
+        width: 35%;
+    }
+
+    @include Media(320px, 1000px) {
+        margin-top: 30px;
+        height: fit-content;
+        justify-content: center;
+
+    }
+
 }
 
 .title {
@@ -19,22 +48,51 @@ $borderColor: #f0f0f0;
     display: flex;
     align-items: center;
 
+    @include Media(320px, 750px) {
+        height: 45px;
+        margin-top: 10px;
+    }
 
     span {
         color: $iconColor;
         padding: 0 15px;
         font-size: 29px;
 
+        @include Media(320px, 450px) {
+            font-size: 19px;
+            padding: 0 10px;
+
+        }
+
+        @include Media(450px, 750px) {
+            font-size: 24px;
+        }
+
+        @include Media(750px, 1000px) {
+            font-size: 27px;
+        }
     }
 
     h1 {
         display: inline-block;
         font-size: 21.5px;
+
+        @include Media(320px, 450px) {
+            font-size: 14px;
+
+        }
+
+        @include Media(450px, 750px) {
+            font-size: 16px;
+        }
+
+        @include Media(750px, 1000px) {
+            font-size: 20px;
+        }
     }
 }
 
 .guidanceContainer {
-    width: 600px;
     height: 140px;
     background-color: $colorBar;
     border-radius: 4px;
@@ -42,11 +100,22 @@ $borderColor: #f0f0f0;
     justify-content: center;
     align-items: center;
 
+    @include Media(450px, 750px) {
+        height: 110px;
+    }
+
+    @include Media(320px, 450px) {
+        height: 90px;
+    }
+
     .guidance {
 
-        padding: 20px 30px;
+        padding: 0px 18px;
         border-radius: 8px;
-        height: 90px;
+        height: 70%;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
         width: 92%;
         background-color: #ffffff;
 
@@ -55,10 +124,34 @@ $borderColor: #f0f0f0;
             font-weight: 600;
             padding-bottom: 3px;
             color: #393939;
+
+            @include Media(1000px, 1300px) {
+                font-size: 1.2vw;
+            }
+
+            @include Media(450px, 750px) {
+                font-size: 13px;
+            }
+
+            @include Media(320px, 450px) {
+                font-size: 10.5px;
+            }
         }
 
         span {
             font-size: 14.5px;
+
+            @include Media(1000px, 1300px) {
+                font-size: 1vw;
+            }
+
+            @include Media(450px, 750px) {
+                font-size: 11px;
+            }
+
+            @include Media(320px, 450px) {
+                font-size: 9.5px;
+            }
         }
     }
 }
@@ -73,7 +166,21 @@ $borderColor: #f0f0f0;
     justify-content: center;
     box-shadow: 0px 0px 7px 1px #d7d7d7cf;
 
+    @include Media(1000px, 1300px) {
+        width: 100%;
+    }
 
+    @include Media(450px, 1000px) {
+        width: 70%;
+    }
+
+    @include Media(450px, 750px) {
+        height: 118px;
+    }
+
+    @include Media(320px, 450px) {
+        height: 98px;
+    }
 }
 
 .addComment {
@@ -88,10 +195,26 @@ $borderColor: #f0f0f0;
             font-size: 14px;
             font-weight: 600;
             padding-right: 5px;
+
+            @include Media(1000px, 1300px) {
+                font-size: 1.2vw;
+            }
+
+            @include Media(450px, 750px) {
+                font-size: 12px;
+            }
+
+            @include Media(320px, 450px) {
+                font-size: 10.5px;
+            }
         }
 
         .BiMessageDots {
             font-size: 22px;
+
+            @include Media(320px, 750px) {
+                font-size: 18px;
+            }
 
         }
     }
@@ -99,7 +222,8 @@ $borderColor: #f0f0f0;
     .addCommentBtnContainer {
         display: flex;
         justify-content: center;
-cursor: pointer;
+        cursor: pointer;
+
         .addCommentBtn {
             color: #ffffff;
 
@@ -111,15 +235,40 @@ cursor: pointer;
             width: 80%;
             height: 48px;
 
+            @include Media(450px, 750px) {
+                width: 88%;
+                height: 40px;
+            }
+
+            @include Media(320px, 450px) {
+                width: 85%;
+                height: 33px;
+            }
+
             span {
                 font-size: 16px;
                 font-weight: 600;
                 padding-left: 7px;
+
+                @include Media(1000px, 1300px) {
+                    font-size: 1.3vw;
+                }
+
+                @include Media(450px, 750px) {
+                    font-size: 12px;
+                }
+
+                @include Media(320px, 450px) {
+                    font-size: 10px;
+                }
             }
 
             .BiPlus {
                 font-size: 22px;
 
+                @include Media(320px, 750px) {
+                    font-size: 16.5px;
+                }
             }
         }
     }
@@ -153,6 +302,26 @@ cursor: pointer;
         flex-direction: column;
         overflow: hidden;
 
+        @include Media(1300px, 1600px) {
+            width: 40%;
+        }
+
+        @include Media(1000px, 1300px) {
+            width: 55%;
+        }
+
+
+        @include Media(750px, 1000px) {
+            width: 75%;
+        }
+
+        @include Media(320px, 750px) {
+            width: 100%;
+            height: 100%;
+            border-radius: unset;
+
+        }
+
         .headerComment {
             padding: 0 25px;
             display: flex;
@@ -161,16 +330,29 @@ cursor: pointer;
             height: 63px;
             border-bottom: 4px solid $borderColor;
 
+            @include Media(320px, 500px) {
+                border-bottom: 2px solid $borderColor;
+                height: 50px;
+            }
+
             p {
                 font-size: 17.5px;
                 font-weight: 600;
                 color: #363636;
                 padding-right: 6px;
+
+                @include Media(320px, 500px) {
+                    font-size: 13px;
+                }
             }
 
             .closeIcon {
                 font-size: 20px;
                 color: #2b2b2b;
+
+                @include Media(320px, 500px) {
+                    font-size: 14.5px;
+                }
             }
 
         }
@@ -180,27 +362,44 @@ cursor: pointer;
             width: 100%;
             height: 103px;
             border: 1px solid $borderColor;
-            justify-content: space-between;
+
             align-items: center;
             padding: 0 15px;
+
+            @include Media(320px, 500px) {
+                height: 85px;
+            }
 
             p {
                 padding: 0 15px;
                 font-size: 14.5px;
                 font-weight: 600;
+
+                @include Media(320px, 500px) {
+                    font-size: 3.1vw;
+                }
+            }
+
+            img {
+                @include Media(320px, 500px) {
+                    width: 60px;
+                    height: 60px;
+                }
             }
         }
 
         .commentText {
             padding: 16px 25px;
             height: 290px;
-            border-bottom: 2px solid rgb(226, 226, 226);
 
             p {
                 font-weight: 600;
                 color: #363636;
                 display: inline;
 
+                @include Media(320px, 500px) {
+                    font-size: 14px;
+                }
             }
 
             span {
@@ -228,7 +427,21 @@ cursor: pointer;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Geneva, Tahoma, sans-serif;
                 font-weight: 600;
 
+                @include Media(320px, 500px) {
+                    font-size: 12.5px;
+                }
+
                 color: rgba(165, 165, 165, 0.791);
+            }
+        }
+
+        .lowrPart {
+            border-top: 2px solid rgb(226, 226, 226);
+
+            @include Media(320px, 750px) {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
             }
         }
 
@@ -237,6 +450,10 @@ cursor: pointer;
             justify-content: center;
             align-items: center;
             height: 80px;
+
+            @include Media(320px, 500px) {
+                height: 65px;
+            }
 
             .registerComment {
                 color: #ffffff;
@@ -249,38 +466,71 @@ cursor: pointer;
                 width: 90%;
                 height: 48px;
 
+                @include Media(320px, 500px) {
+                    height: 40px;
+                    font-size: 13px;
+                }
+
             }
         }
 
         .textCaptionContainer {
 
-            display: block;
-            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            font-size: 12.5px;
+
+            @include Media(320px, 500px) {
+                font-size: 10.5px;
+            }
+
+            @include Media(320px, 750px) {
+                margin-bottom: 10px;
+            }
 
             .RjLandTextCaption {
-                font-size: 12.5px;
                 color: #43c1d0;
                 padding: 0 3.5px;
                 font-weight: 600;
             }
 
-            .textCaption {
-                font-size: 12.5px;
 
-            }
         }
 
     }
 }
 
 .contentCommentsContainer {
-    height: 200px;
-    width: 100%;
-    margin-top: 40px;
-    box-shadow: 0px 0px 1px 0px #0043ff;
-    border-radius: 30px;
-    padding: 15px 40px;
+    margin: 40px 0;
+
+    .contentComment {
+        height: 190px;
+        width: 67%;
+        box-shadow: 0px 0px 1px 0px #4d74df;
+        border-radius: 27px;
+        padding: 15px 40px;
+
+        @include Media(320px, 1000px) {
+            width: 100%;
+        }
+
+        @include Media(450px, 750px) {
+            height: 150px;
+            padding: 15px 30px;
+            border-radius: 20px;
+
+        }
+
+        @include Media(32px, 450px) {
+            height: 130px;
+            border-radius: 13px;
+            padding: 15px 20px;
+
+        }
+    }
 }
+
 
 .userComment {
     height: 50px;
@@ -291,15 +541,35 @@ cursor: pointer;
     color: #272727;
     font-size: 17px;
     font-weight: 600;
+
+    @include Media(450px, 750px) {
+        height: 36px;
+        font-size: 15.5px;
+    }
+
+    @include Media(320px, 450px) {
+        height: 32px;
+        font-size: 13px;
+    }
 }
 
 .textComment {
     padding-right: 10px;
-    height: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
-    font-size: 17px;
+    font-size: 15px;
     color: #3b5578;
 
     font-weight: 600;
+
+    @include Media(450px, 750px) {
+        height: 55px;
+        font-size: 13px;
+    }
+
+    @include Media(320px, 450px) {
+        height: 52px;
+        font-size: 11px;
+    }
 }

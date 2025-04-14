@@ -108,6 +108,12 @@
   margin-top: 15px;
   width: 100%;
 }
+@media ((min-width: 300px) and (max-width: 628px)) {
+  .productNameContainer {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
 
 .remainingContainer {
   height: 45px;

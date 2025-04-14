@@ -1,0 +1,126 @@
+@mixin Media($minWidth , $maxWidth) {
+    @media ((min-width:$minWidth) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
+.searchAndBasketContainer {
+    display: flex;
+    gap: 25px;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    padding: 18px 25px 0;
+
+    .ShoppingCart {
+        text-decoration: none;
+        position: relative;
+
+        div {
+            position: absolute;
+            width: 15.5px;
+            justify-content: center;
+            right: -3.5px;
+            display: flex;
+            height: 11px;
+            bottom: 6.5px;
+            border-radius: 51%;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 10.5px;
+            text-align: center;
+            background-color: #14a0de;
+
+            @include Media(450px, 750px) {
+                width: 12px;
+                height: 11.5px;
+                right: -3px;
+                bottom: 8px;
+                font-size: 9px;
+            }
+
+            @include Media(320px, 450px) {
+                width: 10.5px;
+                height: 9.5px;
+                right: -2px;
+                bottom: 8px;
+                font-size: 8px;
+            }
+        }
+    }
+
+    .Icon {
+        font-size: 22px;
+        color: rgb(50, 50, 50);
+
+        @include Media(450px, 700px) {
+            font-size: 20px;
+        }
+
+        @include Media(320px, 450px) {
+            font-size: 18.5px;
+        }
+    }
+
+    .SearchBoxContainer {
+        background-color: rgba(0, 0, 0, 0.326);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 1000;
+        right: 0;
+        top: 0px;
+
+        .searchBox {
+            width: 100%;
+            background-color: #ffffff;
+            height: 75px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+
+            .ArrowRight {
+                position: absolute;
+                color: #667281;
+                right: 35px;
+                font-size: 19px;
+
+                @include Media(320px, 550px) {
+                    font-size: 16.5px;
+                }
+            }
+
+            .searchBoxInput {
+
+                width: 100%;
+                height: 45px;
+                background-color: #f1f1f1;
+                border-radius: 35px;
+                padding-right: 45px;
+                border: none;
+                outline: none;
+                font-family: "yekan";
+                font-size: 15.5px !important;
+                color: #4a4a4a;
+
+                @include Media(320px, 550px) {
+                    padding-right: 40px;
+                }
+            }
+
+            .searchBoxInput::placeholder {
+                color: #585c70;
+                font-weight: 600;
+                font-size: 15px;
+
+                @include Media(320px, 550px) {
+                    font-size: 12.5px;
+                }
+            }
+        }
+    }
+
+
+}

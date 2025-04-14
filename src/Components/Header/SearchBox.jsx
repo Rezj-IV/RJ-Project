@@ -6,6 +6,7 @@ import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 import { useRouter } from "next/navigation";
 import { Form, Formik } from "formik";
+import { FiSearch } from "react-icons/fi";
 
 const SearchBox = () => {
   const [textSearch, setTextSearch] = useState("");
@@ -29,7 +30,7 @@ const SearchBox = () => {
           className={styles.searchBox}
           type="text"
           onChange={changeHandler}
-          placeholder="محصول، برند یا دسته مورد نظرتان را جستجو کنید"
+          placeholder="محصول ، برند  یا  دسته مورد  نظرتان  را  جستجو  کنید"
         />
       {/* </form> */}
     </div>

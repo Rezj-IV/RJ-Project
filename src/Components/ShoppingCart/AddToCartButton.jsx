@@ -6,6 +6,7 @@ import ShoppingCartItemCount from "./ShoppingCartItemCount";
 
 const AddToCartButton = ({data}) => {
   const selector = useSelector((state) => state.ShoppingCart);
+  console.log(selector);
   const prd = {
     id: data.id,
     name: data.name,
@@ -17,27 +18,10 @@ const AddToCartButton = ({data}) => {
     priceWithDiscount: data.priceWithDiscount,
     incredibleOffers: data.incredibleOffers,
     indexImageUrl: data.indexImageUrl,
-  //   colorID: [
-  //     {
-  //       id:
-  //       color: ,
-  //       showColor:
-  //     },]
+
   };
   
-  // const prd = {
-  //   id: props.data.id,
-  //   name: props.data.name,
-  //   category: props.data.category,
-  //   type: props.data.type,
-  //   seller: props.data.seller,
-  //   stock: props.data.stock,
-  //   price: props.data.price,
-  //   priceWithDiscount: props.data.priceWithDiscount,
-  //   incredibleOffers: props.data.incredibleOffers,
-  //   indexImageUrl: props.data.indexImageUrl,
-  //   mainColor: props.color,
-  // };
+  
 
   return (
     <div>

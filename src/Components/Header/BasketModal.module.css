@@ -4,6 +4,7 @@
     padding: 0 30px;
     height: 310px;
     border-bottom: 1px solid #dfdfdf;
+
 }
 
 
@@ -93,7 +94,7 @@
 
 .colorContainer {
     display: flex;
-     height: 45px;
+    height: 45px;
     align-items: center;
     margin-top: 6px;
 
@@ -202,4 +203,38 @@
     padding-left: 3px;
     font-size: 13px;
 
+}
+
+@media ((min-width:1000px) and (max-width:1300px)) {
+    .basketModal {
+        padding: 0 15px;
+    }
+
+    .productName {
+        font-size: 12px;
+    }
+
+    .productImage img {
+        width: 95px;
+        height: 95px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .mainPrice {
+        font-size: 15.5px;
+    }
+    .OffPrice {
+        font-size: 15.5px;
+
+    }
+    .priceContainer {
+        gap: unset;
+    }
+    .seller span {
+        font-size: 12px;
+     
+    }
 }

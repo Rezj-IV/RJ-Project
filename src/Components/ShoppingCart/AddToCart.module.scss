@@ -1,0 +1,86 @@
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
+.shoppingCartBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #00387b;
+    color: #ffffff;
+    height: 50px;
+    padding: 0px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    @include Media(320px, 500px) {
+        font-size: 12px;
+        padding: 0px 10px;
+        height: 37px;
+
+    }
+
+    @include Media(500px, 830px) {
+        font-size: 14px;
+        height: 43px;
+    }
+
+    @include Media(300px, 1500px) {
+        margin-top: 0;
+    }
+
+
+}
+
+
+.textShoppingCart {
+    flex-basis: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        font-size: 16px;
+        font-weight: 600;
+
+        @include Media(320px, 460px) {
+            font-size: 10px;
+        }
+
+        @include Media(460px, 600px) {
+            font-size: 12px;
+
+        }
+
+        @include Media(600px, 850px) {
+            font-size: 13.5px;
+        }
+
+    }
+
+}
+
+.BsCartIcon {
+    flex-basis: 5%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+
+    @include Media(320px, 460px) {
+        font-size: 12px;
+    }
+
+    @include Media(460px, 600px) {
+        font-size: 14px;
+
+    }
+
+    @include Media(600px, 850px) {
+        font-size: 15.5px;
+    }
+
+}

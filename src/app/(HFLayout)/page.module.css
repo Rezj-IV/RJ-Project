@@ -5,7 +5,11 @@ margin: 0 auto;
 
 }
 
-/* @media  (min-width:800px ) and (max-width: 3400px) {
-    .LowerPart{
-     display: none;
-    }} */
+@media  (min-width:300px ) and (max-width: 1500px) {
+    .PdContainer{
+        width: 90%;
+       
+        
+        
+        }
+}

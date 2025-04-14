@@ -28,43 +28,113 @@
         text-decoration: none;
         gap: 3px;
         cursor: pointer;
-        p{
-        color: rgb(87, 87, 87);
-        font-size: 11px; 
-        }
-.icon{
-font-size: 25px;
-color: #787878;
 
-}
+        p {
+            color: rgb(87, 87, 87);
+            font-size: 11px;
+
+            @include Media(300px, 450px) {
+                font-size: 9px;
+
+            }
+
+            @include Media(450px, 650px) {
+                font-size: 10px;
+
+            }
+        }
+
+      
     }
 }
+  .icon {
+            font-size: 25px;
+            color: #787878;
 
+            @include Media(300px, 450px) {
+                font-size: 18px;
+
+            }
+
+            @include Media(450px, 650px) {
+                font-size: 22px;
+
+            }
+        }
 .LogSignUIContainer {
     display: inline-flex;
     justify-content: center;
     align-items: center;
 
-span{
-    font-size: 12px;
-    color: #606060;
-    padding: 8px;
+    span {
+        font-size: 12px;
+        color: #606060;
+        padding: 8px;
+
+
+    }
+
+    .link {
+        color: rgb(87, 87, 87);
+        text-decoration: none;
+        font-size: 14px;
+
+        @include Media(300px, 450px) {
+            font-size: 11px;
+
+        }
+
+        @include Media(450px, 650px) {
+            font-size: 12.5px;
+
+        }
+
+    }
+
+    .link:hover {
+        color: #5e6f81;
+        font-weight: 600;
+    }
+
+    .iconLogin {
+        font-size: 19px;
+        display: flex;
+        align-items: center;
+        margin-left: 2px;
+
+        @include Media(300px, 450px) {
+            font-size: 17px;
+
+
+        }
+    }
 
 }
-.link {
-    color: rgb(87, 87, 87);
-    text-decoration: none;
-    font-size: 14px;
 
-}
-.link:hover{
-    color: #5e6f81;
-    font-weight: 600;
-}
-
-.iconLogin {
-    font-size: 19px;
+.profile {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-left: 2px;
-}}
+text-decoration: none;
+gap: 3px;
+    .userIcon {
+        font-size: 21.5px;
+        color: #787878;
+
+    }
+
+    p {
+        color: rgb(87, 87, 87);
+        font-size: 11px;
+
+        @include Media(300px, 450px) {
+            font-size: 9px;
+
+        }
+
+        @include Media(450px, 650px) {
+            font-size: 10px;
+
+        }
+    }
+}

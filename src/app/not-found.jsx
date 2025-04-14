@@ -11,6 +11,7 @@ export default function NotFound() {
           width={1400}
           height={440}
           priority
+          className={styles.NotFoundImage}
         />
         <div className={styles.returnHomeContainer}>
           <Link className={styles.returnHomeLink} href="/">بازگشت به صفحه اصلی</Link>

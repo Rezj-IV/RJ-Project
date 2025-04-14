@@ -1,14 +1,13 @@
 .profileContainer {
     display: flex;
-    padding: 0 143px;
-    height: 550px;
-    margin: 50px 0;
+    width: 80%;
+    margin: 50px auto 14% auto;
 
 }
 
 .rightSide {
     display: flex;
-    gap: 25px;
+    gap: 4%;
     flex-direction: column;
     cursor: pointer;
     flex-basis: 20%;
@@ -30,7 +29,7 @@
 .profileContent {
     display: flex;
     color: #385086;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     align-items: center;
 
@@ -50,9 +49,9 @@
 
 .leftSide {
     flex-basis: 80%;
-
-    height: 100%;
-    border: 1px solid #efefef;
+    border: 1px solid rgb(235 235 235 / 57%);
+    height: fit-content;
+    /* border: 1px solid #efefef; */
     border-radius: 5px;
     position: relative;
     display: flex;
@@ -62,30 +61,29 @@
 }
 
 .constructionContainer {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: fit-content;
 
 }
 
 .construction {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 25px 0;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-auto-rows: 1fr;
 }
 
 .Specifications {
     background-color: #f8fbff;
     display: flex;
     align-items: center;
-    border-radius: 13px;
-    width: 90%;
+    width: 100%;
     height: 100px;
+    border: 1px solid rgb(235 235 235 / 57%);
     padding-right: 40px;
 }
 
 .Specifications p {
-    font-size: 15px;
+    font-size: 14.5px;
     color: #545454;
     font-weight: 600;
     text-shadow: 0px 0px 20px #9bbaff;
@@ -93,7 +91,109 @@
 
 .Specifications span {
     padding-right: 20px;
-    font-size: 15px;
+    font-size: 14px;
     color: #003678;
-    
+
+}
+
+@media ((min-width:1035px) and (max-width:1500px)) {
+    .Specifications {
+        height: 85px;
+    }
+
+    .Specifications p {
+        font-size: 12.5px;
+    }
+
+    .Specifications span {
+        font-size: 11.5px;
+    }
+}
+
+@media ((min-width:668px) and (max-width:1035px)) {
+    .Specifications {
+        height: 70px;
+    }
+
+    .Specifications p {
+        font-size: 11px;
+    }
+
+    .profileContainer {
+        width: 93%;
+    }
+
+    .Specifications span {
+        font-size: 10.5px;
+    }
+
+    .profile {
+        font-size: 15px;
+    }
+
+    .profileIcon {
+        margin-left: 8px;
+        font-size: 20px;
+    }
+
+    .profileContent {
+        font-size: 13px;
+    }
+
+    .ExitIcon {
+        margin-left: 7px;
+        font-size: 17px;
+
+    }
+}
+
+@media ((min-width:300px) and (max-width:668px)) {
+    .Specifications {
+        height: 55px;
+        width: 95%;
+        padding-right: 13px;
+    }
+
+    .Specifications p {
+        font-size: 10px;
+    }
+
+    .Specifications span {
+        font-size: 9.5px;
+    }
+
+    .profileContainer {
+        width: 99%;
+        display: block;
+    }
+
+    .leftSide {
+        border: none;
+    }
+
+    .profile {
+        font-size: 15px;
+    }
+
+    .profileIcon {
+        margin-left: 9px;
+        font-size: 21px;
+    }
+
+    .profileContent {
+        font-size: 12px;
+    }
+
+    .ExitIcon {
+        margin-left: 8px;
+        font-size: 16px;
+
+    }
+
+    .rightSide {
+        width: 93%;
+        flex-direction: row;
+        margin-bottom: 5px;
+        justify-content: space-between;
+    }
 }

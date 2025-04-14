@@ -1,18 +1,19 @@
-.notFoundProduct{
+.notFoundProduct {
     width: 100%;
-    height: 100vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.titleText{
-margin-top: 33px;
-font-size: 21px;
-margin-bottom: 9px;
+.titleText {
+    margin-top: 33px;
+    font-size: 21px;
+    margin-bottom: 9px;
 }
-.text{
+
+.text {
     color: rgb(32, 32, 32);
     font-size: 16px;
 }

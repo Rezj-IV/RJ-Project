@@ -1,87 +1,165 @@
-.footerDataContainer .footerData {
+.footerData {
   display: flex;
   width: 100%;
-  height: 340px;
+  height: -moz-fit-content;
+  height: fit-content;
   margin-top: 50px;
   color: #e4e4e4;
 }
-.footerDataContainer .footerData .rightSideFooter {
+@media ((min-width: 100px) and (max-width: 1500px)) {
+  .footerData {
+    display: block;
+  }
+}
+.footerData .rightSideFooter {
   flex-basis: 30%;
   display: flex;
   flex-direction: column;
 }
-.footerDataContainer .footerData .rightSideFooter .Addresses {
+@media ((min-width: 700px) and (max-width: 1500px)) {
+  .footerData .rightSideFooter {
+    flex-direction: row;
+    gap: 7%;
+    margin-bottom: 25px;
+  }
+}
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .footerData .rightSideFooter {
+    gap: 3%;
+    flex-direction: row;
+    margin-bottom: 25px;
+  }
+}
+.footerData .rightSideFooter .Addresses {
   display: flex;
   height: 45px;
 }
-.footerDataContainer .footerData .rightSideFooter .Addresses span {
-  padding: 0 15.5px 0 12px;
+.footerData .rightSideFooter .Addresses span {
+  padding: 0 15.5px 0 10px;
   font-size: 14px;
   font-weight: 600;
 }
-.footerDataContainer .footerData .rightSideFooter .Addresses .gmailIcon {
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .footerData .rightSideFooter .Addresses span {
+    font-size: 12px;
+    padding: 0 5px;
+  }
+}
+.footerData .rightSideFooter .Addresses .gmailIcon {
   font-size: 21px;
   color: #d9d9d9;
 }
-.footerDataContainer .footerData .rightSideFooter .Addresses .phoneIcon {
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .footerData .rightSideFooter .Addresses .gmailIcon {
+    font-size: 18px;
+  }
+}
+.footerData .rightSideFooter .Addresses .phoneIcon {
   font-size: 16px;
   color: #d9d9d9;
 }
-.footerDataContainer .footerData .rightSideFooter .Addresses p {
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .footerData .rightSideFooter .Addresses .phoneIcon {
+    font-size: 13.5px;
+  }
+}
+.footerData .rightSideFooter .Addresses p {
   font-size: 14.5px;
   font-weight: 600;
   padding-top: 2px;
 }
-.footerDataContainer .footerData .leftSideFooter {
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .footerData .rightSideFooter .Addresses p {
+    font-size: 12px;
+  }
+}
+.footerData .leftSideFooter {
   flex-basis: 70%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row: auto;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-rows: repeat(1, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 40px 0;
   cursor: pointer;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-.footerDataContainer .footerData .leftSideFooter .leftSideContent, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled {
-  position: relative;
-}
-.footerDataContainer .footerData .leftSideFooter .leftSideContent h3, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled h3 {
+.footerData .leftSideFooter .leftSideContent h3, .footerData .leftSideFooter .leftSideContentDisabled h3 {
   height: 45px;
   font-size: 20px;
   display: inline-block;
 }
-.footerDataContainer .footerData .leftSideFooter .leftSideContent span, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled span {
-  color: #a0a0a0;
-  font-size: 13px;
-  width: 50px;
+@media ((min-width: 700px) and (max-width: 1300px)) {
+  .footerData .leftSideFooter .leftSideContent h3, .footerData .leftSideFooter .leftSideContentDisabled h3 {
+    font-size: 17px;
+  }
 }
-.footerDataContainer .footerData .leftSideFooter .leftSideContent ul, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul {
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .footerData .leftSideFooter .leftSideContent h3, .footerData .leftSideFooter .leftSideContentDisabled h3 {
+    font-size: 16px;
+  }
+}
+.footerData .leftSideFooter .leftSideContent ul, .footerData .leftSideFooter .leftSideContentDisabled ul {
   list-style: none;
 }
-.footerDataContainer .footerData .leftSideFooter .leftSideContent ul li, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li {
-  padding: 6px 0;
+.footerData .leftSideFooter .leftSideContent ul li, .footerData .leftSideFooter .leftSideContentDisabled ul li {
+  padding: 2% 0;
 }
-.footerDataContainer .footerData .leftSideFooter .leftSideContent ul li div, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li div {
+.footerData .leftSideFooter .leftSideContent ul li div, .footerData .leftSideFooter .leftSideContentDisabled ul li div {
   text-decoration: none;
   color: #e4e4e4;
   font-size: 14px;
 }
-.footerDataContainer .footerData .leftSideFooter .leftSideContent ul li div:hover, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li div:hover {
+@media ((min-width: 700px) and (max-width: 1300px)) {
+  .footerData .leftSideFooter .leftSideContent ul li div, .footerData .leftSideFooter .leftSideContentDisabled ul li div {
+    font-size: 13px;
+  }
+}
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .footerData .leftSideFooter .leftSideContent ul li div, .footerData .leftSideFooter .leftSideContentDisabled ul li div {
+    font-size: 11px;
+  }
+}
+.footerData .leftSideFooter .leftSideContent ul li div:hover, .footerData .leftSideFooter .leftSideContentDisabled ul li div:hover {
   color: rgb(136, 245, 255);
 }
-.footerDataContainer .footerData .leftSideFooter .leftSideContent ul li a, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li a {
+.footerData .leftSideFooter .leftSideContent ul li a, .footerData .leftSideFooter .leftSideContentDisabled ul li a {
   text-decoration: none;
   color: #e4e4e4;
   font-size: 14px;
 }
-.footerDataContainer .footerData .leftSideFooter .leftSideContent ul li a:hover, .footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled ul li a:hover {
+@media ((min-width: 700px) and (max-width: 1300px)) {
+  .footerData .leftSideFooter .leftSideContent ul li a, .footerData .leftSideFooter .leftSideContentDisabled ul li a {
+    font-size: 11px;
+  }
+}
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .footerData .leftSideFooter .leftSideContent ul li a, .footerData .leftSideFooter .leftSideContentDisabled ul li a {
+    font-size: 9.5px;
+  }
+}
+.footerData .leftSideFooter .leftSideContent ul li a:hover, .footerData .leftSideFooter .leftSideContentDisabled ul li a:hover {
   color: rgb(136, 245, 255);
 }
-.footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled p {
+.footerData .leftSideFooter .leftSideContentDisabled p {
   color: #e4e4e4;
   font-size: 14px;
 }
-.footerDataContainer .footerData .leftSideFooter .leftSideContentDisabled p:hover {
+@media ((min-width: 700px) and (max-width: 1300px)) {
+  .footerData .leftSideFooter .leftSideContentDisabled p {
+    font-size: 11px;
+  }
+}
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .footerData .leftSideFooter .leftSideContentDisabled p {
+    font-size: 9.5px;
+  }
+}
+.footerData .leftSideFooter .leftSideContentDisabled p:hover {
   color: darkgrey;
 }
-.footerDataContainer .symbols {
+
+.symbols {
   width: 100%;
   height: 90px;
   display: flex;
@@ -89,29 +167,81 @@
   justify-content: end;
   gap: 20px;
 }
-.footerDataContainer .symbols .symbolImage {
+.symbols .symbolImage {
   border-radius: 8px;
   background-color: #ffffff;
-  width: 80px;
+  width: 70px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 77px;
+  height: 67px;
 }
-.footerDataContainer .foundation {
+@media ((min-width: 700px) and (max-width: 1300px)) {
+  .symbols .symbolImage {
+    width: 65px;
+    height: 62px;
+  }
+}
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .symbols .symbolImage {
+    width: 57px;
+    height: 54px;
+  }
+}
+@media ((min-width: 700px) and (max-width: 1300px)) {
+  .symbols .symbolImage .NationalSymbol {
+    width: 30px !important;
+    height: 45px !important;
+  }
+}
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .symbols .symbolImage .NationalSymbol {
+    width: 25px !important;
+    height: 40px !important;
+  }
+}
+@media ((min-width: 700px) and (max-width: 1300px)) {
+  .symbols .symbolImage img {
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+@media ((min-width: 300px) and (max-width: 700px)) {
+  .symbols .symbolImage img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+.foundation {
   display: flex;
   width: 100%;
-  height: 75px;
-  align-items: end;
+  height: 110px;
+  align-items: center;
   justify-content: center;
   color: #ffffff;
 }
-.footerDataContainer .foundation span {
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .foundation {
+    align-items: start;
+  }
+}
+.foundation span {
   font-size: 16px;
   font-weight: 600;
 }
-.footerDataContainer .foundation p {
+@media ((min-width: 100px) and (max-width: 1300px)) {
+  .foundation span {
+    font-size: 14px;
+  }
+}
+.foundation p {
   font-size: 14.5px;
   padding-right: 15px;
+}
+@media ((min-width: 100px) and (max-width: 1300px)) {
+  .foundation p {
+    font-size: 12.5px;
+  }
 }/*# sourceMappingURL=FooterData.module.css.map */

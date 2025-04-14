@@ -36,6 +36,9 @@
 }
 
 .layerModalContainer {
+
+ 
+
     width: 410px;
     position: absolute;
     z-index: 10;
@@ -53,20 +56,23 @@
     height: 430px;
     overflow-y: scroll;
     margin-left: 6px;
-    
+
 }
 
 .layerModal::-webkit-scrollbar {
     width: 7px;
 }
+
 .layerModal::-webkit-scrollbar-track {
     border-radius: 15px;
     background: #e1e1e1;
-  }
+}
+
 .layerModal::-webkit-scrollbar-thumb {
     background: #afafaf;
     border-radius: 15px;
-  }
+}
+
 .titleContainer {
     display: flex;
     align-items: center;
@@ -140,7 +146,7 @@
     background-color: #ffffff;
     color: #ffffff;
     width: 100%;
-    border-top:  1px solid rgb(221, 221, 221);
+    border-top: 1px solid rgb(221, 221, 221);
     cursor: pointer;
     text-decoration: none;
 }
@@ -164,4 +170,11 @@
     font-size: 13.5px;
     padding-right: 5px;
     font-weight: 100;
+}
+
+@media ((min-width:1000px) and (max-width:1300px)) {
+    .layerModalContainer {
+        width: 368px;
+
+    }
 }

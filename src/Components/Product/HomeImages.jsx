@@ -25,7 +25,6 @@ export const HomeImagesFirstSection = ({ images }) => {
             alt={result[0].name}
             src={result[0].indexImageUrl}
             sizes="100%"
-            
           />
         </div>
       </Link>
@@ -49,16 +48,20 @@ export const HomeImagesSecondSection = ({ images }) => {
       <div className={styles.SecondSectionContainer}>
         {result.map((item) => {
           return (
-            <div key={item.id} onClick={() => clickHandler(item.name)} className={styles.SecondSection}>
+            <div
+              key={item.id}
+              onClick={() => clickHandler(item.name)}
+              className={styles.SecondSection}
+            >
               <Image
                 priority
                 className={styles.SecondHomeImage}
                 width={180}
                 height={180}
                 alt={item.name}
-                  sizes="100%"
+                sizes="100%"
                 src={item.indexImageUrl}
-                  />
+              />
               <p>{item.name}</p>
             </div>
           );
@@ -84,7 +87,7 @@ export const HomeImagesThirdSection = ({ images }) => {
             className={styles.homeImage}
             fill
             alt={result[0].name}
-                  sizes="100%"
+            sizes="100%"
             src={result[0].indexImageUrl}
           />
         </div>
@@ -108,16 +111,19 @@ export const HomeImagesFourthSection = ({ images }) => {
       <div className={styles.SecondSectionContainer}>
         {result.map((item) => {
           return (
-            <div key={item.id} onClick={() => clickHandler(item.name)} className={styles.SecondSection}>
+            <div
+              key={item.id}
+              onClick={() => clickHandler(item.name)}
+              className={styles.SecondSection}
+            >
               <Image
-                
                 className={styles.SecondHomeImage}
                 width={180}
                 height={180}
                 alt={item.name}
-                  sizes="100%"
+                sizes="100%"
                 src={item.indexImageUrl}
-                  />
+              />
               <p>{item.name}</p>
             </div>
           );
@@ -134,34 +140,31 @@ export const HomeImagesFifthSection = ({ images }) => {
   let result2 = images.filter((item) => {
     return item.id === 3;
   });
-  const rout = useRouter();
 
   const params = new URL(
     "http://localhost:3000/Product/categoryType/اپل /?class=handsfree"
   );
   return (
-      <div className={`${styles.FifthSectionContainer} `}>
-        <Link href={params} className={styles.FifthSection}>
-            <Image
-              
-              className={styles.FifthHomeImage}
-              fill
-              alt={result1[0].name}
-                  sizes="100%"
-              src={result1[0].indexImageUrl}
-              />
-        </Link>
-        <Link href="Product/Class/console" className={styles.FifthSection}>
-            <Image
-              
-              className={styles.FifthHomeImage}
-              fill
-              alt={result2[0].name}
-                  sizes="100%"
-              src={result2[0].indexImageUrl}
-              />
-        </Link>
-      </div>
+    <div className={`${styles.FifthSectionContainer} `}>
+      <Link href={params} className={styles.FifthSection}>
+        <Image
+          className={styles.FifthHomeImage}
+          fill
+          alt={result1[0].name}
+          sizes="100%"
+          src={result1[0].indexImageUrl}
+        />
+      </Link>
+      <Link href="Product/Class/console" className={styles.FifthSection}>
+        <Image
+          className={styles.FifthHomeImage}
+          fill
+          alt={result2[0].name}
+          sizes="100%"
+          src={result2[0].indexImageUrl}
+        />
+      </Link>
+    </div>
   );
 };
 
@@ -182,16 +185,19 @@ export const HomeImagesSixthSection = ({ images }) => {
       <div className={styles.SecondSectionContainer}>
         {result.map((item) => {
           return (
-            <div key={item.id} onClick={() => clickHandler(item.name)} className={styles.SecondSection}>
+            <div
+              key={item.id}
+              onClick={() => clickHandler(item.name)}
+              className={styles.SecondSection}
+            >
               <Image
-                
                 className={styles.SecondHomeImage}
                 width={180}
                 height={180}
                 alt={item.name}
-                  sizes="100%"
+                sizes="100%"
                 src={item.indexImageUrl}
-                  />
+              />
               <p>{item.name}</p>
             </div>
           );
@@ -221,13 +227,12 @@ export const HomeImagesSeventhSection = ({ images }) => {
               onClick={() => clickHandler(item.name)}
             >
               <Image
-                  sizes="100%"
-                
+                sizes="100%"
                 className={styles.FifthHomeImage}
                 fill
                 alt={item.name}
                 src={item.indexImageUrl}
-                  />
+              />
             </div>
           );
         })}
@@ -253,13 +258,12 @@ export const HomeImagesEighthSection = ({ images }) => {
             <Link href={`/brand/${item.name}`} key={item.id}>
               <div className={styles.EighthSection}>
                 <Image
-                  
                   width={130}
                   sizes="100%"
                   height={100}
                   alt={item.name}
                   src={item.indexImageUrl}
-                      />
+                />
               </div>
             </Link>
           );
@@ -290,13 +294,12 @@ export const HomeImagesNinthSection = ({ images }) => {
                 <Link href={`/Product/Class/${item.linkName}`}>
                   <div className={styles.Digital}>
                     <Image
-                      
-                  sizes="100%"
+                      sizes="100%"
                       width={120}
                       height={120}
                       alt={item.name}
                       src={`/Digital/${item.indexImageUrl}`}
-                              />
+                    />
 
                     <div className={styles.textDigital}>
                       <span>{item.name}</span>
@@ -307,13 +310,12 @@ export const HomeImagesNinthSection = ({ images }) => {
                 <Link href={`/brand/${item.linkName}`}>
                   <div className={styles.Digital}>
                     <Image
-                      
                       width={120}
-                  sizes="100%"
+                      sizes="100%"
                       height={120}
                       alt={item.name}
                       src={`/Digital/${item.indexImageUrl}`}
-                              />
+                    />
 
                     <div className={styles.textDigital}>
                       <span>{item.name}</span>
@@ -342,7 +344,6 @@ export const HomeImagesTenthSection = ({ images }) => {
       <div className={`${styles.FifthSectionContainer} ${styles.double} `}>
         <Link href="/" className={styles.FifthSection}>
           <Image
-            
             sizes="100%"
             className={styles.FifthHomeImage}
             fill
@@ -353,7 +354,6 @@ export const HomeImagesTenthSection = ({ images }) => {
 
         <Link href="/Product/Class/handsfree" className={styles.FifthSection}>
           <Image
-            
             className={styles.FifthHomeImage}
             sizes="100%"
             fill
@@ -380,7 +380,7 @@ export const HomeImagesEleventhSection = ({ images }) => {
               <Image
                 className={styles.EleventhHomeImage}
                 fill
-                  sizes="100%"
+                sizes="100%"
                 alt={item.name}
                 src={item.indexImageUrl}
               />

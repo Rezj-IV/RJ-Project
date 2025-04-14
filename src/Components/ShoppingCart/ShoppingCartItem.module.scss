@@ -2,21 +2,29 @@ $lightBlue: #14a0de;
 $iconColor: #00387b;
 $delText: #8e9bbb;
 
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
 .mainContainer {
     border: 1px solid #d1d6e3;
     border-radius: 15px;
     margin-bottom: 25px;
-.removePrdContainer{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    height: 54px;
-}
+
+    .removePrdContainer {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        height: 54px;
+    }
+
     .incredibleOffersLogo {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 54px;
+        height: fit-content;
 
         .offerText {
             color: $lightBlue;
@@ -25,16 +33,46 @@ $delText: #8e9bbb;
             align-items: center;
             font-size: 16px;
             margin-bottom: 5px;
-            width: 124px;
-            justify-content: center;
+            padding-right: 2%;
             padding-top: 7px;
 
+            @include Media(300px, 600px) {
+                font-size: 9px;
+                padding-right: 3%;
+
+            }
+
+            @include Media(600px, 800px) {
+                font-size: 11.5px;
+                padding-right: 3%;
+
+            }
+
+            @include Media(800px, 1100px) {
+                font-size: 13.5px;
+                padding-right: 3%;
+
+            }
 
             i {
                 display: flex;
                 align-items: center;
                 font-size: 30px;
 
+                @include Media(300px, 600px) {
+                    font-size: 15px;
+
+                }
+
+                @include Media(600px, 800px) {
+                    font-size: 21px;
+
+                }
+
+                @include Media(800px, 1100px) {
+                    font-size: 24px;
+
+                }
             }
         }
     }
@@ -42,16 +80,53 @@ $delText: #8e9bbb;
     .container {
         display: flex;
         justify-content: space-between;
-        height: 420px;
+        height: fit-content;
         padding: 0 40px;
 
+        @include Media(300px, 450px) {
+            flex-direction: row-reverse;
+        }
 
+        @include Media(300px, 800px) {
+            padding: 0 4%;
+
+        }
+
+        @include Media(800px, 1100px) {
+            padding: 0 25px;
+        }
+.productNSContainer{
+    @include Media(300px, 450px) {
+        width: 60%;
+    }
+}
         .productName {
             text-decoration: none;
+
             p {
                 font-weight: 600;
                 color: #222222;
                 font-size: 18px;
+
+                @include Media(300px, 450px) {
+                    font-size: 10px;
+
+                }
+
+                @include Media(450px, 600px) {
+                    font-size: 11px;
+
+                }
+
+                @include Media(600px, 800px) {
+                    font-size: 13.5px;
+
+                }
+
+                @include Media(800px, 1100px) {
+                    font-size: 15.5px;
+
+                }
             }
         }
 
@@ -64,10 +139,43 @@ $delText: #8e9bbb;
             flex-direction: column;
             gap: 17px;
 
+            @include Media(300px, 600px) {
+                height: 120px;
+                gap: 7px;
+            }
+
+            @include Media(600px, 800px) {
+                height: 134px;
+                gap: 9px;
+            }
+
+            @include Media(800px, 1100px) {
+                height: 148px;
+                gap: 12px;
+            }
+
             .iconShop {
                 color: $iconColor;
                 margin-left: 18px;
                 font-size: 24px;
+
+                @include Media(300px, 600px) {
+                    font-size: 15px;
+                    margin-left: 10px;
+
+                }
+
+                @include Media(600px, 800px) {
+                    font-size: 17.5px;
+                    margin-left: 13px;
+
+                }
+
+                @include Media(800px, 1100px) {
+                    font-size: 19px;
+                    margin-left: 15px;
+
+                }
             }
 
             .warranty {
@@ -82,6 +190,23 @@ $delText: #8e9bbb;
                 }
             }
 
+            .sellerTextA {
+                @include Media(300px, 600px) {
+                    font-size: 9px !important;
+
+                }
+
+                @include Media(600px, 800px) {
+                    font-size: 11.5px !important;
+
+                }
+
+                @include Media(800px, 1100px) {
+                    font-size: 13px !important;
+
+                }
+            }
+
             .seller {
                 display: flex;
                 align-items: center;
@@ -91,6 +216,8 @@ $delText: #8e9bbb;
                     color: #525252;
                     font-weight: 600;
                     height: 28px;
+                    display: flex;
+                    align-items: center;
                 }
             }
 
@@ -102,9 +229,24 @@ $delText: #8e9bbb;
                     font-size: 12.5px;
                     font-weight: 600;
                     color: #375475;
+
+                    @include Media(300px, 600px) {
+                        font-size: 8px !important;
+
+                    }
+
+                    @include Media(600px, 800px) {
+                        font-size: 10px !important;
+
+                    }
+
+                    @include Media(800px, 1100px) {
+                        font-size: 11.5px !important;
+
+                    }
                 }
 
-                .sellerText {
+                .sellerTextB {
                     padding: 0 4px;
                 }
             }
@@ -114,102 +256,36 @@ $delText: #8e9bbb;
         }
 
         .productImage {
-            width: 380px;
+            width: 40%;
             align-items: end;
             display: flex;
             flex-direction: column;
             gap: 40px;
             overflow: hidden;
 
-            .productDetails {
-                width: 100%;
-                height: 110px;
-                border: 1px solid #f0f0f0;
-                border-radius: 8px;
-                display: flex;
-                flex-direction: column;
-                padding: 15px;
+         
 
-                .mainPriceContainer {
-                    display: flex;
+         
 
-                    .priceContainer {
-                        display: flex;
-                        width: 100%;
-                        justify-content: end;
-                        gap: 10px;
-
-                        .mainPrice {
-                            font-weight: 600;
-                            font-size: 18px;
-                        }
-
-                        .price {
-                            color: #919ebc;
-                            text-decoration-line: line-through;
-                            text-decoration-color: #919ebc;
-                            text-decoration-thickness: 1px;
-                            font-size: 15px;
-                            text-align: left;
-                            display: inline-block;
-
-                        }
-
-                        .priceWithDiscount {
-                            font-weight: 600;
-                            font-size: 18px;
-
-                        }
-
-                        .toman {
-                            font-size: 12px;
-                            color: #525252;
-                            padding-right: 4px;
-
-                        }
-
-                    }
-
-                    .priceDetail {
-                        display: flex;
-                        width: 100%;
-                        justify-content: space-between;
-                    }
-
-
-
-                    .offPrcent {
-                        width: 37px;
-                        font-size: 13px;
-                        font-weight: 600;
-                        border-radius: 3px;
-                        height: 20px;
-                        display: flex;
-                        justify-content: center;
-                        border-style: none;
-                        flex-direction: row-reverse;
-                        background-color: $lightBlue;
-                        align-items: center;
-                        padding-top: 3px;
-                        color: rgb(241, 235, 235);
-
-                        .prcent {
-
-                            padding-left: 2px;
-                            font-size: 15px;
-
-                        }
-                    }
-
+            img {
+                @include Media(300px, 450px) {
+                    width: 120px !important;
+                    height: 120px !important;
                 }
 
+                @include Media(450px, 600px) {
+                    width: 140px !important;
+                    height: 140px !important;
+                }
 
-                .counterAndColor {
-                    display: flex;
-                    width: 100%;
-                    height: 60px;
-                    justify-content: space-between;
-                    align-items: center;
+                @include Media(600px, 800px) {
+                    width: 155px !important;
+                    height: 155px !important;
+                }
+
+                @include Media(800px, 1100px) {
+                    width: 185px !important;
+                    height: 185px !important;
                 }
             }
 
@@ -218,3 +294,231 @@ $delText: #8e9bbb;
 
     }
 }
+
+.Details {
+    display: flex;
+    width: 100%;
+    padding: 0px 40px;
+    justify-content: end;
+    margin-bottom: 14px;
+    height: 167px;
+    align-items: center;
+
+    @include Media(300px, 800px) {
+        padding: 0 11px;
+        height: 100px;
+    }
+}
+
+.productDetails {
+    width: 371px;
+    height: 110px;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+
+    @include Media(300px, 1000px) {
+        width: 100%;
+    }
+
+    @include Media(300px, 1100px) {
+        height: fit-content;
+        padding: 12px 15px 0;
+    }
+
+    .mainPriceContainer {
+        display: flex;
+        justify-content: space-between;
+
+        @include Media(300px, 1000px) {
+            justify-content: end;
+            gap: 5%;
+
+        }
+
+        .Mp {
+            width: 100% !important;
+        }
+
+        .priceContainer {
+            display: flex;
+            width: fit-content;
+            justify-content: end;
+            gap: 10px;
+
+            .mainPrice {
+                font-weight: 600;
+                font-size: 18px;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+
+                @include Media(300px, 600px) {
+                    font-size: 11.5px;
+
+                }
+
+
+                @include Media(600px, 800px) {
+                    font-size: 14px;
+
+                }
+
+                @include Media(800px, 1100px) {
+                    font-size: 15.5px;
+
+                }
+            }
+
+            .price {
+                color: #919ebc;
+                text-decoration-line: line-through;
+                text-decoration-color: #919ebc;
+                text-decoration-thickness: 1px;
+                font-size: 15px;
+                text-align: left;
+                display: inline-block;
+
+                @include Media(300px, 600px) {
+                    font-size: 10.5px;
+
+                }
+
+
+                @include Media(600px, 800px) {
+                    font-size: 12px;
+
+                }
+
+                @include Media(800px, 1100px) {
+                    font-size: 13.5px;
+
+                }
+
+            }
+
+            .priceWithDiscount {
+                font-weight: 600;
+                font-size: 18px;
+
+                @include Media(300px, 600px) {
+                    font-size: 11.5px;
+
+                }
+
+
+                @include Media(600px, 800px) {
+                    font-size: 14px;
+
+                }
+
+                @include Media(800px, 1100px) {
+                    font-size: 15.5px;
+
+                }
+            }
+
+            .toman {
+                font-size: 12px;
+                color: #525252;
+                padding-right: 4px;
+
+                @include Media(600px, 1100px) {
+                    font-size: 10.5px;
+
+                }
+
+                @include Media(300px, 600px) {
+                    font-size: 9px;
+
+                }
+            }
+
+        }
+
+        .priceDetail {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+
+
+        .offPrcent {
+            width: 37px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 3px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            border-style: none;
+            flex-direction: row-reverse;
+            background-color: $lightBlue;
+            align-items: center;
+            padding-top: 3px;
+            color: rgb(241, 235, 235);
+
+            @include Media(300px, 600px) {
+                width: 21px;
+                height: 13px;
+                font-size: 8.5px;
+
+            }
+
+
+            @include Media(600px, 800px) {
+                width: 27px;
+                height: 15px;
+                font-size: 10.5px;
+            }
+
+            @include Media(800px, 1100px) {
+                width: 30px;
+                height: 18px;
+            }
+
+            .prcent {
+
+                padding-left: 2px;
+                font-size: 15px;
+
+                @include Media(300px, 600px) {
+
+                    font-size: 8.5px;
+                }
+
+
+                @include Media(600px, 800px) {
+
+                    font-size: 10.5px;
+                }
+
+                @include Media(800px, 1100px) {
+
+                    font-size: 13px;
+                    ;
+                }
+            }
+        }
+
+    }
+
+
+    .counterAndColor {
+        display: flex;
+        width: 100%;
+        height: 60px;
+        justify-content: space-between;
+        align-items: center;
+
+        @include Media(300px, 600px) {
+            height: 45px;
+
+        }
+    }
+}
+
+.ShoppingCartItemCountB {}

@@ -20,18 +20,51 @@ $ShText : rgb(34 60 120/1);
         display: flex;
         justify-content: space-between;
         width: 100%;
-        height: 70px;
+        height: fit-content;
+        margin-bottom: 2%;
         background-color: transparent;
         font-weight: 600;
         padding: 0 27px;
+        @include Media(100px, 600px) {
+            padding: 0 ;
 
+        }
         p {
             font-size: 20px;
+
+            @include Media(100px, 600px) {
+                font-size:14px !important;
+    
+            }
+    
+            @include Media(600px, 1100px) {
+                font-size: 16.5px !important;
+    
+            }
+    
+            @include Media(1100px, 1500px) {
+                font-size: 18.5px !important;
+    
+            }
 
         }
 
         span {
             font-size: 20px;
+            @include Media(100px, 600px) {
+                font-size:14px !important;
+    
+            }
+    
+            @include Media(600px, 1100px) {
+                font-size: 16.5px !important;
+    
+            }
+    
+            @include Media(1100px, 1500px) {
+                font-size: 18.5px !important;
+    
+            }
         }
 
         .rjLand {
@@ -48,14 +81,46 @@ $ShText : rgb(34 60 120/1);
             span {
                 font-size: 15px;
 
+                @include Media(100px, 600px) {
+                    font-size: 10.5px !important;
+        
+                }
+        
+                @include Media(600px, 1100px) {
+                    font-size: 12.5px !important;
+        
+                }
+        
+                @include Media(1100px, 1500px) {
+                    font-size: 14px !important;
+        
+                }
             }
 
         }
 
         .AiOutlineLeft {
 
-            margin-right: 10px;
-            font-size: 14px;
+            margin-right: 10px !important;
+            font-size: 14px !important;
+
+            @include Media(100px, 600px) {
+                font-size: 10px !important;
+                margin-right: 2px !important
+            }
+    
+            @include Media(600px, 1100px) {
+                font-size: 12px !important;
+                margin-right: 4px !important;
+    
+    
+    
+            }
+    
+            @include Media(1100px, 1500px) {
+                font-size: 13.5px;
+    
+            }
         }
     }
 }
@@ -74,30 +139,13 @@ $ShText : rgb(34 60 120/1);
     }
 }
 
-@media ((min-width: 100px) and (max-width: 666px)) {
-    .titleCarusel{
-        padding: 0 !important;
-    }
-    .titleCarusel p {
-        font-size: 15.5px !important;
-    }
 
-    .ShowAll span {
-        font-size: 12px !important;
-    }
 
-    .AiOutlineLeft {
-        font-size: 11px !important;
-        margin-right: 5px !important;
-    }
-}
 
-.slick-list{
-    padding: 0 !important;
-  }
 
   .weblogContainer{
     display: block;
+    padding: 30px 20px 10px 20px !important; 
     @include Media(100px, 1101px){
         display: none;
     }

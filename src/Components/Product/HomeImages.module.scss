@@ -112,7 +112,7 @@
     height: fit-content;
     margin-bottom: 5%;
 
-    @include Media(100px, 1100px) {
+    @include Media(100px, 800px) {
         flex-direction: column;
         gap: 5%;
 
@@ -147,14 +147,29 @@
     margin: 0 auto;
     margin-bottom: 5%;
 
-    @include Media(100px, 590px) {
-        width: 95%;
+    @include Media(100px, 1500px) {
+        width: 100%;
+    }
+
+    @include Media(100px, 650px) {
+        margin-top: 6%;
     }
 
     .title {
         height: 58px;
         font-size: 21px;
         color: #1b2442;
+
+        @include Media(650px, 1200px) {
+            font-size: 18px;
+            height: 53px;
+
+        }
+
+        @include Media(100px, 650px) {
+            font-size: 16px;
+            height: 46px;
+        }
     }
 
     .DigitalContainer {
@@ -163,9 +178,18 @@
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-template-rows: 1fr;
         grid-auto-rows: 1fr;
-        grid-gap: 50px;
         gap: 50px;
         margin: 0 auto;
+
+        @include Media(300px, 650px) {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+        }
+
+        @include Media(100px, 1191px) {
+            gap: 30px 22px;
+
+        }
 
         .Digital {
             position: relative;
@@ -181,6 +205,18 @@
             align-items: center;
             justify-content: center;
             border-radius: 8px;
+
+            img {
+                @include Media(300px, 650px) {
+                    width: 85px !important;
+                    height: 85px !important;
+                }
+
+                @include Media(650px, 1191px) {
+                    width: 100px !important;
+                    height: 100px !important;
+                }
+            }
 
             .textDigital {
                 position: absolute;
@@ -227,6 +263,10 @@
     justify-content: center;
     margin: 59px auto;
 
+    @include Media(300px, 1000px) {
+        display: none;
+    }
+
     .selectedBrandsContainer {
         display: flex;
         width: fit-content;
@@ -237,7 +277,10 @@
         border: 2px solid #d4d8e2;
         overflow: hidden;
 
+
+
         .selectedBrands {
+
             width: 230px;
             display: flex;
             height: 100%;
@@ -247,15 +290,28 @@
             flex-direction: column;
             background-image: linear-gradient(90deg, #0079b1, #1b3570);
 
+
+
             .Check {
                 font-size: 32px;
+
+                @include Media(1000px, 1250px) {
+                    font-size: 27px;
+
+                }
             }
 
             h3 {
                 font-size: 21px;
                 padding-top: 4px;
+
+                @include Media(1000px, 1250px) {
+                    font-size: 17px;
+                    padding-top: 2px;
+                }
             }
         }
+
 
         .EighthSection {
             width: 230px;
@@ -263,6 +319,22 @@
             align-items: center;
             justify-content: center;
             border-right: 1px solid #989eaa;
+
+            @include Media(1250px, 1580px) {
+                width: 190px;
+            }
+
+            @include Media(1000px, 1250px) {
+                width: 150px;
+            }
+
+            img {
+                @include Media(1000px, 1250px) {
+                    width: 110px;
+                    height: 80px;
+                }
+
+            }
         }
 
     }
@@ -285,9 +357,11 @@
         .EleventhSection {
             position: relative;
             width: 100%;
-            height: 200px;
+            height: fit-content;
 
             .EleventhHomeImage {
+
+                position: unset !important;
                 height: unset !important;
 
             }
@@ -300,7 +374,7 @@
                 }
 
                 position: absolute;
-                bottom: 0;
+                bottom: -20%;
                 width: 100%;
                 background-color: #333333;
                 height: 55px;

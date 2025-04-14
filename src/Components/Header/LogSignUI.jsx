@@ -9,12 +9,18 @@ import { removeToken } from "@/Redux/Slices/UserSlice";
 import { RiUserLine } from "react-icons/ri";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdKeyboardArrowLeft } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 const LogSignUI = () => {
   const dispatch = useDispatch();
   const jwt = useSelector((state) => state.Users);
   // const arrayToken = jwt.token.split(".");
   // const tokenPayload = JSON.parse(atob(arrayToken[1]));
+  const rout = useRouter();
+  const SignOut = () => {
+    dispatch(removeToken());
+    rout.push("/");
+  };
   return (
     <div>
       {jwt.token ? (
@@ -31,10 +37,7 @@ const LogSignUI = () => {
               </p>
               <MdKeyboardArrowLeft className={styles.ArrowLeftIcon} />
             </Link>
-            <div
-              onClick={() => dispatch(removeToken())}
-              className={styles.sginOut}
-            >
+            <div onClick={SignOut} className={styles.sginOut}>
               <RxExit className={styles.exitIcon} />
 
               <p>خروج از حساب کاربری</p>

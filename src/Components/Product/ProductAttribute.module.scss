@@ -1,6 +1,12 @@
 $Bcolor: #d3d8e4;
 $AattColor: #1f47a5d6;
 
+@mixin Media($minWidth , $maxWidth) {
+    @media ((min-width:$minWidth) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
 .attContainer {
     padding: 10px 17px;
 
@@ -12,9 +18,32 @@ $AattColor: #1f47a5d6;
         border-bottom: 1px dashed $Bcolor ;
         width: 100%;
         height: 52px;
-        font-size: 14px;
+
+        @include Media(750px, 1250px) {
+            height: 45px;
+        }
+
+        @include Media(450px, 750px) {
+            height: 38px;
+        }
+
+        @include Media(320px, 450px) {
+            height: 25px;
+        }
 
         .attName {
+            @include Media(750px, 1250px) {
+                font-size: 12px;
+            }
+
+            @include Media(450px, 750px) {
+                font-size: 10.5px
+            }
+
+            @include Media(320px, 450px) {
+                font-size: 6.5px
+            }
+
             font-size: 13.5px;
             font-weight: 600;
             color: rgb(33, 33, 33);
@@ -22,7 +51,20 @@ $AattColor: #1f47a5d6;
 
         .attMainText {
             padding-left: 20px;
+            font-size: 15px;
             color: $AattColor;
+
+            @include Media(750px, 1250px) {
+                font-size: 12.5px;
+            }
+
+            @include Media(450px, 750px) {
+                font-size: 11px
+            }
+
+            @include Media(320px, 450px) {
+                font-size: 8px
+            }
         }
     }
 

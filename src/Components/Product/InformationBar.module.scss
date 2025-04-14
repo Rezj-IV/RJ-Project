@@ -3,8 +3,20 @@ $iconColor: #465e91;
 $delText: #8e9bbb;
 $lightBlue: #14a0de;
 
+@mixin Media($minWidth , $maxWidth) {
+    @media ((min-width:$minWidth) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
 .container {
     margin-top: 30px;
+
+    @include Media(320px, 1500px) {
+        width: 89%;
+        margin: 0 auto;
+    }
+
     .informationBarContainer {
         width: 100%;
         background-color: $colorBar;
@@ -20,7 +32,23 @@ $lightBlue: #14a0de;
         font-size: 14px;
         font-weight: 600;
 
+        @include Media(320px, 750px) {
+            height: fit-content;
+            padding: 3% 4%;
+        }
+
         .barLink {
+            @include Media(320px, 450px) {
+                font-size: 11px;
+            }
+
+            @include Media(450px, 750px) {
+                font-size: 13px;
+            }
+
+            @include Media(750px, 1000px) {
+                font-size: 13.5px;
+            }
 
             text-decoration: none;
             color: #242424;
@@ -31,6 +59,11 @@ $lightBlue: #14a0de;
 
     .rightSide {
         flex-basis: 70%;
+
+        @include Media(320px, 1500px) {
+            flex-basis: unset;
+            width: 100%;
+        }
 
     }
 
@@ -52,17 +85,52 @@ $lightBlue: #14a0de;
                     display: flex;
                     align-items: center;
 
+                    @include Media(320px, 750px) {
+                        height: fit-content;
+                        margin-top: 13px;
+                    }
+
+                    @include Media(750px, 1000px) {
+                        height: fit-content;
+                        margin-top: 20px;
+                    }
 
                     span {
                         color: $iconColor;
                         padding: 0 15px;
                         font-size: 29px;
 
+                        @include Media(320px, 450px) {
+                            font-size: 19px;
+                            padding: 0 10px;
+
+                        }
+
+                        @include Media(450px, 750px) {
+                            font-size: 24px;
+                        }
+
+                        @include Media(750px, 1000px) {
+                            font-size: 27px;
+                        }
                     }
 
                     h1 {
                         display: inline-block;
                         font-size: 21.5px;
+
+                        @include Media(320px, 450px) {
+                            font-size: 14px;
+
+                        }
+
+                        @include Media(450px, 750px) {
+                            font-size: 16px;
+                        }
+
+                        @include Media(750px, 1000px) {
+                            font-size: 20px;
+                        }
                     }
                 }
 
@@ -75,15 +143,53 @@ $lightBlue: #14a0de;
                     margin: 10px auto;
                     padding: 20px 25px;
 
+                    @include Media(320px, 750px) {
+                        padding: 3% 5%;
+                        margin: 1.5% auto;
+                        height: fit-content;
+                        flex-direction: column;
+                        display: flex;
+                        justify-content: center;
+
+                    }
+
                     p {
 
                         color: #585858;
+
+                        @include Media(320px, 450px) {
+                            font-size: 11.5px;
+                        }
+
+                        @include Media(450px, 750px) {
+                            font-size: 13px;
+                        }
+
+                        @include Media(750px, 1000px) {
+                            font-size: 15px;
+                        }
                     }
 
                     h4 {
                         color: rgb(55, 55, 55);
                         font-size: 16px;
                         height: 32px;
+
+                        @include Media(320px, 450px) {
+                            font-size: 11.5px;
+                            height: 20px;
+
+                        }
+
+                        @include Media(450px, 750px) {
+                            font-size: 13.5px;
+                            height: 25px;
+                        }
+
+                        @include Media(750px, 1000px) {
+                            font-size: 15px;
+                            height: 28.5px;
+                        }
                     }
 
                 }
@@ -99,10 +205,15 @@ $lightBlue: #14a0de;
 
         .dataProductContainer {
             flex-basis: 30%;
+            // display: flex;
             display: flex;
             justify-content: end;
             margin-top: 45px;
             position: sticky;
+
+            @include Media(320px, 1500px) {
+                display: none;
+            }
 
             .dataProduct {
                 top: 100px;
@@ -307,6 +418,8 @@ $lightBlue: #14a0de;
 
     .commentsProduct {
         width: 100%;
-        height: 500px;
+        height: fit-content;
+        margin-bottom: 120px;
+
     }
 }

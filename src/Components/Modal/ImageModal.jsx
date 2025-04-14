@@ -7,25 +7,19 @@ import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 
 const ImageModal = ({ images, namePrd, mainImage }) => {
   const [modal, setModal] = useState(false);
-  const [imgID, setImgID] = useState({
-    id: 0,
-    original: "",
-  });
-  const [ximg, setxImg] = useState();
+  const [slideImag, setSlideImag] = useState(0);
+  const nextSlideImage = () => {
+    setSlideImag(slideImag === images.length - 1 ? 0 : slideImag + 1);
+  };
+
+  const prevSlideImage = () => {
+    setSlideImag(slideImag === 0 ? images.length - 1 : slideImag - 1);
+  };
 
   const clickToModal = () => {
     setModal(!modal);
   };
-  const clickToShowImg = (props) => {
-    setImgID({ id: props.id, original: props.original });
-  };
 
-  const clickToLeftSlide = () => {
-    setImgID((...prev) => prev.id - 1);
-  };
-  const clickToRightSlide = () => {
-    setImgID((...prev) => prev.id + 1);
-  };
   return (
     <div className={styles.imagesProduct}>
       {modal && (
@@ -52,12 +46,16 @@ const ImageModal = ({ images, namePrd, mainImage }) => {
                   <div className={styles.rightsideContainer}>
                     <p className={styles.nameProduct}>{namePrd}</p>
                     <div className={styles.rightside}>
-                      {images.map((item) => {
+                      {images.map((item, index) => {
                         return (
                           <div
                             key={item.id}
-                            className={styles.slideImage}
-                            onClick={() => clickToShowImg(item)}
+                            className={
+                              slideImag !== index
+                                ? styles.slideImage
+                                : `${styles.slideImage} ${styles.selectedImage}`
+                            }
+                            onClick={() => setSlideImag(index)}
                           >
                             <Image
                               src={item.original}
@@ -71,36 +69,39 @@ const ImageModal = ({ images, namePrd, mainImage }) => {
                     </div>
                   </div>
                   <div className={styles.leftSildeContainer}>
-                  <div className={styles.mainModalIMages}>
-                    <div className={styles.clickArrow}>
-                      <BiChevronRight
-                        className={styles.iconArrow}
-                        onClick={clickToRightSlide}
-                      />
-                    </div>
+                    <div className={styles.mainModalIMages}>
+                      <div className={styles.leftArrow}>
+                        <BiChevronRight
+                          onClick={prevSlideImage}
+                          className={styles.Arrow}
+                        />
+                      </div>
+                      <div className={styles.productImages}>
+                        {images.map((item, index) => {
+                          return (
+                            <Image
+                              key={index}
+                              src={item.original}
+                              alt="productImage"
+                              width={400}
+                              height={400}
+                              className={
+                                slideImag === index
+                                  ? styles.slide
+                                  : `${styles.slide} ${styles.slideHidden}`
+                              }
+                            />
+                          );
+                        })}
+                      </div>
 
-                    {imgID.id ? (
-                      <Image
-                        src={imgID.original}
-                        alt={namePrd}
-                        width={400}
-                        height={400}
-                      />
-                    ) : (
-                      <Image
-                        src={mainImage}
-                        alt={namePrd}
-                        width={400}
-                        height={400}
-                      />
-                    )}
-                    <div className={styles.clickArrow}>
-                      <BiChevronLeft
-                        className={styles.iconArrow}
-                        onClick={clickToLeftSlide}
-                      />
+                      <div className={styles.rightArrow}>
+                        <BiChevronLeft
+                          onClick={nextSlideImage}
+                          className={styles.Arrow}
+                        />
+                      </div>
                     </div>
-                  </div>
                   </div>
                 </div>
               </div>

@@ -10,16 +10,16 @@ const Footer = async () => {
     <div className={styles.footer}>
       <div className={styles.headerFooter}>
         <Link href="/">
-          <Image src="/logo/RJLand.png" width={130} height={130} alt="RJLand" />
+          <Image src="/logo/RJLand.png" width={125} height={125} alt="RJLand" className={styles.rjLogo}/>
         </Link>{" "}
         <div>
-          <Link href="/" className={styles.goUp}>
+          <Link href="#top" className={styles.goUp} >
             <p>بازگشت به بالا</p>
             <IoIosArrowUp className={styles.upIcon} />
           </Link>
         </div>
       </div>
-      <div>
+      <div className={styles.FooterData}>
         <FooterData />
       </div>
     </div>

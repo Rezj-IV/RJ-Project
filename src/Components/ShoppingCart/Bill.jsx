@@ -12,6 +12,7 @@ const Bill = ({ totalCount, totalAmount, discountProducts , data }) => {
           <div className={styles.ProductPrice}>
             <p className={styles.ProductPriceText}>قیمت محصولات</p>
             <span className={styles.ProductPriceText}>
+              
               {totalAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             <span className={styles.toman}>تومان</span>
 

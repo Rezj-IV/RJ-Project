@@ -32,8 +32,13 @@
         color: #929292;
         font-size: 28px;
         width: 75px;
-
-        @include Media(100px, 699px) {
+        @include Media(300px, 380px) {
+            bottom: 14px;
+            right: 18px;
+            font-size: 21px;
+        }
+        
+        @include Media(380px, 699px) {
             bottom: 12px;
             right: 29px;
             font-size: 24px;
@@ -47,17 +52,23 @@
 
         }
     }
-
     .searchBox {
-        @include Media(100px, 699px) {
+        @include Media(300px, 380px) {
+            height: 45px;
+            border-radius: 25px;
+            padding-right: 69px;
+            font-size: 15px;
+        }
+
+        @include Media(380px, 699px) {
             height: 45px;
             border-radius: 25px;
             padding-right: 80px;
-        font-size: 15px;
+            font-size: 15px;
 
         }
 
-        @include Media(699px, 1200px) {
+        @include Media(700px, 1200px) {
             height: 52px;
             padding-right: 55px;
 
@@ -70,14 +81,7 @@
         padding-right: 60px;
         border: none;
         outline: none;
-        font-family: 'Gill Sans',
-        'Gill Sans MT',
-        Calibri,
-        'Trebuchet MS',
-        sans-serif,
-        Geneva,
-        Tahoma,
-        sans-serif;
+        font-family: 'yekan';
         font-size: 17px;
         color: #4a4a4a;
     }
@@ -85,16 +89,19 @@
 
     .searchBox::placeholder {
         font-size: 14px;
-        font-weight: 600;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #b1adad;
-        @include Media(100px, 699px) {
-            font-size: 12px;
-     
+        font-family: 'yekan';
+        color: #a1a1a1;
 
+        @include Media(300px, 380px) {
+            font-size:9px
         }
-        @include Media(699px, 1000px) {
-            font-size: 13px;
+
+        @include Media(380px, 699px) {
+            font-size: 10px
+        }
+
+        @include Media(700px, 1000px) {
+            font-size: 12px;
         }
     }
 

@@ -12,8 +12,8 @@ import { removeToken } from "@/Redux/Slices/UserSlice";
 const profile = (prop) => {
   const dispatch = useDispatch();
   const jwt = useSelector((state) => state.Users);
-  const arrayToken = jwt.token.split(".");
-  const tokenPayload = JSON.parse(atob(arrayToken[1]));
+  // const arrayToken = jwt.token.split(".");
+  // const tokenPayload = JSON.parse(atob(arrayToken[1]));
   const rout = useRouter();
   const clickHandler = () => {
     dispatch(removeToken());
@@ -24,13 +24,14 @@ const profile = (prop) => {
       <div className={styles.rightSide}>
         <div className={styles.profile}>
           <TbUserHexagon className={styles.profileIcon} />
-          <p>{tokenPayload.username}</p>
+          {/* <p>{tokenPayload.username}</p> */}
+          <p>rezj</p>
         </div>
-
+{/* 
         <div className={styles.profileContent}>
           <MdOutlineRemoveRedEye className={styles.EyeIcon} />
           <p> اخرین کالاهای دیده شده</p>
-        </div>
+        </div> */}
 
         <div className={styles.profileContent} onClick={clickHandler}>
           <RxExit className={styles.ExitIcon} />
@@ -43,24 +44,24 @@ const profile = (prop) => {
           <div className={styles.construction}>
             <div className={styles.Specifications}>
               <p>نام کاربری :</p>
-              <span>{tokenPayload.username}</span>
+              {/* <span>{tokenPayload.username}</span> */}
             </div>
             <div className={styles.Specifications}>
               <p>نام :</p>
 
-              <span>{tokenPayload.name}</span>
+              {/* <span>{tokenPayload.name}</span> */}
             </div>
             <div className={styles.Specifications}>
               <p>نام خانوادگی :</p>
-              <span>{tokenPayload.lastname}</span>
+              {/* <span>{tokenPayload.lastname}</span> */}
             </div>
             <div className={styles.Specifications}>
               <p>شماره موبایل :</p>
-              <span>{tokenPayload.mobilenumber}</span>
+              {/* <span>{tokenPayload.mobilenumber}</span> */}
             </div>
             <div className={styles.Specifications}>
               <p>ایمیل :</p>
-              <span>{tokenPayload.email}</span>
+              {/* <span>{tokenPayload.email}</span> */}
             </div>
           </div>
         </div>

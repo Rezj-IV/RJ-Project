@@ -1,0 +1,852 @@
+$gray: #d6d8de;
+$mainColor: #000000;
+$textColor: #183b8dd6;
+$lightBlue: #14a0de;
+$iconColor: #00387b;
+$delText: #8e9bbb;
+
+$borderColor: #8c9ab9;
+$ShText : rgb(34 60 120/1);
+
+
+@mixin Media($minWidth , $maxWidth) {
+    @media ((min-width:$minWidth) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
+.mainContainer {
+    width: 85%;
+    margin: 0 auto;
+
+    @include Media(1500px, 1700px) {
+        width: 95%;
+    }
+
+    @include Media(300px, 1500px) {
+        width: 100%;
+    }
+
+    .dataProductContainer {
+        margin-top: 50px;
+        display: flex;
+
+        @include Media(300px, 1500px) {
+            display: block;
+            margin-top: 0;
+        }
+
+        .descriptionContainer {
+            display: flex;
+            border: 1px solid $gray;
+            flex-basis: 72%;
+            padding: 10px 40px 40px 15px;
+            width: 100%;
+            height: 740px;
+            border-radius: 13px;
+            justify-content: space-between;
+
+            @include Media(300px, 1500px) {
+                border: none;
+                width: 100%;
+                height: fit-content;
+            }
+
+            @include Media(300px, 1000px) {
+                flex-direction: column-reverse;
+                padding: 0 5%;
+            }
+
+            .nameContainer {
+                flex-basis: 57%;
+                padding-top: 30px;
+
+                @include Media(300px, 1000px) {
+                    flex-basis: unset;
+                }
+
+                .name {
+                    @include Media(950px, 1300px) {
+                        font-size: 1.5vw;
+                    }
+
+                    @include Media(750px, 950px) {
+                        font-size: 15.6px;
+                    }
+
+
+                    @include Media(450px, 750px) {
+                        font-size: 12px;
+                        width: fit-content;
+                    }
+
+                    @include Media(300px, 450px) {
+                        font-size: 11px;
+                        width: fit-content;
+                        line-height: unset;
+
+
+                    }
+
+
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $mainColor ;
+                    line-height: 33px;
+                    height: fit-content;
+                    display: table;
+                    width: 599px;
+                }
+
+                .nameb {
+                    font-size: 13.5px;
+
+                    padding: 15px 0;
+                    color: $textColor;
+
+                    @include Media(1000px, 1250px) {
+                        font-size: 12.5px;
+                    }
+
+                    @include Media(750px, 1000px) {
+                        font-size: 11px;
+                    }
+
+
+                    @include Media(450px, 750px) {
+                        font-size: 9.5px;
+                    }
+
+                    @include Media(300px, 450px) {
+                        font-size: 8px;
+                        padding: 5% 0;
+
+                    }
+
+                }
+
+                .commentContainer {
+                    width: fit-content;
+                    border-bottom: 1px solid $gray;
+                    padding-bottom: 15px;
+
+                    .comment {
+                        @include Media(1000px, 1250px) {
+                            font-size: 13.5px;
+                        }
+
+                        @include Media(750px, 1000px) {
+                            font-size: 11.5px;
+                        }
+
+
+                        @include Media(450px, 750px) {
+                            font-size: 10.5px;
+                        }
+
+                        @include Media(300px, 450px) {
+                            font-size: 9.5px;
+                        }
+
+                        font-size: 15px;
+                        font-weight: 600;
+                        color: $mainColor;
+                        padding-left: 10px;
+                    }
+
+                    .numberComment {
+                        color: $lightBlue;
+                        font-size: 13px;
+                        font-weight: 600;
+
+                        @include Media(1000px, 1250px) {
+                            font-size: 12px;
+                        }
+
+                        @include Media(750px, 1000px) {
+                            font-size: 11px;
+                        }
+
+
+                        @include Media(450px, 750px) {
+                            font-size: 10px;
+                        }
+
+                        @include Media(300px, 450px) {
+                            font-size: 9px;
+                        }
+
+                    }
+                }
+
+
+
+            }
+
+            .imageContainer {
+                display: flex;
+                flex-direction: column;
+                flex-basis: 43%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                padding-top: 10px;
+
+                @include Media(300px, 1000px) {
+                    flex-basis: unset;
+                }
+
+                .offerTextContainer {
+                    color: $lightBlue;
+                    font-style: italic;
+                    margin-bottom: 5px;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    height: 45px;
+                    width: 100%;
+                    font-size: 19px;
+
+                    @include Media(1000px, 1250px) {
+                        font-size: 17px;
+                    }
+
+                    @include Media(750px, 1000px) {
+                        font-size: 15.5px;
+                    }
+
+
+                    @include Media(450px, 750px) {
+                        font-size: 13px;
+                    }
+
+                    @include Media(300px, 450px) {
+                        font-size: 11px;
+                    }
+
+                    .offerText {
+                        display: flex;
+                    }
+
+                    i {
+                        @include Media(1000px, 1250px) {
+                            font-size: 28px;
+                        }
+
+                        @include Media(750px, 1000px) {
+                            font-size: 24.5px;
+                        }
+
+
+                        @include Media(450px, 750px) {
+                            font-size: 20.5px;
+                        }
+
+                        @include Media(300px, 450px) {
+                            font-size: 16px;
+                        }
+
+                        font-size: 32px;
+
+                    }
+                }
+
+                .prdImage {
+                    flex-basis: 80%;
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        @include Media(1250px, 1500px) {
+                            width: 335px;
+                            height: 335px;
+                        }
+
+                        @include Media(1000px, 1250px) {
+                            width: 310px;
+                            height: 310px;
+                        }
+
+                        @include Media(750px, 1000px) {
+                            width: 280px;
+                            height: 280px;
+                        }
+
+
+                        @include Media(450px, 750px) {
+                            width: 250px;
+                            height: 250px;
+                        }
+
+                        @include Media(300px, 450px) {
+                            width: 210px;
+                            height: 210px;
+                        }
+
+                        @include Media(300px, 1000px) {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+
+                .otherImage {
+                    flex-basis: 20%;
+                    display: flex;
+                    align-items: flex-end;
+
+                    @include Media(1000px, 1250px) {
+                        display: block;
+                    }
+                }
+            }
+
+            .mainFeatures {
+                font-size: 13px;
+                height: 30px;
+
+                @include Media(450px, 750px) {
+                    font-size: 12px;
+                }
+
+                @include Media(320px, 450px) {
+                    font-size: 10px;
+                    height: 25px;
+                }
+            }
+
+            .attributeContainer {
+                @include Media(1000px, 1250px) {
+                    width: 85%;
+                }
+
+                @include Media(320px, 1000px) {
+                    width: 93.5%;
+                }
+
+                width: 90%;
+                height: fit-content;
+                border: 1px solid $gray;
+                border-radius: 7px;
+                background-color: #ffffff;
+            }
+        }
+
+        .productDetailsContainer {
+            flex-basis: 23%;
+            margin: 0 auto;
+
+
+            .productDetailsChild {
+
+                @include Media(1000px, 1500px) {
+                    background-color: transparent;
+                    border-radius: unset;
+
+                }
+
+                width: 100%;
+                height: fit-content;
+                border-radius: 15px;
+                box-shadow: 0px 1px 9px 0.5px #e9e9e9;
+                background-color: #ffffff;
+                padding: 23px 25px;
+
+                @include Media(320px, 1000px) {
+                    box-shadow: unset;
+                    padding: 23px 3%;
+
+                }
+
+                .sellerContainer {
+                    width: 100%;
+                    background-color: #f3f8fc;
+                    height: 170px;
+                    border-radius: 7px;
+                    padding: 7px 20px;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 10px;
+
+                    @include Media(320px, 1000px) {
+                        background-color: transparent;
+                    }
+
+                    .iconShop {
+                        color: $iconColor;
+                        margin-left: 18px;
+                        font-size: 17px;
+
+                        @include Media(450px, 750px) {
+                            font-size: 15px;
+                        }
+
+                        @include Media(320px, 450px) {
+                            font-size: 13px;
+                        }
+                    }
+
+                    .seller {
+
+
+                        p {
+                            font-size: 15px;
+                            font-weight: 600;
+                            color: #3a3a3a;
+                            height: 28px;
+
+                            @include Media(450px, 750px) {
+                                font-size: 13px;
+                            }
+
+                            @include Media(320px, 450px) {
+                                font-size: 11.5px;
+                            }
+                        }
+
+                        @include Media(320px, 1000px) {
+                            border-bottom: 1px solid #e5e5e5;
+                        }
+
+                        flex-basis: 40%;
+                        border-bottom: 1px solid #ffff;
+                    }
+
+                    .Evaluation {
+
+
+
+                        .excEvaluation {
+                            color: $iconColor;
+                            font-size: 12px;
+                            font-weight: 600;
+                            margin-right: 10px;
+
+                            @include Media(450px, 750px) {
+                                font-size: 11px;
+                            }
+
+                            @include Media(320px, 450px) {
+                                font-size: 9px;
+                            }
+                        }
+
+                        display: flex;
+                        align-items: center;
+                        flex-basis: 30%;
+                        border-bottom: 1px solid #ffff;
+
+                        @include Media(320px, 1000px) {
+                            border-bottom: 1px solid #e5e5e5;
+                        }
+
+                    }
+
+                    .warranty {
+
+
+                        display: flex;
+                        align-items: center;
+                        flex-basis: 30%;
+
+                    }
+
+                    span {
+                        font-size: 12px;
+                        font-weight: 600;
+                        color: #3a3a3a;
+
+                        @include Media(450px, 750px) {
+                            font-size: 11px;
+                        }
+
+                        @include Media(320px, 450px) {
+                            font-size: 8.5px;
+                        }
+                    }
+
+                }
+
+                .PriceAndCounterContainer {
+                    @include Media(320px, 600px) {
+                        height: 55px !important;
+                    }
+
+                    @include Media(300px, 1500px) {
+                        position: fixed;
+                        bottom: 0;
+                        right: 0;
+                        flex-direction: row-reverse;
+                        padding: 0 1.5%;
+                        width: 100%;
+                        margin: 0 auto;
+                        display: flex;
+                        height: 70px;
+                        align-items: center;
+                        background-color: #ffffff;
+                        z-index: 100;
+                        border-top: 1px solid rgb(225, 225, 225);
+                        justify-content: space-between;
+                    }
+                }
+
+                .AddToCartButton {
+                    @include Media(300px, 1500px) {
+                        width: 40%;
+
+                    }
+                }
+
+                .priceDetail {
+                    @include Media(300px, 1500px) {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .priceContainer {
+                        display: flex;
+                        align-items: center;
+                        justify-content: end;
+                        font-weight: 600;
+                        height: 40px;
+
+                        @include Media(300px, 1500px) {
+                            flex-direction: column;
+                            height: fit-content;
+                        }
+
+                        .priceToman {
+                            font-size: 12px;
+                            padding-right: 5px;
+                            color: #2a2a2a;
+
+                            @include Media(320px, 450px) {
+                                font-size: 9px;
+                            }
+                        }
+
+                        .price {
+                            font-size: 19px;
+                            padding-right: 10px;
+
+                            @include Media(450px, 750px) {
+                                font-size: 16px;
+                            }
+
+                            @include Media(320px, 450px) {
+                                font-size: 13px;
+                            }
+                        }
+
+                        .priceWithDiscount {
+                            @include Media(300px, 1500px) {
+                                display: flex;
+                                flex-direction: row-reverse;
+                                gap: 10px;
+                                width: 100%;
+
+                            }
+
+                            .discountPercentage {
+                                display: none;
+                                text-align: center;
+                                padding-top: 1px;
+                                width: 29px;
+                                font-size: 11px;
+                                font-weight: 600;
+                                border-radius: 3px;
+                                height: 18px;
+                                border-style: none;
+                                background-color: $lightBlue;
+                                color: rgb(241, 235, 235);
+
+                                @include Media(450px, 750px) {
+                                    width: 23px;
+                                    height: 14px;
+                                    font-size: 9.5px;
+                                }
+
+                                @include Media(300px, 1500px) {
+                                    display: inline;
+
+                                }
+
+                                @include Media(320px, 450px) {
+                                    width: 20px;
+                                    height: 13px;
+                                    font-size: 8.5px;
+
+                                }
+
+                                span {
+                                    padding-left: 3px;
+                                    font-size: 12px;
+
+                                    @include Media(450px, 750px) {
+                                        font-size: 10px;
+                                    }
+
+                                    @include Media(320px, 450px) {
+                                        font-size: 9px;
+                                    }
+                                }
+                            }
+
+                            p {
+                                color: $delText;
+                                text-decoration-line: line-through;
+                                text-decoration-color: #7b8292;
+                                text-decoration-thickness: 2px;
+                                font-size: 16px;
+
+                                @include Media(300px, 1500px) {
+                                    text-decoration-color: #95a0bb;
+                                    font-size: 14px;
+                                }
+
+                                @include Media(450px, 750px) {
+                                    font-size: 13px;
+                                }
+
+                                @include Media(320px, 450px) {
+                                    font-size: 11px;
+                                }
+                            }
+
+                        }
+
+
+                    }
+
+                    .offPrcentContainer {
+                        display: flex;
+                        justify-content: end;
+                        height: 55px;
+                        margin-left: 10px;
+                        align-items: center;
+
+                        .offPrcent {
+                            @include Media(300px, 1500px) {
+                                display: none;
+                            }
+
+                            width: 150px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: $lightBlue;
+                            height: 25px;
+                            color: #ffffff;
+                            border-radius: 16px;
+                            font-weight: 600;
+
+
+
+                            .offPrcentNumber {
+                                font-size: 16px;
+                                padding-top: 4px;
+
+
+                            }
+
+                            .offPrcentToman {
+                                font-size: 12px;
+                                padding-right: 8px;
+                            }
+                        }
+                    }
+
+
+
+
+
+
+                }
+
+                .remainingContainer {
+                    height: 40px;
+                    align-items: center;
+                    display: flex;
+
+
+                    .remaining {
+                        color: $lightBlue;
+                        font-size: 12px;
+                        font-weight: 600;
+
+                        @include Media(450px, 750px) {
+                            font-size: 10px;
+                        }
+
+                        @include Media(320px, 450px) {
+                            font-size: 9px;
+                        }
+
+
+                    }
+
+                    .FiBox {
+                        font-size: 15px;
+                        font-weight: 600;
+                        margin-left: 5px;
+
+                        @include Media(450px, 750px) {
+                            font-size: 11px;
+                        }
+
+                        @include Media(320px, 450px) {
+                            font-size: 9px;
+                        }
+
+
+                    }
+                }
+
+
+            }
+
+
+
+
+        }
+    }
+
+
+    .caruselContainer {
+        width: 100%;
+        height: fit-content;
+        border: 1px solid #f0f0f2;
+        border-radius: 25px;
+        margin: 60px auto;
+        overflow: hidden;
+        padding: 30px 20px;
+
+        @include Media(320px, 1500px) {
+            width: 89%;
+        }
+
+        @include Media(320px, 1000px) {
+            margin: 0 auto 15px;
+        }
+
+        @include Media(320px, 600px) {
+            padding: 20px;
+
+        }
+
+        .titleCarusel {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 70px;
+            background-color: transparent;
+            font-weight: 600;
+            padding: 0 27px;
+
+            @include Media(320px, 600px) {
+                padding: 0 3px;
+                height: 44px;
+            }
+
+            p {
+                font-size: 20px;
+
+                @include Media(320px, 450px) {
+                    font-size: 12.5px !important;
+                }
+
+                @include Media(450px, 600px) {
+                    font-size: 13px !important;
+
+                }
+
+                @include Media(600px, 1100px) {
+                    font-size: 16.5px !important;
+
+                }
+
+                @include Media(1100px, 1500px) {
+                    font-size: 18.5px !important;
+
+                }
+
+            }
+
+            span {
+                font-size: 17px;
+
+                @include Media(320px, 450px) {
+                    font-size: 10.5px !important;
+                }
+
+                @include Media(450px, 600px) {
+                    font-size: 12px !important;
+
+                }
+
+                @include Media(600px, 1100px) {
+                    font-size: 15px !important;
+
+                }
+
+                @include Media(1100px, 1500px) {
+                    font-size: 16.5px !important;
+
+                }
+            }
+
+            .rjLand {
+                padding-right: 10px;
+            }
+
+            .ShowAll {
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                text-decoration: none;
+                color: $ShText;
+                height: fit-content;
+
+
+            }
+
+            .AiOutlineLeft {
+                @include Media(320px, 600px) {
+                    margin-right: 3px;
+                    font-size: 11.5px;
+                }
+
+                margin-right: 10px;
+                font-size: 14px;
+            }
+        }
+    }
+
+
+
+
+    .informationProductContainer {}
+}
+
+.searchAndBasketContainer {
+    display: none;
+
+    @include Media(300px, 1000px) {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: end;
+        gap: 25px;
+    }
+}
+
+.Header {
+    @include Media(300px, 1000px) {
+        display: none;
+    }
+}
+
+.Footer {
+    @include Media(300px, 1000px) {
+        display: none;
+    }
+}

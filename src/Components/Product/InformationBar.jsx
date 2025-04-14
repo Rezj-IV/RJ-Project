@@ -81,6 +81,7 @@ const InformationBar = ({ Att, data, stock , PrdId }) => {
           <div id="commentSection" className={styles.commentsProduct}>
             <CommentsSection PrdData={data} PrdId={PrdId}/>
           </div>
+          
         </div>
         {stock === 0 ? null : (
           <div className={styles.dataProductContainer}>

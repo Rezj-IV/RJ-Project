@@ -7,7 +7,7 @@ import Link from "next/link";
 const SlideCarousel = ({ PRD }) => {
   return (
     <div className={styles.Container}>
-      <div className={styles.ContainerContent}>
+      <div className={styles.contentContainer}>
         <pre className={styles.offerText}>
           𝓡𝓙
           <br />

@@ -1,5 +1,11 @@
 $lightBlue :#14a0de;
 
+@mixin Media($minWidth , $maxWidth ) {
+    @media ((min-width:$minWidth ) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
 .Container {
     background-color: #ffffff;
     display: flex;
@@ -9,20 +15,20 @@ $lightBlue :#14a0de;
     align-items: center;
     border-radius: 20px;
     width: 100%;
-    margin:  0 auto;
+    margin: 0 auto;
     margin-bottom: 4%;
     border: 1.5px solid $lightBlue;
 }
 
-.ContainerContent {
+.contentContainer {
     color: #ffffff;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 62px;
-    padding: 0 40px;
+    height: fit-content;
+    padding: .5% 3%;
     border-radius: 15px;
     background-color: $lightBlue;
     font-size: 17px;
@@ -35,13 +41,41 @@ $lightBlue :#14a0de;
         align-items: center;
         font-size: 19px;
 
+        @include Media(100px, 600px) {
+            font-size: 12px;
+
+        }
+
+        @include Media(600px, 1100px) {
+            font-size: 14px;
+
+        }
+
+        @include Media(1100px, 1500px) {
+            font-size: 15px;
+
+        }
     }
 
     i {
         display: flex;
         align-items: center;
-        font-size: 47px;
+        font-size: 38px;
 
+        @include Media(100px, 600px) {
+            font-size: 23px;
+
+        }
+
+        @include Media(600px, 1100px) {
+            font-size: 27px;
+
+        }
+
+        @include Media(1100px, 1500px) {
+            font-size: 33px;
+
+        }
     }
 
 
@@ -51,37 +85,50 @@ $lightBlue :#14a0de;
         color: #ffffff;
         display: flex;
         align-items: center;
+        height: 15.5px;
+
+        @include Media(100px, 600px) {
+            font-size: 10px;
+
+        }
+
+        @include Media(600px, 1100px) {
+            font-size: 12px;
+
+        }
+
+        @include Media(1100px, 1500px) {
+            font-size: 13.5px;
+
+        }
     }
 
     .AiOutlineLeft {
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 600;
         margin-right: 10px;
 
+        @include Media(100px, 600px) {
+            font-size: 11px;
+            margin-right: 2px;
+        }
+
+        @include Media(600px, 1100px) {
+            font-size: 12px;
+            margin-right: 4px;
+
+
+
+        }
+
+        @include Media(1100px, 1500px) {
+            font-size: 13.5px;
+
+        }
     }
 }
 
 .ContainerCarousel {
     width: 100%;
 
-}
-
-
-@media ((min-width: 100px) and (max-width: 666px)) {
-    .offerText {
-        font-size: 15px !important;
-    }
-
-    .offerText i {
-        font-size: 28px;
-    }
-    .ShowAllIncredibleOffers {
-    font-size: 13px;
-    }
-    .AiOutlineLeft {
-        font-size: 12.5px !important;
-   
-     
-
-    }
 }

@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import * as repository from "../../../../../RestConfig/RestRequest";
+import * as repository from "../../../../RestConfig/RestRequest";
 import styles from "./singleProduct.module.scss";
 import Image from "next/image";
 import ImageModal from "@/Components/Modal/ImageModal";
@@ -14,6 +14,13 @@ import Link from "next/link";
 import NonExistentSingleCard from "@/Components/Product/NonExistentSingleCard";
 import Color from "@/Components/Product/Color";
 import AddToCartButton from "@/Components/ShoppingCart/AddToCartButton";
+import CarouselSlider from "@/Components/Slider/CarouselSlider";
+import Footer from "@/Components/Footer/Footer";
+import Header from "@/Components/Header/Header";
+import LowerPart from "@/Components/LowerPart/LowerPart";
+import MainMenu from "@/Components/Menu/MainMenu";
+import SearchBox from "@/Components/Header/SearchBox";
+import SearchAndBasket from "@/Components/Header/SearchAndBasket";
 
 async function getAllSingleProduct(props) {
   const response = await repository.Get(`products/${props}`);
@@ -38,9 +45,17 @@ const singleProduct = async (props) => {
   const context = await props.params;
   const data = await getAllSingleProduct(context.singleProduct);
   const category = await getAllSameCategory(data.category);
-
   return (
     <div>
+      <div className={styles.searchAndBasketContainer}>
+        <SearchAndBasket />
+      </div>
+      <div className={styles.Header}>
+        <Header />
+        <MainMenu />
+      </div>
+
+      <div className={styles.LowerPart}></div>
       {data.stock === 0 ? (
         <NonExistentSingleCard data={data} category={category} />
       ) : (
@@ -127,7 +142,7 @@ const singleProduct = async (props) => {
                     </div>
                   </div>
 
-                  <div>
+                  <div className={styles.PriceAndCounterContainer}>
                     {data.priceWithDiscount === 0 ? (
                       <div className={`${styles.priceDetail}`}>
                         <div className={`${styles.priceContainer}`}>
@@ -141,6 +156,15 @@ const singleProduct = async (props) => {
                       </div>
                     ) : (
                       <div className={`${styles.priceDetail}`}>
+                        {data.stock < 3 ? (
+                          <div className={styles.remainingContainer}>
+                            <div className={styles.remaining}>
+                              <BsBoxSeam className={styles.FiBox} />
+                              <span>{data.stock}</span>
+                              <span>عدد در انبار باقی مانده</span>
+                            </div>
+                          </div>
+                        ) : null}
                         <div className={styles.offPrcentContainer}>
                           <div className={`${styles.offPrcent}`}>
                             <div className={styles.offPrcentNumber}>
@@ -156,12 +180,24 @@ const singleProduct = async (props) => {
                         </div>
                         <div className={`${styles.priceContainer}`}>
                           <div className={styles.priceWithDiscount}>
-                            {data.priceWithDiscount
-                              .toString()
-                              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                            <p>
+                              {" "}
+                              {data.price
+                                .toString()
+                                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                            </p>
+
+                            <div className={styles.discountPercentage}>
+                              {Math.floor(
+                                ((data.price - data.priceWithDiscount) /
+                                  data.price) *
+                                  100
+                              )}
+                              <span>%</span>
+                            </div>
                           </div>
                           <div className={`${styles.price}`}>
-                            {data.price
+                            {data.priceWithDiscount
                               .toString()
                               .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                             <span className={styles.priceToman}>تومان</span>
@@ -169,18 +205,11 @@ const singleProduct = async (props) => {
                         </div>
                       </div>
                     )}
-                  </div>
 
-                  {data.stock < 3 ? (
-                    <div className={styles.remainingContainer}>
-                      <div className={styles.remaining}>
-                        <BsBoxSeam className={styles.FiBox} />
-                        <span>{data.stock}</span>
-                        <span>عدد در انبار باقی مانده</span>
-                      </div>
+                    <div className={styles.AddToCartButton}>
+                      <AddToCartButton data={data} />
                     </div>
-                  ) : null}
-                  <AddToCartButton data={data} />
+                  </div>
                 </div>
               </div>
             </Suspense>
@@ -194,7 +223,7 @@ const singleProduct = async (props) => {
                     href={`/brand/${data.category}`}
                     className={styles.ShowAll}
                   >
-                    نمایش همه
+                    <span> نمایش همه</span>
                     <AiOutlineLeft className={styles.AiOutlineLeft} />
                   </Link>
                 </div>
@@ -213,6 +242,9 @@ const singleProduct = async (props) => {
           </div>
         </div>
       )}
+      <div className={styles.Footer}>
+        <Footer />
+      </div>
     </div>
   );
 };

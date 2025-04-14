@@ -1,0 +1,108 @@
+@mixin Media($minWidth , $maxWidth) {
+    @media ((min-width:$minWidth) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+
+    @include Media(300px, 1500px) {
+        gap: 10px;
+
+    }
+}
+
+.counter {
+    width: 96px;
+    height: 46.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    color: #2a55b2;
+    box-shadow: 0px 0px 4px 0px rgb(24 76 141 / 55%);
+
+    @include Media(300px, 1500px) {
+        width: 65%;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+    @include Media(320px,750px ){
+        height:  41.5px;
+    }
+}
+
+.countNumber {
+    font-size: 17.5px;
+
+    @include Media(300px, 1500px) {
+        font-size: 18.5px;
+
+    }
+
+    @include Media(450px, 750px) {
+        font-size: 16.5px;
+    }
+    @include Media(320px, 450px) {
+        font-size: 15.5px;
+    }
+}
+
+.goShoppingCart {
+    width: 180px;
+    height: 48px;
+    border-radius: 10px;
+    border: 2px solid #295689;
+    color: #3759a3;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+
+    @include Media(320px, 1500px) {
+        width: max-content;
+        border: none;
+        justify-content: unset;
+    }
+
+    @include Media(750px, 1000px) {
+        font-size: 13px;
+    }
+
+    @include Media(450px, 750px) {
+        font-size: 11px;
+    }
+    @include Media(320px, 450px) {
+display: none;    }
+}
+
+.leftIcon {
+    font-size: 22px;
+
+    @include Media(450px, 750px) {
+        font-size: 18px;
+    }
+}
+
+.counterIcon {
+    @include Media(300px, 1500px) {
+        font-size: 20px;
+    }
+
+    @include Media(450px, 750px) {
+        font-size: 16px;
+    }
+    @include Media(320px, 450px) {
+        font-size: 15px;
+    }
+}

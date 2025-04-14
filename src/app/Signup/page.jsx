@@ -11,9 +11,18 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const validation = Yup.object({
-    name: Yup.string().required("نام خود را وارد کنید"),
-    lastname: Yup.string().required("نام خانوادگی خود را وارد کنید"),
-    username: Yup.string().required("نام کاربری خود را وارد کنید"),
+    name: Yup.string()
+      .min(2, "تعداد حروف کم است ! ")
+      .max(10, "تعداد حروف زیاد است ! !")
+      .required("نام خود را وارد کنید"),
+    lastname: Yup.string()
+      .min(3, "تعداد حروف کم است ! ")
+      .max(15, "تعداد حروف زیاد است ! !")
+      .required("نام خانوادگی خود را وارد کنید"),
+    username: Yup.string()
+      .min(2, "تعداد حروف کم است ! ")
+      .max(20, "تعداد حروف زیاد است ! !")
+      .required("نام کاربری خود را وارد کنید"),
     mobilenumber: Yup.number().required("شماره همراه خود را وارد کنید"),
     password: Yup.string().required("پسورد  خود را وارد کنید"),
     email: Yup.string()

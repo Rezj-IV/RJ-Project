@@ -29,7 +29,7 @@ const CarouselSlider = ({ imageSlider }) => {
   return (
     <Slider {...settings}>
       {imageSlider.map((item) => {
-        if (item.id === 3 || item.id === 7) {
+        if (item.id === 3 || item.id === 7|| item.id === 107) {
           return (
             <Link href={`/Product/Class/${item.name}`} key={item.id}>
               <div className={styles.sliderContainer}>

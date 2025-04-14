@@ -11,6 +11,8 @@ const Carusel = (props) => {
       return item.stock !== 0;
     });
   let settings = {
+    listClass: `slick-list ${styles.list}`,
+
     speed: 700,
     centerMode: true,
     centerPadding: "1em",
@@ -42,7 +44,7 @@ const Carusel = (props) => {
         }
       },
       {
-        breakpoint: 1100,
+        breakpoint: 800,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -51,7 +53,7 @@ const Carusel = (props) => {
         }
       },
       {
-        breakpoint: 870,
+        breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -60,16 +62,7 @@ const Carusel = (props) => {
         }
       },
    
-      {
-        breakpoint: 650,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          autoplay: false,
-
-        }
-      },
+    
   
     ]
   };
@@ -77,7 +70,7 @@ const Carusel = (props) => {
   return (
     <Slider
       {...settings}
-      autoplay={true}
+      autoplay={false}
       autoplaySpeed={2000}
       focusOnSelect={false}
       rtl={true}

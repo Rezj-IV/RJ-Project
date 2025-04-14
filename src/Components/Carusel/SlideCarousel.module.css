@@ -12,60 +12,109 @@
   border: 1.5px solid #14a0de;
 }
 
-.ContainerContent {
+.contentContainer {
   color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 62px;
-  padding: 0 40px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.5% 3%;
   border-radius: 15px;
   background-color: #14a0de;
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 35px;
 }
-.ContainerContent .offerText {
+.contentContainer .offerText {
   font-style: italic;
   display: flex;
   align-items: center;
   font-size: 19px;
 }
-.ContainerContent i {
+@media ((min-width: 100px) and (max-width: 600px)) {
+  .contentContainer .offerText {
+    font-size: 12px;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1100px)) {
+  .contentContainer .offerText {
+    font-size: 14px;
+  }
+}
+@media ((min-width: 1100px) and (max-width: 1500px)) {
+  .contentContainer .offerText {
+    font-size: 15px;
+  }
+}
+.contentContainer i {
   display: flex;
   align-items: center;
-  font-size: 47px;
+  font-size: 38px;
 }
-.ContainerContent .ShowAllIncredibleOffers {
+@media ((min-width: 100px) and (max-width: 600px)) {
+  .contentContainer i {
+    font-size: 23px;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1100px)) {
+  .contentContainer i {
+    font-size: 27px;
+  }
+}
+@media ((min-width: 1100px) and (max-width: 1500px)) {
+  .contentContainer i {
+    font-size: 33px;
+  }
+}
+.contentContainer .ShowAllIncredibleOffers {
   text-decoration: none;
   cursor: pointer;
   color: #ffffff;
   display: flex;
   align-items: center;
+  height: 15.5px;
 }
-.ContainerContent .AiOutlineLeft {
-  font-size: 16px;
+@media ((min-width: 100px) and (max-width: 600px)) {
+  .contentContainer .ShowAllIncredibleOffers {
+    font-size: 10px;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1100px)) {
+  .contentContainer .ShowAllIncredibleOffers {
+    font-size: 12px;
+  }
+}
+@media ((min-width: 1100px) and (max-width: 1500px)) {
+  .contentContainer .ShowAllIncredibleOffers {
+    font-size: 13.5px;
+  }
+}
+.contentContainer .AiOutlineLeft {
+  font-size: 15px;
   font-weight: 600;
   margin-right: 10px;
+}
+@media ((min-width: 100px) and (max-width: 600px)) {
+  .contentContainer .AiOutlineLeft {
+    font-size: 11px;
+    margin-right: 2px;
+  }
+}
+@media ((min-width: 600px) and (max-width: 1100px)) {
+  .contentContainer .AiOutlineLeft {
+    font-size: 12px;
+    margin-right: 4px;
+  }
+}
+@media ((min-width: 1100px) and (max-width: 1500px)) {
+  .contentContainer .AiOutlineLeft {
+    font-size: 13.5px;
+  }
 }
 
 .ContainerCarousel {
   width: 100%;
-}
-
-@media ((min-width: 100px) and (max-width: 666px)) {
-  .offerText {
-    font-size: 15px !important;
-  }
-  .offerText i {
-    font-size: 28px;
-  }
-  .ShowAllIncredibleOffers {
-    font-size: 13px;
-  }
-  .AiOutlineLeft {
-    font-size: 12.5px !important;
-  }
 }/*# sourceMappingURL=SlideCarousel.module.css.map */

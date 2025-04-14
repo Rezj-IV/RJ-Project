@@ -1,3 +1,4 @@
+"use client";
 import styles from "./LowerPart.module.css";
 import { HiHome } from "react-icons/hi2";
 import { BiCategoryAlt, BiLogOut } from "react-icons/bi";
@@ -6,8 +7,12 @@ import Link from "next/link";
 import React from "react";
 import { AiFillAliwangwang } from "react-icons/ai";
 import { CiLogin } from "react-icons/ci";
+import { useSelector } from "react-redux";
+import { FaRegUser } from "react-icons/fa";
 
 const LowerPart = () => {
+  const jwt = useSelector((state) => state.Users);
+
   return (
     <div className={styles.lowerPartContainer}>
       <Link href="/" className={styles.lowerPart}>
@@ -26,18 +31,24 @@ const LowerPart = () => {
         <RiShoppingCartLine className={styles.icon} />
         <p>سبد خرید</p>
       </Link>
-
-      <div className={styles.LogSignUIContainer}>
-        <CiLogin className={styles.iconLogin} />
-
-        <Link className={styles.link} href="/Login">
-          ورود
+      {jwt.token ? (
+        <Link href="/Profile" className={styles.profile}>
+          <FaRegUser className={styles.icon} />
+          <p>پروفایل</p>
         </Link>
-        <span>|</span>
-        <Link className={styles.link} href="/Signup">
-          ثبت نام
-        </Link>
-      </div>
+      ) : (
+        <div className={styles.LogSignUIContainer}>
+          <CiLogin className={styles.iconLogin} />
+
+          <Link className={styles.link} href="/Login">
+            ورود
+          </Link>
+          <span>|</span>
+          <Link className={styles.link} href="/Signup">
+            ثبت نام
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,128 @@
+@mixin Media($minWidth , $maxWidth) {
+    @media ((min-width:$minWidth) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
+
+.colorContainer {
+    width: fit-content;
+    height: 90px;
+    margin-bottom: 35px;
+    margin-top: 8px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    border-bottom: 1px solid #d6d8de;
+    flex-wrap: wrap;
+    @include Media(320px, 450px) {
+   height: 70px;
+    }
+}
+
+.insideColor {
+    @include Media(750px, 1250px) {
+        height: 27px;
+        width: 27px;
+    }
+
+    @include Media(450px, 750px) {
+        height: 23px;
+        width: 23px;
+    }
+
+    @include Media(320px, 450px) {
+        height: 20px;
+        width: 20px;
+    }
+
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: 2px solid #949fb5;
+    display: flex;
+    margin: 0px 5px 10px 5px;
+    box-shadow: 0px 0px 2px 0px #d9d9d9;
+    position: relative;
+}
+
+
+
+.color {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+}
+
+.showColorContainer {
+    display: inline-block;
+    width: 100%;
+    @include Media(320px, 450px) {
+        height: 31px;
+    }
+}
+
+.showColorTitle {
+    font-size: 14px;
+
+    @include Media(450px, 750px) {
+        font-size: 13px;
+    }
+
+    @include Media(320px, 450px) {
+        font-size: 11px;
+    }
+}
+
+.showColor {
+    font-size: 14px;
+    font-weight: 600;
+    padding-right: 5px;
+
+    @include Media(750px, 1250px) {
+        font-size: 13px;
+    }
+
+    @include Media(450px, 750px) {
+        font-size: 12px;
+    }
+
+    @include Media(320px, 450px) {
+        font-size: 10px;
+    }
+}
+
+.Check {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+
+    @include Media(750px, 1250px) {
+        font-size: 17.5px;
+    }
+
+    @include Media(450px, 750px) {
+        font-size: 13px;
+    }
+
+    @include Media(320px, 450px) {
+        font-size: 11px;
+    }
+}
+
+.notCheck {
+    display: none;
+}
+
+.CheckColor {
+    @extend .insideColor;
+
+    position: relative;
+    border: 2px solid hsl(226, 100%, 79%);
+}

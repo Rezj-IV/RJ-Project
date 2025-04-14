@@ -17,8 +17,6 @@ const IncCarusel = async () => {
   return (
     <div>
       <SlideCarousel PRD={PrdData} />
-
-
     </div>
   );
 };

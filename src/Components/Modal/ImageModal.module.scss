@@ -10,13 +10,15 @@ $lightBlue: #14a0de;
     justify-content: center;
 }
 
+@mixin Media($minWidth , $maxWidth) {
+    @media ((min-width:$minWidth) and (max-width:$maxWidth)) {
+        @content;
+    }
+}
 
 
 .imagesProduct {
     @include DF();
-
-
-
 
     .mainImage {
         display: flex;
@@ -27,6 +29,21 @@ $lightBlue: #14a0de;
         .showMore {
             @include DF();
 
+            @include Media(750px, 1250px) {
+                width: 70px;
+                height: 70px;
+            }
+
+            @include Media(450px, 750px) {
+                width: 55px;
+                height: 55px;
+            }
+
+            @include Media(320px, 450px) {
+                width: 50px;
+                height: 50px;
+            }
+
             border: 1px solid $gray ;
             background-color: transparent;
             border-radius: 7.5px;
@@ -35,6 +52,20 @@ $lightBlue: #14a0de;
 
             img {
                 border-radius: 7px;
+
+                @include Media(750px, 1250px) {
+                    height: 60px;
+                }
+
+                @include Media(450px, 750px) {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                @include Media(320px, 450px) {
+                    width: 45px;
+                    height: 45px;
+                }
             }
 
         }
@@ -56,7 +87,7 @@ $lightBlue: #14a0de;
         height: 100%;
         display: flex;
         flex-wrap: wrap;
-        z-index: 100;
+        z-index: 103;
         right: 0;
         top: 0px;
         @include DF();
@@ -75,6 +106,22 @@ $lightBlue: #14a0de;
             overflow: hidden;
             padding: 25px;
 
+            @include Media(1350px, 1750px) {
+                width: 80%;
+            }
+
+            @include Media(1000px, 1350px) {
+                width: 90%;
+                height: 599px;
+            }
+
+            @include Media(320px, 1000px) {
+                width: 100%;
+                height: 100%;
+            border-radius: unset;
+
+            }
+
             .closeModalIMagesContainer {
                 width: 100%;
                 height: 90px;
@@ -83,6 +130,11 @@ $lightBlue: #14a0de;
                 margin-bottom: 30px;
                 display: flex;
                 flex-direction: column;
+
+                @include Media(320px, 600px) {
+                    margin-bottom: 3%;
+                    height: fit-content;
+                }
 
                 .closeModalIMagesChild {
                     flex-basis: 40%;
@@ -110,6 +162,10 @@ $lightBlue: #14a0de;
                     margin-right: 15px;
                     flex-basis: 60%;
 
+                    @include Media(320px, 600px) {
+                        display: none;
+                    }
+
                     p {
                         padding-bottom: 3px;
                         color: $lightBlue;
@@ -126,26 +182,48 @@ $lightBlue: #14a0de;
 
                 .childModalSlideIMages {
                     display: flex;
-                    flex-wrap: wrap;
                     width: 100%;
+                    justify-content: space-between;
                     padding-right: 27px;
                     gap: 22px;
 
+                    @include Media(320px, 1000px) {
+                        flex-direction: column-reverse;
+                        padding-right: 0px;
+
+                    }
+
                     .rightsideContainer {
                         display: block;
-                        flex-basis: 50%;
+
+                        @include Media(320px, 1000px) {
+                            position: fixed;
+                            bottom: 22px;
+                            z-index: 10;
+                        }
 
                         .nameProduct {
                             font-size: 17px;
                             font-weight: 600;
                             height: 60px;
 
+                            @include Media(1000px, 1350px) {
+                                font-size: 14.5px;
+                            }
+
+                            @include Media(320px, 1000px) {
+                                display: none;
+                            }
                         }
 
                         .rightside {
                             display: flex;
-
                             gap: 23px;
+
+                            .selectedImage {
+                                border: 2px solid rgb(149, 168, 225) !important;
+
+                            }
 
                             .slideImage {
 
@@ -158,10 +236,32 @@ $lightBlue: #14a0de;
                                 border-radius: 7.5px;
                                 overflow: hidden;
 
+                                @include Media(1000px, 1350px) {
+                                    width: 70px;
+                                    height: 70px;
+                                }
+
+                                @include Media(320px, 420px) {
+
+                                    width: 77px;
+                                    height: 77px;
+                                }
 
 
+                                img {
+                                    @include Media(1000px, 1350px) {
+                                        border-radius: 5px;
+                                        color: transparent;
+                                        width: 60px;
+                                        height: 60px;
+                                    }
 
-                                img {}
+                                    @include Media(320px, 420px) {
+                                        border-radius: 5px;
+                                        width: 62px;
+                                        height: 62px;
+                                    }
+                                }
 
                             }
                         }
@@ -174,34 +274,55 @@ $lightBlue: #14a0de;
 
                     height: 500px;
                     padding-left: 30px;
-                    flex-basis: 45%;
+
+                    @include Media(320px, 450px) {
+                        position: relative;
+                    }
+
+                    @include Media(320px, 1000px) {
+                        padding-left: 0;
+                    }
 
                     .mainModalIMages {
                         display: flex;
                         width: 100%;
                         height: 100%;
                         justify-content: center;
-
                         align-items: center;
+                        position: relative;
 
+                        @include Media(320px, 1000px) {
+                            justify-content: space-between;
+                        }
 
                         img {
                             margin: 0 10px;
 
-                        }
 
-                        .clickArrow {
-                            @include DF();
-                            width: 33px;
-                            height: 33px;
-                            border-radius: 50%;
-                            box-shadow: 0 0 14px -3px rgba(0, 0, 0, .22);
-
-                            .iconArrow {
-                                font-size: 25px;
-                                color: #002367;
+                            @include Media(1000px, 1350px) {
+                                width: 300px;
+                                height: 300px;
                             }
+
+                            @include Media(715px, 1000px) {
+                                width: 400px;
+                                height: 400px;
+                            }
+
+                            @include Media(600px, 715px) {
+                                width: 80%;
+                                height: auto;
+                            }
+
+                            @include Media(320px, 600px) {
+                                width: 100%;
+                                height: auto;
+                            }
+
+
                         }
+
+
                     }
                 }
 
@@ -211,16 +332,78 @@ $lightBlue: #14a0de;
 
         }
 
+    }
 
+}
 
+.productImages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
 
+    .slide {
 
+        border-radius: 10px;
+    }
 
-
-
-
+    .slideHidden {
+        display: none;
     }
 
 
 
+}
+
+
+
+.leftArrow {
+    @include DF();
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    box-shadow: 0 0 14px -3px rgba(0, 0, 0, .22);
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    background-color: #ffff;
+
+    @include Media(1000px, 1350px) {
+        width: 28px;
+        height: 28px;
+    }
+
+    @include Media(750px, 1000px) {
+        width: 28px;
+        height: 28px;
+    }
+
+    @include Media(320px, 500px) {
+        display: none;
+    }
+
+}
+
+.Arrow {
+
+    font-size: 25px;
+    color: #002367;
+
+    @include Media(1000px, 1350px) {
+        font-size: 20px;
+    }
+
+    @include Media(750px, 1000px) {
+        font-size: 20px;
+
+    }
+
+}
+
+
+.rightArrow {
+    right: unset;
+    left: 0;
+    @extend .leftArrow;
 }

@@ -46,10 +46,7 @@ const ProductCarusel = ({ data, homeImages }) => {
               href="/Product/specialCategory/flagBearer"
               className={styles.ShowAll}
             >
-              <span>
-              نمایش همه
-
-              </span>
+              <span>نمایش همه</span>
               <AiOutlineLeft className={styles.AiOutlineLeft} />
             </Link>
           </div>
@@ -69,7 +66,7 @@ const ProductCarusel = ({ data, homeImages }) => {
             </span>
 
             <Link href="/Product/Class/laptop" className={styles.ShowAll}>
-              نمایش همه
+              <span> نمایش همه</span>
               <AiOutlineLeft className={styles.AiOutlineLeft} />
             </Link>
           </div>
@@ -84,7 +81,7 @@ const ProductCarusel = ({ data, homeImages }) => {
           <div className={styles.titleCarusel}>
             <p>کامپیوتر و تجهیزات</p>
             <Link href="/Product/Class/computer" className={styles.ShowAll}>
-              نمایش همه
+              <span> نمایش همه</span>
               <AiOutlineLeft className={styles.AiOutlineLeft} />
             </Link>
           </div>
@@ -103,7 +100,7 @@ const ProductCarusel = ({ data, homeImages }) => {
               <span className={styles.rjLand}>ار جی لند</span>
             </span>
             <Link href="/Product/Class/console" className={styles.ShowAll}>
-              نمایش همه
+              <span> نمایش همه</span>
               <AiOutlineLeft className={styles.AiOutlineLeft} />
             </Link>
           </div>
@@ -123,7 +120,7 @@ const ProductCarusel = ({ data, homeImages }) => {
               href="/Product/specialCategory/bestSelling"
               className={styles.ShowAll}
             >
-              نمایش همه
+              <span> نمایش همه</span>
               <AiOutlineLeft className={styles.AiOutlineLeft} />
             </Link>
           </div>
@@ -139,7 +136,7 @@ const ProductCarusel = ({ data, homeImages }) => {
             <p className={styles.weblogTitle}>بزودی در ار جی لند</p>
           </div>
           <Link href="" className={styles.ShowAll}>
-            نمایش بیشتر در بلاگ
+            <span> نمایش بیشتر در بلاگ</span>
             <AiOutlineLeft className={styles.AiOutlineLeft} />
           </Link>
         </div>

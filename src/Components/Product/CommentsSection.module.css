@@ -2,11 +2,37 @@
   display: flex;
   justify-content: space-between;
 }
+@media ((min-width: 320px) and (max-width: 1000px)) {
+  .commentsSectionContainer {
+    display: block;
+  }
+}
+
+.rightSideCommentsSection {
+  width: 50%;
+}
+@media ((min-width: 320px) and (max-width: 1000px)) {
+  .rightSideCommentsSection {
+    width: 100%;
+  }
+}
 
 .leftSideCommentsSection {
-  height: 315px;
   display: flex;
-  align-items: center;
+  align-items: end;
+}
+@media ((min-width: 1000px) and (max-width: 1300px)) {
+  .leftSideCommentsSection {
+    width: 35%;
+  }
+}
+@media ((min-width: 320px) and (max-width: 1000px)) {
+  .leftSideCommentsSection {
+    margin-top: 30px;
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-content: center;
+  }
 }
 
 .title {
@@ -14,18 +40,54 @@
   display: flex;
   align-items: center;
 }
+@media ((min-width: 320px) and (max-width: 750px)) {
+  .title {
+    height: 45px;
+    margin-top: 10px;
+  }
+}
 .title span {
   color: #465e91;
   padding: 0 15px;
   font-size: 29px;
 }
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .title span {
+    font-size: 19px;
+    padding: 0 10px;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .title span {
+    font-size: 24px;
+  }
+}
+@media ((min-width: 750px) and (max-width: 1000px)) {
+  .title span {
+    font-size: 27px;
+  }
+}
 .title h1 {
   display: inline-block;
   font-size: 21.5px;
 }
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .title h1 {
+    font-size: 14px;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .title h1 {
+    font-size: 16px;
+  }
+}
+@media ((min-width: 750px) and (max-width: 1000px)) {
+  .title h1 {
+    font-size: 20px;
+  }
+}
 
 .guidanceContainer {
-  width: 600px;
   height: 140px;
   background-color: #f1f8ff;
   border-radius: 4px;
@@ -33,10 +95,23 @@
   justify-content: center;
   align-items: center;
 }
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .guidanceContainer {
+    height: 110px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .guidanceContainer {
+    height: 90px;
+  }
+}
 .guidanceContainer .guidance {
-  padding: 20px 30px;
+  padding: 0px 18px;
   border-radius: 8px;
-  height: 90px;
+  height: 70%;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
   width: 92%;
   background-color: #ffffff;
 }
@@ -46,8 +121,38 @@
   padding-bottom: 3px;
   color: #393939;
 }
+@media ((min-width: 1000px) and (max-width: 1300px)) {
+  .guidanceContainer .guidance p {
+    font-size: 1.2vw;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .guidanceContainer .guidance p {
+    font-size: 13px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .guidanceContainer .guidance p {
+    font-size: 10.5px;
+  }
+}
 .guidanceContainer .guidance span {
   font-size: 14.5px;
+}
+@media ((min-width: 1000px) and (max-width: 1300px)) {
+  .guidanceContainer .guidance span {
+    font-size: 1vw;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .guidanceContainer .guidance span {
+    font-size: 11px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .guidanceContainer .guidance span {
+    font-size: 9.5px;
+  }
 }
 
 .addCommentContainer {
@@ -59,6 +164,26 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 7px 1px rgba(215, 215, 215, 0.8117647059);
+}
+@media ((min-width: 1000px) and (max-width: 1300px)) {
+  .addCommentContainer {
+    width: 100%;
+  }
+}
+@media ((min-width: 450px) and (max-width: 1000px)) {
+  .addCommentContainer {
+    width: 70%;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .addCommentContainer {
+    height: 118px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .addCommentContainer {
+    height: 98px;
+  }
 }
 
 .addComment {
@@ -74,8 +199,28 @@
   font-weight: 600;
   padding-right: 5px;
 }
+@media ((min-width: 1000px) and (max-width: 1300px)) {
+  .addComment .writeOpinion p {
+    font-size: 1.2vw;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .addComment .writeOpinion p {
+    font-size: 12px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .addComment .writeOpinion p {
+    font-size: 10.5px;
+  }
+}
 .addComment .writeOpinion .BiMessageDots {
   font-size: 22px;
+}
+@media ((min-width: 320px) and (max-width: 750px)) {
+  .addComment .writeOpinion .BiMessageDots {
+    font-size: 18px;
+  }
 }
 .addComment .addCommentBtnContainer {
   display: flex;
@@ -92,13 +237,45 @@
   width: 80%;
   height: 48px;
 }
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .addComment .addCommentBtnContainer .addCommentBtn {
+    width: 88%;
+    height: 40px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .addComment .addCommentBtnContainer .addCommentBtn {
+    width: 85%;
+    height: 33px;
+  }
+}
 .addComment .addCommentBtnContainer .addCommentBtn span {
   font-size: 16px;
   font-weight: 600;
   padding-left: 7px;
 }
+@media ((min-width: 1000px) and (max-width: 1300px)) {
+  .addComment .addCommentBtnContainer .addCommentBtn span {
+    font-size: 1.3vw;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .addComment .addCommentBtnContainer .addCommentBtn span {
+    font-size: 12px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .addComment .addCommentBtnContainer .addCommentBtn span {
+    font-size: 10px;
+  }
+}
 .addComment .addCommentBtnContainer .addCommentBtn .BiPlus {
   font-size: 22px;
+}
+@media ((min-width: 320px) and (max-width: 750px)) {
+  .addComment .addCommentBtnContainer .addCommentBtn .BiPlus {
+    font-size: 16.5px;
+  }
 }
 
 .containerModalComment {
@@ -124,6 +301,28 @@
   flex-direction: column;
   overflow: hidden;
 }
+@media ((min-width: 1300px) and (max-width: 1600px)) {
+  .containerModalComment .childModalComment {
+    width: 40%;
+  }
+}
+@media ((min-width: 1000px) and (max-width: 1300px)) {
+  .containerModalComment .childModalComment {
+    width: 55%;
+  }
+}
+@media ((min-width: 750px) and (max-width: 1000px)) {
+  .containerModalComment .childModalComment {
+    width: 75%;
+  }
+}
+@media ((min-width: 320px) and (max-width: 750px)) {
+  .containerModalComment .childModalComment {
+    width: 100%;
+    height: 100%;
+    border-radius: unset;
+  }
+}
 .containerModalComment .childModalComment .headerComment {
   padding: 0 25px;
   display: flex;
@@ -132,39 +331,74 @@
   height: 63px;
   border-bottom: 4px solid #f0f0f0;
 }
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .headerComment {
+    border-bottom: 2px solid #f0f0f0;
+    height: 50px;
+  }
+}
 .containerModalComment .childModalComment .headerComment p {
   font-size: 17.5px;
   font-weight: 600;
   color: #363636;
   padding-right: 6px;
 }
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .headerComment p {
+    font-size: 13px;
+  }
+}
 .containerModalComment .childModalComment .headerComment .closeIcon {
   font-size: 20px;
   color: #2b2b2b;
+}
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .headerComment .closeIcon {
+    font-size: 14.5px;
+  }
 }
 .containerModalComment .childModalComment .PrdInformation {
   display: flex;
   width: 100%;
   height: 103px;
   border: 1px solid #f0f0f0;
-  justify-content: space-between;
   align-items: center;
   padding: 0 15px;
+}
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .PrdInformation {
+    height: 85px;
+  }
 }
 .containerModalComment .childModalComment .PrdInformation p {
   padding: 0 15px;
   font-size: 14.5px;
   font-weight: 600;
 }
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .PrdInformation p {
+    font-size: 3.1vw;
+  }
+}
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .PrdInformation img {
+    width: 60px;
+    height: 60px;
+  }
+}
 .containerModalComment .childModalComment .commentText {
   padding: 16px 25px;
   height: 290px;
-  border-bottom: 2px solid rgb(226, 226, 226);
 }
 .containerModalComment .childModalComment .commentText p {
   font-weight: 600;
   color: #363636;
   display: inline;
+}
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .commentText p {
+    font-size: 14px;
+  }
 }
 .containerModalComment .childModalComment .commentText span {
   color: red;
@@ -196,11 +430,34 @@
   font-weight: 600;
   color: rgba(165, 165, 165, 0.791);
 }
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .commentText .commentTextInput::-moz-placeholder {
+    font-size: 12.5px;
+  }
+  .containerModalComment .childModalComment .commentText .commentTextInput::placeholder {
+    font-size: 12.5px;
+  }
+}
+.containerModalComment .childModalComment .lowrPart {
+  border-top: 2px solid rgb(226, 226, 226);
+}
+@media ((min-width: 320px) and (max-width: 750px)) {
+  .containerModalComment .childModalComment .lowrPart {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
 .containerModalComment .childModalComment .registerCommentContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80px;
+}
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .registerCommentContainer {
+    height: 65px;
+  }
 }
 .containerModalComment .childModalComment .registerCommentContainer .registerComment {
   color: #ffffff;
@@ -212,27 +469,62 @@
   width: 90%;
   height: 48px;
 }
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .registerCommentContainer .registerComment {
+    height: 40px;
+    font-size: 13px;
+  }
+}
 .containerModalComment .childModalComment .textCaptionContainer {
-  display: block;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 12.5px;
+}
+@media ((min-width: 320px) and (max-width: 500px)) {
+  .containerModalComment .childModalComment .textCaptionContainer {
+    font-size: 10.5px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 750px)) {
+  .containerModalComment .childModalComment .textCaptionContainer {
+    margin-bottom: 10px;
+  }
 }
 .containerModalComment .childModalComment .textCaptionContainer .RjLandTextCaption {
-  font-size: 12.5px;
   color: #43c1d0;
   padding: 0 3.5px;
   font-weight: 600;
 }
-.containerModalComment .childModalComment .textCaptionContainer .textCaption {
-  font-size: 12.5px;
-}
 
 .contentCommentsContainer {
-  height: 200px;
-  width: 100%;
-  margin-top: 40px;
-  box-shadow: 0px 0px 1px 0px #0043ff;
-  border-radius: 30px;
+  margin: 40px 0;
+}
+.contentCommentsContainer .contentComment {
+  height: 190px;
+  width: 67%;
+  box-shadow: 0px 0px 1px 0px #4d74df;
+  border-radius: 27px;
   padding: 15px 40px;
+}
+@media ((min-width: 320px) and (max-width: 1000px)) {
+  .contentCommentsContainer .contentComment {
+    width: 100%;
+  }
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .contentCommentsContainer .contentComment {
+    height: 150px;
+    padding: 15px 30px;
+    border-radius: 20px;
+  }
+}
+@media ((min-width: 32px) and (max-width: 450px)) {
+  .contentCommentsContainer .contentComment {
+    height: 130px;
+    border-radius: 13px;
+    padding: 15px 20px;
+  }
 }
 
 .userComment {
@@ -245,13 +537,37 @@
   font-size: 17px;
   font-weight: 600;
 }
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .userComment {
+    height: 36px;
+    font-size: 15.5px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .userComment {
+    height: 32px;
+    font-size: 13px;
+  }
+}
 
 .textComment {
   padding-right: 10px;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
-  font-size: 17px;
+  font-size: 15px;
   color: #3b5578;
   font-weight: 600;
+}
+@media ((min-width: 450px) and (max-width: 750px)) {
+  .textComment {
+    height: 55px;
+    font-size: 13px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .textComment {
+    height: 52px;
+    font-size: 11px;
+  }
 }/*# sourceMappingURL=CommentsSection.module.css.map */

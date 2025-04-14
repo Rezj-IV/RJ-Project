@@ -19,7 +19,7 @@ const SixIcon = async () => {
       <div className={styles.sixIconContainer}>
         {data.map((item) => {
           return (
-            <div>
+            <div key={item.id}>
               {item.id === 6 ? (
                 <div className={styles.sixIcon} key={item.id}>
                   <Image

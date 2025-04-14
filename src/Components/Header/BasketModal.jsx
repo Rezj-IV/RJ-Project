@@ -5,11 +5,12 @@ import Image from "next/image";
 import EmptyBasket from "./EmptyBasket";
 import { BsShopWindow } from "react-icons/bs";
 import { TbBuildingWarehouse } from "react-icons/tb";
+import Link from "next/link";
+
 const BasketModal = ({ data, totalCount }) => {
   return (
     <div>
       <div>
-       
         {data.map((item) => {
           return (
             <div className={styles.basketModal} key={item.id}>
@@ -53,14 +54,17 @@ const BasketModal = ({ data, totalCount }) => {
               </div>
 
               <div className={styles.leftSlide}>
-                <div className={styles.productImage}>
+                <Link
+                  href={`/Product/${item.id}`}
+                  className={styles.productImage}
+                >
                   <Image
                     width={105}
                     height={105}
                     alt={item.name}
                     src={item.indexImageUrl}
                   />
-                </div>
+                </Link>
                 {item.priceWithDiscount === 0 ? (
                   <div className={`${styles.priceContainer}`}>
                     <div className={styles.mainPrice}>
@@ -91,6 +95,7 @@ const BasketModal = ({ data, totalCount }) => {
                         <div className={`${styles.price}`}>
                           {item.price
                             .toString()
+
                             .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         </div>
                         <span className={styles.tomanIcon}>تومان</span>
@@ -99,6 +104,7 @@ const BasketModal = ({ data, totalCount }) => {
                         <div className={styles.OffPrice}>
                           {item.priceWithDiscount
                             .toString()
+
                             .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         </div>
 

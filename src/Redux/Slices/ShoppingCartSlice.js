@@ -12,10 +12,16 @@ const refreshState = (state) => {
   state.discountProducts = 0;
   state.items.map((item) => {
     state.totalCount += item.count;
-    state.totalAmount +=
-      item.priceWithDiscount !== 0
-        ? item.priceWithDiscount * item.count
-        : item.price * item.count;
+
+    // if (item.priceWithDiscount === 0) {
+    //   state.totalAmount += item.price * item.count;
+
+    // } else {
+    //   state.totalAmount += item.priceWithDiscount * item.count;
+
+    // }
+
+    state.totalAmount += item.price * item.count;
 
     state.discountProducts +=
       item.priceWithDiscount !== 0
@@ -29,7 +35,7 @@ const ShoppingCartSlice = createSlice({
   initialState: Initial_State,
   reducers: {
     addItem: (state, action) => {
-      state.items.push({ ...action.payload, count: 1 });
+      state.items.push({ ...action.payload.product, count: 1 , basketcolor:action.payload.mainColor});
       return refreshState(state);
     },
     increaceItem: (state, action) => {

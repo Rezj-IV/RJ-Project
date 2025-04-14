@@ -33,8 +33,20 @@
 .RJLandLogo {
     margin-top: 10px;
 }
+@media (min-width:300px) and (max-width: 380px) {
+    .RJLandLogo {
+        position: absolute;
+        z-index: 1;
+        margin-right: 8px;
 
-@media (min-width:100px) and (max-width: 699px) {
+    }
+
+    .RJLandLogo img {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media (min-width:380px) and (max-width: 699px) {
     .RJLandLogo {
         position: absolute;
         z-index: 1;

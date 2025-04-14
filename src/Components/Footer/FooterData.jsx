@@ -22,7 +22,7 @@ const FooterData = () => {
     rout.push(`/Product/categoryType/${props}/?class=handsfree`);
   };
   return (
-    <div className={styles.footerDataContainer}>
+    <div >
       <div className={styles.footerData}>
         <div className={styles.rightSideFooter}>
           <div className={styles.Addresses}>
@@ -117,18 +117,20 @@ const FooterData = () => {
 
       <div className={styles.symbols}>
         <div className={styles.symbolImage}>
-          <Image width={60} height={60} alt="" src="/Symbol/etemad.png" />
+          <Image width={50} height={50} alt="" src="/Symbol/etemad.png" />
         </div>
         <div className={styles.symbolImage}>
           <Image
-            width={45}
-            height={60}
+
+          className={styles.NationalSymbol}
+            width={35}
+            height={50}
             alt=""
             src="/Symbol/National Union.svg"
           />
         </div>
         <div className={styles.symbolImage}>
-          <Image width={60} height={60} alt="" src="/Symbol/c5.png" />
+          <Image width={50} height={50} alt="" src="/Symbol/c5.png" />
         </div>
       </div>
       <div className={styles.foundation}>

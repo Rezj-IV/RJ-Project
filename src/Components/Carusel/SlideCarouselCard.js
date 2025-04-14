@@ -24,8 +24,8 @@ const SlideCarouselCard = ({ product }) => {
           className={styles.PrdImage}
           alt={product.name}
           src={product.indexImageUrl}
-          width={170}
-          height={170}
+          width={165}
+          height={165}
         />
 
         <p align="justify" className={`${styles.productName}`}>
@@ -52,7 +52,7 @@ const SlideCarouselCard = ({ product }) => {
             </div>
 
             <div className={`${styles.priceContainer}`}>
-              <div>
+              <div className={styles.OffPriceContainer}>  
                 <div className={styles.OffPrice}>
                   {product.priceWithDiscount
                     .toString()

@@ -36,7 +36,10 @@ export const PurchaseRegistrationToast = () => {
         toastOptions={{
           style: {
             background: "#6be981",
-
+            height: "fit-content",
+            width: "fit-content",
+            paddingRight: "10px",
+            paddingLeft: "50px",
             color: "#ffff",
           },
         }}
