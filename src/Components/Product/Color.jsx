@@ -17,11 +17,14 @@ const Color = ({ colorID }) => {
           <span className={styles.showColorTitle}>رنگ :</span>
           <span className={styles.showColor}>{mainColor}</span>
         </div>
+        
 
         {colorID.map((item) => {
           return (
             <div key={item.id}>
+
               <div
+            
                 className={
                   color.id === item.id
                     ? `${styles.CheckColor}`
