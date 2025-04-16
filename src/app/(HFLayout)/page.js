@@ -1,18 +1,10 @@
-import MobileMenu from "@/Components/Menu/MobileMenu";
 import styles from "./page.module.css";
-import MainMenu from "@/Components/Menu/MainMenu";
-import Header from "@/Components/Header/Header";
-import GetIncredibleOffers from "@/Components/IncredibleOffersProducts/GetIncredibleOffers";
 import IncCarusel from "@/Components/Carusel/IncCarusel";
-import Modal from "@/Components/Modal/ImageModal";
-import MainSlider from "@/Components/Slider/mainSlider";
 import ProductCarusel from "@/Components/Product/ProductCarusel";
 import * as repository from "../../../RestConfig/RestRequest";
 import SixIcon from "@/Components/SixIcon/SixIcon";
-import Footer from "@/Components/Footer/Footer";
 import { Suspense } from "react";
-import LowerPart from "@/Components/LowerPart/LowerPart";
-import Image from "next/image";
+
 
 async function getAllProduct() {
   const response = await repository.Get("products");
@@ -37,7 +29,6 @@ export default async function Home() {
   const homeImages = await getAllHomeImages();
   return (
     <>
-      <Suspense><MainSlider /></Suspense>
       
       <div className={styles.PdContainer}>
         <Suspense>
