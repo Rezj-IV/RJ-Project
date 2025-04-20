@@ -11,7 +11,6 @@ import { removeAll } from "@/Redux/Slices/ShoppingCartSlice";
 const ShoppingCartItems = () => {
   const data = useSelector((state) => state.ShoppingCart);
   const dispatch = useDispatch();
-  console.log(data);
   return (
     <>
       {data.totalCount === 0 ? (

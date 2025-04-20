@@ -12,7 +12,7 @@ const BasketModal = ({ data }) => {
       <div>
         {data.map((item) => {
           return (
-            <div className={styles.basketModal} key={item.id}>
+            <div className={styles.basketModal} key={new Date()}>
               <div className={styles.rightSlide}>
                 <div className={styles.productNameContainer}>
                   <div className={styles.incredibleOffersLogo}>

@@ -3,7 +3,6 @@ import styles from "./PUincorrect.module.css";
 import { PiSealWarningDuotone } from "react-icons/pi";
 
 const PUincorrect = () => {
-  console.log("PUincorrect");
   return (
     <div className={styles.inc}>
       <PiSealWarningDuotone className={styles.PiSealWarning}/>

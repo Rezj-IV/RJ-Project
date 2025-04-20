@@ -213,7 +213,7 @@ const singleProduct = async (props) => {
             </Suspense>
           </div>
           <Suspense>
-            {data.category === "هوآوی " || data.category === "آنر" ? null : (
+            {data.category === "هوآوی" || data.category === "آنر" ? null : (
               <div className={styles.caruselContainer}>
                 <div className={styles.titleCarusel}>
                   <p>برند مشابه</p>

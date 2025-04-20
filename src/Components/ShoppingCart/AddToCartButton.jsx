@@ -6,7 +6,7 @@ import ShoppingCartItemCount from "./ShoppingCartItemCount";
 
 const AddToCartButton = ({data}) => {
   const selector = useSelector((state) => state.ShoppingCart);
-  console.log(selector);
+  
   const prd = {
     id: data.id,
     name: data.name,

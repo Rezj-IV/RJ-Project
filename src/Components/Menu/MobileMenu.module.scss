@@ -47,29 +47,32 @@ $BlackGray: #545454;
 
         }
 
-        @include Media(560px, 740px) {
+        @include Media(650px, 740px) {
             width: 200px;
             padding: 0;
             border-left: 1px solid #f3f3f3;
             box-shadow: none;
         }
 
-        @include Media(450px, 560px) {
-            width: 170px;
+        @include Media(450px, 650px) {
+            width: 130px;
             padding: 0;
             border-left: 1px solid #f3f3f3;
             box-shadow: none;
 
 
         }
+
         @include Media(100px, 450px) {
-            width: 150px;
+            width: 56px;
             padding: 0;
             border-left: 1px solid #f3f3f3;
             box-shadow: none;
+            border-top-left-radius: 30px;
 
 
         }
+
         .otherOption {
             display: flex;
             align-items: center;
@@ -83,7 +86,7 @@ $BlackGray: #545454;
 
             }
 
-            @include Media(560px, 740px) {
+            @include Media(650px, 740px) {
                 width: 200px;
                 height: 80px;
                 padding: 0;
@@ -93,23 +96,24 @@ $BlackGray: #545454;
 
             }
 
-            @include Media(100px, 560px) {
+            @include Media(450px, 650px) {
 
-                width: 170px;
+                width: 130px;
                 height: 70px;
                 padding: 0;
                 border-left: 1px solid #f3f3f3;
                 box-shadow: none;
 
             }
+
             @include Media(100px, 450px) {
-                width: 150px;
+                width: 56px;
                 height: 60px;
                 padding: 0;
                 border-left: 1px solid #f3f3f3;
                 box-shadow: none;
-    
-    
+                border-top-left-radius: 30px;
+
             }
 
             @include hover(rgba(182, 214, 250, 0.29), 15px);
@@ -122,6 +126,9 @@ $BlackGray: #545454;
                 width: 100%;
                 height: 100%;
 
+                @include Media(100px, 650px) {
+                    padding: 0 5px 0 1px;
+                }
             }
         }
 
@@ -144,11 +151,12 @@ $BlackGray: #545454;
                     font-size: 11.5px;
                 }
 
-                @include Media(100px, 560px) {
-
+                @include Media(450px, 560px) {
                     font-size: 10px;
-
-
+                }
+                
+                @include Media(320px, 450px) {
+                    display: none;
                 }
             }
 
@@ -199,20 +207,21 @@ $BlackGray: #545454;
     width: 100%;
     height: 100%;
 
-    @include Media(560px, 740px) {
+    @include Media(650px, 740px) {
         right: 200px;
 
 
     }
 
-    @include Media(100px, 560px) {
-        right: 170px;
+    @include Media(450px, 650px) {
+        right: 150px;
 
 
     }
-    @include Media(100px, 450px) {
-        right:  150px;
- 
+
+    @include Media(320px, 450px) {
+        right: 60px;
+
 
 
     }
@@ -225,19 +234,12 @@ li:hover .layer {
 
 }
 
-
-
-
 .HeadMenuMobile {
     display: flex;
     justify-content: space-between;
     width: 100%;
-
 }
 
-
 .groupMenu {
-
     width: 100%;
-
 }

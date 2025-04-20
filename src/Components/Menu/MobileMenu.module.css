@@ -30,7 +30,7 @@
     box-shadow: none;
   }
 }
-@media ((min-width: 560px) and (max-width: 740px)) {
+@media ((min-width: 650px) and (max-width: 740px)) {
   .navbar ul {
     width: 200px;
     padding: 0;
@@ -38,9 +38,9 @@
     box-shadow: none;
   }
 }
-@media ((min-width: 450px) and (max-width: 560px)) {
+@media ((min-width: 450px) and (max-width: 650px)) {
   .navbar ul {
-    width: 170px;
+    width: 130px;
     padding: 0;
     border-left: 1px solid #f3f3f3;
     box-shadow: none;
@@ -48,10 +48,11 @@
 }
 @media ((min-width: 100px) and (max-width: 450px)) {
   .navbar ul {
-    width: 150px;
+    width: 56px;
     padding: 0;
     border-left: 1px solid #f3f3f3;
     box-shadow: none;
+    border-top-left-radius: 30px;
   }
 }
 .navbar ul .otherOption {
@@ -67,7 +68,7 @@
     width: 240px;
   }
 }
-@media ((min-width: 560px) and (max-width: 740px)) {
+@media ((min-width: 650px) and (max-width: 740px)) {
   .navbar ul .otherOption {
     width: 200px;
     height: 80px;
@@ -76,9 +77,9 @@
     box-shadow: none;
   }
 }
-@media ((min-width: 100px) and (max-width: 560px)) {
+@media ((min-width: 450px) and (max-width: 650px)) {
   .navbar ul .otherOption {
-    width: 170px;
+    width: 130px;
     height: 70px;
     padding: 0;
     border-left: 1px solid #f3f3f3;
@@ -87,11 +88,12 @@
 }
 @media ((min-width: 100px) and (max-width: 450px)) {
   .navbar ul .otherOption {
-    width: 150px;
+    width: 56px;
     height: 60px;
     padding: 0;
     border-left: 1px solid #f3f3f3;
     box-shadow: none;
+    border-top-left-radius: 30px;
   }
 }
 .navbar ul .otherOption:hover {
@@ -106,6 +108,11 @@
   list-style: none;
   width: 100%;
   height: 100%;
+}
+@media ((min-width: 100px) and (max-width: 650px)) {
+  .navbar ul .otherOption li {
+    padding: 0 5px 0 1px;
+  }
 }
 .navbar ul .ParentLink {
   display: inline-flex;
@@ -123,9 +130,14 @@
     font-size: 11.5px;
   }
 }
-@media ((min-width: 100px) and (max-width: 560px)) {
+@media ((min-width: 450px) and (max-width: 560px)) {
   .navbar ul .ParentLink .LinkOption {
     font-size: 10px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .navbar ul .ParentLink .LinkOption {
+    display: none;
   }
 }
 .navbar ul .ParentLogo {
@@ -161,19 +173,19 @@
   width: 100%;
   height: 100%;
 }
-@media ((min-width: 560px) and (max-width: 740px)) {
+@media ((min-width: 650px) and (max-width: 740px)) {
   .layer {
     right: 200px;
   }
 }
-@media ((min-width: 100px) and (max-width: 560px)) {
-  .layer {
-    right: 170px;
-  }
-}
-@media ((min-width: 100px) and (max-width: 450px)) {
+@media ((min-width: 450px) and (max-width: 650px)) {
   .layer {
     right: 150px;
+  }
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .layer {
+    right: 60px;
   }
 }
 

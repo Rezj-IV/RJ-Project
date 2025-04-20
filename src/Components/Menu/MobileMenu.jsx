@@ -29,8 +29,8 @@ const MobileMenu = async (props) => {
             <div>
               {MenuItem.map((item) => {
                 return (
-                  <div className={styles.otherOption} key={item.id}>
-                    <li>
+                  <div className={styles.otherOption} key={item.id} >
+                    <li >
                       <div className={styles.ParentLogo}>
                         <Image
                           src={item.logoUrl}

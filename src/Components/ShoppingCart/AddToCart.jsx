@@ -6,13 +6,13 @@ import { useDispatch } from "react-redux";
 import { addItem } from "@/Redux/Slices/ShoppingCartSlice";
 const AddToCart = ({ product }) => {
   const dispatch = useDispatch();
-  const Prd = product;
+  
 
   return (
     <div>
       <div
         className={styles.shoppingCartBtnContainer}
-        onClick={() => dispatch(addItem(Prd))}
+        onClick={() => dispatch(addItem(product))}
       >
         <div className={styles.textShoppingCart}>
           <span>افزودن به سبد خرید</span>

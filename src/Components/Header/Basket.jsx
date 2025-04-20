@@ -19,6 +19,7 @@ const Basket = () => {
           )}
         </div>
       </Link>
+      
       <div className={styles.BasketModal}>
         {data.totalCount === 0 ? (
           <div className={styles.EmptyBasket}>
@@ -55,7 +56,8 @@ const Basket = () => {
                 <span>
                   {data.totalAmount
                     .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                    }
                   <span className={styles.toman}>تومان</span>
                 </span>
               </div>

@@ -15,10 +15,8 @@ const refreshState = (state) => {
 
     // if (item.priceWithDiscount === 0) {
     //   state.totalAmount += item.price * item.count;
-
     // } else {
     //   state.totalAmount += item.priceWithDiscount * item.count;
-
     // }
 
     state.totalAmount += item.price * item.count;
@@ -35,7 +33,7 @@ const ShoppingCartSlice = createSlice({
   initialState: Initial_State,
   reducers: {
     addItem: (state, action) => {
-      state.items.push({ ...action.payload.product, count: 1 , basketcolor:action.payload.mainColor});
+      state.items.push({ ...action.payload, count: 1});
       return refreshState(state);
     },
     increaceItem: (state, action) => {

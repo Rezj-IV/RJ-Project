@@ -142,7 +142,6 @@ const CardDetails = ({ product }) => {
         return item.category.includes(SelectedCats[index]);
       });
       result.push(...ProductsCats);
-      console.log(SelectedCats);
     }
     {
       showCategories.length === 0
@@ -151,7 +150,6 @@ const CardDetails = ({ product }) => {
     }
     setShowCategories(SelectedCats);
   };
-  console.log(showCategories);
   return (
     <div className={styles.cardDetailsConrainer}>
       <Suspense>

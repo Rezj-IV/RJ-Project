@@ -26,7 +26,6 @@ const LogIn = () => {
 
   const submitHandler = (values) => {
     repository.Post("users/login", values).then((response) => {
-      console.log(response);
       if (response.data.hasOwnProperty("token")) {
         dispatch(setToken(response.data.token));
         router.back(1);

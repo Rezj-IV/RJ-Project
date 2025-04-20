@@ -21,7 +21,7 @@
     height: 402px;
     width: 550px;
 
-    @include Media(600px, 1000px) {
+    @include Media(650px, 1000px) {
         height: fit-content;
         border: none;
         width: 450px;
@@ -29,21 +29,21 @@
 
     }
 
-    @include Media(520px, 600px) {
+    @include Media(450px, 650px) {
         height: fit-content;
         border: none;
-        width: 350px;
-
-
+        width: 247px;
+        padding: 30px 2px;
     }
 
-    @include Media(100px, 520px) {
+    @include Media(320px, 450px) {
         height: fit-content;
         border: none;
-        width: 280px;
         gap: 20px;
-
+        padding: 26px 15px;
+        width: 198px;
     }
+
 
 
     .contents {
@@ -108,6 +108,13 @@
 .gap {
 
     gap: 23px 40px;
+
+    @include Media(320px, 450px) {
+        gap: 25px 0;
+    }
+    @include Media(450px, 650px) {
+        gap: 25px 0;
+    }
 }
 
 

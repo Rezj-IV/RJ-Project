@@ -22,7 +22,6 @@ const Header = () => {
       </div>
       <div className={styles.HeaderLeftSide}>
         <LogSignUI />
-
         <Basket />
       </div>
     </div>

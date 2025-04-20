@@ -9,7 +9,7 @@
   height: 402px;
   width: 550px;
 }
-@media ((min-width: 600px) and (max-width: 1000px)) {
+@media ((min-width: 650px) and (max-width: 1000px)) {
   .contentsContainer {
     height: -moz-fit-content;
     height: fit-content;
@@ -17,21 +17,23 @@
     width: 450px;
   }
 }
-@media ((min-width: 520px) and (max-width: 600px)) {
+@media ((min-width: 450px) and (max-width: 650px)) {
   .contentsContainer {
     height: -moz-fit-content;
     height: fit-content;
     border: none;
-    width: 350px;
+    width: 247px;
+    padding: 30px 2px;
   }
 }
-@media ((min-width: 100px) and (max-width: 520px)) {
+@media ((min-width: 320px) and (max-width: 450px)) {
   .contentsContainer {
     height: -moz-fit-content;
     height: fit-content;
     border: none;
-    width: 280px;
     gap: 20px;
+    padding: 26px 15px;
+    width: 198px;
   }
 }
 .contentsContainer .contents {
@@ -90,6 +92,16 @@
 
 .gap {
   gap: 23px 40px;
+}
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .gap {
+    gap: 25px 0;
+  }
+}
+@media ((min-width: 450px) and (max-width: 650px)) {
+  .gap {
+    gap: 25px 0;
+  }
 }
 
 .headerContent:hover {
