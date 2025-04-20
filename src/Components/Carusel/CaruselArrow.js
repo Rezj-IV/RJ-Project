@@ -1,11 +1,12 @@
 "use client";
 
-import { BiChevronLeft , BiChevronRight  } from "react-icons/bi";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import styles from "./CaruselArrow.module.css";
 export function NextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <BiChevronRight 
-      className={className}
+    <BiChevronRight
+      className={`${className} ${styles.arrow} `}
       style={{
         ...style,
         backgroundColor: "#ffffff",
@@ -26,7 +27,7 @@ export function PrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <BiChevronLeft
-      className={className}
+      className={`${className} ${styles.arrow} `}
       style={{
         ...style,
         backgroundColor: "#ffffff",
@@ -38,6 +39,7 @@ export function PrevArrow(props) {
         marginLeft: "30px",
         zIndex: "10",
         color: "#4a4a4a",
+        
       }}
       onClick={onClick}
     />

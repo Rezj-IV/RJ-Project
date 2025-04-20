@@ -1,14 +1,14 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import styles from "./Login.module.css";
-import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
 import * as repository from "../../../RestConfig/RestRequest";
 import Link from "next/link";
 import { setToken } from "@/Redux/Slices/UserSlice";
+import PUincorrect from "./PUincorrect";
 
 const LogIn = () => {
   const dispatch = useDispatch();
@@ -22,23 +22,26 @@ const LogIn = () => {
     username: "",
     password: "",
   };
+  const [incorrect, setIncorrect] = useState(false);
 
   const submitHandler = (values) => {
     repository.Post("users/login", values).then((response) => {
       console.log(response);
       if (response.data.hasOwnProperty("token")) {
         dispatch(setToken(response.data.token));
-        router.push("/Profile");
+        router.back(1);
       } else {
-        alert("نام کاربری یا رمزعبور نادرست است");
+        setIncorrect(true);
       }
     });
   };
 
   return (
     <div className={styles.mainContainer}>
+
       <div className={styles.FieldContainer}>
-        {/* <Image src="/logo/rjLogo.png" alt="rj land" width={150} height={150} /> */}
+      {incorrect && <PUincorrect />}
+
         <p className={styles.title}> ورود </p>
         <Formik
           d
@@ -86,8 +89,6 @@ const LogIn = () => {
           </Form>
         </Formik>
       </div>
-
-     
     </div>
   );
 };

@@ -4,6 +4,7 @@ import ProductCarusel from "@/Components/Product/ProductCarusel";
 import * as repository from "../../../RestConfig/RestRequest";
 import SixIcon from "@/Components/SixIcon/SixIcon";
 import { Suspense } from "react";
+import MainSlider from "@/Components/Slider/MainSlider";
 
 
 async function getAllProduct() {
@@ -29,7 +30,9 @@ export default async function Home() {
   const homeImages = await getAllHomeImages();
   return (
     <>
-      
+      <Suspense>
+        <MainSlider/>
+      </Suspense>
       <div className={styles.PdContainer}>
         <Suspense>
           <SixIcon />

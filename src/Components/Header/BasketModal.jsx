@@ -2,12 +2,11 @@ import React from "react";
 import styles from "./BasketModal.module.css";
 import ShoppingCartItemCountB from "../ShoppingCart/ShoppingCartItemCountB";
 import Image from "next/image";
-import EmptyBasket from "./EmptyBasket";
 import { BsShopWindow } from "react-icons/bs";
 import { TbBuildingWarehouse } from "react-icons/tb";
 import Link from "next/link";
 
-const BasketModal = ({ data, totalCount }) => {
+const BasketModal = ({ data }) => {
   return (
     <div>
       <div>
@@ -46,7 +45,7 @@ const BasketModal = ({ data, totalCount }) => {
                   </div>
                 </div>
 
-                <div className={styles.colorContainer}>color</div>
+                <div className={styles.colorContainer}></div>
 
                 <div className={styles.ShoppingCartItemCount}>
                   <ShoppingCartItemCountB PrdId={item.id} />

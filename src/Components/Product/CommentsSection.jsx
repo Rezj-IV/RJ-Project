@@ -8,12 +8,19 @@ import Image from "next/image";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { LuSquareUserRound } from "react-icons/lu";
+import { jwtDecode } from "jwt-decode";
 
 const CommentsSection = ({ PrdData, PrdId }) => {
   const [showComment, setShowComment] = useState(false);
   const jwt = useSelector((state) => state.Users);
-  // const arrayToken = jwt.token.split(".");
-  // const tokenPayload = JSON.parse(atob(arrayToken[1]));
+  const [jwtData, setJwtData] = useState();
+
+  useEffect(() => {
+    if (jwt.token) {
+      setJwtData(jwtDecode(jwt.token).username);
+    }
+  }, []);
+
   const Content = useRef();
 
   const rout = useRouter();
@@ -133,7 +140,7 @@ const CommentsSection = ({ PrdData, PrdId }) => {
             <div className={styles.contentComment}>
               <div>
                 <div className={styles.userComment}>
-                  {/* <p>{tokenPayload.username}</p> */}
+                  {jwtData && <p>{jwtData}</p>}
                 </div>
 
                 <div className={styles.textComment}>
@@ -144,7 +151,6 @@ const CommentsSection = ({ PrdData, PrdId }) => {
               </div>
             </div>
           ) : null}
-      
         </div>
       )}
     </>

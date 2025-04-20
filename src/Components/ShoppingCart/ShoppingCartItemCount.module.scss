@@ -79,11 +79,10 @@
         font-size: 13px;
     }
 
-    @include Media(450px, 750px) {
+    @include Media(320px, 750px) {
         font-size: 11px;
     }
-    @include Media(320px, 450px) {
-display: none;    }
+    
 }
 
 .leftIcon {

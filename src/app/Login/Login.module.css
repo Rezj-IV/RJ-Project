@@ -22,7 +22,7 @@
   height: fit-content;
   /* From Uiverse.io by zanina-yassine */
 }
-@media ((min-width: 0px) and (max-width: 320px)) {
+@media ((min-width: 0px) and (max-width: 390px)) {
   .mainContainer .FieldContainer {
     margin: 5px;
     padding: 25px 18px;

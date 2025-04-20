@@ -11,7 +11,6 @@ const CarouselSlider = ({ imageSlider }) => {
   var settings = {
     dots: true,
     dotsClass: `slick-dots ${styles.dots}`,
-
     swipeToSlide: true,
     speed: 500,
     rtl: true,

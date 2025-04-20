@@ -4,13 +4,10 @@ import styles from "./AddToCart.module.css";
 import { BsCart3 } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { addItem } from "@/Redux/Slices/ShoppingCartSlice";
-const AddToCart = ({ product, mainColor }) => {
+const AddToCart = ({ product }) => {
   const dispatch = useDispatch();
-  console.log(mainColor);
-  const Prd = {
-    product,
-    mainColor,
-  };
+  const Prd = product;
+
   return (
     <div>
       <div

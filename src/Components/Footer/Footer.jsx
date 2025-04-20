@@ -10,7 +10,7 @@ const Footer = async () => {
     <div className={styles.footer}>
       <div className={styles.headerFooter}>
         <Link href="/">
-          <Image src="/logo/RJLand.png" width={125} height={125} alt="RJLand" className={styles.rjLogo}/>
+          <Image src="/logo/RJLand.png" width={125} height={125} alt="RJLand" className={styles.rjLogo} priority/>
         </Link>{" "}
         <div>
           <Link href="#top" className={styles.goUp} >

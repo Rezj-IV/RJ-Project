@@ -53,8 +53,8 @@
 }
 @media ((min-width: 300px) and (max-width: 400px)) {
   .PrdImage {
-    width: 90px !important;
-    height: 90px !important;
+    width: 100px !important;
+    height: 100px !important;
   }
 }
 
@@ -80,8 +80,8 @@
 }
 @media ((min-width: 300px) and (max-width: 400px)) {
   .productName {
-    font-size: 9px;
-    height: 42px;
+    font-size: 10px;
+    height: 45px;
   }
 }
 

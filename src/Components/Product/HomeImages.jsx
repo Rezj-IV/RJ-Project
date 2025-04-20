@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import * as repository from "../../../RestConfig/RestRequest";
+import React from "react";
 import Image from "next/image";
 import styles from "./HomeImages.module.scss";
 import Link from "next/link";
 import { BsPatchCheck } from "react-icons/bs";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export const HomeImagesFirstSection = ({ images }) => {
   let result = images.filter((item) => {
@@ -338,11 +337,17 @@ export const HomeImagesTenthSection = ({ images }) => {
   let result2 = images.filter((item) => {
     return item.id === 23;
   });
-
+  const rout=useRouter()
+  const clickHandler = (props) => {
+    rout.push(`/Product/Class/laptop/?tl=${props}`);
+  };
   return (
     <div>
       <div className={`${styles.FifthSectionContainer} ${styles.double} `}>
-        <Link href="/" className={styles.FifthSection}>
+        <div
+          className={styles.FifthSection}
+          onClick={() => clickHandler("Xgaming")}
+        >
           <Image
             sizes="100%"
             className={styles.FifthHomeImage}
@@ -350,7 +355,7 @@ export const HomeImagesTenthSection = ({ images }) => {
             alt={result1[0].name}
             src={result1[0].indexImageUrl}
           />
-        </Link>
+        </div>
 
         <Link href="/Product/Class/handsfree" className={styles.FifthSection}>
           <Image

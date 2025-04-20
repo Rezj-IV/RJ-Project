@@ -108,7 +108,7 @@ const ShoppingCartItem = ({ Product }) => {
             )}
           </div>
           <div className={styles.counterAndColor}>
-            <div className={styles.colorContainer}>color</div>
+            <div className={styles.colorContainer}></div>
             <div className={styles.ShoppingCartItemCountB}>
               <ShoppingCartItemCountB PrdId={Product.id} />
             </div>

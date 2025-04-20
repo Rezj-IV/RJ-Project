@@ -18,7 +18,9 @@
     font-weight: 600;
 
 }
-
+.link:hover{
+    color: royalblue;
+}
 .iconLogin {
     font-size: 18px;
     display: flex;
@@ -78,6 +80,7 @@
 
 .userAccount:hover .username {
     color: #85a0b5;
+    font-weight: 600;
 }
 
 .username {

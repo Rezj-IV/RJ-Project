@@ -14,6 +14,7 @@ const EmptyShoppingCart = () => {
           alt="EmptyShoppingCart"
           height={300}
           width={300}
+          className={styles.EmptyShoppingCartImg}
         />
         <h2>سبد خرید شما خالیه!</h2>
         <p>برای مشاهده تخفیف‌های امروز، روی لینک زیر کلیک کنید.</p>

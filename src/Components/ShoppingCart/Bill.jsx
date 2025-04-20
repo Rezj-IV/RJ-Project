@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Bill.module.css";
 import { PurchaseRegistrationToast } from "../Product/Toast";
-const Bill = ({ totalCount, totalAmount, discountProducts , data }) => {
+const Bill = ({ totalAmount, discountProducts  }) => {
   const totalSum = totalAmount - discountProducts;
 
   return (

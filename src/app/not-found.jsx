@@ -8,8 +8,7 @@ export default function NotFound() {
         <Image
           src="/images/notFound.png"
           alt="not-Found"
-          width={1400}
-          height={440}
+      fill
           priority
           className={styles.NotFoundImage}
         />

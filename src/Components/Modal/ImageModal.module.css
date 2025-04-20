@@ -27,14 +27,14 @@
 }
 @media ((min-width: 450px) and (max-width: 750px)) {
   .imagesProduct .mainImage .showMore {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
   }
 }
 @media ((min-width: 320px) and (max-width: 450px)) {
   .imagesProduct .mainImage .showMore {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
   }
 }
 .imagesProduct .mainImage .showMore img {
@@ -47,14 +47,14 @@
 }
 @media ((min-width: 450px) and (max-width: 750px)) {
   .imagesProduct .mainImage .showMore img {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
   }
 }
 @media ((min-width: 320px) and (max-width: 450px)) {
   .imagesProduct .mainImage .showMore img {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
   }
 }
 .imagesProduct .containerModalIMages {

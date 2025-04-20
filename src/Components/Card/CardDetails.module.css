@@ -118,6 +118,7 @@
   align-items: center;
   padding-right: 10px;
   justify-content: space-between;
+  cursor: pointer;
 }
 @media ((min-width: 320px) and (max-width: 625px)) {
   .cardDetailsConrainer .childModal .modalContent {
@@ -373,4 +374,11 @@
   .itemCategorys {
     font-size: 13px;
   }
+}
+
+.notSelected {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgb(202, 202, 202);
+  border-radius: 5px;
 }/*# sourceMappingURL=CardDetails.module.css.map */

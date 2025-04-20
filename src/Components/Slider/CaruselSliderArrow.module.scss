@@ -7,10 +7,6 @@
 .NextArrowSlide {
     background-color: #ffffff;
     box-shadow: 0 0 14px -3px rgba(0, 0, 0, .22);
-    // border-top-right-radius: 80%;
-    // border-top-left-radius: 15px;
-    // border-bottom-right-radius: 93%;
-    // border-bottom-left-radius: 15px;
     border-radius: 50%;
     height: 8%;
     width: 2%;
@@ -24,80 +20,25 @@
 
     @include Media(1300px, 4000px) {
         right: 1%;
-
-
-    }
-
-    @include Media(1000px, 1300px) {
-        height: 9%;
-        width: 2.3%;
-        bottom: 18%;
-
-
-    }
-
-    @include Media(700px, 1000px) {
-        height: 10%;
-        width: 2.5%;
-        bottom: 20%;
-
-
     }
 
     @include Media(500px, 700px) {
-        height: 11%;
-        width: 2.5%;
-        bottom: 22%;
-        margin-right: 3.5%;
-
+        right: 2%;
     }
 
-    @include Media(300px, 500px) {
-        height: 11.5%;
-        width: 3%;
-        bottom: 23%;
-
-
+    @include Media(320px, 500px) {
+        right: 3% !important;
     }
 }
 
-.PrevArrowSlideContainer {
-    width: 100%;
-    display: flex;
-    height: 500px;
-    align-items: center;
-    background-color: red;
-}
 
 .PrevArrowSlide {
-    @include Media(1000px, 1300px) {
-        height: 9%;
-        width: 2.3%;
-        bottom: 18%;
-
-    }
-
-    @include Media(700px, 1000px) {
-        height: 10%;
-        width: 2.5%;
-        bottom: 20%;
-
+    @include Media(300px, 500px) {
+        right: 6% !important;
     }
 
     @include Media(500px, 700px) {
-        height: 11%;
-        width: 2.5%;
-        bottom: 22%;
-        margin-right: 6%;
-
-    }
-
-    @include Media(300px, 500px) {
-        height: 11.5%;
-        width: 3%;
-        bottom: 23%;
-
-
+        right: 3% !important;
     }
 
     position: absolute;
@@ -105,11 +46,6 @@
     right: 2%;
     background-color: #ffffff;
     border-radius: 50%;
-
-    // border-top-left-radius: 80%;
-    // border-top-right-radius: 15px;
-    // border-bottom-left-radius: 93%;
-    // border-bottom-right-radius: 15px;
     box-shadow: 0 0 14px -3px rgba(0, 0, 0, .22);
     height: 8%;
     width: 2%;
@@ -120,4 +56,39 @@
     margin-right: 4%;
     z-index: 1;
     color: #999999;
+}
+
+.arrow {
+
+
+    @include Media(1000px, 1300px) {
+        height: 9%;
+        width: 2.3%;
+        bottom: 18%;
+
+
+    }
+
+    @include Media(700px, 1000px) {
+        height: 10%;
+        width: 2.5%;
+        bottom: 20%;
+
+
+    }
+
+    @include Media(500px, 700px) {
+        height: 9%;
+        width: 2.5%;
+        bottom: 22%;
+
+    }
+
+    @include Media(300px, 500px) {
+        height: 8.5%;
+        width: 3%;
+        bottom: 21%;
+
+
+    }
 }

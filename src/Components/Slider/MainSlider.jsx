@@ -15,9 +15,9 @@ const MainSlider = async () => {
   const slide = await getAllSlides();
 
   return (
-    <div>
+    <>
       <CarouselSlider imageSlider={slide} />
-    </div>
+    </>
   );
 };
 

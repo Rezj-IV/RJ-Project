@@ -17,33 +17,14 @@
     right: 1%;
   }
 }
-@media ((min-width: 1000px) and (max-width: 1300px)) {
-  .NextArrowSlide {
-    height: 9%;
-    width: 2.3%;
-    bottom: 18%;
-  }
-}
-@media ((min-width: 700px) and (max-width: 1000px)) {
-  .NextArrowSlide {
-    height: 10%;
-    width: 2.5%;
-    bottom: 20%;
-  }
-}
 @media ((min-width: 500px) and (max-width: 700px)) {
   .NextArrowSlide {
-    height: 11%;
-    width: 2.5%;
-    bottom: 22%;
-    margin-right: 3.5%;
+    right: 2%;
   }
 }
-@media ((min-width: 300px) and (max-width: 500px)) {
+@media ((min-width: 320px) and (max-width: 500px)) {
   .NextArrowSlide {
-    height: 11.5%;
-    width: 3%;
-    bottom: 23%;
+    right: 3% !important;
   }
 }
 
@@ -52,7 +33,11 @@
   display: flex;
   height: 500px;
   align-items: center;
-  background-color: red;
+}
+@media ((min-width: 300px) and (max-width: 500px)) {
+  .PrevArrowSlideContainer {
+    right: 7% !important;
+  }
 }
 
 .PrevArrowSlide {
@@ -72,32 +57,42 @@
   z-index: 1;
   color: #999999;
 }
-@media ((min-width: 1000px) and (max-width: 1300px)) {
+@media ((min-width: 300px) and (max-width: 500px)) {
   .PrevArrowSlide {
+    right: 6% !important;
+  }
+}
+@media ((min-width: 500px) and (max-width: 700px)) {
+  .PrevArrowSlide {
+    right: 3% !important;
+  }
+}
+
+@media ((min-width: 1000px) and (max-width: 1300px)) {
+  .arrow {
     height: 9%;
     width: 2.3%;
     bottom: 18%;
   }
 }
 @media ((min-width: 700px) and (max-width: 1000px)) {
-  .PrevArrowSlide {
+  .arrow {
     height: 10%;
     width: 2.5%;
     bottom: 20%;
   }
 }
 @media ((min-width: 500px) and (max-width: 700px)) {
-  .PrevArrowSlide {
-    height: 11%;
+  .arrow {
+    height: 9%;
     width: 2.5%;
     bottom: 22%;
-    margin-right: 6%;
   }
 }
 @media ((min-width: 300px) and (max-width: 500px)) {
-  .PrevArrowSlide {
-    height: 11.5%;
+  .arrow {
+    height: 8.5%;
     width: 3%;
-    bottom: 23%;
+    bottom: 21%;
   }
 }/*# sourceMappingURL=CaruselSliderArrow.module.css.map */

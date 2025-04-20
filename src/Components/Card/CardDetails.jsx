@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense, useId, useRef, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 import Card from "./Card";
 import styles from "./CardDetails.module.scss";
 import { CgReorder } from "react-icons/cg";
@@ -11,29 +11,9 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 const CardDetails = ({ product }) => {
   const [state, setState] = useState("");
   const [showProduct, setShowProduct] = useState(product);
-  const [modalCategories, setModalCategories] = useState(false);
   const [showSorting, SetshowSorting] = useState(false);
   const [showFilter, SetshowFilter] = useState(false);
 
-  // const checkHandler = (id, box) => {
-  //   let exist = false;
-  //   state.forEach((element) => {
-  //     if (element == id) {
-  //       exist = true;
-  //     }
-  //   });
-  //   if (!exist) {
-  //     if (box.current.checked) {
-  //       setState([...state, id]);
-  //     }
-  //   } else {
-  //     setState(
-  //       state.filter((item) => {
-  //         return item !== id;
-  //       })
-  //     );
-  //   }
-  // };
   let cats = [];
   product.forEach((item) => {
     if (cats.length == 0) {
@@ -47,7 +27,7 @@ const CardDetails = ({ product }) => {
       }
     }
   });
-  let minProducts = product;
+  let minProducts = showProduct;
   let minResult = [];
   while (minProducts.length !== 0) {
     for (let index1 = 0; index1 < minProducts.length; index1++) {
@@ -85,7 +65,9 @@ const CardDetails = ({ product }) => {
     }
   }
 
-  let maxProducts = product;
+  
+
+  let maxProducts = showProduct;
   let maxResult = [];
   while (maxProducts.length !== 0) {
     for (let index1 = 0; index1 < maxProducts.length; index1++) {
@@ -150,7 +132,6 @@ const CardDetails = ({ product }) => {
     let SelectedCats = showCategories;
     let result = [];
     const exist = IsExistInSelectedCats(props, SelectedCats);
-    console.log(exist);
     if (exist == -1) {
       SelectedCats.push(props);
     } else {
@@ -163,7 +144,6 @@ const CardDetails = ({ product }) => {
       result.push(...ProductsCats);
       console.log(SelectedCats);
     }
-    // setShowCategories(...showCategories, result);
     {
       showCategories.length === 0
         ? setShowProduct(product)
@@ -171,7 +151,7 @@ const CardDetails = ({ product }) => {
     }
     setShowCategories(SelectedCats);
   };
-
+  console.log(showCategories);
   return (
     <div className={styles.cardDetailsConrainer}>
       <Suspense>
@@ -215,35 +195,32 @@ const CardDetails = ({ product }) => {
 
               <div
                 className={`${styles.categoriesTitle} ${styles.modalContent}`}
-                onClick={() => setModalCategories(!modalCategories)}
               >
                 <p>برند ها</p>
                 <MdKeyboardArrowDown />
               </div>
-              {modalCategories && (
-                <div className={styles.categoryDropdown}>
-                  {cats.map((item, index) => {
-                    return (
-                      <div key={index}>
-                        <input
-                          type="checkbox"
-                          onClick={() => clickHandler(item)}
-                          className={styles.categoryCheckbox}
-                        />
-                        <label
-                          className={
-                            item === state.item
-                              ? styles.cats
-                              : styles.itemCategorys
-                          }
-                        >
-                          {item}
-                        </label>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
+              <div className={styles.categoryDropdown}>
+                {cats.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <input
+                        type="checkbox"
+                        onClick={() => clickHandler(item)}
+                        className={styles.categoryCheckbox}
+                      />
+                      <label
+                        className={
+                          item === state.item
+                            ? styles.cats
+                            : styles.itemCategorys
+                        }
+                      >
+                        {item}
+                      </label>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         )}
@@ -295,37 +272,33 @@ const CardDetails = ({ product }) => {
                 </label>
               </div>
               <div>
-                <div
-                  className={styles.categoriesTitle}
-                  onClick={() => setModalCategories(!modalCategories)}
-                >
+                <div className={styles.categoriesTitle}>
                   <p>برند ها</p>
                   <MdKeyboardArrowDown />
                 </div>
-                {modalCategories && (
-                  <div className={styles.categoryDropdown}>
-                    {cats.map((item, index) => {
-                      return (
-                        <div key={index}>
-                          <input
-                            type="checkbox"
-                            onClick={() => clickHandler(item)}
-                            className={styles.categoryCheckbox}
-                          />
-                          <label
-                            className={
-                              item === state.item
-                                ? styles.cats
-                                : styles.itemCategorys
-                            }
-                          >
-                            {item}
-                          </label>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+
+                <div className={styles.categoryDropdown}>
+                  {cats.map((item, index) => {
+                    return (
+                      <div key={index}>
+                        <input
+                          type="checkbox"
+                          onClick={() => clickHandler(item)}
+                          className={styles.categoryCheckbox}
+                        />
+                        <label
+                          className={
+                            item === state.item
+                              ? styles.cats
+                              : styles.itemCategorys
+                          }
+                        >
+                          {item}
+                        </label>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 

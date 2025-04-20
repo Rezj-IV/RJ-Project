@@ -1,11 +1,10 @@
 "use client";
 import styles from "./LowerPart.module.css";
 import { HiHome } from "react-icons/hi2";
-import { BiCategoryAlt, BiLogOut } from "react-icons/bi";
+import { BiCategoryAlt } from "react-icons/bi";
 import { RiShoppingCartLine } from "react-icons/ri";
 import Link from "next/link";
 import React from "react";
-import { AiFillAliwangwang } from "react-icons/ai";
 import { CiLogin } from "react-icons/ci";
 import { useSelector } from "react-redux";
 import { FaRegUser } from "react-icons/fa";

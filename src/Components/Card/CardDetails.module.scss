@@ -146,6 +146,7 @@ $gray: #ced0cf;
             align-items: center;
             padding-right: 10px;
             justify-content: space-between;
+            cursor: pointer;
 
             @include Media(320px, 625px) {
                 font-size: 12px;
@@ -442,4 +443,14 @@ $gray: #ced0cf;
     @include Media(320px, 690px) {
         font-size: 13px;
     }
+}
+
+.notSelected{
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgb(202, 202, 202);
+    border-radius: 5px;
+}
+.selected{
+    
 }

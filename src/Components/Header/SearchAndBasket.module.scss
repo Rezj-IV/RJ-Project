@@ -40,11 +40,11 @@
             }
 
             @include Media(320px, 450px) {
-                width: 10.5px;
-                height: 9.5px;
+                width: 11.5px;
+                height: 10.5px;
                 right: -2px;
                 bottom: 8px;
-                font-size: 8px;
+                font-size: 9px;
             }
         }
     }
@@ -58,7 +58,7 @@
         }
 
         @include Media(320px, 450px) {
-            font-size: 18.5px;
+            font-size: 19.5px;
         }
     }
 

@@ -7,19 +7,16 @@ import ProductAttribute from "@/Components/Product/ProductAttribute";
 import { BsShop } from "react-icons/bs";
 import { AiOutlineLeft, AiOutlineSetting } from "react-icons/ai";
 import { GoShieldCheck } from "react-icons/go";
-import { BsCart3, BsBoxSeam } from "react-icons/bs";
+import {BsBoxSeam } from "react-icons/bs";
 import InformationBar from "@/Components/Product/InformationBar";
 import Carusel from "@/Components/Carusel/Carusel";
 import Link from "next/link";
 import NonExistentSingleCard from "@/Components/Product/NonExistentSingleCard";
 import Color from "@/Components/Product/Color";
 import AddToCartButton from "@/Components/ShoppingCart/AddToCartButton";
-import CarouselSlider from "@/Components/Slider/CarouselSlider";
 import Footer from "@/Components/Footer/Footer";
 import Header from "@/Components/Header/Header";
-import LowerPart from "@/Components/LowerPart/LowerPart";
 import MainMenu from "@/Components/Menu/MainMenu";
-import SearchBox from "@/Components/Header/SearchBox";
 import SearchAndBasket from "@/Components/Header/SearchAndBasket";
 
 async function getAllSingleProduct(props) {
@@ -45,6 +42,7 @@ const singleProduct = async (props) => {
   const context = await props.params;
   const data = await getAllSingleProduct(context.singleProduct);
   const category = await getAllSameCategory(data.category);
+
   return (
     <div>
       <div className={styles.searchAndBasketContainer}>
@@ -207,7 +205,7 @@ const singleProduct = async (props) => {
                     )}
 
                     <div className={styles.AddToCartButton}>
-                      <AddToCartButton data={data} />
+                      <AddToCartButton data={data}  />
                     </div>
                   </div>
                 </div>

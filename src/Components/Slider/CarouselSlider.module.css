@@ -13,13 +13,22 @@
     border-radius: 22px;
   }
 }
+@media ((min-width: 320px) and (max-width: 450px)) {
+  .imageSlider {
+    height: 118px !important;
+  }
+}
+@media ((min-width: 450px) and (max-width: 600px)) {
+  .imageSlider {
+    height: 140px !important;
+  }
+}
 
 .dots {
-  right: 2.5% !important;
-  bottom: 7% !important;
   direction: rtl !important;
   text-align: unset;
-  width: 97% !important;
+  width: 97.5% !important;
+  bottom: 7%;
 }
 @media ((min-width: 700px) and (max-width: 1000px)) {
   .dots {
@@ -31,6 +40,11 @@
   .dots {
     bottom: 8% !important;
     right: 5.5% !important;
+  }
+}
+@media ((min-width: 320px) and (max-width: 700px)) {
+  .dots {
+    width: 91% !important;
   }
 }
 .dots li {

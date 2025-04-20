@@ -20,7 +20,6 @@ const CTContent = async (props) => {
   });
   return (
     <div>
-      {" "}
       <CardDetails product={result} />
     </div>
   );

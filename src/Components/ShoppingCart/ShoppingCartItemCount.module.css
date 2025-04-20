@@ -82,14 +82,9 @@
     font-size: 13px;
   }
 }
-@media ((min-width: 450px) and (max-width: 750px)) {
+@media ((min-width: 320px) and (max-width: 750px)) {
   .goShoppingCart {
     font-size: 11px;
-  }
-}
-@media ((min-width: 320px) and (max-width: 450px)) {
-  .goShoppingCart {
-    display: none;
   }
 }
 

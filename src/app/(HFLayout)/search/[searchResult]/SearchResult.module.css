@@ -15,5 +15,21 @@
 
 .text {
     color: rgb(32, 32, 32);
-    font-size: 16px;
+}
+
+@media ((min-width:320px) and (max-width:850px)) {
+    .titleText {
+        font-size: 16.5px;
+    }
+
+    .text {
+        font-size: 13px;
+
+    }
+
+    .notFoundProductImg {
+        width: 230px;
+        height: 203px;
+    }
+
 }

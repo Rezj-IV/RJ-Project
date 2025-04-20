@@ -25,6 +25,8 @@ const SearchResult = async (props) => {
             alt="notFoundProduct"
             width={282}
             height={255}
+            className={styles.notFoundProductImg}
+
           />
           <h3 className={styles.titleText}>کالایی یافت نشد.</h3>
           <p className={styles.text}>

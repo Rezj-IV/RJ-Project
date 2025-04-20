@@ -36,11 +36,11 @@
 }
 @media ((min-width: 320px) and (max-width: 450px)) {
   .searchAndBasketContainer .ShoppingCart div {
-    width: 10.5px;
-    height: 9.5px;
+    width: 11.5px;
+    height: 10.5px;
     right: -2px;
     bottom: 8px;
-    font-size: 8px;
+    font-size: 9px;
   }
 }
 .searchAndBasketContainer .Icon {
@@ -54,7 +54,7 @@
 }
 @media ((min-width: 320px) and (max-width: 450px)) {
   .searchAndBasketContainer .Icon {
-    font-size: 18.5px;
+    font-size: 19.5px;
   }
 }
 .searchAndBasketContainer .SearchBoxContainer {

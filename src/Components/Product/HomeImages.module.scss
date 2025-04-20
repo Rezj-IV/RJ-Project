@@ -11,7 +11,7 @@
     height: fit-content;
     width: 100%;
 
-    @include Media(100px, 1000px) {
+    @include Media(320px, 1000px) {
         margin-top: 2%;
         margin-bottom: 4%;
 
@@ -21,7 +21,13 @@
         position: unset !important;
         height: unset !important;
         border-radius: 17px;
+
+        @include Media(320px, 430px) {
+            height: 60px !important;
+      
+          }
     }
+   
 }
 
 .mainContainer {

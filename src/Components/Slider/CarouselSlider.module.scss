@@ -20,24 +20,37 @@
     @include Media(100px, 999px) {
         border-radius: 22px;
     }
+
+    @include Media(320px, 450px) {
+        height: 118px !important;
+    }
+    @include Media(450px, 600px) {
+        height: 140px !important;
+    }
 }
 
 .dots {
-    right: 2.5% !important;
-    bottom: 7% !important;
     direction: rtl !important;
     text-align: unset;
-    width: 97% !important;
+    width: 97.5% !important;
+    bottom: 7%;
+
     @include Media(700px, 1000px) {
-    bottom: 8% !important;
-    right: 3% !important;
-        
+        bottom: 8% !important;
+        right: 3% !important;
+
     }
+
     @include Media(500px, 700px) {
         bottom: 8% !important;
         right: 5.5% !important;
-            
-        }
+
+    }
+    @include Media(320px, 700px) {
+        width: 91% !important;
+
+
+    }
     li {
         margin: 0px !important;
         width: 1.2% !important;

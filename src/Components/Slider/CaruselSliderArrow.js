@@ -1,23 +1,22 @@
 
 import { RiArrowDropLeftLine , RiArrowDropRightLine  } from "react-icons/ri";
-import { RxCaretLeft ,RxCaretRight } from "react-icons/rx";
-
 import styles from "./CaruselSliderArrow.module.css";
+
 export function NextArrowSlide(props) {
-  const { className, style, onClick } = props;
+  const {onClick}  = props;
   return (
       <RiArrowDropRightLine
-        className={` ${styles.NextArrowSlide}`}
+        className={` ${styles.NextArrowSlide} ${styles.arrow}`}
         onClick={onClick}
       />
   );
 }
 export function PrevArrowSlide(props) {
-  const { className, style, onClick } = props;
+  const  {onClick}  = props;
   return (
-  <div className={style.PrevArrowSlideContainer}>
+  <div>
       <RiArrowDropLeftLine
-        className={`  ${styles.PrevArrowSlide}`}
+        className={`  ${styles.PrevArrowSlide} ${styles.arrow}`}
         onClick={onClick}
       />
       </div>

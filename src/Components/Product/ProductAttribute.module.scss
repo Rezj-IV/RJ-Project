@@ -23,12 +23,10 @@ $AattColor: #1f47a5d6;
             height: 45px;
         }
 
-        @include Media(450px, 750px) {
-            height: 38px;
-        }
+     
 
-        @include Media(320px, 450px) {
-            height: 25px;
+        @include Media(320px, 750px) {
+            height: 40px;
         }
 
         .attName {
@@ -41,7 +39,7 @@ $AattColor: #1f47a5d6;
             }
 
             @include Media(320px, 450px) {
-                font-size: 6.5px
+                font-size: 8.5px
             }
 
             font-size: 13.5px;
@@ -55,15 +53,15 @@ $AattColor: #1f47a5d6;
             color: $AattColor;
 
             @include Media(750px, 1250px) {
-                font-size: 12.5px;
+                font-size: 13.5px;
             }
 
             @include Media(450px, 750px) {
-                font-size: 11px
+                font-size: 12.5px
             }
 
             @include Media(320px, 450px) {
-                font-size: 8px
+                font-size: 10.5px
             }
         }
     }

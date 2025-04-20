@@ -17,10 +17,18 @@
     justify-content: center;
     gap: 4%;
 
-    @include Media(100px, 1100px) {
+    @include Media(320px, 1100px) {
         justify-content: space-around;
-    }
+        height: fit-content;
+        padding: 6% 0;
 
+    }
+@include Media(320px,600px ){
+    display: grid ;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-rows: repeat(2, 1fr) ;
+    gap: 8px;
+}
     .sixIcon {
         margin: 0 auto;
         width: 100%;
@@ -36,12 +44,9 @@
             display: block;
             margin: 0 auto;
 
-            @include Media(300px, 500px) {
-                width: 35px !important;
-                height: 35px !important;
-            }
 
-            @include Media(500px, 600px) {
+
+            @include Media(320px, 600px) {
                 width: 50px !important;
                 height: 50px !important;
             }
@@ -69,12 +74,9 @@
             color: rgb(51 87 124);
             text-align: center;
 
-            @include Media(300px, 500px) {
-                font-size: 5.5px;
 
-            }
 
-            @include Media(500px, 600px) {
+            @include Media(320px, 600px) {
                 font-size: 9px;
 
             }
