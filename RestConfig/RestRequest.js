@@ -17,7 +17,7 @@ export const Get = (url) => {
 export const Post =  (url, body) => {
  return axios({
     method:"POST",
-    url:`${SA.Main_Server}${url}`,
+    url:`${SA.Main_Server}${url}`, headers:{"Accept":"application/json, text/plain, /","Content-Type": "multipart/form-data"},
     data:body,
   })   
  };
