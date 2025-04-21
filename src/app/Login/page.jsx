@@ -25,6 +25,24 @@ const LogIn = () => {
   const [incorrect, setIncorrect] = useState(false);
 
   const submitHandler = (values) => {
+  //   console.log(values);
+  //   fetch("http://194.60.231.181:9095/users/login", {
+  //     method: "POST",
+  //     body: values,
+  //     headers: {
+
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Success: ", data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  //  ;
+
     repository.Post("users/login", values).then((response) => {
       if (response.data.hasOwnProperty("token")) {
         dispatch(setToken(response.data.token));
@@ -37,9 +55,8 @@ const LogIn = () => {
 
   return (
     <div className={styles.mainContainer}>
-
       <div className={styles.FieldContainer}>
-      {incorrect && <PUincorrect />}
+        {incorrect && <PUincorrect />}
 
         <p className={styles.title}> ورود </p>
         <Formik
