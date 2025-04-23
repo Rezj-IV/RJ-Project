@@ -5,9 +5,9 @@ import * as Yup from "yup";
 import styles from "./Login.module.css";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
-import * as repository from "../../../RestConfig/RestRequest";
+
 import Link from "next/link";
-import { setToken } from "@/Redux/Slices/UserSlice";
+
 import PUincorrect from "./PUincorrect";
 
 const LogIn = () => {
@@ -25,32 +25,32 @@ const LogIn = () => {
   const [incorrect, setIncorrect] = useState(false);
 
   const submitHandler = (values) => {
-  //   console.log(values);
-  //   fetch("http://194.60.231.181:9095/users/login", {
-  //     method: "POST",
-  //     body: values,
-  //     headers: {
+    console.log(values);
+    fetch("http://194.60.231.181:9095/users/login", {
+      method: "POST",
+      body: JSON.stringify(values),
+      headers: {
 
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("Success: ", data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //     });
-  //  ;
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success: ", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+   ;
 
-    repository.Post("users/login", values).then((response) => {
-      if (response.data.hasOwnProperty("token")) {
-        dispatch(setToken(response.data.token));
-        router.back(1);
-      } else {
-        setIncorrect(true);
-      }
-    });
+    // repository.Post("users/login", values).then((response) => {
+    //   if (response.data.hasOwnProperty("token")) {
+    //     dispatch(setToken(response.data.token));
+    //     router.back(1);
+    //   } else {
+    //     setIncorrect(true);
+    //   }
+    // });
   };
 
   return (
@@ -60,7 +60,7 @@ const LogIn = () => {
 
         <p className={styles.title}> ورود </p>
         <Formik
-          d
+          
           onSubmit={submitHandler}
           initialValues={FormFields}
           validationSchema={validation}
