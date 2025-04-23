@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={` ${geistMono.variable} ${yekan.className}`}>
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       <meta name="author" content="Reza Khodadadi" />
       <link rel="icon" href="/logo/TitleLogo2.png" />
 
